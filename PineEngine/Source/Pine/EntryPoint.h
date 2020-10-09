@@ -1,11 +1,10 @@
 #pragma once
 
 #ifdef PINE_PLATFORM_WINDOWS
-
 extern Pine::Application* Pine::CreateApplication();
 
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
 	//init logging
 	Pine::Log::Init();
@@ -16,9 +15,12 @@ int main(int argc, char** argv)
 	//create application
 	auto app = Pine::CreateApplication();
 	app->Run(app);
-
+	
 	//after run has finished delete app
+		
+
 	delete app;
+	return (0);
 }
 
 #endif

@@ -67,11 +67,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>PINE_PLATFORM_WINDOWS;PINE_BUILD_DLL;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)PineEngine\Source\Vendor\spdlog\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)PineEngine\Source\Vendor\spdlog\include;$(SolutionDir)PineEngine\Source\Vendor\SDL2-2.0.12\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL2.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)PineEngine\Source\Vendor\SDL2-2.0.12\lib\x64;</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
       <Command>xcopy /y "$(OutDir)PineEngine.dll" "$(SolutionDir)bin\$(Configuration)-$(Platform)\PMyGame\"</Command>

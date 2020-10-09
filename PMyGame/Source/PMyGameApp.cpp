@@ -8,11 +8,8 @@ Pine::Application* Pine::CreateApplication()
 
 void PMyGame::Update()
 {
-	for (size_t i = 0; i < 5000; i++)
-	{
-		PINE_INFO("Update");
-
-	}
-
+	PINE_INFO("Updating");
 
 }
+
+
