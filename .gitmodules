@@ -1,0 +1,4 @@
+
+[submodule "PineEngine/Source/Vendor/spdlog"]
+	path = PineEngine/Source/Vendor/spdlog
+	url = https://github.com/gabime/spdlog

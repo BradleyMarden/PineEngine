@@ -11,14 +11,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Pine\Log.h" />
     <ClInclude Include="Source\Pine.h" />
     <ClInclude Include="Source\Pine\Application.h" />
     <ClInclude Include="Source\Pine\Core.h" />
     <ClInclude Include="Source\Pine\EntryPoint.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Pine\Log.cpp" />
     <ClCompile Include="Source\Pine\Application.cpp" />
-    <ClCompile Include="Source\Pine\Core.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -66,6 +67,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>PINE_PLATFORM_WINDOWS;PINE_BUILD_DLL;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)PineEngine\Source\Vendor\spdlog\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

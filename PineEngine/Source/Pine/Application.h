@@ -7,11 +7,12 @@ namespace Pine{
 	
 	public:
 		Application();
-		// ~Application();
-		void Run();
+		bool Run(Application* game);
+		virtual void Update() {};
 	};
 
 	//to define in client
 	Application* CreateApplication();
+	
 }
 

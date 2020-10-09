@@ -8,10 +8,18 @@ namespace Pine
 
 	}
 
-	void Application::Run()
+	
+	bool Application::Run(Application* game)
 	{
-		while (true);
+		//while (true);
+		//{
 		
+			//Application::Update();
+			game->Update();
+			
+		//};
+		
+		return true;
 	}
 }
 
