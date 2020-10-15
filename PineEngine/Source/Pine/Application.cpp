@@ -2,15 +2,55 @@
 
 namespace Pine
 {
+   
+
 
 	Application::Application()
 	{
 
 	}
+    
+    //=====================================================================================Public Functions:
+    bool Application::CreateNetwork()
+    {
+        return Pine::Networking::InitNetwork();
 
-	
-	bool Application::Run(Application* game)
-	{
+    }
+
+    bool Application::CreateRenderer()
+    {
+    
+        return true;
+    }
+
+    //=====================================================================================Private Functions:
+
+    Application::~Application()
+    {
+       
+    }
+
+    bool Application::Run(Application* game)
+    {
+        SetGameInitialize();
+        if (isGameInitializing())
+        {
+            PINE_ENGINE_INFO("APP INITIALIZING");
+            PGame = game;
+            PGame->Initialize();
+            if (!isExiting)
+            {
+                SetGameStarting();
+            }
+        }
+        SDL_Event event;
+
+
+#pragma region window
+
+
+        //WINDOW LAYER=============================================================
+
         SDL_Window* window;                    // Declare a pointer
 
         SDL_Init(SDL_INIT_VIDEO);              // Initialize SDL2
@@ -31,18 +71,63 @@ namespace Pine
             printf("Could not create window: %s\n", SDL_GetError());
             return 1;
         }
+        //WINDOW LAYER=============================================================
+#pragma endregion
 
-        
+        if (isGameStarted())
+        {
+            PINE_ENGINE_INFO("APP STARTED");
+            game->Start();
+            SetGameUpdate();
+        }
 
+        if (!isExiting)
+        {
+
+            while (isGameRunning())
+            {
+                PINE_ENGINE_INFO("APP LOOPING");
+                if (IsGamePaused())
+                {
+                    PINE_ENGINE_INFO("APP PAUSED");//TODO add paused Functionality
+                    break;
+
+                }
+                else if (IsGameOver())
+                {
+                    PINE_ENGINE_INFO("APP GAME OVER");//TODO add Game Over Functionality
+                    break;
+
+                }
+                else if (IsGameClosing())
+                {
+                    PINE_ENGINE_INFO("APP CLOSING");
+                    break;
+                }
+
+
+                game->Update();
+                while (SDL_PollEvent(&event))//TODO Improve checking
+                {
+                    // --- Processing of exit events ---
+                    if (event.type == SDL_QUIT)
+                    {
+                        *PState = PGAME_CLOSING;
+                        break;
+                    }
+                }
+            }
+        }
+        PINE_ENGINE_INFO("APP CLOSING");
         SDL_Delay(3000);  // Pause execution for 3000 milliseconds, for example
-
         // Close and destroy the window
         SDL_DestroyWindow(window);
-
         // Clean up
         SDL_Quit();
-		
-		return true;
-	}
-}
+        return true;
+    }
+
+ }
+   
+
 

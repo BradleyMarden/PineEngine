@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include "Pine/Log.h"
+#include "Pine/Networking.h"
 #include "Pine/Application.h"
 
 

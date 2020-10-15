@@ -30,12 +30,18 @@
     <ClInclude Include="Source\Pine\Log.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Pine\Networking.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Pine\Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\Pine\Log.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Pine\Networking.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
