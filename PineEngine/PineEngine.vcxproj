@@ -11,17 +11,21 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Pine\Networking.h" />
-    <ClInclude Include="Source\Pine\Log.h" />
+    <ClInclude Include="Source\Pine\Core\Game.h" />
+    <ClInclude Include="Source\Pine\Core\PineAPI.h" />
+    <ClInclude Include="Source\Pine\Networking\ServerNetworking.h" />
+    <ClInclude Include="Source\Pine\Networking\Networking.h" />
+    <ClInclude Include="Source\Pine\Logging\Log.h" />
     <ClInclude Include="Source\Pine.h" />
-    <ClInclude Include="Source\Pine\Application.h" />
-    <ClInclude Include="Source\Pine\Core.h" />
-    <ClInclude Include="Source\Pine\EntryPoint.h" />
+    <ClInclude Include="Source\Pine\Core\Core.h" />
+    <ClInclude Include="Source\PineServer.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Pine\Networking.cpp" />
-    <ClCompile Include="Source\Pine\Log.cpp" />
-    <ClCompile Include="Source\Pine\Application.cpp" />
+    <ClCompile Include="Source\Pine\Core\Game.cpp" />
+    <ClCompile Include="Source\Pine\Core\Core.cpp" />
+    <ClCompile Include="Source\Pine\Networking\ServerNetworking.cpp" />
+    <ClCompile Include="Source\Pine\Networking\Networking.cpp" />
+    <ClCompile Include="Source\Pine\Logging\Log.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -78,7 +82,8 @@
       <AdditionalLibraryDirectories>$(SolutionDir)PineEngine\Vendor\SDL2-2.0.12\lib\x64;$(SolutionDir)PineEngine\Vendor\enet-1.3.16\lib;</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /y "$(OutDir)PineEngine.dll" "$(SolutionDir)bin\$(Configuration)-$(Platform)\PMyGame\"</Command>
+      <Command>xcopy /y "$(OutDir)PineEngine.dll" "$(SolutionDir)bin\$(Configuration)-$(Platform)\PMyGame\"
+xcopy /y "$(OutDir)PineEngine.dll"  "$(SolutionDir)bin\$(Configuration)-$(Platform)\PMyServer\"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

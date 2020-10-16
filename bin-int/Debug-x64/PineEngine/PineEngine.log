@@ -1,13 +1,14 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(444,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(445,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
-  Application.cpp
-E:\PineEngine\PineEngine\PineEngine\Source\Pine\Log.h(23,56): warning C4251: 'Pine::Log::s_EngineLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Pine::Log'
+  Core.cpp
+E:\PineEngine\PineEngine\PineEngine\Source\Pine\Logging\Log.h(25,56): warning C4251: 'Pine::Log::s_EngineLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Pine::Log'
 E:\PineEngine\PineEngine\PineEngine\Vendor\spdlog\include\spdlog\details\registry.h(34): message : see declaration of 'std::shared_ptr<spdlog::logger>'
-E:\PineEngine\PineEngine\PineEngine\Source\Pine\Log.h(24,56): warning C4251: 'Pine::Log::s_ClientLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Pine::Log'
+E:\PineEngine\PineEngine\PineEngine\Source\Pine\Logging\Log.h(26,56): warning C4251: 'Pine::Log::s_ClientLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Pine::Log'
 E:\PineEngine\PineEngine\PineEngine\Vendor\spdlog\include\spdlog\details\registry.h(34): message : see declaration of 'std::shared_ptr<spdlog::logger>'
-E:\PineEngine\PineEngine\PineEngine\Source\Pine\Application.h(67,68): warning C4251: 'Pine::Application::PState': class 'std::shared_ptr<Pine::Application::GameState>' needs to have dll-interface to be used by clients of class 'Pine::Application'
-E:\PineEngine\PineEngine\PineEngine\Source\Pine\Application.h(67): message : see declaration of 'std::shared_ptr<Pine::Application::GameState>'
-     Creating library E:\PineEngine\PineEngine\bin\Debug-x64\PineEngine\PineEngine.lib and object E:\PineEngine\PineEngine\bin\Debug-x64\PineEngine\PineEngine.exp
+E:\PineEngine\PineEngine\PineEngine\Source\Pine\Logging\Log.h(27,56): warning C4251: 'Pine::Log::s_ServerLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Pine::Log'
+E:\PineEngine\PineEngine\PineEngine\Vendor\spdlog\include\spdlog\details\registry.h(34): message : see declaration of 'std::shared_ptr<spdlog::logger>'
   PineEngine.vcxproj -> E:\PineEngine\PineEngine\bin\Debug-x64\PineEngine\PineEngine.dll
+  E:\PineEngine\PineEngine\bin\Debug-x64\PineEngine\PineEngine.dll
+  1 File(s) copied
   E:\PineEngine\PineEngine\bin\Debug-x64\PineEngine\PineEngine.dll
   1 File(s) copied

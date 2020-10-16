@@ -1,1 +1,16 @@
-﻿  PMyGame.vcxproj -> E:\PineEngine\PineEngine\bin\Debug-x64\PMyGame\PMyGame.exe
+﻿  PMyGameApp.cpp
+E:\PineEngine\PineEngine\PineEngine\Source\Pine\Logging\Log.h(25,56): warning C4251: 'Pine::Log::s_EngineLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Pine::Log'
+E:\PineEngine\PineEngine\PineEngine\Vendor\spdlog\include\spdlog\details\registry.h(34): message : see declaration of 'std::shared_ptr<spdlog::logger>'
+E:\PineEngine\PineEngine\PineEngine\Source\Pine\Logging\Log.h(26,56): warning C4251: 'Pine::Log::s_ClientLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Pine::Log'
+E:\PineEngine\PineEngine\PineEngine\Vendor\spdlog\include\spdlog\details\registry.h(34): message : see declaration of 'std::shared_ptr<spdlog::logger>'
+E:\PineEngine\PineEngine\PineEngine\Source\Pine\Logging\Log.h(27,56): warning C4251: 'Pine::Log::s_ServerLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Pine::Log'
+E:\PineEngine\PineEngine\PineEngine\Vendor\spdlog\include\spdlog\details\registry.h(34): message : see declaration of 'std::shared_ptr<spdlog::logger>'
+  main.cpp
+E:\PineEngine\PineEngine\PineEngine\Source\Pine\Logging\Log.h(25,56): warning C4251: 'Pine::Log::s_EngineLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Pine::Log'
+E:\PineEngine\PineEngine\PineEngine\Vendor\spdlog\include\spdlog\details\registry.h(34): message : see declaration of 'std::shared_ptr<spdlog::logger>'
+E:\PineEngine\PineEngine\PineEngine\Source\Pine\Logging\Log.h(26,56): warning C4251: 'Pine::Log::s_ClientLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Pine::Log'
+E:\PineEngine\PineEngine\PineEngine\Vendor\spdlog\include\spdlog\details\registry.h(34): message : see declaration of 'std::shared_ptr<spdlog::logger>'
+E:\PineEngine\PineEngine\PineEngine\Source\Pine\Logging\Log.h(27,56): warning C4251: 'Pine::Log::s_ServerLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Pine::Log'
+E:\PineEngine\PineEngine\PineEngine\Vendor\spdlog\include\spdlog\details\registry.h(34): message : see declaration of 'std::shared_ptr<spdlog::logger>'
+  Generating Code...
+  PMyGame.vcxproj -> E:\PineEngine\PineEngine\bin\Debug-x64\PMyGame\PMyGame.exe

@@ -87,6 +87,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\PMyGameApp.cpp" />
   </ItemGroup>
   <ItemGroup>
