@@ -41,7 +41,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -66,6 +66,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\$(ProjectName)</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\$(ProjectName)</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -82,15 +84,15 @@
       <AdditionalLibraryDirectories>$(SolutionDir)PineEngine\Vendor\SDL2-2.0.12\lib\x64;$(SolutionDir)PineEngine\Vendor\enet-1.3.16\lib;</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /y "$(OutDir)PineEngine.dll" "$(SolutionDir)bin\$(Configuration)-$(Platform)\PMyGame\"
-xcopy /y "$(OutDir)PineEngine.dll"  "$(SolutionDir)bin\$(Configuration)-$(Platform)\PMyServer\"</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
     <Lib />
     <ProjectReference>
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
     <Lib>
-      <AdditionalDependencies>$(SolutionDir)PineEngine\Vendor\SDL2-2.0.12\lib\x64\SDL2.lib;$(SolutionDir)PineEngine\Vendor\enet-1.3.16\lib\enet.lib;</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)PineEngine\Vendor\SDL2-2.0.12\lib\x64\SDL2.lib;$(SolutionDir)PineEngine\Vendor\enet-1.3.16\lib\enet64.lib;ws2_32.lib;winmm.lib;</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -99,8 +101,9 @@ xcopy /y "$(OutDir)PineEngine.dll"  "$(SolutionDir)bin\$(Configuration)-$(Platfo
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>PINE_PLATFORM_WINDOWS;PINE_BUILD_DLL;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)PineEngine\Vendor\spdlog\include;$(SolutionDir)PineEngine\Vendor\SDL2-2.0.12\include;$(SolutionDir)PineEngine\Vendor\enet-1.3.16\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -108,6 +111,9 @@ xcopy /y "$(OutDir)PineEngine.dll"  "$(SolutionDir)bin\$(Configuration)-$(Platfo
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib>
+      <AdditionalDependencies>$(SolutionDir)PineEngine\Vendor\SDL2-2.0.12\lib\x64\SDL2.lib;$(SolutionDir)PineEngine\Vendor\enet-1.3.16\lib\enet64.lib;ws2_32.lib;winmm.lib;</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

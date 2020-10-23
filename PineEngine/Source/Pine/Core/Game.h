@@ -42,4 +42,4 @@ namespace Pine {
 	};
 }
 
-//$(SolutionDir)PineEngine\Vendor\spdlog\include;$(SolutionDir)PineEngine\Vendor\SDL2-2.0.12\include;$(SolutionDir)PineEngine\Vendor\enet-1.3.16\include;
+//$//(SolutionDir)PineEngine\Vendor\spdlog\include;$(SolutionDir)PineEngine\Vendor\SDL2-2.0.12\include;$(SolutionDir)PineEngine\Vendor\enet-1.3.16\include;

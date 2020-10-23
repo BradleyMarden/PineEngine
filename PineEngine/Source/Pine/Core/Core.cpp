@@ -41,7 +41,7 @@ namespace Pine {
 
 		//Wait two seconds
 		SDL_Delay(2000);
-
+		
 		
 
 	}
@@ -54,10 +54,16 @@ namespace Pine {
 
 	}
 
-	bool Core::PineInit(Game* game)
+	bool Core::PineInit(Game* game, uint8_t flags)
 	{
+
 		//setup everything for engine
 		Pine::Log::Init();
+		PINE_ENGINE_INFO("Welcome To Pine Engine!");
+		PINE_ENGINE_INFO("Created By Bradley Marden : Licensed under Apache License");
+		PINE_ENGINE_INFO("Refer to Documentation for Engine Use Cases");
+
+		PINE_ENGINE_INFO("Application Starting...");
 		if (!game)
 		{
 			return false;
@@ -66,7 +72,29 @@ namespace Pine {
 		{
 			givenGame = game;
 		}
-		
+		if (flags & Pine_Networking)
+		{
+			PINE_ENGINE_ERROR("RUNNING NETWORKING");
+			if (!Pine::Networking::PineNetworkInit())
+			{
+				PINE_ENGINE_ERROR("Error Loading NETWORKING... closing");
+				givenGame->GameOver();
+			}
+		}
+		if (flags & Pine_Server)
+		{
+			PINE_ENGINE_ERROR("RUNNING SERVER");
+			if (!Pine::Networking::PineNetworkInit())
+			{
+				PINE_ENGINE_ERROR("Error Loading NETWORKING... closing");
+				givenGame->GameOver();
+			}
+			if (Pine::Networking::PineNetworkCreate(2302,4) !=1)
+			{
+				PINE_ENGINE_ERROR("Error Creating Server... closing");
+				givenGame->GameOver();
+			}
+		}
 		
 		//start game flow
 		givenGame->Initialize();
@@ -78,28 +106,38 @@ namespace Pine {
 			givenGame->GameClose();//just for safety
 			return false;
 		}
-		PINE_ENGINE_INFO("Application Running");
+		
 
 		return true;
 	}
+	void Core::PineConnect()
+	{
+		Pine::Networking::PineNetworkConnect("127.0.0.1", 2302);
+	}
 
+	void Core::PinePoll()
+	{
+		Pine::Networking::PineNetworkLoop();
+
+	}
 	void Core::PineStart()
 	{
+		PINE_ENGINE_INFO("Application Started!");
+		givenGame->Start();
 		bool closeGame = false;
 		SDL_Event event;
-
 		while (!closeGame)
 		{
-			
+			//PinePoll();
 				if (givenGame->IsGameOver())
 				{
-					PINE_ENGINE_INFO("Application Over");
+					//PINE_ENGINE_INFO("Application Over");
 
 				}
 				if (givenGame->IsGameClosing())
 				{
 
-					PINE_ENGINE_INFO("Application Closing");
+					//PINE_ENGINE_INFO("Application Closing");
 
 					closeGame = true;
 					givenGame->Terminate();
@@ -112,13 +150,13 @@ namespace Pine {
 				}
 				if (!givenGame->IsGameMenu())//always runs while not in menu for opengl rendering controll
 				{
-					PINE_ENGINE_INFO("Application not in Menu");
+					//PINE_ENGINE_INFO("Application not in Menu");
 
 				}
 
 				if (givenGame->IsGameRunning() || givenGame->IsGameMenu())//run all the time, even if the menu is open
 				{
-					PINE_ENGINE_INFO("Application Running");
+					//PINE_ENGINE_INFO("Application Running");
 
 					givenGame->Update();
 				}
@@ -128,7 +166,6 @@ namespace Pine {
 	void Core::PineCloseWindow()
 	{
 		SDL_Delay(3000);
-
 		SDL_DestroyWindow(m_Window);
 		SDL_Quit();
 	}
