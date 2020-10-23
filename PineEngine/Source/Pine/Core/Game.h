@@ -1,11 +1,11 @@
 #pragma once
 #include "sdl2/SDL.h"
 #include <memory>
-#include "PineAPI.h"
+//#include "PineAPI.h"
 
 
 namespace Pine {
-	class PINE_API Game
+	class Game
 	{
 
 		///////////////////*Game States*\\\\\\\\\\\\\\\\\\\\\\\\
@@ -42,4 +42,4 @@ namespace Pine {
 	};
 }
 
-
+//$(SolutionDir)PineEngine\Vendor\spdlog\include;$(SolutionDir)PineEngine\Vendor\SDL2-2.0.12\include;$(SolutionDir)PineEngine\Vendor\enet-1.3.16\include;

@@ -1,12 +1,12 @@
 #pragma once
 #include <memory>//for shared pointers
 #include "../Core/Core.h"
-#include "../Core/PineAPI.h"
+//#include "../Core/PineAPI.h"
 #include "spdlog/spdlog.h"
 #include "spdlog/sinks/stdout_color_sinks.h"
 
 namespace Pine {
-	class PINE_API Log
+	class Log
 	{
 	public:
 		Log();

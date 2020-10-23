@@ -2,7 +2,7 @@
 //Only to be used by Pine applications
 //#include "sdl2/SDL.h"
 //#include <stdio.h>
-#include "PineAPI.h"
+//#include "PineAPI.h"
 #include "../Logging/Log.h"
 #include "Game.h"
 #include "sdl2/SDL.h"
@@ -17,7 +17,7 @@
 
 
 namespace Pine {
-	class PINE_API Core
+	class Core
 	{
 
 	public:
