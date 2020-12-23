@@ -39,6 +39,27 @@
     <ClInclude Include="Source\Pine\Core\PineAPI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Pine\Primitives\2D\PCircle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Pine\Primitives\2D\PEntity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Pine\Primitives\2D\PLine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Pine\Primitives\2D\PTriangle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Pine\Primitives\2D\PObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Pine\Maths\PMaths.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Pine\Primitives\2D\PRect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Pine\Networking\ServerNetworking.cpp">
@@ -54,6 +75,27 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\Pine\Core\Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Pine\Primitives\2D\PCircle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Pine\Primitives\2D\PEntity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Pine\Primitives\2D\PLine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Pine\Primitives\2D\PTriangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Pine\Primitives\2D\PObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Pine\Maths\PMaths.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Pine\Primitives\2D\PRect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

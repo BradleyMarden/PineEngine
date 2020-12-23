@@ -1,12 +1,5 @@
 ﻿  main.cpp
-E:\PineEngine\PineEngine\PineEngine\Source\Pine\Networking\Networking.h(9,27): error C3646: 'Messages': unknown override specifier
-E:\PineEngine\PineEngine\PineEngine\Source\Pine\Networking\Networking.h(9,27): error C2143: syntax error: missing ',' before '['
-E:\PineEngine\PineEngine\PineEngine\Source\Pine\Networking\Networking.h(9,30): error C2143: syntax error: missing ')' before ';'
-E:\PineEngine\PineEngine\PineEngine\Source\Pine\Networking\Networking.h(9,30): error C2238: unexpected token(s) preceding ';'
-E:\PineEngine\PineEngine\PMyGame\Source\main.cpp(12,5): error C2661: 'Pine::Core::PineInit': no overloaded function takes 1 arguments
+E:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Core.h(30,10): fatal error C1083: Cannot open include file: 'GL/glew.h': No such file or directory
   PMyGameApp.cpp
-E:\PineEngine\PineEngine\PineEngine\Source\Pine\Networking\Networking.h(9,27): error C3646: 'Messages': unknown override specifier
-E:\PineEngine\PineEngine\PineEngine\Source\Pine\Networking\Networking.h(9,27): error C2143: syntax error: missing ',' before '['
-E:\PineEngine\PineEngine\PineEngine\Source\Pine\Networking\Networking.h(9,30): error C2143: syntax error: missing ')' before ';'
-E:\PineEngine\PineEngine\PineEngine\Source\Pine\Networking\Networking.h(9,30): error C2238: unexpected token(s) preceding ';'
+E:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Core.h(30,10): fatal error C1083: Cannot open include file: 'GL/glew.h': No such file or directory
   Generating Code...

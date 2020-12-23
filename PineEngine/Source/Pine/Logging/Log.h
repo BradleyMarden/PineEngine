@@ -32,7 +32,7 @@ namespace Pine {
 }
 
 
-#ifdef _DEBUG
+#ifdef DEBUG
 
 #define	PINE_ENGINE_ERROR(...)   ::Pine::Log::GetEngineLogger()->error(__VA_ARGS__)
 #define	PINE_ENGINE_WARN(...)    ::Pine::Log::GetEngineLogger()->warn(__VA_ARGS__)
@@ -56,25 +56,25 @@ namespace Pine {
 
 #else
 
-#define	PINE_ENGINE_ERROR
-#define	PINE_ENGINE_WARN
-#define	PINE_ENGINE_CRITICAL
-#define	PINE_ENGINE_INFO
-#define	PINE_ENGINE_TRACE
+#define	PINE_ENGINE_ERROR(...)
+#define	PINE_ENGINE_WARN(...)
+#define	PINE_ENGINE_CRITICAL(...)
+#define	PINE_ENGINE_INFO(...)
+#define	PINE_ENGINE_TRACE(...)
 
 //For Server Logging
-#define	PINE_SERVER_ERROR
-#define	PINE_SERVER_WARN
-#define	PINE_SERVER_CRITICAL
-#define	PINE_SERVER_INFO
-#define	PINE_SERVER_TRACE
+#define	PINE_SERVER_ERROR(...)
+#define	PINE_SERVER_WARN(...)
+#define	PINE_SERVER_CRITICAL(...)
+#define	PINE_SERVER_INFO(...)
+#define	PINE_SERVER_TRACE(...)
 
 //For Client Logging
-#define PINE_ERROR   
-#define PINE_WARN  
-#define PINE_CRITICAL  
-#define PINE_INFO       
-#define PINE_TRACE
+#define PINE_ERROR(...)
+#define PINE_WARN(...)
+#define PINE_CRITICAL(...) 
+#define PINE_INFO(...)
+#define PINE_TRACE(...)
 #endif // !PINE_RELEASE
 
 

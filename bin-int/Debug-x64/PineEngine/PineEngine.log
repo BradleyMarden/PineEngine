@@ -1,11 +1,31 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(444,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(445,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
   Core.cpp
+E:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Core.cpp(167,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Core.cpp(167,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Core.cpp(197,69): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Core.cpp(197,55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Core.cpp(197,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Log.cpp
   Networking.cpp
-E:\PineEngine\PineEngine\PineEngine\Source\Pine\Networking\Networking.cpp(37,13): warning C4101: 'event': unreferenced local variable
+E:\PineEngine\PineEngine\PineEngine\Source\Pine\Networking\Networking.cpp(129,37): warning C4311: 'type cast': pointer truncation from 'enet_uint8 *' to 'int'
+E:\PineEngine\PineEngine\PineEngine\Source\Pine\Networking\Networking.cpp(129,37): warning C4302: 'type cast': truncation from 'enet_uint8 *' to 'int'
+E:\PineEngine\PineEngine\PineEngine\Source\Pine\Networking\Networking.cpp(151,13): warning C4101: 'event': unreferenced local variable
   ServerNetworking.cpp
+  PRect.cpp
+E:\PineEngine\PineEngine\PineEngine\Source\Pine\Primitives\2D\PRect.cpp(26,16): warning C4150: deletion of pointer to incomplete type 'SDL_Texture'; no destructor called
+E:\PineEngine\PineEngine\PineEngine\Vendor\SDL2-2.0.12\include\sdl2\SDL_render.h(138): message : see declaration of 'SDL_Texture'
+E:\PineEngine\PineEngine\PineEngine\Source\Pine\Primitives\2D\PRect.cpp(36,22): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+E:\PineEngine\PineEngine\PineEngine\Source\Pine\Primitives\2D\PRect.cpp(37,22): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+E:\PineEngine\PineEngine\PineEngine\Source\Pine\Primitives\2D\PRect.cpp(38,18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+E:\PineEngine\PineEngine\PineEngine\Source\Pine\Primitives\2D\PRect.cpp(39,18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+E:\PineEngine\PineEngine\PineEngine\Source\Pine\Primitives\2D\PRect.cpp(43,69): warning C4244: 'argument': conversion from 'float' to 'Uint8', possible loss of data
+E:\PineEngine\PineEngine\PineEngine\Source\Pine\Primitives\2D\PRect.cpp(43,60): warning C4244: 'argument': conversion from 'float' to 'Uint8', possible loss of data
+E:\PineEngine\PineEngine\PineEngine\Source\Pine\Primitives\2D\PRect.cpp(43,51): warning C4244: 'argument': conversion from 'float' to 'Uint8', possible loss of data
+E:\PineEngine\PineEngine\PineEngine\Source\Pine\Primitives\2D\PRect.cpp(43,42): warning C4244: 'argument': conversion from 'float' to 'Uint8', possible loss of data
   Generating Code...
-ws2_32.lib(WS2_32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in SDL2.lib(SDL2.dll); second definition ignored
-winmm.lib(WINMM.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in SDL2.lib(SDL2.dll); second definition ignored
+SDL2_image.lib(SDL2_image.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in opengl32.lib(OPENGL32.dll); second definition ignored
+SDL2.lib(SDL2.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in opengl32.lib(OPENGL32.dll); second definition ignored
+ws2_32.lib(WS2_32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in opengl32.lib(OPENGL32.dll); second definition ignored
+winmm.lib(WINMM.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in opengl32.lib(OPENGL32.dll); second definition ignored
   PineEngine.vcxproj -> E:\PineEngine\PineEngine\bin\Debug-x64\PineEngine\PineEngine.lib

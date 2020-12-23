@@ -11,6 +11,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Pine\Primitives\2D\PRect.h" />
+    <ClInclude Include="Source\Pine\Maths\PMaths.h" />
+    <ClInclude Include="Source\Pine\Primitives\2D\PCircle.h" />
+    <ClInclude Include="Source\Pine\Primitives\2D\PEntity.h" />
+    <ClInclude Include="Source\Pine\Primitives\2D\PLine.h" />
+    <ClInclude Include="Source\Pine\Primitives\2D\PTriangle.h" />
+    <ClInclude Include="Source\Pine\Primitives\2D\PObject.h" />
     <ClInclude Include="Source\Pine\Core\Game.h" />
     <ClInclude Include="Source\Pine\Core\PineAPI.h" />
     <ClInclude Include="Source\Pine\Networking\ServerNetworking.h" />
@@ -21,6 +28,13 @@
     <ClInclude Include="Source\PineServer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Pine\Primitives\2D\PRect.cpp" />
+    <ClCompile Include="Source\Pine\Maths\PMaths.cpp" />
+    <ClCompile Include="Source\Pine\Primitives\2D\PCircle.cpp" />
+    <ClCompile Include="Source\Pine\Primitives\2D\PEntity.cpp" />
+    <ClCompile Include="Source\Pine\Primitives\2D\PLine.cpp" />
+    <ClCompile Include="Source\Pine\Primitives\2D\PTriangle.cpp" />
+    <ClCompile Include="Source\Pine\Primitives\2D\PObject.cpp" />
     <ClCompile Include="Source\Pine\Core\Game.cpp" />
     <ClCompile Include="Source\Pine\Core\Core.cpp" />
     <ClCompile Include="Source\Pine\Networking\ServerNetworking.cpp" />
@@ -73,9 +87,9 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>PINE_PLATFORM_WINDOWS;PINE_BUILD_DLL;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GLEW_STATIC;PINE_PLATFORM_WINDOWS;PINE_BUILD_DLL;DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)PineEngine\Vendor\spdlog\include;$(SolutionDir)PineEngine\Vendor\SDL2-2.0.12\include;$(SolutionDir)PineEngine\Vendor\enet-1.3.16\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)PineEngine\Vendor\glew-2.1.0\include;$(SolutionDir)PineEngine\Vendor\spdlog\include;$(SolutionDir)PineEngine\Vendor\SDL2-2.0.12\include;$(SolutionDir)PineEngine\Vendor\enet-1.3.16\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -92,7 +106,7 @@
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
     <Lib>
-      <AdditionalDependencies>$(SolutionDir)PineEngine\Vendor\SDL2-2.0.12\lib\x64\SDL2.lib;$(SolutionDir)PineEngine\Vendor\enet-1.3.16\lib\enet64.lib;ws2_32.lib;winmm.lib;</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;$(SolutionDir)PineEngine\Vendor\glew-2.1.0\lib\Release\x64\glew32s.lib;$(SolutionDir)PineEngine\Vendor\SDL2-2.0.12\lib\x64\SDL2_image.lib;$(SolutionDir)PineEngine\Vendor\SDL2-2.0.12\lib\x64\SDL2.lib;$(SolutionDir)PineEngine\Vendor\enet-1.3.16\lib\enet64.lib;ws2_32.lib;winmm.lib;</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -101,9 +115,9 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>PINE_PLATFORM_WINDOWS;PINE_BUILD_DLL;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ITERATOR_DEBUG_LEVEL=0;GLEW_STATIC;PINE_PLATFORM_WINDOWS;PINE_BUILD_DLL;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)PineEngine\Vendor\spdlog\include;$(SolutionDir)PineEngine\Vendor\SDL2-2.0.12\include;$(SolutionDir)PineEngine\Vendor\enet-1.3.16\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)PineEngine\Vendor\glew-2.1.0\include;$(SolutionDir)PineEngine\Vendor\spdlog\include;$(SolutionDir)PineEngine\Vendor\SDL2-2.0.12\include;$(SolutionDir)PineEngine\Vendor\enet-1.3.16\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -112,7 +126,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>$(SolutionDir)PineEngine\Vendor\SDL2-2.0.12\lib\x64\SDL2.lib;$(SolutionDir)PineEngine\Vendor\enet-1.3.16\lib\enet64.lib;ws2_32.lib;winmm.lib;</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;$(SolutionDir)PineEngine\Vendor\glew-2.1.0\lib\Release\x64\glew32s.lib;$(SolutionDir)PineEngine\Vendor\SDL2-2.0.12\lib\x64\SDL2_image.lib;$(SolutionDir)PineEngine\Vendor\SDL2-2.0.12\lib\x64\SDL2.lib;$(SolutionDir)PineEngine\Vendor\enet-1.3.16\lib\enet64.lib;ws2_32.lib;winmm.lib;</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

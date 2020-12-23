@@ -7,7 +7,7 @@
 namespace Pine {
 	class Game
 	{
-
+		//the game files. COntroll game play
 		///////////////////*Game States*\\\\\\\\\\\\\\\\\\\\\\\\
 
 	private:
@@ -38,6 +38,7 @@ namespace Pine {
 		virtual void Start()       {};
 		virtual void Initialize()  {};
 		virtual void Terminate()   {};
+		virtual void OnMouseClick()   {};
 
 	};
 }
