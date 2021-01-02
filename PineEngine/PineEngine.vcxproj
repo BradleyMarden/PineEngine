@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Pine\Core\Input.h" />
     <ClInclude Include="Source\Pine\Primitives\2D\PRect.h" />
     <ClInclude Include="Source\Pine\Maths\PMaths.h" />
     <ClInclude Include="Source\Pine\Primitives\2D\PCircle.h" />
@@ -28,6 +29,7 @@
     <ClInclude Include="Source\PineServer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Pine\Core\Input.cpp" />
     <ClCompile Include="Source\Pine\Primitives\2D\PRect.cpp" />
     <ClCompile Include="Source\Pine\Maths\PMaths.cpp" />
     <ClCompile Include="Source\Pine\Primitives\2D\PCircle.cpp" />

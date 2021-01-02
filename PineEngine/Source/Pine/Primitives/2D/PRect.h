@@ -20,6 +20,7 @@ namespace Pine {
 		//will implement below if need to controll rect texture. Otherwise use PEntity
 		//PRect(Pine::PVector2f p_Position, Pine::PVector2f p_Size, Pine::PVector2f p_Scale, SDL_Texture& p_texture, char* p_Path, PColourf p_Colour);
 		PRect(Pine::PVector2f p_Position, Pine::PVector2f p_Size);
+		PRect();
 		~PRect();
 		void SetColour(Pine::PColourf p_Colour)			{ Colour = p_Colour; }
 		void SetPosition(Pine::PVector2f p_Position)	{ Position = p_Position; }

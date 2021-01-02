@@ -21,6 +21,15 @@ Pine::PRect::PRect(Pine::PVector2f p_Position, Pine::PVector2f p_Size)
 	Colour = Pine::PColourf(1, 0, 0, 255);
 	
 }
+Pine::PRect::PRect()
+{
+	
+	Scale = Pine::PVector2f(1,1);
+	Texture = nullptr;
+	path = nullptr;
+	Colour = Pine::PColourf(1, 0, 0, 255);
+	
+}
 Pine::PRect::~PRect()
 {
 	delete Texture;

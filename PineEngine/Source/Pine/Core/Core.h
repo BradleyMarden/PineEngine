@@ -1,8 +1,6 @@
 #pragma once
 //Only to be used by Pine applications
-//#include "sdl2/SDL.h"
-//#include <stdio.h>
-//#include "PineAPI.h"
+
 #include "../Logging/Log.h"
 #include "../Networking/Networking.h"
 #include "Game.h"
@@ -22,14 +20,16 @@
 
 //-----------------------------------------------------------
 
-
 #include <stdio.h>
 #include <io.h>
 #include <fcntl.h>
 #include <windows.h>
 #include "GL/glew.h"
 #include <sdl2/SDL_opengl.h>
-
+#include <chrono>
+#include <time.h>
+#include <sdl2/SDL_timer.h>
+#include "Input.h"
 
 namespace Pine {
 
@@ -44,25 +44,34 @@ namespace Pine {
 		~Core();
 		Core(const char* m_windowName, unsigned int m_Width, unsigned int m_Height);
 
-		static void PineInit();
-		static void PineConnect();
-		static void PinePoll();
+		void		PineCloseWindow();
+		void		PineOpenWindow(const char* m_windowName, unsigned int m_Width, unsigned int m_Height);
+		bool		PineInit(Game* game, uint8_t flags);
+		void		PineStart();
+		
 
-		void    PineCloseWindow();
-		void    PineOpenWindow(const char* m_windowName, unsigned int m_Width, unsigned int m_Height);
-		bool    PineInit(Game* game, uint8_t flags);
-		void    PineStart();
-
-
+		static PVector2f GetMousePos();//abstarct out to another class
+		std::vector<PObject*>objects;//temp, move back to private!!
+		void Draw();//need to refactyor, causes errors when used on clients. Needs to only be used privately
 	
 	private:
 
+
 		SDL_Window* m_Window = nullptr;
-		Game* givenGame;
-		SDL_Renderer* renderer;
+		Game* givenGame = nullptr;
+		SDL_Renderer* renderer = nullptr;
 		SDL_Rect rect;
-		SDL_Texture* text;
-		std::vector<PObject>objects;
+		SDL_Texture* text = nullptr;
+
+		void ApplicationRunning();
+		void HandleEvents();
+		
+		
+		const int fps = 60;
+		const int frameDelay = 1000 / fps;// max time between frames
+		Uint32 frameStart;
+		int frameTime;
+
 
 	};
 }

@@ -10,23 +10,18 @@ namespace Pine {
 
 	}
 
-	void Core::PineInit()//init with window size, flag and f/r
-	{
-		//init logging
-
-		//Pine::Log::Init();
-		//PINE_ENGINE_INFO("Working");
-	}
 
 	Core::Core(const char* m_windowName, unsigned int m_Width, unsigned int m_Height)
 	{
+		Pine::Log::Init();
+
 		if (glewInit() != GLEW_OK)
 		{
 			PINE_ENGINE_ERROR("OPENGL NO INITIALIZED!");
 		}
 		//SDL_GL_CreateContext()
 		SDL_Init(SDL_INIT_VIDEO);
-		m_Window = SDL_CreateWindow(m_windowName, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, m_Width, m_Height, SDL_WINDOW_OPENGL);
+		m_Window = SDL_CreateWindow(m_windowName, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, m_Width, m_Height, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
 		if (m_Window == NULL)
 		{
 			auto a = SDL_GetError();
@@ -38,9 +33,6 @@ namespace Pine {
 		//Get window surface
 		screenSurface = SDL_GetWindowSurface(m_Window);
 
-		//Fill the surface white
-		SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0xFF, 0xFF, 0xFF));
-		//Update the surface
 		SDL_UpdateWindowSurface(m_Window);
 		//Wait two seconds
 		SDL_Delay(2000);
@@ -50,14 +42,21 @@ namespace Pine {
 	
 	void Core::PineOpenWindow(const char* m_windowName, unsigned int m_Width, unsigned int m_Height)
 	{
+		Pine::Log::Init();
+
+		if (glewInit() != GLEW_OK)
+		{
+			PINE_ENGINE_ERROR("OPENGL NO INITIALIZED!");
+		}
+		//SDL_GL_CreateContext()
 		SDL_Init(SDL_INIT_VIDEO);
 		m_Window = SDL_CreateWindow(m_windowName, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, m_Width, m_Height, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
+		//glViewport(0, 0, m_Width, m_Height);
 
 	}
 
 	bool Core::PineInit(Game* game, uint8_t flags)
 	{
-		Pine::Log::Init();
 		if (!game)
 		{
 			return false;
@@ -115,122 +114,104 @@ namespace Pine {
 
 		return true;
 	}
-	void Core::PineConnect()
-	{
-		Pine::Networking::PineServerConnect("127.0.0.1", 2302);
-	}
+	
 
-	void Core::PinePoll()
-	{
-		//Pine::Networking::PineServerNetworkLoop();
-
-	}
 	void Core::PineStart()
 	{
 		PINE_ENGINE_INFO("Application Started!");
 		givenGame->Start();
-		bool closeGame = false;
 		SDL_Event event;
-		rect.w = 100;
-		rect.h = 100;
+		bool closeGame = false;
 		
-		//text = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_TARGET, 1024, 768);
 		while (!closeGame)
 		{
-			//PinePoll();
-				if (givenGame->IsGameOver())
-				{
-					//PINE_ENGINE_INFO("Application Over");
+			frameStart = SDL_GetTicks();
+			switch (givenGame->GetGameState())
+			{
+			default:
+				break;
+			case Game::GameState::RUNNING:
+				HandleEvents();
+				ApplicationRunning();
+				Draw();
+				break;
+			case Game::GameState::GAMEOVER:
+				break;
+			case Game::GameState::CLOSING:
+				PINE_ENGINE_INFO("Application Closing");
+				closeGame = true;
+				givenGame->Terminate();
+				break;
+			}
+			
+			//testing purpose
+			//if (Pine::Input::CloseApplication())
+			//{
+			//	givenGame->GameClose();
+			//}
 
-				}
-				if (givenGame->IsGameClosing())
-				{
-
-					PINE_ENGINE_INFO("Application Closing");
-
-					closeGame = true;
-					givenGame->Terminate();
-				}
-				while (SDL_PollEvent(&event)) {
-					if (event.type == SDL_QUIT)
-					{
-						givenGame->GameClose();
-					}
-					if (event.type ==SDL_MOUSEBUTTONUP)
-					{
-						PINE_ENGINE_INFO("MOUSE PRESSED");
-						Pine::PVector2f mousePos;
-						int x;
-						int y;
-						SDL_GetMouseState(&x, &y);
-						//PCircle c(300, 250, 300, rand() % 255, rand() % 255, rand() % 255);
-						PRect r(Pine::PVector2f(x-32,y-32), Pine::PVector2f(64, 64));
-
-						objects.push_back(r);
-						PINE_ENGINE_ERROR(objects.size());
-						if (objects.size() >3)
-						{
-							objects.erase(objects.begin() +2);
-							PINE_ENGINE_ERROR(objects.size());
-
-
-						}
-						//if (IMG_LoadTexture(renderer, "res/grass.jpg") == NULL)
-						//{
-						//	PINE_ENGINE_ERROR("COULD NOT LOAD IMAGE");
-						//}
-						//SDL_Rect src;
-						////draw here
-						//src.x = 0;
-						//src.y = 0;
-						//src.w = 959;
-						//src.h = 828;
-						//SDL_Rect dst;
-						//dst.x = x - 32;
-						//dst.y = y - 32;
-						//dst.w = 32*4;
-						//dst.h = 32*4;
-
-						//SDL_Texture* text = IMG_LoadTexture(renderer, "res/grass.jpg");
-						//SDL_RenderCopy(renderer, text, &src, &dst);
-						//r.SetTexture(IMG_LoadTexture(renderer, "res/grass.jpg"));
-						r.SetColour(Pine::PColourf(rand() % 255, rand() % 255, rand() % 255, 255));
-						r.Render(renderer);
-						//c.Render(renderer);
-						givenGame->OnMouseClick();
-
-
-					}
-				}
-				if (!givenGame->IsGameMenu())//always runs while not in menu for opengl rendering controll
-				{
-					//PINE_ENGINE_INFO("Application not in Menu");
-
-				}
-
-				if (givenGame->IsGameRunning() || givenGame->IsGameMenu())//run all the time, even if the menu is open
-				{
-					//PINE_ENGINE_INFO("Application Running");
-					
-
-					//test circle
-
-
-
-					givenGame->Update();
-					//rect.x = rand() % 500;
-					//rect.y = rand() % 500;
-					//SDL_SetRenderTarget(renderer, text);
-					//SDL_SetRenderDrawColor(renderer, 0x00, 0x00, 0x00, 0x00);
-					//SDL_RenderClear(renderer);
-					//SDL_RenderDrawRect(renderer, &rect);
-					//SDL_SetRenderDrawColor(renderer, 0xFF, 0x00, 0x00, 0x00);
-					//SDL_RenderFillRect(renderer, &rect);
-					//SDL_SetRenderTarget(renderer, NULL);
-					//SDL_RenderCopy(renderer, text, NULL, NULL);
-					SDL_RenderPresent(renderer);
-				}
+			//limit FPS
+			frameTime = SDL_GetTicks() - frameStart;
+			if (frameDelay > frameTime)
+			{
+				SDL_Delay(frameDelay - frameTime);
+			}
 		}
+	}
+
+	void Core::ApplicationRunning()
+	{
+		
+
+		//runs Update on the game client
+		givenGame->Update();
+
+		//now finally render graphics
+		
+	}
+	void Core::Draw()
+	{
+		//draws all objects
+		for (int i = 0; i < objects.size(); i++)
+		{
+			objects[i]->Render(renderer);
+		}
+		SDL_RenderPresent(renderer);
+	}
+
+	void Core::HandleEvents()//all keyboard and mouse events are handled here
+	{
+		SDL_Event e;
+		SDL_PollEvent(&e);
+		switch (e.type)
+		{
+			default:
+				break;
+			case SDL_MOUSEBUTTONDOWN:
+				PINE_ENGINE_WARN("MOUSE BUTTON PRESSED");
+				Input::MousePressed(&e);
+				break;
+			case SDL_MOUSEBUTTONUP:
+				PINE_ENGINE_WARN("MOUSE BUTTON RELEASED");
+				Input::MouseReleased(&e);
+				break;
+			case SDL_QUIT:
+				givenGame->GameClose();
+				PINE_ENGINE_WARN("CLOSING GAME");
+				break;
+		}
+	}
+
+	Pine::PVector2f Core::GetMousePos()
+	{
+		Pine::PVector2f mousePos;
+		int x;
+		int y;
+		SDL_GetMouseState(&x, &y);
+
+		mousePos.X = x;
+		mousePos.Y = y;
+		return mousePos;
 	}
 
 	void Core::PineCloseWindow()
