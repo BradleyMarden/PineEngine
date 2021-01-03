@@ -31,6 +31,8 @@
 #include <sdl2/SDL_timer.h>
 #include "Input.h"
 
+#define fps 60
+
 namespace Pine {
 
 	//
@@ -48,10 +50,11 @@ namespace Pine {
 		void		PineOpenWindow(const char* m_windowName, unsigned int m_Width, unsigned int m_Height);
 		bool		PineInit(Game* game, uint8_t flags);
 		void		PineStart();
+        void        Instanciate(PObject* object);
 		
 
 		static PVector2f GetMousePos();//abstarct out to another class
-		std::vector<PObject*>objects;//temp, move back to private!!
+		
 		void Draw();//need to refactyor, causes errors when used on clients. Needs to only be used privately
 	
 	private:
@@ -65,9 +68,9 @@ namespace Pine {
 
 		void ApplicationRunning();
 		void HandleEvents();
+		std::vector<PObject*>objects;//temp, move back to private!!
 		
-		
-		const int fps = 60;
+		//const int fps = 60;
 		const int frameDelay = 1000 / fps;// max time between frames
 		Uint32 frameStart;
 		int frameTime;

@@ -7,7 +7,9 @@ namespace Pine {
 	}
 	Core::~Core()
 	{
-
+        delete renderer;//need to double check
+        
+        
 	}
 
 
@@ -72,9 +74,10 @@ namespace Pine {
 
 		PINE_ENGINE_INFO("Application Starting...");
 		
+        //Need to implememnt= bitflags!
 		if (flags & Pine_Networking)
 		{
-			PINE_ENGINE_ERROR("RUNNING NETWORKING");
+			PINE_ENGINE_WARN("RUNNING NETWORKING");
 			if (!Pine::Networking::PineNetworkingInit())
 			{
 				PINE_ENGINE_ERROR("Error Loading NETWORKING... closing");
@@ -83,7 +86,7 @@ namespace Pine {
 		}
 		if (flags & Pine_Server)
 		{
-			PINE_ENGINE_ERROR("RUNNING SERVER");
+			PINE_ENGINE_WARN("RUNNING SERVER");
 			if (!Pine::Networking::PineNetworkingInit())
 			{
 				PINE_ENGINE_ERROR("Error Loading NETWORKING... closing");
@@ -106,7 +109,7 @@ namespace Pine {
 		givenGame->GameRun();
 		if (!givenGame->IsGameRunning())//if game is initialized
 		{
-			PINE_ENGINE_INFO("Failed to Run Application");
+			PINE_ENGINE_ERROR("Failed to Run Application");
 			givenGame->GameClose();//just for safety
 			return false;
 		}
@@ -122,7 +125,7 @@ namespace Pine {
 		givenGame->Start();
 		SDL_Event event;
 		bool closeGame = false;
-		
+		//Main game loop
 		while (!closeGame)
 		{
 			frameStart = SDL_GetTicks();
@@ -188,16 +191,16 @@ namespace Pine {
 			default:
 				break;
 			case SDL_MOUSEBUTTONDOWN:
-				PINE_ENGINE_WARN("MOUSE BUTTON PRESSED");
+				PINE_ENGINE_INFO("MOUSE BUTTON PRESSED");
 				Input::MousePressed(&e);
 				break;
 			case SDL_MOUSEBUTTONUP:
-				PINE_ENGINE_WARN("MOUSE BUTTON RELEASED");
+				PINE_ENGINE_INFO("MOUSE BUTTON RELEASED");
 				Input::MouseReleased(&e);
 				break;
 			case SDL_QUIT:
 				givenGame->GameClose();
-				PINE_ENGINE_WARN("CLOSING GAME");
+				PINE_ENGINE_INFO("CLOSING GAME");
 				break;
 		}
 	}
@@ -223,4 +226,14 @@ namespace Pine {
 		SDL_Quit();
 	}
 
+void Pine::Instanciate(PObject& object)//may work using reference but check with a pointer
+
+{
+    PINE_ENGINE_INFO("Instancating new Object. Name" + object.Name + " With ID:"); //need to search for a unused id and add it to the obejct we are spawning);
+    //need to add object to list
+    objects.add(&object);
+    
+    //then re-draw the entire list
+    draw();
+    
 }
