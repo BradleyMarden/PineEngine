@@ -7,9 +7,7 @@ namespace Pine {
 	}
 	Core::~Core()
 	{
-        delete renderer;//need to double check
-        
-        
+
 	}
 
 
@@ -74,10 +72,9 @@ namespace Pine {
 
 		PINE_ENGINE_INFO("Application Starting...");
 		
-        //Need to implememnt= bitflags!
 		if (flags & Pine_Networking)
 		{
-			PINE_ENGINE_WARN("RUNNING NETWORKING");
+			PINE_ENGINE_ERROR("RUNNING NETWORKING");
 			if (!Pine::Networking::PineNetworkingInit())
 			{
 				PINE_ENGINE_ERROR("Error Loading NETWORKING... closing");
@@ -86,7 +83,7 @@ namespace Pine {
 		}
 		if (flags & Pine_Server)
 		{
-			PINE_ENGINE_WARN("RUNNING SERVER");
+			PINE_ENGINE_ERROR("RUNNING SERVER");
 			if (!Pine::Networking::PineNetworkingInit())
 			{
 				PINE_ENGINE_ERROR("Error Loading NETWORKING... closing");
@@ -109,7 +106,7 @@ namespace Pine {
 		givenGame->GameRun();
 		if (!givenGame->IsGameRunning())//if game is initialized
 		{
-			PINE_ENGINE_ERROR("Failed to Run Application");
+			PINE_ENGINE_INFO("Failed to Run Application");
 			givenGame->GameClose();//just for safety
 			return false;
 		}
@@ -125,7 +122,7 @@ namespace Pine {
 		givenGame->Start();
 		SDL_Event event;
 		bool closeGame = false;
-		//Main game loop
+		
 		while (!closeGame)
 		{
 			frameStart = SDL_GetTicks();
@@ -136,7 +133,7 @@ namespace Pine {
 			case Game::GameState::RUNNING:
 				HandleEvents();
 				ApplicationRunning();
-				Draw();
+				//Draw();
 				break;
 			case Game::GameState::GAMEOVER:
 				break;
@@ -172,12 +169,27 @@ namespace Pine {
 		//now finally render graphics
 		
 	}
-	void Core::Draw()
+	void Core::Test()
 	{
-		//draws all objects
-		for (int i = 0; i < objects.size(); i++)
+		PINE_ENGINE_INFO("REDRAWING...");
+		Draw(false);
+	}
+
+	
+	void Core::Draw(bool firstDraw)
+	{
+		if (firstDraw)
 		{
-			objects[i]->Render(renderer);
+			objects[objects.size() - 1]->SetRenderer(renderer);
+			objects[objects.size() - 1]->Render();
+		}
+		else {
+			//draws all objects
+			for (int i = 0; i < objects.size(); i++)
+			{
+				//need to fix redrawing the same objects. Huge memory usage, especially with re-drawn images.
+				objects[i]->Render();
+			}
 		}
 		SDL_RenderPresent(renderer);
 	}
@@ -188,20 +200,21 @@ namespace Pine {
 		SDL_PollEvent(&e);
 		switch (e.type)
 		{
-			default:
-				break;
-			case SDL_MOUSEBUTTONDOWN:
-				PINE_ENGINE_INFO("MOUSE BUTTON PRESSED");
-				Input::MousePressed(&e);
-				break;
-			case SDL_MOUSEBUTTONUP:
-				PINE_ENGINE_INFO("MOUSE BUTTON RELEASED");
-				Input::MouseReleased(&e);
-				break;
-			case SDL_QUIT:
-				givenGame->GameClose();
-				PINE_ENGINE_INFO("CLOSING GAME");
-				break;
+		default:
+			break;
+		case SDL_MOUSEBUTTONDOWN:
+			PINE_ENGINE_WARN("MOUSE BUTTON PRESSED");
+			Input::MousePressed(&e);
+			break;
+		case SDL_MOUSEBUTTONUP:
+			PINE_ENGINE_WARN("MOUSE BUTTON RELEASED");
+			Input::MouseReleased(&e);
+			break;
+		case SDL_QUIT:
+			givenGame->GameClose();
+			PINE_ENGINE_WARN("CLOSING GAME");
+			break;
+			
 		}
 	}
 
@@ -226,14 +239,4 @@ namespace Pine {
 		SDL_Quit();
 	}
 
-void Pine::Instanciate(PObject& object)//may work using reference but check with a pointer
-
-{
-    PINE_ENGINE_INFO("Instancating new Object. Name" + object.Name + " With ID:"); //need to search for a unused id and add it to the obejct we are spawning);
-    //need to add object to list
-    objects.add(&object);
-    
-    //then re-draw the entire list
-    draw();
-    
 }

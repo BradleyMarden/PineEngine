@@ -63,7 +63,40 @@ namespace Pine {
 			break;
 			
 		case RIGHTDOWN:
-			return true;
+			if (CurrentMouseButton == RIGHTDOWN)
+			{
+				CurrentMouseButton = DEFAULT;
+				return true;
+			}
+			break;
+		case MIDDLEMOUSEDOWN:
+			if (CurrentMouseButton == MIDDLEMOUSEDOWN)
+			{
+				CurrentMouseButton = DEFAULT;
+				return true;
+			}
+			break;
+		case LEFTUP:
+			if (CurrentMouseButton == LEFTUP)
+			{
+				CurrentMouseButton = DEFAULT;
+				return true;
+			}
+			break;
+		case RIGHTUP:
+			if (CurrentMouseButton == RIGHTUP)
+			{
+				CurrentMouseButton = DEFAULT;
+				return true;
+			}
+			break;
+		case MIDDLEMOUSEUP:
+			if (CurrentMouseButton == MIDDLEMOUSEUP)
+			{
+				CurrentMouseButton = DEFAULT;
+				return true;
+			}
+			break;
 			
 
 		}

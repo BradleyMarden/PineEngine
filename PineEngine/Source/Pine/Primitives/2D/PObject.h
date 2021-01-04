@@ -25,7 +25,8 @@ namespace Pine {
 		//void SetPosition(Pine::PMaths::PVector2 m_Position) { Position = m_Position; }
 
 
-		virtual bool Render(SDL_Renderer* renderer);
+		virtual bool Render();
 		virtual SDL_Rect GetBounds();
+		virtual void SetRenderer(SDL_Renderer* p_Renderer);
 	};
 }

@@ -17,7 +17,7 @@
 #define Pine_Server 0x00000002
 #define Pine_Release 0x00000004
 #define Pine_Debug 0x00000008
-
+//#define PINE_ENGINE_INFO
 //-----------------------------------------------------------
 
 #include <stdio.h>
@@ -31,11 +31,9 @@
 #include <sdl2/SDL_timer.h>
 #include "Input.h"
 
-#define fps 60
-
 namespace Pine {
 
-	//
+	typedef std::vector<std::shared_ptr<Pine::PObject>> GameObjects;
 	class Core
 	{
 
@@ -50,13 +48,21 @@ namespace Pine {
 		void		PineOpenWindow(const char* m_windowName, unsigned int m_Width, unsigned int m_Height);
 		bool		PineInit(Game* game, uint8_t flags);
 		void		PineStart();
-        void        Instanciate(PObject* object);
 		
 
 		static PVector2f GetMousePos();//abstarct out to another class
-		
-		void Draw();//need to refactyor, causes errors when used on clients. Needs to only be used privately
-	
+		//std::vector<PObject*>objects;//temp, move back to private!!
+		template <typename T> void Instanciate(std::shared_ptr<T> object)//may work using reference but check with a pointer
+
+		{
+			//move to an internal function
+			//need to add object to list
+			objects.push_back(object);
+			std::cout << "WORKING" << std::endl;
+			Draw(true);
+		}
+
+		void Test();
 	private:
 
 
@@ -68,9 +74,10 @@ namespace Pine {
 
 		void ApplicationRunning();
 		void HandleEvents();
-		std::vector<PObject*>objects;//temp, move back to private!!
-		
-		//const int fps = 60;
+		void Draw(bool firstDraw);
+
+		GameObjects objects;
+		const int fps = 60;
 		const int frameDelay = 1000 / fps;// max time between frames
 		Uint32 frameStart;
 		int frameTime;

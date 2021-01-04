@@ -15,10 +15,12 @@ namespace Pine
 		SDL_Rect temp = { 1,1 };
 		return temp;
 	}
-	bool PObject::Render(SDL_Renderer *renderer) 
+	bool PObject::Render() 
 	{
 		return true;
 	}
-
+	void PObject::SetRenderer(SDL_Renderer* p_Renderer)
+	{
+	}
 
 }
