@@ -33,7 +33,6 @@ namespace Pine {
 	/*System*/ //MIGHT NOT NEED THE COMPONENT COUNT, CAN USE THE VECTOR SIZE
 	void PineECS::CreateSystem(void(*p_SystemFucntion)(), int p_ComponentCount, std::vector<char*>p_s) //parameter pack, for unknown number of components
 	{
-		PINE_ENGINE_INFO("Creating system with Fucntion: [%p]", p_SystemFucntion);
 		PSystem l_System;
 		l_System.SystemFunction = p_SystemFucntion;
 		l_System.ComponentCount = p_ComponentCount;
