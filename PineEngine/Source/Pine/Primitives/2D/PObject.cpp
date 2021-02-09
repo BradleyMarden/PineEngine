@@ -22,5 +22,8 @@ namespace Pine
 	void PObject::SetRenderer(SDL_Renderer* p_Renderer)
 	{
 	}
-
+	void PObject::UpdateRenderer(SDL_Renderer* p_Renderer)
+	{
+	
+	}
 }

@@ -49,6 +49,7 @@ void Pine::PRect::SetRenderer(SDL_Renderer* p_Renderer)
 	if (path != nullptr)
 	{
 		Texture = IMG_LoadTexture(renderer, path);
+		
 		if (Texture == NULL)
 		{
 			PINE_ENGINE_ERROR("Could not find image: {0}. \nCheck file extention or path.\n", path);
@@ -56,6 +57,10 @@ void Pine::PRect::SetRenderer(SDL_Renderer* p_Renderer)
 	}
 }
 
+void Pine::PRect::UpdateRenderer(SDL_Renderer* p_Renderer) 
+{
+	renderer = p_Renderer;
+}
 
 bool Pine::PRect::Render()
 {
@@ -73,17 +78,15 @@ bool Pine::PRect::Render()
 			src.y = 0;
 			src.w = 959;//actual image resolution
 			src.h = 828;//actual image resolution
-
 			
 			SDL_RenderCopy(renderer, Texture, &src, &Bounds);
 			
-			PINE_ENGINE_INFO("CREATED IMAGE");
-
+			SDL_DestroyTexture(Texture);
 		
 		}
 		else//render filled rect
 		{
-			PINE_ENGINE_INFO("CREATED RECT");
+			//PINE_ENGINE_INFO("CREATED RECT");
 			//SDL_RenderCopy(renderer, Texture, &Bounds, &Bounds);
 			SDL_RenderDrawRect(renderer, &Bounds);
 			SDL_SetRenderDrawColor(renderer, Colour.R, Colour.G, Colour.B, Colour.W);

@@ -28,5 +28,6 @@ namespace Pine {
 		virtual bool Render();
 		virtual SDL_Rect GetBounds();
 		virtual void SetRenderer(SDL_Renderer* p_Renderer);
+		virtual void UpdateRenderer(SDL_Renderer* p_Renderer);
 	};
 }

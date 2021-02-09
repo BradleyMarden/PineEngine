@@ -2,6 +2,7 @@
 #include "enet/enet.h"
 #include "../Logging/Log.h"
 #include <stdlib.h>
+#include <string>
 #define PINE_MAX_NETWORK_MESSAGES 100000
 namespace Pine {
 
@@ -26,8 +27,8 @@ namespace Pine {
 					   
 		static int	   PineServerConnect(const char* ipAddress, unsigned int port);//Specify ipAddress and port of server to connect
 		static bool    PineClientNetworkLoop(int delayBetweenLoops);//Place in update, checks for incoming packets 
-		static void    PineSendPacket(const char* text);//send a packet containing text
-		static void    PineSendGlobalPacket(const char* text);//Send a global packet containing text
+		static void    PineSendPacket(std::string text);//send a packet containing text
+		static void    PineSendGlobalPacket(std::string text);//Send a global packet containing text
 		static void    PineServerDisconnect();//Disconnect from server
 		inline static char* PineGetLastMessage() { return lastMessage; }//TEST returns last message
 

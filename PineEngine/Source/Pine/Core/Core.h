@@ -30,6 +30,7 @@
 #include <time.h>
 #include <sdl2/SDL_timer.h>
 #include "Input.h"
+#include "PineECS.h"
 
 namespace Pine {
 
@@ -58,11 +59,12 @@ namespace Pine {
 			//move to an internal function
 			//need to add object to list
 			objects.push_back(object);
-			std::cout << "WORKING" << std::endl;
+			std::cout << "Instanciated" << std::endl;
 			Draw(true);
 		}
 
 		void Test();
+		int GetObjectCount() { return objects.size(); }
 	private:
 
 
@@ -71,9 +73,8 @@ namespace Pine {
 		SDL_Renderer* renderer = nullptr;
 		SDL_Rect rect;
 		SDL_Texture* text = nullptr;
-
-		void ApplicationRunning();
 		void HandleEvents();
+		void ApplicationRunning();
 		void Draw(bool firstDraw);
 
 		GameObjects objects;

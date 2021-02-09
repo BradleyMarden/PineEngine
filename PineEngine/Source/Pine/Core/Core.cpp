@@ -133,7 +133,7 @@ namespace Pine {
 			case Game::GameState::RUNNING:
 				HandleEvents();
 				ApplicationRunning();
-				//Draw();
+				//Draw(false);
 				break;
 			case Game::GameState::GAMEOVER:
 				break;
@@ -143,12 +143,6 @@ namespace Pine {
 				givenGame->Terminate();
 				break;
 			}
-			
-			//testing purpose
-			//if (Pine::Input::CloseApplication())
-			//{
-			//	givenGame->GameClose();
-			//}
 
 			//limit FPS
 			frameTime = SDL_GetTicks() - frameStart;
@@ -178,6 +172,7 @@ namespace Pine {
 	
 	void Core::Draw(bool firstDraw)
 	{
+		SDL_RenderClear(renderer);
 		if (firstDraw)
 		{
 			objects[objects.size() - 1]->SetRenderer(renderer);
@@ -185,12 +180,15 @@ namespace Pine {
 		}
 		else {
 			//draws all objects
+
 			for (int i = 0; i < objects.size(); i++)
 			{
 				//need to fix redrawing the same objects. Huge memory usage, especially with re-drawn images.
+				objects[i]->SetRenderer(renderer);
 				objects[i]->Render();
 			}
 		}
+		SDL_SetRenderDrawColor(renderer, 21, 27, 31, 255);
 		SDL_RenderPresent(renderer);
 	}
 
@@ -203,13 +201,19 @@ namespace Pine {
 		default:
 			break;
 		case SDL_MOUSEBUTTONDOWN:
-			PINE_ENGINE_WARN("MOUSE BUTTON PRESSED");
+		//	PINE_ENGINE_WARN("MOUSE BUTTON PRESSED");
+			givenGame->OnMouseClick();
 			Input::MousePressed(&e);
 			break;
 		case SDL_MOUSEBUTTONUP:
-			PINE_ENGINE_WARN("MOUSE BUTTON RELEASED");
+		//	PINE_ENGINE_WARN("MOUSE BUTTON RELEASED");
 			Input::MouseReleased(&e);
 			break;
+
+		case SDL_KEYDOWN:
+			Input::KeyPressed(&e);
+			break;
+
 		case SDL_QUIT:
 			givenGame->GameClose();
 			PINE_ENGINE_WARN("CLOSING GAME");
@@ -233,7 +237,7 @@ namespace Pine {
 	void Core::PineCloseWindow()
 	{
 
-		SDL_Delay(3000);
+		//SDL_Delay(3000);
 		SDL_DestroyRenderer(renderer);
 		SDL_DestroyWindow(m_Window);
 		SDL_Quit();

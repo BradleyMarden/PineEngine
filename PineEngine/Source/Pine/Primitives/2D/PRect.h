@@ -25,17 +25,19 @@ namespace Pine {
 		PRect();
 		~PRect();
 		void SetColour(Pine::PColourf p_Colour)			{ Colour = p_Colour; }
-		void SetPosition(Pine::PVector2f p_Position) { Position = p_Position; Render(); }
+		void SetPosition(Pine::PVector2f p_Position)	{ Position = p_Position; }
 		void SetScale(Pine::PVector2f p_Scale)			{ Scale = p_Scale; }
+		void SetSize(Pine::PVector2f p_Size)			{ Size = p_Size; }
 		void SetTexture(SDL_Texture *p_Texture)			{ Texture = p_Texture; }
 		void SetSurface(SDL_Surface *p_Surface)			{ Surface = p_Surface; }
 		void SetTexturePath(const char* p_Path)			{ path = p_Path; }
 		void SetRenderer(SDL_Renderer* p_Renderer);
-		
+		void UpdateRenderer(SDL_Renderer* p_Renderer);
 
 		Pine::PVector2f GetPosition()					{ return Position; }
 		Pine::PColourf GetColour()						{ return Colour; }
 		Pine::PVector2f GetScale()						{ return Scale; }
+		Pine::PVector2f GetSize()						{ return Size; }
 		SDL_Texture* GetTexture()						{ return Texture; }
 		SDL_Rect GetBounds()							{ return Bounds; }
 		bool Render();

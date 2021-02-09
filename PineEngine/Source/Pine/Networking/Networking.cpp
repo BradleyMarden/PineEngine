@@ -19,16 +19,18 @@ namespace Pine{
 	
 	}
 	//send packets
-	void Networking::PineSendPacket(const char* text)
+	void Networking::PineSendPacket(std::string text)
 	{
-		ENetPacket* packet = enet_packet_create(text, strlen(text) + 1, ENET_PACKET_FLAG_RELIABLE);
+		const char* s = text.c_str();
+		ENetPacket* packet = enet_packet_create(s, strlen(s) + 1, ENET_PACKET_FLAG_RELIABLE);
 		enet_peer_send(peer, 0, packet);
 		enet_host_flush(host);
 	}
 
-	void Networking::PineSendGlobalPacket(const char* text)
+	void Networking::PineSendGlobalPacket(std::string text)
 	{
-		ENetPacket* packet = enet_packet_create(text, strlen(text) + 1, ENET_PACKET_FLAG_RELIABLE);
+		const char* s = text.c_str();
+		ENetPacket* packet = enet_packet_create(s, strlen(s) + 1, ENET_PACKET_FLAG_RELIABLE);
 		enet_host_broadcast(host, 0, packet);
 		enet_host_flush(host);
 
