@@ -6,7 +6,7 @@
 
 namespace Pine {
 
-	
+//use a bit set to determine what component is used, and the entity will hold its own components. this will be a partal ecs, with the c and s merged into one.
 	struct PComponent
 	{
 		const char* Name;
@@ -60,6 +60,30 @@ namespace Pine {
 		PECSWorld m_PWorld;
 
 	};
+
+
+
+class t_Component;
+class t_PineObject;
+class PEntityManager;
+
+/*
+ Use a  static method to hold the id of each entity, increment after each one.
+ 
+ constexpr   runs at compile time
+ noexcept to return true along with the normal return type of the function
+ 
+ 
+        
+                                        
+
+ 
+ 
+ */
+
+
+
+
 }
 
 
