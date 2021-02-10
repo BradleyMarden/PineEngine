@@ -13,17 +13,17 @@ namespace Pine {
 		void* data;
 	};
 
-	typedef struct
+	struct PEntity
 	{
 		int ComponentCount;
 		PComponent Components[Pine_Max_Components_Allowed];//Limited amount of components allowed, can be removed.
-	}PEntity;
+	};
 
 	struct PSystem//variadic Function
 	{
-		void (*SystemFunction)();//Passed Function for the system to call
+		void (*SystemFunction)(PEntity& p_Entity, std::initializer_list<PComponent>& p_Componenets);//Passed Function for the system to call
 		int ComponentCount;//Number of components
-		const char* ArcheytypedComponenets[Pine_Max_Components_Allowed];//coponents required for the system fucntion
+		const char* ArcheytypedComponents[Pine_Max_Components_Allowed];//components required for the system fucntion
 	};
 	struct PECSWorld 
 	{
@@ -43,24 +43,24 @@ namespace Pine {
 		void DestroyEntity();
 		void QueryEntity();
 
-
 		/*Component*/
 		PComponent CreateComponent(const char* p_Name, void* p_data);//Create a component but is not assigned to anthing
-		void AddComponent(PEntity* p_Entity, PComponent p_Component);//Add component to an entity
+		void AddComponent(PEntity& p_Entity, PComponent p_Component);//Add component to an entity
 
 		/*System*/
-		void CreateSystem(void(*p_SystemFucntion)(), int p_ComponentCount, std::vector<char*>p_s);//parameter pack, for unknown number of components
-
+		void CreateSystem(void(*p_SystemFucntion)(PEntity& p_Entity, std::initializer_list<PComponent>& p_Componenets), int p_ComponentCount, std::vector<char*>p_Components);//parameter pack, for unknown number of components
 
 		/*ECS Tools*/
 		void Query();
+		void ECSUpdate();
 		void CheckECSData();
 		void CleanupECS();
 		void InitECS();
-
 	private:
 		PECSWorld m_PWorld;
 
 	};
 }
+
+
 
