@@ -11,7 +11,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Pine\Core\PineECS.h" />
+    <ClInclude Include="Source\Pine\Core\ECS\Components\PCTransform.h" />
+    <ClInclude Include="Source\Pine\Core\ECS\Components\PCSquare.h" />
+    <ClInclude Include="Source\Pine\Rendering\RenderingComponent.h" />
+    <ClInclude Include="Source\Pine\Core\ECS\PGameObject.h" />
+    <ClInclude Include="Source\Pine\Core\ECS\PComponent.h" />
+    <ClInclude Include="Source\Pine\Core\ECS\PineECS.h" />
     <ClInclude Include="Source\Pine\Core\Input.h" />
     <ClInclude Include="Source\Pine\Primitives\2D\PRect.h" />
     <ClInclude Include="Source\Pine\Maths\PMaths.h" />
@@ -30,7 +35,12 @@
     <ClInclude Include="Source\PineServer.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Pine\Core\PineECS.cpp" />
+    <ClCompile Include="Source\Pine\Core\ECS\Components\PCTransform.cpp" />
+    <ClCompile Include="Source\Pine\Core\ECS\Components\PCSquare.cpp" />
+    <ClCompile Include="Source\Pine\Rendering\RenderingComponent.cpp" />
+    <ClCompile Include="Source\Pine\Core\ECS\PGameObject.cpp" />
+    <ClCompile Include="Source\Pine\Core\ECS\PComponent.cpp" />
+    <ClCompile Include="Source\Pine\Core\ECS\PineECS.cpp" />
     <ClCompile Include="Source\Pine\Core\Input.cpp" />
     <ClCompile Include="Source\Pine\Primitives\2D\PRect.cpp" />
     <ClCompile Include="Source\Pine\Maths\PMaths.cpp" />

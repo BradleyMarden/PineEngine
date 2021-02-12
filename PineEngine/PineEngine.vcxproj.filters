@@ -63,7 +63,22 @@
     <ClInclude Include="Source\Pine\Core\Input.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Pine\Core\PineECS.h">
+    <ClInclude Include="Source\Pine\Core\ECS\PineECS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Pine\Core\ECS\PComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Pine\Core\ECS\PGameObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Pine\Rendering\RenderingComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Pine\Core\ECS\Components\PCSquare.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Pine\Core\ECS\Components\PCTransform.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -107,7 +122,22 @@
     <ClCompile Include="Source\Pine\Core\Input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Pine\Core\PineECS.cpp">
+    <ClCompile Include="Source\Pine\Core\ECS\PineECS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Pine\Core\ECS\PComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Pine\Core\ECS\PGameObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Pine\Rendering\RenderingComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Pine\Core\ECS\Components\PCSquare.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Pine\Core\ECS\Components\PCTransform.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

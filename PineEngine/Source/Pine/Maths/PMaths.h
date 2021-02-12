@@ -2,6 +2,17 @@
 //#include "../Logging/log.h"
 namespace Pine {
 
+	template <typename t>
+	struct PVector
+	{
+		t X;
+		t Y;
+		//Pass X and Y of Type
+		PVector(t p_X, t p_Y, t p_Z) : X(p_X), Y(p_Y) {}
+		PVector() : X(0), Y(0) {}
+
+	};
+
 	struct PVector2f
 	{
 		float X;

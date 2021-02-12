@@ -30,8 +30,7 @@
 #include <time.h>
 #include <sdl2/SDL_timer.h>
 #include "Input.h"
-#include "PineECS.h"
-
+#include "ECS/PineECS.h"
 namespace Pine {
 
 	typedef std::vector<std::shared_ptr<Pine::PObject>> GameObjects;
@@ -65,12 +64,14 @@ namespace Pine {
 
 		void Test();
 		int GetObjectCount() { return objects.size(); }
+
+	 SDL_Renderer* GetRenderer() { return  renderer; }
 	private:
 
 
 		SDL_Window* m_Window = nullptr;
 		Game* givenGame = nullptr;
-		SDL_Renderer* renderer = nullptr;
+		SDL_Renderer* renderer;
 		SDL_Rect rect;
 		SDL_Texture* text = nullptr;
 		void HandleEvents();
