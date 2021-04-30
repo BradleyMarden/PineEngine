@@ -23,7 +23,6 @@ namespace Pine
 			return l_TypeID++;
 		}
 	}
-	
 	//gets the type of component
 	template<typename T> inline PComponentID GetComponentTypeID() noexcept
 	{

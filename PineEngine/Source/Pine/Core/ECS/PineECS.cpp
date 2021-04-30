@@ -23,7 +23,7 @@ namespace Pine {
 		//Add to the end of the vector, and return a reference of the new game object. when the gameobject is removed from the m_PGameObjects vector, the reference will now reference unused mem.
 		m_PGameObjects.emplace_back(std::move(uptr));
 		return *l_PGO;
-	
+
 	}
 
 	void PECS::Update()
