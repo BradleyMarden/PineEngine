@@ -12,3 +12,4 @@ bin-int/
 *.obj
 *.log
 *.tlog
+.vs/PineEngine/v16/Browse.VC.db
