@@ -22,7 +22,7 @@ namespace Pine {
 		
 		
 	public:
-		PGameObject();
+		PGameObject(const char* p_Name);
 		~PGameObject();
 		bool IsAlive() { return alive; }
 		void Destroy() { alive = false; }
@@ -73,6 +73,8 @@ namespace Pine {
 		}
 
 		void Update();
+		void SetName(const char* p_Name) { m_Name = p_Name; }
+		const char* GetName() { return m_Name; }
 
 	private:
 		PComponentsArray m_ComponentsAttached;
@@ -80,6 +82,7 @@ namespace Pine {
 		bool alive = true;
 		bool CheckDestroyed();
 		std::vector<std::unique_ptr<PComponent>> Components;
+		const char* m_Name;
 
 	};
 

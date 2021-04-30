@@ -2,9 +2,9 @@
 
 namespace Pine
 {
-	PGameObject::PGameObject() 
+	PGameObject::PGameObject(const char* p_Name)
 	{
-	
+		SetName(p_Name);
 	}
 
 	PGameObject::~PGameObject()

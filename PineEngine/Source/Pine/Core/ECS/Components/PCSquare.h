@@ -12,8 +12,6 @@ namespace Pine {
 		*/
 	public:
 		PCSquare() {}
-		PCSquare(SDL_Renderer* p_rend);
-		
 		~PCSquare();
 
 		void Update();
@@ -21,5 +19,4 @@ namespace Pine {
 	private:
 
 	};
-}
-
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     

@@ -1,7 +1,8 @@
 #include "PineECS.h"
 
 namespace Pine {
-	
+	std::vector<std::unique_ptr<PGameObject>> PECS::m_PGameObjects;
+
 	PECS::PECS()
 	{
 	}
@@ -10,10 +11,10 @@ namespace Pine {
 	{
 	}
 
-	PGameObject& PECS::CreateGameObject()
+	PGameObject& PECS::CreateGameObject(const char* p_Name)
 	{
 		//Create raw ptr on the heap
-		PGameObject* l_PGO = new PGameObject();
+		PGameObject* l_PGO = new PGameObject(p_Name);
 
 		//create a unique ptr, and transfer ownership to it. This is done so that if we delete the unique ptr, the raw ptr does not need to be deleted.
 		//Allows for less management on the user side.
@@ -35,7 +36,7 @@ namespace Pine {
 		}
 	}
 
-	void PECS::Refresh()
+	void PECS::Refresh()//removes PGameObjects from the m_PGameObjects vector if they have been destroyed.
 	{
 		for (size_t i = 0; i < m_PGameObjects.size(); i++)
 		{

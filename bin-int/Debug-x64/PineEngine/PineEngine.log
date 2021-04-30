@@ -2,10 +2,57 @@
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(477,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
   Core.cpp
 D:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Input.h(22): warning C4091: 'static ': ignored on left of 'Pine::Input::MouseButtons' when no variable is declared
-D:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Core.h(66,24): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Core.h(65,24): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
 D:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Core.cpp(123,13): warning C4101: 'event': unreferenced local variable
 D:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Core.cpp(232,16): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 D:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Core.cpp(233,16): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  PCSquare.cpp
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Input.h(22): warning C4091: 'static ': ignored on left of 'Pine::Input::MouseButtons' when no variable is declared
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Core.h(65,24): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  PCTransform.cpp
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Input.h(22): warning C4091: 'static ': ignored on left of 'Pine::Input::MouseButtons' when no variable is declared
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Core.h(65,24): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  PComponent.cpp
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Input.h(22): warning C4091: 'static ': ignored on left of 'Pine::Input::MouseButtons' when no variable is declared
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Core.h(65,24): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  PGameObject.cpp
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Input.h(22): warning C4091: 'static ': ignored on left of 'Pine::Input::MouseButtons' when no variable is declared
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Core.h(65,24): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  PineECS.cpp
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Input.h(22): warning C4091: 'static ': ignored on left of 'Pine::Input::MouseButtons' when no variable is declared
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Core.h(65,24): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  Input.cpp
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Core.h(65,24): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Input.h(22): warning C4091: 'static ': ignored on left of 'Pine::Input::MouseButtons' when no variable is declared
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Input.cpp(150,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Input.cpp(150,20): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Log.cpp
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Input.h(22): warning C4091: 'static ': ignored on left of 'Pine::Input::MouseButtons' when no variable is declared
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Core.h(65,24): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  Networking.cpp
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Input.h(22): warning C4091: 'static ': ignored on left of 'Pine::Input::MouseButtons' when no variable is declared
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Core.h(65,24): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Networking\Networking.cpp(131,37): warning C4311: 'type cast': pointer truncation from 'enet_uint8 *' to 'int'
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Networking\Networking.cpp(131,37): warning C4302: 'type cast': truncation from 'enet_uint8 *' to 'int'
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Networking\Networking.cpp(153,13): warning C4101: 'event': unreferenced local variable
+  ServerNetworking.cpp
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Input.h(22): warning C4091: 'static ': ignored on left of 'Pine::Input::MouseButtons' when no variable is declared
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Core.h(65,24): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  PRect.cpp
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Input.h(22): warning C4091: 'static ': ignored on left of 'Pine::Input::MouseButtons' when no variable is declared
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Core.h(65,24): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Primitives\2D\PRect.cpp(70,22): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Primitives\2D\PRect.cpp(71,22): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Primitives\2D\PRect.cpp(72,18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Primitives\2D\PRect.cpp(73,18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Primitives\2D\PRect.cpp(92,73): warning C4244: 'argument': conversion from 'float' to 'Uint8', possible loss of data
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Primitives\2D\PRect.cpp(92,63): warning C4244: 'argument': conversion from 'float' to 'Uint8', possible loss of data
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Primitives\2D\PRect.cpp(92,53): warning C4244: 'argument': conversion from 'float' to 'Uint8', possible loss of data
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Primitives\2D\PRect.cpp(92,43): warning C4244: 'argument': conversion from 'float' to 'Uint8', possible loss of data
+  RenderingComponent.cpp
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Input.h(22): warning C4091: 'static ': ignored on left of 'Pine::Input::MouseButtons' when no variable is declared
+D:\PineEngine\PineEngine\PineEngine\Source\Pine\Core\Core.h(65,24): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
 SDL2_image.lib(SDL2_image.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in opengl32.lib(OPENGL32.dll); second definition ignored
 SDL2.lib(SDL2.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in opengl32.lib(OPENGL32.dll); second definition ignored
 ws2_32.lib(WS2_32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in opengl32.lib(OPENGL32.dll); second definition ignored

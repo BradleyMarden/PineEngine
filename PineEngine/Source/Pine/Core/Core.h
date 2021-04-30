@@ -33,10 +33,9 @@
 #include "ECS/PineECS.h"
 namespace Pine {
 
-	typedef std::vector<std::shared_ptr<Pine::PObject>> GameObjects;
+	typedef std::vector<std::shared_ptr<Pine::PObject>> GameObjects;//Deprecated
 	class Core
 	{
-
 		//the game application.
 	public:
 		
@@ -50,10 +49,10 @@ namespace Pine {
 		void		PineStart();
 		
 
-		static PVector2f GetMousePos();//abstarct out to another class
+		static PVector2f GetMousePos();//abstract out to another class
 		//std::vector<PObject*>objects;//temp, move back to private!!
-		template <typename T> void Instanciate(std::shared_ptr<T> object)//may work using reference but check with a pointer
 
+		template <typename T> void Instanciate(std::shared_ptr<T> object)//Deprecated
 		{
 			//move to an internal function
 			//need to add object to list
@@ -63,11 +62,13 @@ namespace Pine {
 		}
 
 		void Test();
-		int GetObjectCount() { return objects.size(); }
+		int GetObjectCount() { return objects.size(); }//Deprecated
 
-	 SDL_Renderer* GetRenderer() { return  renderer; }
-	private:
+		SDL_Renderer* GetRenderer() { return  renderer; }//Move renderer to Renderer class
 
+		private:
+		//NEW
+		//PECS m_PGameObjectManager;
 
 		SDL_Window* m_Window = nullptr;
 		Game* givenGame = nullptr;
@@ -76,9 +77,9 @@ namespace Pine {
 		SDL_Texture* text = nullptr;
 		void HandleEvents();
 		void ApplicationRunning();
-		void Draw(bool firstDraw);
+		void Draw(bool firstDraw);//Deprecated
 
-		GameObjects objects;
+		GameObjects objects;//Deprecated
 		const int fps = 60;
 		const int frameDelay = 1000 / fps;// max time between frames
 		Uint32 frameStart;

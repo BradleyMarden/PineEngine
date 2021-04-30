@@ -54,11 +54,11 @@ namespace Pine
 	public:
 		PECS();
 		~PECS();
-		 PGameObject& CreateGameObject();
+		static PGameObject& CreateGameObject(const char* p_Name);
 
 		 void Refresh();
 
-		 std::vector<std::unique_ptr<PGameObject>> m_PGameObjects;
+		 static std::vector<std::unique_ptr<PGameObject>> m_PGameObjects;
 
 		void Update();
 	private:
