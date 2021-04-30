@@ -61,7 +61,7 @@ namespace Pine {
 			Draw(true);
 		}
 
-		void Test();
+		void Test();//used for redrawing the screen
 		int GetObjectCount() { return objects.size(); }//Deprecated
 
 		SDL_Renderer* GetRenderer() { return  renderer; }//Move renderer to Renderer class

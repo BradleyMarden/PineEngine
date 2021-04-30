@@ -91,6 +91,8 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\$(ProjectName)</OutDir>
     <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\$(ProjectName)</IntDir>
+    <PublicIncludeDirectories>$(SolutionDir)PineEngine\Vendor\glew-2.1.0\include;$(SolutionDir)PineEngine\Vendor\spdlog\include;$(SolutionDir)PineEngine\Vendor\SDL2-2.0.12\include;$(SolutionDir)PineEngine\Vendor\enet-1.3.16\include;</PublicIncludeDirectories>
+    <IncludePath>$(SolutionDir)PineEngine\Vendor\glew-2.1.0\include;$(SolutionDir)PineEngine\Vendor\spdlog\include;$(SolutionDir)PineEngine\Vendor\SDL2-2.0.12\include;$(SolutionDir)PineEngine\Vendor\enet-1.3.16\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -103,7 +105,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>GLEW_STATIC;PINE_PLATFORM_WINDOWS;PINE_BUILD_DLL;DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)PineEngine\Vendor\glew-2.1.0\include;$(SolutionDir)PineEngine\Vendor\spdlog\include;$(SolutionDir)PineEngine\Vendor\SDL2-2.0.12\include;$(SolutionDir)PineEngine\Vendor\enet-1.3.16\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -121,6 +124,7 @@
     </ProjectReference>
     <Lib>
       <AdditionalDependencies>opengl32.lib;$(SolutionDir)PineEngine\Vendor\glew-2.1.0\lib\Release\x64\glew32s.lib;$(SolutionDir)PineEngine\Vendor\SDL2-2.0.12\lib\x64\SDL2_image.lib;$(SolutionDir)PineEngine\Vendor\SDL2-2.0.12\lib\x64\SDL2.lib;$(SolutionDir)PineEngine\Vendor\enet-1.3.16\lib\enet64.lib;ws2_32.lib;winmm.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)PineEngine\PineEngine\Vendor\glew-2.1.0\lib\Release\x64;$(ProjectDir)PineEngine\PineEngine\Vendor\enet-1.3.16\lib;$(ProjectDir)PineEngine\PineEngine\Vendor\SDL2-2.0.12\lib\x64;</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
