@@ -4,10 +4,8 @@
 #include "../Logging/Log.h"
 #include "../Networking/Networking.h"
 #include "Game.h"
-#include "sdl2/SDL.h"
-#include "sdl2/SDL_image.h"
-#include "../Primitives/2D/PCircle.h"
-#include"../Primitives/2D/PRect.h"
+#include "SDL2/SDL.h"
+#include "SDL2/SDL_image.h"
 #include <vector>
 #undef main
 
@@ -21,19 +19,22 @@
 //-----------------------------------------------------------
 
 #include <stdio.h>
-#include <io.h>
+#include <iostream>
+//#include <io.h>
 #include <fcntl.h>
-#include <windows.h>
-#include "GL/glew.h"
-#include <sdl2/SDL_opengl.h>
+//#include <windows.h>
+//#include "GL/glew.h"
+#include <SDL2/SDL_opengl.h>
 #include <chrono>
 #include <time.h>
-#include <sdl2/SDL_timer.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_timer.h>
+#include "../Maths/PMaths.h" 
 #include "Input.h"
-#include "ECS/PineECS.h"
+//#include "ECS/PineECS.h"
 namespace Pine {
 
-	typedef std::vector<std::shared_ptr<Pine::PObject>> GameObjects;//Deprecated
+	//typedef std::vector<std::shared_ptr<Pine::PObject>> GameObjects;//Deprecated
 	class Core
 	{
 		//the game application.
@@ -56,13 +57,13 @@ namespace Pine {
 		{
 			//move to an internal function
 			//need to add object to list
-			objects.push_back(object);
+			//objects.push_back(object);
 			std::cout << "Instanciated" << std::endl;
 			Draw(true);
 		}
 
 		void Test();//used for redrawing the screen
-		int GetObjectCount() { return objects.size(); }//Deprecated
+		//int GetObjectCount() { return objects.size(); }//Deprecated
 
 		SDL_Renderer* GetRenderer() { return  renderer; }//Move renderer to Renderer class
 
@@ -79,7 +80,7 @@ namespace Pine {
 		void ApplicationRunning();
 		void Draw(bool firstDraw);//Deprecated
 
-		GameObjects objects;//Deprecated
+		//GameObjects objects;//Deprecated
 		const int fps = 60;
 		const int frameDelay = 1000 / fps;// max time between frames
 		Uint32 frameStart;

@@ -15,10 +15,10 @@ namespace Pine {
 	{
 		Pine::Log::Init();
 
-		if (glewInit() != GLEW_OK)
+		/*if (glewInit() != GLEW_OK)
 		{
 			PINE_ENGINE_ERROR("OPENGL NO INITIALIZED!");
-		}
+		}*/
 		//SDL_GL_CreateContext()
 		SDL_Init(SDL_INIT_VIDEO);
 		m_Window = SDL_CreateWindow(m_windowName, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, m_Width, m_Height, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
@@ -28,7 +28,7 @@ namespace Pine {
 			PINE_ENGINE_ERROR("COULD NOT CREATE WINDOW {a}", a);
 		}
 
-		glViewport(0, 0, m_Width, m_Height);
+		//glViewport(0, 0, m_Width, m_Height);
 		SDL_Surface* screenSurface = NULL;
 		//Get window surface
 		screenSurface = SDL_GetWindowSurface(m_Window);
@@ -36,7 +36,7 @@ namespace Pine {
 		SDL_UpdateWindowSurface(m_Window);
 		//Wait two seconds
 		SDL_Delay(2000);
-		glewInit();
+		//glewInit();
 	}
 
 	
@@ -44,10 +44,10 @@ namespace Pine {
 	{
 		Pine::Log::Init();
 
-		if (glewInit() != GLEW_OK)
+		/*if (glewInit() != GLEW_OK)
 		{
 			PINE_ENGINE_ERROR("OPENGL NO INITIALIZED!");
-		}
+		}*/
 		//SDL_GL_CreateContext()
 		SDL_Init(SDL_INIT_VIDEO);
 		m_Window = SDL_CreateWindow(m_windowName, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, m_Width, m_Height, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
@@ -173,7 +173,7 @@ namespace Pine {
 	void Core::Draw(bool firstDraw)
 	{
 		SDL_RenderClear(renderer);
-		if (firstDraw)
+		/*if (firstDraw)
 		{
 			objects[objects.size() - 1]->SetRenderer(renderer);
 			objects[objects.size() - 1]->Render();
@@ -187,7 +187,7 @@ namespace Pine {
 				objects[i]->SetRenderer(renderer);
 				objects[i]->Render();
 			}
-		}
+		}*/
 		SDL_SetRenderDrawColor(renderer, 21, 27, 31, 255);
 		SDL_RenderPresent(renderer);
 	}

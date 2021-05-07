@@ -1,12 +1,12 @@
 #pragma once
+#include <sdl2/SDL.h>
 #include "Core.h"
 #include "../Maths/PMaths.h"
-#include "sdl2/SDL.h"
 namespace Pine {
 	class Input {
 
 	public:
-		static enum MouseButtons { 
+		 enum MouseButtons { 
 			DEFAULT,
 			LEFTSINGLECLICK,
 			LEFTDOUBLECLICK,

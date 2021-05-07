@@ -127,8 +127,8 @@ namespace Pine{
 			case ENET_EVENT_TYPE_RECEIVE:
 				PINE_SERVER_INFO("A Packet of length {} containing {} from {} on channel {}", event.packet->dataLength, event.packet->data, event.peer->data, event.channelID);
 				{
-					int lData = 0;
-					lData = (int)event.packet->data;
+					uint64_t lData = 0;
+					lData = (uint64_t)event.packet->data;
 					if ((const char*)event.packet->data == "close")
 					{
 						PINE_SERVER_INFO("Server Closing...");

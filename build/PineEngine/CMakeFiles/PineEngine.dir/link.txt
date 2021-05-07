@@ -1,0 +1,2 @@
+/usr/bin/ar qc libPineEngine.a CMakeFiles/PineEngine.dir/Source/Pine/Core/Core.cpp.o CMakeFiles/PineEngine.dir/Source/Pine/Core/Game.cpp.o CMakeFiles/PineEngine.dir/Source/Pine/Core/Input.cpp.o CMakeFiles/PineEngine.dir/Source/Pine/Logging/Log.cpp.o CMakeFiles/PineEngine.dir/Source/Pine/Maths/PMaths.cpp.o CMakeFiles/PineEngine.dir/Source/Pine/Networking/Networking.cpp.o
+/usr/bin/ranlib libPineEngine.a
