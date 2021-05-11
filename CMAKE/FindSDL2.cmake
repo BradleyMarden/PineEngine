@@ -115,6 +115,7 @@ FIND_PATH(SDL2_INCLUDE_DIR SDL.h
         /Library/Frameworks
         /usr/local/include/SDL2
         /usr/include/SDL2
+       ${CMAKE_SOURCE_DIR}/PineEngine/Vendor/SDL2-2.0.14/include
         /sw # Fink
         /opt/local # DarwinPorts
         /opt/csw # Blastwave
@@ -131,6 +132,7 @@ IF(CMAKE_SIZEOF_VOID_P EQUAL 8)
             lib/x64
             x86_64-w64-mingw32/lib
             PATHS
+            ${CMAKE_SOURCE_DIR}/PineEngine/Vendor/SDL2-2.0.14/lib/x64
             /sw
             /opt/local
             /opt/csw
@@ -146,6 +148,7 @@ ELSE(CMAKE_SIZEOF_VOID_P EQUAL 8)
             lib/x86
             i686-w64-mingw32/lib
             PATHS
+            ${CMAKE_SOURCE_DIR}/PineEngine/Vendor/SDL2-2.0.14/lib/x86
             /sw
             /opt/local
             /opt/csw
@@ -170,6 +173,7 @@ IF(NOT SDL2_BUILDING_LIBRARY)
                     lib/x64
                     x86_64-w64-mingw32/lib
                     PATHS
+                    ${CMAKE_SOURCE_DIR}/PineEngine/Vendor/SDL2-2.0.14/lib/x64
                     /sw
                     /opt/local
                     /opt/csw
@@ -186,6 +190,7 @@ IF(NOT SDL2_BUILDING_LIBRARY)
                     lib/x86
                     i686-w64-mingw32/lib
                     PATHS
+                    ${CMAKE_SOURCE_DIR}/PineEngine/Vendor/SDL2-2.0.14/lib/x86
                     /sw
                     /opt/local
                     /opt/csw

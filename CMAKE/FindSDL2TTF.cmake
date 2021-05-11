@@ -69,7 +69,8 @@ SET(SDL2TTF_SEARCH_PATHS
         ~/Library/Frameworks
         /Library/Frameworks
         /usr/local
-        /usr
+       
+        ${CMAKE_SOURCE_DIR}/PineEngine/Vendor/SDL2_ttf-2.0.15
         /sw # Fink
         /opt/local # DarwinPorts
         /opt/csw # Blastwave
@@ -78,17 +79,39 @@ SET(SDL2TTF_SEARCH_PATHS
 
 FIND_PATH(SDL2TTF_INCLUDE_DIR SDL_ttf.h
         HINTS
+        ${SDL2}
+        $ENV{SDL2}
         $ENV{SDL2TTFDIR}
-        PATH_SUFFIXES include/SDL2 include
-        PATHS ${SDL2TTF_SEARCH_PATHS}
+        PATH_SUFFIXES include/SDL2 include SDL2
+        i686-w64-mingw32/include/SDL2
+        x86_64-w64-mingw32/include/SDL2
+        SDL2_ttf-2.0.15/include
+        PATHS
+        ~/Library/Frameworks
+        /Library/Frameworks
+        /usr/local
+        ${CMAKE_SOURCE_DIR}/PineEngine/Vendor/SDL2_ttf-2.0.15/include
+        /sw # Fink
+        /opt/local # DarwinPorts
+        /opt/csw # Blastwave
+        /opt
         )
 
 FIND_LIBRARY(SDL2TTF_LIBRARY_TEMP
         NAMES SDL2_ttf
         HINTS
+        ${SDL2}
+        $ENV{SDL2}
         $ENV{SDL2TTFDIR}
         PATH_SUFFIXES lib64 lib
-        PATHS ${SDL2TTF_SEARCH_PATHS}
+        lib/x64
+        x86_64-w64-mingw32/lib
+        PATHS
+        ${CMAKE_SOURCE_DIR}/PineEngine/Vendor/SDL2_ttf-2.0.15/lib/x64
+        /sw # Fink
+        /opt/local # DarwinPorts
+        /opt/csw # Blastwave
+        /opt
         )
 
 IF(NOT SDL2TTF_BUILDING_LIBRARY)
@@ -100,9 +123,18 @@ IF(NOT SDL2TTF_BUILDING_LIBRARY)
         FIND_LIBRARY(SDL2TTFMAIN_LIBRARY
                 NAMES SDL2_ttf
                 HINTS
+                ${SDL2}
+                $ENV{SDL2}
                 $ENV{SDL2TTFDIR}
                 PATH_SUFFIXES lib64 lib
-                PATHS ${SDL2TTF_SEARCH_PATHS}
+                lib/x64
+                x86_64-w64-mingw32/lib
+                PATHS PATHS
+                ${CMAKE_SOURCE_DIR}/PineEngine/Vendor/SDL2_ttf-2.0.15/lib/x64
+                /sw # Fink
+                /opt/local # DarwinPorts
+                /opt/csw # Blastwave
+                /opt
                 )
     ENDIF(NOT ${SDL2TTF_INCLUDE_DIR} MATCHES ".framework")
 ENDIF(NOT SDL2TTF_BUILDING_LIBRARY)

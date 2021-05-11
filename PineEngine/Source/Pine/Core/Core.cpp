@@ -7,7 +7,7 @@ namespace Pine {
 	}
 	Core::~Core()
 	{
-
+		//hello
 	}
 
 

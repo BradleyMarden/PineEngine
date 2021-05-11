@@ -1,15 +1,30 @@
-e:\pineengine\pineengine\bin-int\debug-x64\pineengine\pineengine.pdb
-e:\pineengine\pineengine\bin-int\debug-x64\pineengine\pineengine.idb
-e:\pineengine\pineengine\bin-int\debug-x64\pineengine\log.obj
-e:\pineengine\pineengine\bin-int\debug-x64\pineengine\networking.obj
-e:\pineengine\pineengine\bin-int\debug-x64\pineengine\servernetworking.obj
-e:\pineengine\pineengine\bin-int\debug-x64\pineengine\core.obj
-e:\pineengine\pineengine\bin-int\debug-x64\pineengine\game.obj
-e:\pineengine\pineengine\bin\debug-x64\pineengine\pineengine.lib
-e:\pineengine\pineengine\bin\debug-x64\pineengine\pineengine.pdb
-e:\pineengine\pineengine\bin-int\debug-x64\pineengine\pineengine.tlog\cl.command.1.tlog
-e:\pineengine\pineengine\bin-int\debug-x64\pineengine\pineengine.tlog\cl.read.1.tlog
-e:\pineengine\pineengine\bin-int\debug-x64\pineengine\pineengine.tlog\cl.write.1.tlog
-e:\pineengine\pineengine\bin-int\debug-x64\pineengine\pineengine.tlog\lib-link.read.1.tlog
-e:\pineengine\pineengine\bin-int\debug-x64\pineengine\pineengine.tlog\lib-link.write.1.tlog
-e:\pineengine\pineengine\bin-int\debug-x64\pineengine\pineengine.tlog\lib.command.1.tlog
+d:\pineengine\pineengine\bin-int\debug-x64\pineengine\pineengine.pdb
+d:\pineengine\pineengine\bin-int\debug-x64\pineengine\pineengine.idb
+d:\pineengine\pineengine\bin-int\debug-x64\pineengine\renderingcomponent.obj
+d:\pineengine\pineengine\bin-int\debug-x64\pineengine\prect.obj
+d:\pineengine\pineengine\bin-int\debug-x64\pineengine\servernetworking.obj
+d:\pineengine\pineengine\bin-int\debug-x64\pineengine\networking.obj
+d:\pineengine\pineengine\bin-int\debug-x64\pineengine\log.obj
+d:\pineengine\pineengine\bin-int\debug-x64\pineengine\input.obj
+d:\pineengine\pineengine\bin-int\debug-x64\pineengine\pineecs.obj
+d:\pineengine\pineengine\bin-int\debug-x64\pineengine\pgameobject.obj
+d:\pineengine\pineengine\bin-int\debug-x64\pineengine\pcomponent.obj
+d:\pineengine\pineengine\bin-int\debug-x64\pineengine\pctransform.obj
+d:\pineengine\pineengine\bin-int\debug-x64\pineengine\pcsquare.obj
+d:\pineengine\pineengine\bin-int\debug-x64\pineengine\core.obj
+d:\pineengine\pineengine\bin-int\debug-x64\pineengine\ptriangle.obj
+d:\pineengine\pineengine\bin-int\debug-x64\pineengine\pentity.obj
+d:\pineengine\pineengine\bin-int\debug-x64\pineengine\pmaths.obj
+d:\pineengine\pineengine\bin-int\debug-x64\pineengine\game.obj
+d:\game engine\pineengine\bin-int\debug-x64\pineengine\pineengine.pdb
+d:\game engine\pineengine\bin-int\debug-x64\pineengine\pineengine.idb
+d:\game engine\pineengine\bin-int\debug-x64\pineengine\log.obj
+d:\game engine\pineengine\bin-int\debug-x64\pineengine\servernetworking.obj
+d:\game engine\pineengine\bin-int\debug-x64\pineengine\core.obj
+d:\game engine\pineengine\bin-int\debug-x64\pineengine\game.obj
+d:\game engine\pineengine\bin-int\debug-x64\pineengine\pmaths.obj
+d:\game engine\pineengine\bin-int\debug-x64\pineengine\input.obj
+d:\game engine\pineengine\bin\debug-x64\pineengine\pineengine.pdb
+d:\game engine\pineengine\bin-int\debug-x64\pineengine\pineengine.tlog\cl.command.1.tlog
+d:\game engine\pineengine\bin-int\debug-x64\pineengine\pineengine.tlog\cl.read.1.tlog
+d:\game engine\pineengine\bin-int\debug-x64\pineengine\pineengine.tlog\cl.write.1.tlog

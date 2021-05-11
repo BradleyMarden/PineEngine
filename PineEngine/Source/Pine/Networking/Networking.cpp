@@ -125,7 +125,7 @@ namespace Pine{
 				break;
                     
                 case ENET_EVENT_TYPE_CONNECT:
-                    PINE_SERVER_INFO("CONNECTED: NOT TOO SURE IF THIS IS SERVER OR CLIENT AS I HAVE NO INTERNET!")
+					PINE_SERVER_INFO("CONNECTED: NOT TOO SURE IF THIS IS SERVER OR CLIENT AS I HAVE NO INTERNET!");
 
 			case ENET_EVENT_TYPE_RECEIVE:
 				PINE_SERVER_INFO("A Packet of length {} containing {} from {} on channel {}", event.packet->dataLength, event.packet->data, event.peer->data, event.channelID);

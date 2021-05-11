@@ -26,10 +26,15 @@ target_include_directories(PineEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Source
 target_include_directories(PineEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Source/Pine/Maths")
 target_include_directories(PineEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Source/Pine/Networking")
 
+Message( STATUS "WE ARE HEREREERERER:" ${SDL2_INCLUDE_DIR})
 #VENDOR INCLUDES
 target_include_directories(PineEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Vendor/spdlog/include")
 target_include_directories(PineEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Vendor/glew-2.1.0/include")
+target_include_directories(PineEngine PUBLIC "${CMAKE_SOURCE_DIR}/PineEngine/Vendor/SDL2-2.0.14/include")
 target_include_directories(PineEngine PUBLIC ${SDL2_INCLUDE_DIR})
+target_include_directories(PineEngine PUBLIC ${SDL2_IMAGE_INCLUDE_DIR})
+target_include_directories(PineEngine PUBLIC ${SDL2TTF_INCLUDE_DIR})
+target_include_directories(PineEngine PUBLIC ${SDL2Mixer_INCLUDE_DIRS})
 target_include_directories(PineEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Vendor/enet-1.3.16/include")
 
 
