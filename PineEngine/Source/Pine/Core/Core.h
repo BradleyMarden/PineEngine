@@ -4,8 +4,8 @@
 #include "../Logging/Log.h"
 #include "../Networking/Networking.h"
 #include "Game.h"
-#include "SDL2/SDL.h"
-#include "SDL2/SDL_image.h"
+#include "SDL.h"
+#include "SDL_image.h"
 #include <vector>
 #undef main
 
@@ -24,11 +24,11 @@
 #include <fcntl.h>
 //#include <windows.h>
 //#include "GL/glew.h"
-#include <SDL2/SDL_opengl.h>
+#include <SDL_opengl.h>
 #include <chrono>
 #include <time.h>
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_timer.h>
+#include <SDL.h>
+#include <SDL_timer.h>
 #include "../Maths/PMaths.h" 
 #include "Input.h"
 //#include "ECS/PineECS.h"

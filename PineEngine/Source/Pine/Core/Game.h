@@ -1,6 +1,6 @@
 #pragma once
 //#include <sdl2/SDL.h>
-#include <SDL2/SDL.h>
+#include <SDL.h>
 #include <memory>
 //#include "PineAPI.h"
 
