@@ -11,7 +11,13 @@ void myGame::Start()
 void myGame::Initialize(){}
 void myGame::Update(){
 
+
+    if(Input::GetKeyDown(SDLK_w))
+    {
+
     std::cout<< "Hello" << std::endl;
+
+    }
 
 }
 void myGame::OnMouseClick(){}

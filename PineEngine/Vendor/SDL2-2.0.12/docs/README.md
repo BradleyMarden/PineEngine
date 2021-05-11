@@ -1,4 +1,4 @@
-Simple DirectMedia Layer {#mainpage}
+   Simple DirectMedia Layer {#mainpage}
 ========================
 
                                   (SDL)

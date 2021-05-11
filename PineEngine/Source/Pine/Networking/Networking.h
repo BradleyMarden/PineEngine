@@ -2,7 +2,8 @@
 #include "enet/enet.h"
 #include "../Logging/Log.h"
 #include <stdlib.h>
-#include <string>
+#include <string.h>
+
 #define PINE_MAX_NETWORK_MESSAGES 100000
 namespace Pine {
 

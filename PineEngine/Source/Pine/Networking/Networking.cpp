@@ -123,13 +123,16 @@ namespace Pine{
 
 			case ENET_EVENT_TYPE_NONE:
 				break;
+                    
+                case ENET_EVENT_TYPE_CONNECT:
+                    PINE_SERVER_INFO("CONNECTED: NOT TOO SURE IF THIS IS SERVER OR CLIENT AS I HAVE NO INTERNET!")
 
 			case ENET_EVENT_TYPE_RECEIVE:
 				PINE_SERVER_INFO("A Packet of length {} containing {} from {} on channel {}", event.packet->dataLength, event.packet->data, event.peer->data, event.channelID);
 				{
 					uint64_t lData = 0;
 					lData = (uint64_t)event.packet->data;
-					if ((const char*)event.packet->data == "close")
+					if (std::strcmp((const char*)event.packet->data, "close"))
 					{
 						PINE_SERVER_INFO("Server Closing...");
 					}

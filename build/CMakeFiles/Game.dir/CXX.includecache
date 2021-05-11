@@ -1422,17 +1422,13 @@ spdlog-inl.h
 
 ../PineEngine/Vendor/spdlog/include/spdlog/version.h
 
-/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/Game/Source/MyGame.h
-Pine.h
--
-iostream
--
-
-/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/Game/Source/main.cpp
-iostream
--
-Pine.h
--
+/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/Game/Source/MyGame.cpp
 MyGame.h
 /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/Game/Source/MyGame.h
+
+/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/Game/Source/MyGame.h
+Pine.h
+-
+iostream
+-
 
