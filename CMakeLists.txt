@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.12)
-#may need to look at seperating out into mac/windows
+project(PineEngine VERSION 0.3)
 
 Message("")
 Message( STATUS "CMAKE_BINARY_DIR: " ${CMAKE_BINARY_DIR} )
@@ -9,18 +9,14 @@ Message( STATUS "CMAKE_VERSION: " ${CMAKE_VERSION} )
 Message( STATUS "CMAKE_C_COMPILER: " ${CMAKE_C_COMPILER} )
 Message( STATUS "CMAKE_PROJECT_NAME: " ${CMAKE_PROJECT_NAME} )
 Message( STATUS "CMAKE_FINDCMAKE: " ${CMAKE_SOURCE_DIR}/CMAKE )
-project(PineEngine VERSION 0.3)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/CMAKE")
 
-
- 
-#message(WARNING "${CMAKE_SOURCE_DIR}/Vendor/SDL/2.0.14/lib/libSDL2.a"
-
 # ------- Finds ---------- #
 
 #------- SDL2-------------#
+
 FIND_PACKAGE(SDL2 REQUIRED)
 Message("")
 Message( STATUS "FINDING SDL2" )
@@ -57,21 +53,18 @@ ENDIF()
 Message("")
 
 FIND_PACKAGE(SDL2Mixer)
-
 Message( STATUS "FINDING SDL2Mixer" )
 Message( STATUS "SDL2Mixer_FOUND: " ${SDL2Mixer_FOUND} )
 Message( STATUS "SDL2Mixer_INCLUDE_DIRS: " ${SDL2Mixer_INCLUDE_DIRS} )
 Message("")
-
-
-
-add_subdirectory(PineEngine)
-
 # ------- End Finds ------ #
 
-# ------- Inc & Link ---- #
+# ------- Add PineEngine Lib ------ #
+add_subdirectory(PineEngine)
+# --------------------------------- #
 
-#ile(COPY resources DESTINATION ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
+
+# ------- Inc and Link ---- #
 
 include_directories(
     Game/Source
@@ -88,19 +81,33 @@ include_directories(
     ${SDL2Mixer_INCLUDE_DIRS}
     PineEngine/Vendor/enet-1.3.16/include
     )
+   # ------- Add Game Project files here ------ #
 
  add_executable(
     Game 
     Game/Source/main.cpp
     Game/Source/MyGame.cpp
+    Game/Source/MyGame.h
  )
+   # ------- End of Game Project files -------- #
+
+
+# ------- Link based on Platform ---- #
 
 INCLUDE_DIRECTORIES(${SDL2_INCLUDE_DIR})
 TARGET_LINK_LIBRARIES(Game PineEngine ${SDL2_LIBRARY})
 if(APPLE)
+    
+    set(copy_dest_dir "${CMAKE_BINARY_DIR}/bin")
+
     Message( STATUS "FINDING libenet.a" )
+    
     TARGET_LINK_LIBRARIES(Game ${CMAKE_SOURCE_DIR}/PineEngine/Vendor/enet-1.3.16/lib/libenet.a)
+
 elseif(WIN32)
+
+    set(copy_dest_dir "${CMAKE_BINARY_DIR}/bin/$<CONFIG>")
+
     Message( STATUS "FINDING enet64.lib" )
     
     TARGET_LINK_LIBRARIES(Game ${CMAKE_SOURCE_DIR}/PineEngine/Vendor/enet-1.3.16/lib/enet64.lib)
@@ -109,9 +116,11 @@ elseif(WIN32)
 
     target_link_libraries(Game wsock32 ws2_32  winmm)
 endif()
-# Copy <filename> to build directory
 
-set(copy_dest_dir "${CMAKE_BINARY_DIR}/bin/$<CONFIG>")
+# ------- End of Inc and Link  -------- #
+
+
+# ------- Copy DLL files to build dir ----------- #
 
 #sdl 
 set(SDL_DLL_DIR "${CMAKE_SOURCE_DIR}/PineEngine/Vendor/SDL2-2.0.14/lib/x64")
@@ -128,7 +137,6 @@ set(SDL_MIXER_DLL "SDL2_mixer.dll")
 #sdl ttf
 set(SDL_TTF_DLL_DIR "${CMAKE_SOURCE_DIR}/PineEngine/Vendor/SDL2_ttf-2.0.15/lib/x64")
 set(SDL_TTF_DLL "SDL2_ttf.dll")
-
 
 add_custom_command(
     TARGET Game POST_BUILD 

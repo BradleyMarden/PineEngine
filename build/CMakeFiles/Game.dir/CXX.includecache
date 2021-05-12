@@ -85,7 +85,7 @@ enet/enet.h
 ../PineEngine/Source/Pine/Logging/Log.h
 stdlib.h
 -
-string.h
+string
 -
 
 ../PineEngine/Vendor/enet-1.3.16/include/enet/callbacks.h

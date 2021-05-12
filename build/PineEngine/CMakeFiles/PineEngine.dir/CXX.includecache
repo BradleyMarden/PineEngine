@@ -666,6 +666,10 @@ spdlog/spdlog.h
 spdlog/sinks/stdout_color_sinks.h
 /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Logging/spdlog/sinks/stdout_color_sinks.h
 
+/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Maths/PMaths.cpp
+PMaths.h
+/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Maths/PMaths.h
+
 /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Maths/PMaths.h
 
 /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Networking/Networking.cpp
@@ -679,7 +683,7 @@ enet/enet.h
 /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Logging/Log.h
 stdlib.h
 -
-string.h
+string
 -
 
 /usr/local/include/SDL2/SDL.h

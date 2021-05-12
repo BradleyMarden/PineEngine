@@ -36,7 +36,7 @@
 					]
 				}
 			],
-			"name" : "Debug",
+			"name" : "",
 			"projects" : 
 			[
 				{
@@ -58,14 +58,14 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Game::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Game-Debug-67740322b04f9035128c.json",
+					"jsonFile" : "target-Game-ca0f2e4ff27eb3610795.json",
 					"name" : "Game",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 1,
 					"id" : "PineEngine::@554e4c5bb933412c568f",
-					"jsonFile" : "target-PineEngine-Debug-dc538bd88681e9bce271.json",
+					"jsonFile" : "target-PineEngine-30a5c30ac43a5d4d9db1.json",
 					"name" : "PineEngine",
 					"projectIndex" : 0
 				}

@@ -1,54 +1,52 @@
 dependencies: \
   /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Input.cpp \
   /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Input.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_main.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_stdinc.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_config.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_platform.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/begin_code.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/close_code.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_assert.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_atomic.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_audio.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_error.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_endian.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_mutex.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_thread.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_rwops.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_clipboard.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_cpuinfo.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_events.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_video.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_pixels.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_rect.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_surface.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_blendmode.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_keyboard.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_keycode.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_scancode.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_mouse.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_joystick.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_gamecontroller.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_sensor.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_quit.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_gesture.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_touch.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_filesystem.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_haptic.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_hints.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_loadso.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_log.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_messagebox.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_metal.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_power.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_render.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_shape.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_system.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_timer.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_version.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_locale.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_misc.h \
+  /usr/local/include/SDL2/SDL.h /usr/local/include/SDL2/SDL_main.h \
+  /usr/local/include/SDL2/SDL_stdinc.h \
+  /usr/local/include/SDL2/SDL_config.h \
+  /usr/local/include/SDL2/SDL_platform.h \
+  /usr/local/include/SDL2/begin_code.h \
+  /usr/local/include/SDL2/close_code.h \
+  /usr/local/include/SDL2/SDL_assert.h \
+  /usr/local/include/SDL2/SDL_atomic.h \
+  /usr/local/include/SDL2/SDL_audio.h \
+  /usr/local/include/SDL2/SDL_error.h \
+  /usr/local/include/SDL2/SDL_endian.h \
+  /usr/local/include/SDL2/SDL_mutex.h \
+  /usr/local/include/SDL2/SDL_thread.h \
+  /usr/local/include/SDL2/SDL_rwops.h \
+  /usr/local/include/SDL2/SDL_clipboard.h \
+  /usr/local/include/SDL2/SDL_cpuinfo.h \
+  /usr/local/include/SDL2/SDL_events.h \
+  /usr/local/include/SDL2/SDL_video.h \
+  /usr/local/include/SDL2/SDL_pixels.h \
+  /usr/local/include/SDL2/SDL_rect.h \
+  /usr/local/include/SDL2/SDL_surface.h \
+  /usr/local/include/SDL2/SDL_blendmode.h \
+  /usr/local/include/SDL2/SDL_keyboard.h \
+  /usr/local/include/SDL2/SDL_keycode.h \
+  /usr/local/include/SDL2/SDL_scancode.h \
+  /usr/local/include/SDL2/SDL_mouse.h \
+  /usr/local/include/SDL2/SDL_joystick.h \
+  /usr/local/include/SDL2/SDL_gamecontroller.h \
+  /usr/local/include/SDL2/SDL_sensor.h \
+  /usr/local/include/SDL2/SDL_quit.h \
+  /usr/local/include/SDL2/SDL_gesture.h \
+  /usr/local/include/SDL2/SDL_touch.h \
+  /usr/local/include/SDL2/SDL_filesystem.h \
+  /usr/local/include/SDL2/SDL_haptic.h \
+  /usr/local/include/SDL2/SDL_hints.h \
+  /usr/local/include/SDL2/SDL_loadso.h /usr/local/include/SDL2/SDL_log.h \
+  /usr/local/include/SDL2/SDL_messagebox.h \
+  /usr/local/include/SDL2/SDL_metal.h \
+  /usr/local/include/SDL2/SDL_power.h \
+  /usr/local/include/SDL2/SDL_render.h \
+  /usr/local/include/SDL2/SDL_shape.h \
+  /usr/local/include/SDL2/SDL_system.h \
+  /usr/local/include/SDL2/SDL_timer.h \
+  /usr/local/include/SDL2/SDL_version.h \
+  /usr/local/include/SDL2/SDL_locale.h \
+  /usr/local/include/SDL2/SDL_misc.h \
   /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Core.h \
   /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/../Logging/Log.h \
   /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Logging/../Core/Core.h \
@@ -99,7 +97,7 @@ dependencies: \
   /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/enet-1.3.16/include/enet/callbacks.h \
   /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Networking/../Logging/Log.h \
   /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Game.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_image.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_opengl.h \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL/2.0.14/include/SDL2/SDL_opengl_glext.h \
+  /usr/local/include/SDL2/SDL_image.h \
+  /usr/local/include/SDL2/SDL_opengl.h \
+  /usr/local/include/SDL2/SDL_opengl_glext.h \
   /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/../Maths/PMaths.h

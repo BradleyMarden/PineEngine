@@ -19,8 +19,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../PineEngine/Source/Pine/Networking"
   "../PineEngine/Vendor/spdlog/include"
   "../PineEngine/Vendor/glew-2.1.0/include"
-  "../PineEngine/Vendor/enet-1.3.16/include"
   "/usr/local/include/SDL2"
+  "../PineEngine/Vendor/enet-1.3.16/include"
   )
 
 # Targets to which this target links.

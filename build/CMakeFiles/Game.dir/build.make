@@ -79,28 +79,28 @@ include CMakeFiles/Game.dir/flags.make
 CMakeFiles/Game.dir/Game/Source/main.cpp.o: CMakeFiles/Game.dir/flags.make
 CMakeFiles/Game.dir/Game/Source/main.cpp.o: ../Game/Source/main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Game.dir/Game/Source/main.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Game.dir/Game/Source/main.cpp.o -c /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/Game/Source/main.cpp
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Game.dir/Game/Source/main.cpp.o -c /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/Game/Source/main.cpp
 
 CMakeFiles/Game.dir/Game/Source/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Game.dir/Game/Source/main.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/Game/Source/main.cpp > CMakeFiles/Game.dir/Game/Source/main.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/Game/Source/main.cpp > CMakeFiles/Game.dir/Game/Source/main.cpp.i
 
 CMakeFiles/Game.dir/Game/Source/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Game.dir/Game/Source/main.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/Game/Source/main.cpp -o CMakeFiles/Game.dir/Game/Source/main.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/Game/Source/main.cpp -o CMakeFiles/Game.dir/Game/Source/main.cpp.s
 
 CMakeFiles/Game.dir/Game/Source/MyGame.cpp.o: CMakeFiles/Game.dir/flags.make
 CMakeFiles/Game.dir/Game/Source/MyGame.cpp.o: ../Game/Source/MyGame.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Game.dir/Game/Source/MyGame.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Game.dir/Game/Source/MyGame.cpp.o -c /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/Game/Source/MyGame.cpp
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Game.dir/Game/Source/MyGame.cpp.o -c /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/Game/Source/MyGame.cpp
 
 CMakeFiles/Game.dir/Game/Source/MyGame.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Game.dir/Game/Source/MyGame.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/Game/Source/MyGame.cpp > CMakeFiles/Game.dir/Game/Source/MyGame.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/Game/Source/MyGame.cpp > CMakeFiles/Game.dir/Game/Source/MyGame.cpp.i
 
 CMakeFiles/Game.dir/Game/Source/MyGame.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Game.dir/Game/Source/MyGame.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/Game/Source/MyGame.cpp -o CMakeFiles/Game.dir/Game/Source/MyGame.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/Game/Source/MyGame.cpp -o CMakeFiles/Game.dir/Game/Source/MyGame.cpp.s
 
 # Object files for target Game
 Game_OBJECTS = \
@@ -120,6 +120,14 @@ bin/Game: ../PineEngine/Vendor/enet-1.3.16/lib/libenet.a
 bin/Game: CMakeFiles/Game.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable bin/Game"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Game.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Copying SDL2.dll to build directory"
+	/usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL2-2.0.14/lib/x64/SDL2.dll /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/bin/SDL2.dll
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Copying SDL2_image.dll to build directory"
+	/usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL2_image-2.0.5/lib/x64/SDL2_image.dll /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/bin/SDL2_image.dll
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Copying SDL2_mixer.dll to build directory"
+	/usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL2_mixer-2.0.4/lib/x64/SDL2_mixer.dll /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/bin/SDL2_mixer.dll
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Copying SDL2_ttf.dll to build directory"
+	/usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL2_ttf-2.0.15/lib/x64/SDL2_ttf.dll /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/bin/SDL2_ttf.dll
 
 # Rule to build all files generated by this target.
 CMakeFiles/Game.dir/build: bin/Game
