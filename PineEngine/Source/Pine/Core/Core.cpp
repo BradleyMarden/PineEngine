@@ -15,10 +15,10 @@ namespace Pine {
 	{
 		Pine::Log::Init();
 
-		/*if (glewInit() != GLEW_OK)
+		if (glewInit() != GLEW_OK)
 		{
 			PINE_ENGINE_ERROR("OPENGL NO INITIALIZED!");
-		}*/
+		}
 		//SDL_GL_CreateContext()
 		SDL_Init(SDL_INIT_VIDEO);
 		m_Window = SDL_CreateWindow(m_windowName, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, m_Width, m_Height, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);

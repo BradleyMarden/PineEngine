@@ -9,6 +9,9 @@
 #include <vector>
 #undef main
 
+#include <GL/glew.h>
+#include <OpenGL/gl.h>
+
 // FLAGS-----------------------------------------------------
 //Current flag limit is set as uint8_t, may expand if more flags are needed.
 #define Pine_Networking 0x00000001

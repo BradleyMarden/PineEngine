@@ -16,7 +16,10 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/CMAKE")
 # ------- Finds ---------- #
 
 #------- SDL2-------------#
-
+FIND_PACKAGE(OpenGL REQUIRED)
+IF (${OPENGL_FOUND})
+    Message( STATUS "OPENGL_FOUND: " ${OPENGL_FOUND})
+    endif()
 FIND_PACKAGE(SDL2 REQUIRED)
 Message("")
 Message( STATUS "FINDING SDL2" )
@@ -57,6 +60,19 @@ Message( STATUS "FINDING SDL2Mixer" )
 Message( STATUS "SDL2Mixer_FOUND: " ${SDL2Mixer_FOUND} )
 Message( STATUS "SDL2Mixer_INCLUDE_DIRS: " ${SDL2Mixer_INCLUDE_DIRS} )
 Message("")
+
+
+FIND_PACKAGE(GLEW)
+Message("")
+Message( STATUS "FINDING GLEW" )
+Message( STATUS "GLEW_FOUND: " ${GLEW_FOUND})
+IF (${GLEW_FOUND})
+    Message( STATUS "GLEW_INCLUDE_DIR: " ${GLEW_INCLUDE_DIR})
+    Message( STATUS "GLEW_LIBRARY: " ${GLEW_LIBRARY})
+ELSE()
+    Message( FATAL_ERROR "GLEW NOT FOUND" )
+ENDIF()
+
 # ------- End Finds ------ #
 
 # ------- Add PineEngine Lib ------ #
@@ -77,6 +93,7 @@ include_directories(
     PineEngine/Vendor/glew-2.1.0/include
     ${SDL2_INCLUDE_DIR}
     ${SDL2_IMAGE_INCLUDE_DIR}
+    ${GLEW_INCLUDE_DIR}
     ${SDL2TTF_INCLUDE_DIR}
     ${SDL2Mixer_INCLUDE_DIRS}
     PineEngine/Vendor/enet-1.3.16/include
@@ -95,7 +112,7 @@ include_directories(
 # ------- Link based on Platform ---- #
 
 INCLUDE_DIRECTORIES(${SDL2_INCLUDE_DIR})
-TARGET_LINK_LIBRARIES(Game PineEngine ${SDL2_LIBRARY})
+TARGET_LINK_LIBRARIES(Game PineEngine ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARY} ${SDL2TTF_LIBRARY} ${GLEW_LIBRARY} ${SDL2Mixer_LIBRARY})
 if(APPLE)
     
     set(copy_dest_dir "${CMAKE_BINARY_DIR}/bin")

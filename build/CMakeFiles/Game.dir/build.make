@@ -116,6 +116,15 @@ bin/Game: CMakeFiles/Game.dir/build.make
 bin/Game: PineEngine/libPineEngine.a
 bin/Game: /usr/local/lib/libSDL2main.a
 bin/Game: /usr/local/lib/libSDL2.dylib
+bin/Game: /usr/local/lib/libSDL2_image.dylib
+bin/Game: /usr/local/lib/libSDL2_ttf.dylib
+bin/Game: /usr/local/lib/libSDL2_ttf.dylib
+bin/Game: /usr/local/lib/libGLEW.dylib
+bin/Game: /usr/local/lib/libSDL2_mixer.dylib
+bin/Game: ../PineEngine/Vendor/enet-1.3.16/lib/libenet.a
+bin/Game: /usr/local/lib/libSDL2_image.dylib
+bin/Game: /usr/local/lib/libGLEW.dylib
+bin/Game: /usr/local/lib/libSDL2_mixer.dylib
 bin/Game: ../PineEngine/Vendor/enet-1.3.16/lib/libenet.a
 bin/Game: CMakeFiles/Game.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable bin/Game"

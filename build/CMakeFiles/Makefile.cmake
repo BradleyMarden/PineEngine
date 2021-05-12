@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
+  "../CMAKE/FindGLEW.cmake"
   "../CMAKE/FindSDL2.cmake"
   "../CMAKE/FindSDL2Mixer.cmake"
   "../CMAKE/FindSDL2TTF.cmake"
@@ -92,6 +93,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/local/Cellar/cmake/3.19.3/share/cmake/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake"
   "/usr/local/Cellar/cmake/3.19.3/share/cmake/Modules/Compiler/zOS-C-DetermineCompiler.cmake"
   "/usr/local/Cellar/cmake/3.19.3/share/cmake/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake"
+  "/usr/local/Cellar/cmake/3.19.3/share/cmake/Modules/FindOpenGL.cmake"
   "/usr/local/Cellar/cmake/3.19.3/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
   "/usr/local/Cellar/cmake/3.19.3/share/cmake/Modules/FindPackageMessage.cmake"
   "/usr/local/Cellar/cmake/3.19.3/share/cmake/Modules/Internal/FeatureTesting.cmake"

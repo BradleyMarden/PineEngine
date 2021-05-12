@@ -99,5 +99,4 @@ dependencies: \
   /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Game.h \
   /usr/local/include/SDL2/SDL_image.h \
   /usr/local/include/SDL2/SDL_opengl.h \
-  /usr/local/include/SDL2/SDL_opengl_glext.h \
   /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/../Maths/PMaths.h
