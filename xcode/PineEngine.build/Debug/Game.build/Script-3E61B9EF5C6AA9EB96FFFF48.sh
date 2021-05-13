@@ -9,6 +9,10 @@ if test "$CONFIGURATION" = "Debug"; then :
   /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL2_mixer-2.0.4/lib/x64/SDL2_mixer.dll /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode/bin/SDL2_mixer.dll
   cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode
   /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL2_ttf-2.0.15/lib/x64/SDL2_ttf.dll /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode/bin/SDL2_ttf.dll
+  cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode
+  /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/glew-2.1.0/bin/Release/x64/glew32.dll /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode/bin/glew32.dll
+  cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode
+  /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/glfw-3.3.4/lib-vc2019/glfw3.dll /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode/bin/glfw3.dll
 fi
 if test "$CONFIGURATION" = "Release"; then :
   cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode
@@ -19,6 +23,10 @@ if test "$CONFIGURATION" = "Release"; then :
   /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL2_mixer-2.0.4/lib/x64/SDL2_mixer.dll /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode/bin/SDL2_mixer.dll
   cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode
   /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL2_ttf-2.0.15/lib/x64/SDL2_ttf.dll /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode/bin/SDL2_ttf.dll
+  cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode
+  /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/glew-2.1.0/bin/Release/x64/glew32.dll /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode/bin/glew32.dll
+  cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode
+  /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/glfw-3.3.4/lib-vc2019/glfw3.dll /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode/bin/glfw3.dll
 fi
 if test "$CONFIGURATION" = "MinSizeRel"; then :
   cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode
@@ -29,6 +37,10 @@ if test "$CONFIGURATION" = "MinSizeRel"; then :
   /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL2_mixer-2.0.4/lib/x64/SDL2_mixer.dll /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode/bin/SDL2_mixer.dll
   cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode
   /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL2_ttf-2.0.15/lib/x64/SDL2_ttf.dll /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode/bin/SDL2_ttf.dll
+  cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode
+  /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/glew-2.1.0/bin/Release/x64/glew32.dll /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode/bin/glew32.dll
+  cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode
+  /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/glfw-3.3.4/lib-vc2019/glfw3.dll /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode/bin/glfw3.dll
 fi
 if test "$CONFIGURATION" = "RelWithDebInfo"; then :
   cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode
@@ -39,5 +51,9 @@ if test "$CONFIGURATION" = "RelWithDebInfo"; then :
   /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL2_mixer-2.0.4/lib/x64/SDL2_mixer.dll /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode/bin/SDL2_mixer.dll
   cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode
   /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL2_ttf-2.0.15/lib/x64/SDL2_ttf.dll /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode/bin/SDL2_ttf.dll
+  cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode
+  /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/glew-2.1.0/bin/Release/x64/glew32.dll /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode/bin/glew32.dll
+  cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode
+  /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/glfw-3.3.4/lib-vc2019/glfw3.dll /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode/bin/glfw3.dll
 fi
 

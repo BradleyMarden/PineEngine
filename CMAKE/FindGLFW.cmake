@@ -25,10 +25,10 @@ IF(CMAKE_SIZEOF_VOID_P EQUAL 8)
             HINTS
             ${glfw}
             $ENV{glfw}
-            PATH_SUFFIXES lib64 lib lib-vc2019
+            PATH_SUFFIXES lib64 lib
             lib-vc2019
             x86_64-w64-mingw32/lib/Release
-            glfw-3.3.4.bin.WIN64/lib-vc2019
+            glfw-3.3.4/lib-vc2019
             PATHS
             ${CMAKE_SOURCE_DIR}/PineEngine/Vendor/glfw-3.3.4/lib-vc2019
             /sw
@@ -36,7 +36,46 @@ IF(CMAKE_SIZEOF_VOID_P EQUAL 8)
             /opt/csw
             /opt
             )
-ENDIF()
+
+            ELSE(CMAKE_SIZEOF_VOID_P EQUAL 8)
+            FIND_LIBRARY(GLFW_LIBRARY_TEMP
+                    NAMES glfw3
+                    HINTS
+                    ${glfw}
+                    $ENV{glfw}
+                    PATH_SUFFIXES lib
+                    i686-w64-mingw32/lib
+                    glfw-3.3.4/lib-vc2019
+                    PATHS
+                    ${CMAKE_SOURCE_DIR}/PineEngine/Vendor/glfw-3.3.4/lib-vc2019
+                    /sw
+                    /opt/local
+                    /opt/csw
+                    /opt
+                    )
+        ENDIF(CMAKE_SIZEOF_VOID_P EQUAL 8)
+
+        IF(NOT SDL2_BUILDING_LIBRARY)
+    IF(NOT ${SDL2_INCLUDE_DIR} MATCHES ".framework")
+    FIND_LIBRARY(GLFW_LIBRARY_TEMP
+            NAMES glfw.3
+            HINTS
+            ${glfw}
+            $ENV{glfw}
+            PATH_SUFFIXES lib64 lib
+            lib-vc2019
+            x86_64-w64-mingw32/lib/Release
+            glfw-3.3.4/lib-vc2019
+            PATHS
+            ${CMAKE_SOURCE_DIR}/PineEngine/Vendor/glfw-3.3.4/lib-vc2019
+            /sw
+            /opt/local
+            /opt/csw
+            /opt
+            )
+
+    endif()
+    endif()
 
 SET(GLFW_FOUND "NO")
 IF(GLFW_LIBRARY_TEMP)

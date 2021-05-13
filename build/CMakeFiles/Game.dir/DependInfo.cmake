@@ -21,6 +21,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../PineEngine/Vendor/glew-2.1.0/include"
   "/usr/local/include/SDL2"
   "/usr/local/include/GL"
+  "/usr/local/include/GLFW"
   "../PineEngine/Vendor/enet-1.3.16/include"
   )
 

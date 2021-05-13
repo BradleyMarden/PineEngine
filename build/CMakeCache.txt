@@ -231,6 +231,12 @@ GLEW_INCLUDE_DIR:PATH=/usr/local/include/GL
 //Where the GLEW Library can be found
 GLEW_LIBRARY:STRING=/usr/local/lib/libGLEW.dylib
 
+//Path to a file.
+GLFW_INCLUDE_DIR:PATH=/usr/local/include/GLFW
+
+//Where the GLFW Library can be found
+GLFW_LIBRARY:STRING=/usr/local/lib/libglfw.3.dylib
+
 //Include for OpenGL on OS X
 OPENGL_INCLUDE_DIR:PATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenGL.framework
 
@@ -418,6 +424,8 @@ CMAKE_UNAME:INTERNAL=/usr/bin/uname
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding GLEW
 FIND_PACKAGE_MESSAGE_DETAILS_GLEW:INTERNAL=[/usr/local/lib/libGLEW.dylib][/usr/local/include/GL][v()]
+//Details about finding GLFW
+FIND_PACKAGE_MESSAGE_DETAILS_GLFW:INTERNAL=[/usr/local/lib/libglfw.3.dylib][/usr/local/include/GLFW][v()]
 //Details about finding OpenGL
 FIND_PACKAGE_MESSAGE_DETAILS_OpenGL:INTERNAL=[/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenGL.framework][/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenGL.framework][c ][v()]
 //Details about finding SDL2
@@ -429,6 +437,7 @@ FIND_PACKAGE_MESSAGE_DETAILS_SDL2TTF:INTERNAL=[/usr/local/lib/libSDL2_ttf.dylib;
 //Details about finding SDL2_IMAGE
 FIND_PACKAGE_MESSAGE_DETAILS_SDL2_IMAGE:INTERNAL=[/usr/local/lib/libSDL2_image.dylib][/usr/local/include/SDL2][v()]
 GLEW_LIBRARY_TEMP:INTERNAL=/usr/local/lib/libGLEW.dylib
+GLFW_LIBRARY_TEMP:INTERNAL=/usr/local/lib/libglfw.3.dylib
 //ADVANCED property for variable: OPENGL_INCLUDE_DIR
 OPENGL_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OPENGL_gl_LIBRARY

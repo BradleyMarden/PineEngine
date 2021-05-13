@@ -6,6 +6,7 @@ space:= $(empty) $(empty)
 spaceplus:= $(empty)\ $(empty)
 
 TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/CMAKE/FindGLEW.cmake))
+TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/CMAKE/FindGLFW.cmake))
 TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/CMAKE/FindSDL2.cmake))
 TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/CMAKE/FindSDL2Mixer.cmake))
 TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/CMAKE/FindSDL2TTF.cmake))

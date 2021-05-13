@@ -97,6 +97,7 @@ dependencies: \
   /usr/local/include/SDL2/SDL_version.h \
   /usr/local/include/SDL2/SDL_locale.h \
   /usr/local/include/SDL2/SDL_misc.h /usr/local/include/SDL2/SDL_image.h \
+  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/glew-2.1.0/include/GL/glew.h \
   /usr/local/include/SDL2/SDL_opengl.h \
   /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/../Maths/PMaths.h \
   /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Input.h \

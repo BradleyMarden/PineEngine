@@ -5,7 +5,6 @@ FIND_PATH(GLEW_INCLUDE_DIR glew.h
         PATH_SUFFIXES include/GL include glew
         i686-w64-mingw32/include/GL
         x86_64-w64-mingw32/include/GL
-        glew-2.1.0/include/GL
         PATHS
         ~/Library/Frameworks
         /Library/Frameworks
@@ -21,16 +20,15 @@ FIND_PATH(GLEW_INCLUDE_DIR glew.h
 # Lookup the 64 bit libs on x64
 IF(CMAKE_SIZEOF_VOID_P EQUAL 8)
     FIND_LIBRARY(GLEW_LIBRARY_TEMP
-            NAMES glew32
+            NAMES glew
             HINTS
             ${glew}
             $ENV{glew}
-            PATH_SUFFIXES lib64 lib
-            lib/Release/x64
-            x86_64-w64-mingw32/lib/Release
-            glew-2.1.0/lib/Release/x64
+            PATH_SUFFIXES include/GL include glew
+            i686-w64-mingw32/include/GL
+            x86_64-w64-mingw32/include/GL
             PATHS
-            ${CMAKE_SOURCE_DIR}/PineEngine/Vendor/glew-2.1.0/lib/Release/x64
+            ${CMAKE_SOURCE_DIR}/PineEngine/Vendor/glew-2.1.0/Release/x64
             /sw
             /opt/local
             /opt/csw
@@ -39,16 +37,15 @@ IF(CMAKE_SIZEOF_VOID_P EQUAL 8)
     # On 32bit build find the 32bit libs
 ELSE(CMAKE_SIZEOF_VOID_P EQUAL 8)
     FIND_LIBRARY(GLEW_LIBRARY_TEMP
-            NAMES glew32
+            NAMES glew
             HINTS
             ${glew}
             $ENV{glew}
-            PATH_SUFFIXES lib
-            lib/Release/Win32
-            i686-w64-mingw32/lib/Release/Win32
-            glew-2.1.0/lib/Release/WIN32
+            PATH_SUFFIXES include/GL include glew
+            i686-w64-mingw32/include/GL
+            x86_64-w64-mingw32/include/GL
             PATHS
-            ${CMAKE_SOURCE_DIR}/PineEngine/Vendor/glew-2.1.0/lib/Release/Win32
+            ${CMAKE_SOURCE_DIR}/PineEngine/Vendor/glew-2.1.0/Release/Win32
             /sw
             /opt/local
             /opt/csw

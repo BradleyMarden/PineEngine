@@ -11,7 +11,8 @@
 #undef main
 
 #include <GL/glew.h>
-#include <GL/GL.h>
+#include <OpenGL/gl.h>
+//#include <GL/GL.h>
 // FLAGS-----------------------------------------------------
 //Current flag limit is set as uint8_t, may expand if more flags are needed.
 #define Pine_Networking 0x00000001
