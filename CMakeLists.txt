@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.12)
 project(PineEngine VERSION 0.3)
+set(DEBUG_OR_RELEASE "Debug")
 
 Message("")
 Message( STATUS "CMAKE_BINARY_DIR: " ${CMAKE_BINARY_DIR} )
@@ -16,7 +17,11 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/CMAKE")
 # ------- Finds ---------- #
 
 #------- SDL2-------------#
+
+
 FIND_PACKAGE(OpenGL REQUIRED)
+
+
 IF (${OPENGL_FOUND})
     Message( STATUS "OPENGL_FOUND: " ${OPENGL_FOUND})
     endif()
@@ -73,6 +78,17 @@ ELSE()
     Message( FATAL_ERROR "GLEW NOT FOUND" )
 ENDIF()
 
+FIND_PACKAGE(GLFW)
+Message("")
+Message( STATUS "FINDING GLFW" )
+Message( STATUS "GLFW_FOUND: " ${GLFW_FOUND})
+IF (${GLFW_FOUND})
+    Message( STATUS "GLFW_INCLUDE_DIR: " ${GLFW_INCLUDE_DIR})
+    Message( STATUS "GLFW_LIBRARY: " ${GLFW_LIBRARY})
+ELSE()
+    Message( FATAL_ERROR "GLFW NOT FOUND" )
+ENDIF()
+
 # ------- End Finds ------ #
 
 # ------- Add PineEngine Lib ------ #
@@ -94,9 +110,11 @@ include_directories(
     ${SDL2_INCLUDE_DIR}
     ${SDL2_IMAGE_INCLUDE_DIR}
     ${GLEW_INCLUDE_DIR}
+    ${GLFW_INCLUDE_DIR}
     ${SDL2TTF_INCLUDE_DIR}
     ${SDL2Mixer_INCLUDE_DIRS}
     PineEngine/Vendor/enet-1.3.16/include
+
     )
    # ------- Add Game Project files here ------ #
 
@@ -112,7 +130,9 @@ include_directories(
 # ------- Link based on Platform ---- #
 
 INCLUDE_DIRECTORIES(${SDL2_INCLUDE_DIR})
-TARGET_LINK_LIBRARIES(Game PineEngine ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARY} ${SDL2TTF_LIBRARY} ${GLEW_LIBRARY} ${SDL2Mixer_LIBRARY})
+TARGET_LINK_LIBRARIES(Game PineEngine ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARY} ${SDL2TTF_LIBRARY} ${GLFW_LIBRARY} ${GLEW_LIBRARY} ${SDL2Mixer_LIBRARY})
+
+
 if(APPLE)
     
     set(copy_dest_dir "${CMAKE_BINARY_DIR}/bin")
@@ -155,6 +175,13 @@ set(SDL_MIXER_DLL "SDL2_mixer.dll")
 set(SDL_TTF_DLL_DIR "${CMAKE_SOURCE_DIR}/PineEngine/Vendor/SDL2_ttf-2.0.15/lib/x64")
 set(SDL_TTF_DLL "SDL2_ttf.dll")
 
+#glew
+set(GLEW_DLL_DIR "${CMAKE_SOURCE_DIR}/PineEngine/Vendor/glew-2.1.0/bin/Release/x64")
+set(GLEW_DLL "glew32.dll")
+
+set(GLFW_DLL_DIR "${CMAKE_SOURCE_DIR}/PineEngine/Vendor/glfw-3.3.4/lib-vc2019")
+set(GLFW_DLL "glfw3.dll")
+
 add_custom_command(
     TARGET Game POST_BUILD 
     COMMAND ${CMAKE_COMMAND} -E copy "${SDL_DLL_DIR}/${SDL_DLL}" "${copy_dest_dir}/${SDL_DLL}"
@@ -177,5 +204,17 @@ add_custom_command(
     TARGET Game POST_BUILD 
     COMMAND ${CMAKE_COMMAND} -E copy "${SDL_TTF_DLL_DIR}/${SDL_TTF_DLL}" "${copy_dest_dir}/${SDL_TTF_DLL}"
     COMMENT "Copying ${SDL_TTF_DLL} to build directory"
+)
+
+add_custom_command(
+    TARGET Game POST_BUILD 
+    COMMAND ${CMAKE_COMMAND} -E copy "${GLEW_DLL_DIR}/${GLEW_DLL}" "${copy_dest_dir}/${GLEW_DLL}"
+    COMMENT "Copying ${GLEW_DLL} to build directory"
+)
+
+add_custom_command(
+    TARGET Game POST_BUILD 
+    COMMAND ${CMAKE_COMMAND} -E copy "${GLFW_DLL_DIR}/${GLFW_DLL}" "${copy_dest_dir}/${GLFW_DLL}"
+    COMMENT "Copying ${GLFW_DLL} to build directory"
 )
 # ------- End ----------- #

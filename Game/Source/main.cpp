@@ -3,11 +3,11 @@
 
 #include "MyGame.h"
 
-#define _DEBUG
+//#define _DEBUG
 using namespace Pine;
 int main()
 {
-    std::cout<< "Hello" << std::endl;
+    //std::cout<< "Hello" << std::endl;
 
    Core* App = new Core();
     myGame* game = new myGame();
@@ -21,6 +21,6 @@ int main()
     }
     App->Pine::Core::PineStart();
     App->Pine::Core::PineCloseWindow();
-
+    
     return 0;
 }

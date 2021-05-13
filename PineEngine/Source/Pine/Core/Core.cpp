@@ -13,14 +13,26 @@ namespace Pine {
 
 	Core::Core(const char* m_windowName, unsigned int m_Width, unsigned int m_Height)
 	{
-		Pine::Log::Init();
-
-		if (glewInit() != GLEW_OK)
+		/*if (Pine::Log::Init() == true)
 		{
-			PINE_ENGINE_ERROR("OPENGL NO INITIALIZED!");
-		}
+
+			if (glewInit() != GLEW_OK)
+			{
+				PINE_ENGINE_ERROR("OPENGL NO INITIALIZED!");
+				//std::cout << "herer";
+			}
+			else
+			{
+				PINE_ENGINE_INFO("OPENGL INITIALIZED!");
+
+			}
+		}*/
+		//std::cout << "herer";
+
+		
 		//SDL_GL_CreateContext()
 		SDL_Init(SDL_INIT_VIDEO);
+		
 		m_Window = SDL_CreateWindow(m_windowName, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, m_Width, m_Height, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
 		if (m_Window == NULL)
 		{
@@ -36,13 +48,22 @@ namespace Pine {
 		SDL_UpdateWindowSurface(m_Window);
 		//Wait two seconds
 		SDL_Delay(2000);
+		if (glewInit() != GLEW_OK)
+		{
+			PINE_ENGINE_ERROR("OPENGL NO INITIALIZED!");
+		}
+		else
+		{
+			PINE_ENGINE_INFO("OPENGL INITIALIZED!");
+
+		}
 		//glewInit();
 	}
 
 	
 	void Core::PineOpenWindow(const char* m_windowName, unsigned int m_Width, unsigned int m_Height)
 	{
-		Pine::Log::Init();
+		//Pine::Log::Init();
 
 		/*if (glewInit() != GLEW_OK)
 		{

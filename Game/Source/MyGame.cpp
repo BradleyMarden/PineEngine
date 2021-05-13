@@ -5,7 +5,7 @@ myGame::~myGame(){}
 
 void myGame::Start()
 {
-    std::cout << "Started" << std::endl;
+   // std::cout << "Started" << std::endl;
 }
 
 void myGame::Initialize(){}
@@ -15,7 +15,7 @@ void myGame::Update(){
     if(Input::GetKeyDown(SDLK_w))
     {
 
-    std::cout<< "Hello" << std::endl;
+    //std::cout<< "Hello" << std::endl;
 
     }
 

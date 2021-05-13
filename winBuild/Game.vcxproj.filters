@@ -1,19 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="D:\Game Engine\PineEngine\Game\Source\main.cpp">
+    <ClCompile Include="D:\PineEngine\TestWithCmake\PineEngine\Game\Source\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Game Engine\PineEngine\Game\Source\MyGame.cpp">
+    <ClCompile Include="D:\PineEngine\TestWithCmake\PineEngine\Game\Source\MyGame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\Game Engine\PineEngine\CMakeLists.txt" />
+    <ClInclude Include="D:\PineEngine\TestWithCmake\PineEngine\Game\Source\MyGame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <CustomBuild Include="D:\PineEngine\TestWithCmake\PineEngine\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{F60A2492-EEAA-3D83-8CC4-E83BE6B97708}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{9B3B6125-27EE-3B3C-95DB-7496CB1367FF}</UniqueIdentifier>
+      <UniqueIdentifier>{4219D49F-BA38-32A9-AFEA-DDDABB74DCF7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -2,13 +2,13 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>D:\Game Engine\PineEngine\winBuild\x64\Debug\ZERO_CHECK</FullPath>
+      <FullPath>D:\PineEngine\TestWithCmake\PineEngine\winBuild\x64\Debug\ZERO_CHECK</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>D:\Game Engine\PineEngine\winBuild\bin\Debug\Game.exe</FullPath>
+      <FullPath>D:\PineEngine\TestWithCmake\PineEngine\winBuild\bin\Debug\Game.exe</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>D:\Game Engine\PineEngine\winBuild\x64\Debug\ALL_BUILD</FullPath>
+      <FullPath>D:\PineEngine\TestWithCmake\PineEngine\winBuild\x64\Debug\ALL_BUILD</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

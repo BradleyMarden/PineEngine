@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="D:\Game Engine\PineEngine\winBuild\CMakeFiles\e6e3ab4adcb07d7630f10b7383fda4e5\generate.stamp.rule">
+    <CustomBuild Include="D:\PineEngine\TestWithCmake\PineEngine\winBuild\CMakeFiles\639fa5db328d1bf1bd7073992f579ead\generate.stamp.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{191B0E41-5733-35C2-BF74-ABC6970CA8BC}</UniqueIdentifier>
+      <UniqueIdentifier>{22AEAA0B-2FB3-3871-A604-3B248F95A095}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

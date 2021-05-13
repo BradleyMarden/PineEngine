@@ -4,6 +4,7 @@
 //#include "../Core/PineAPI.h"
 #include "spdlog/spdlog.h"
 #include "spdlog/sinks/stdout_color_sinks.h"
+#include <iostream>
 
 
 namespace Pine {
@@ -13,7 +14,7 @@ namespace Pine {
 		Log();
 		~Log();
 
-		static void Init();
+		static bool Init();
 
 		/*returns shared ptr logger by reference, when this goes out of scope this ptr is destroyed, 
 		however if an instance of the the ptr exists anywhere else the reference will still be avaliable, 
