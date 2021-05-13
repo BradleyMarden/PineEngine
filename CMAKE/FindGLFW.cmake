@@ -17,7 +17,7 @@ FIND_PATH(GLFW_INCLUDE_DIR glfw3.h
         /opt/csw # Blastwave
         /opt
         )
-
+#windows
 # Lookup the 64 bit libs on x64
 IF(CMAKE_SIZEOF_VOID_P EQUAL 8)
     FIND_LIBRARY(GLFW_LIBRARY_TEMP
@@ -54,7 +54,7 @@ IF(CMAKE_SIZEOF_VOID_P EQUAL 8)
                     /opt
                     )
         ENDIF(CMAKE_SIZEOF_VOID_P EQUAL 8)
-
+#macos
         IF(NOT SDL2_BUILDING_LIBRARY)
     IF(NOT ${SDL2_INCLUDE_DIR} MATCHES ".framework")
     FIND_LIBRARY(GLFW_LIBRARY_TEMP

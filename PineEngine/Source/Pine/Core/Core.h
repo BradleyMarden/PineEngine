@@ -11,8 +11,16 @@
 #undef main
 
 #include <GL/glew.h>
+#ifdef PINE_PLATFORM_WINDOWS
+#include <GL/GL.h>
+
+#endif // PINE_PLATFORM_WINDOWS
+#ifdef PINE_PLATFORM_MACOS
 #include <OpenGL/gl.h>
-//#include <GL/GL.h>
+
+#endif // PINE_PLATFORM_MACOS
+
+
 // FLAGS-----------------------------------------------------
 //Current flag limit is set as uint8_t, may expand if more flags are needed.
 #define Pine_Networking 0x00000001
