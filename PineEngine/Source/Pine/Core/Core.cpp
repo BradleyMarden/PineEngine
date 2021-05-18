@@ -61,7 +61,7 @@ namespace Pine {
 	}
 
 	
-	void Core::PineOpenWindow(const char* m_windowName, unsigned int m_Width, unsigned int m_Height)
+	void Core::PineOpenWindow()
 	{
 		//Pine::Log::Init();
 
@@ -71,7 +71,20 @@ namespace Pine {
 		}*/
 		//SDL_GL_CreateContext()
 		SDL_Init(SDL_INIT_VIDEO);
-		m_Window = SDL_CreateWindow(m_windowName, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, m_Width, m_Height, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
+		m_Window = SDL_CreateWindow(PINE_WINDOW_NAME, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, PINE_WINDOW_WIDTH, PINE_WINDOW_HEIGHT, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
+		//glViewport(0, 0, m_Width, m_Height);
+
+	}void Core::PineOpenSecondWindow(const char* m_windowName, unsigned int m_Width, unsigned int m_Height)
+	{
+		//Pine::Log::Init();
+
+		/*if (glewInit() != GLEW_OK)
+		{
+			PINE_ENGINE_ERROR("OPENGL NO INITIALIZED!");
+		}*/
+		//SDL_GL_CreateContext()
+		SDL_Init(SDL_INIT_VIDEO);
+		m_SecondWindow = SDL_CreateWindow(m_windowName, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, m_Width, m_Height, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
 		//glViewport(0, 0, m_Width, m_Height);
 
 	}
@@ -261,6 +274,7 @@ namespace Pine {
 		//SDL_Delay(3000);
 		SDL_DestroyRenderer(renderer);
 		SDL_DestroyWindow(m_Window);
+		SDL_DestroyWindow(m_SecondWindow);
 		SDL_Quit();
 	}
 

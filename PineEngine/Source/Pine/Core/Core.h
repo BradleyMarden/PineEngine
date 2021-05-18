@@ -103,7 +103,9 @@ namespace Pine {
 		Core(const char* m_windowName, unsigned int m_Width, unsigned int m_Height);
 
 		void		PineCloseWindow();
-		void		PineOpenWindow(const char* m_windowName, unsigned int m_Width, unsigned int m_Height);
+		static void		PineOpenWindow();
+		//static void		PineOpenWindow(const char* m_windowName, unsigned int m_Width, unsigned int m_Height);
+		static void		PineOpenSecondWindow(const char* m_windowName, unsigned int m_Width, unsigned int m_Height);
 		bool		PineInit(Game* game, uint8_t flags);
 		void		PineStart();
 		
@@ -129,7 +131,8 @@ namespace Pine {
 		//NEW
 		//PECS m_PGameObjectManager;
 
-		SDL_Window* m_Window = nullptr;
+		static inline SDL_Window* m_Window = nullptr;
+		static inline SDL_Window* m_SecondWindow = nullptr;
 		Game* givenGame = nullptr;
 		SDL_Renderer* renderer;
 		SDL_Rect rect;

@@ -21,6 +21,8 @@ virtual void OnMouseClick();
 Pine::Game* Pine::CreateGame()
 {
     std::cout << "Game Created" << std::endl;
-    return new myGame();
+    Game* game = new myGame();
+    game->SetWindowParameters(600, 600, "Brood Test Window");
+    return game;
     
 }

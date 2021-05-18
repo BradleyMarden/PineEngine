@@ -8,11 +8,12 @@ extern Pine::Game* Pine::CreateGame();
 
 int main(int argc, const char* argv[])
 {
-
+    Pine::Core* App = new Pine::Core();
 	auto game = Pine::CreateGame();
-	Pine::Core* App = new Pine::Core();
 
-    App->Pine::Core::PineOpenWindow("Game", 600, 600);
+    // Pine::Core::PineOpenWindow("Game", 600, 600);
+     Pine::Core::PineOpenWindow();
+    
     if (!App->Pine::Core::PineInit(game, NULL))
     {
         App->Pine::Core::PineCloseWindow();
