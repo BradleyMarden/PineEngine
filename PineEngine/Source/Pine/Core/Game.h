@@ -1,5 +1,7 @@
 #pragma once
 //#include <sdl2/SDL.h>
+#define SDL_MAIN_HANDLED
+
 #include <SDL.h>
 #include <memory>
 //#include "PineAPI.h"
@@ -41,6 +43,8 @@ namespace Pine {
 		inline void SetState(GameState STATE) { st = STATE; }
 		bool isExiting = false;
 	};
+
+	Game* CreateGame();
 }
 
 //$//(SolutionDir)PineEngine\Vendor\spdlog\include;$(SolutionDir)PineEngine\Vendor\SDL2-2.0.12\include;$(SolutionDir)PineEngine\Vendor\enet-1.3.16\include;

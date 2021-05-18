@@ -120,7 +120,7 @@ include_directories(
 
  add_executable(
     Game 
-    Game/Source/main.cpp
+    #Game/Source/main.cpp
     Game/Source/MyGame.cpp
     Game/Source/MyGame.h
  )

@@ -22,7 +22,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{F57801D6-F6C4-3269-9908-4DAC5DC487A4}</ProjectGuid>
+    <ProjectGuid>{56089A6E-CF3C-33F2-9AA1-5193253137D2}</ProjectGuid>
     <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
     <Keyword>Win32Proj</Keyword>
     <Platform>x64</Platform>
@@ -59,26 +59,26 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\PineEngine\TestWithCmake\PineEngine\winBuild\PineEngine\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Game Engine\PineEngine\winBuild\PineEngine\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">PineEngine.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">PineEngine</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\PineEngine\TestWithCmake\PineEngine\winBuild\PineEngine\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Game Engine\PineEngine\winBuild\PineEngine\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">PineEngine.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">PineEngine</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\PineEngine\TestWithCmake\PineEngine\winBuild\PineEngine\MinSizeRel\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Game Engine\PineEngine\winBuild\PineEngine\MinSizeRel\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">PineEngine.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">PineEngine</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\PineEngine\TestWithCmake\PineEngine\winBuild\PineEngine\RelWithDebInfo\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Game Engine\PineEngine\winBuild\PineEngine\RelWithDebInfo\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">PineEngine.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">PineEngine</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Core;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Logging;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Maths;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Networking;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\spdlog\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -96,10 +96,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;PINE_PLATFORM_WINDOWS;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Core;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Logging;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Maths;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Networking;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\spdlog\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Core;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Logging;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Maths;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Networking;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\spdlog\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -112,7 +112,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Core;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Logging;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Maths;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Networking;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\spdlog\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -130,10 +130,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;PINE_PLATFORM_WINDOWS;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Core;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Logging;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Maths;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Networking;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\spdlog\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Core;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Logging;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Maths;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Networking;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\spdlog\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -146,7 +146,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Core;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Logging;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Maths;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Networking;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\spdlog\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
@@ -164,10 +164,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;PINE_PLATFORM_WINDOWS;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Core;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Logging;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Maths;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Networking;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\spdlog\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Core;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Logging;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Maths;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Networking;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\spdlog\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -180,7 +180,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Core;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Logging;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Maths;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Networking;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\spdlog\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -197,10 +197,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;PINE_PLATFORM_WINDOWS;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Core;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Logging;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Maths;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Networking;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\spdlog\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Core;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Logging;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Maths;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Networking;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\spdlog\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -212,11 +212,11 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\PineEngine\TestWithCmake\PineEngine\PineEngine\CMakeLists.txt">
+    <CustomBuild Include="D:\Game Engine\PineEngine\PineEngine\CMakeLists.txt">
       <StdOutEncoding>UTF-8</StdOutEncoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/PineEngine/TestWithCmake/PineEngine/PineEngine/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Game Engine/PineEngine/PineEngine/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/PineEngine/TestWithCmake/PineEngine -BD:/PineEngine/TestWithCmake/PineEngine/winBuild --check-stamp-file D:/PineEngine/TestWithCmake/PineEngine/winBuild/PineEngine/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" "-SD:/Game Engine/PineEngine" "-BD:/Game Engine/PineEngine/winBuild" --check-stamp-file "D:/Game Engine/PineEngine/winBuild/PineEngine/CMakeFiles/generate.stamp"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -225,11 +225,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\PineEngine\TestWithCmake\PineEngine\winBuild\PineEngine\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Game Engine\PineEngine\winBuild\PineEngine\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/PineEngine/TestWithCmake/PineEngine/PineEngine/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Game Engine/PineEngine/PineEngine/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/PineEngine/TestWithCmake/PineEngine -BD:/PineEngine/TestWithCmake/PineEngine/winBuild --check-stamp-file D:/PineEngine/TestWithCmake/PineEngine/winBuild/PineEngine/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" "-SD:/Game Engine/PineEngine" "-BD:/Game Engine/PineEngine/winBuild" --check-stamp-file "D:/Game Engine/PineEngine/winBuild/PineEngine/CMakeFiles/generate.stamp"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -238,11 +238,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\PineEngine\TestWithCmake\PineEngine\winBuild\PineEngine\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Game Engine\PineEngine\winBuild\PineEngine\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/PineEngine/TestWithCmake/PineEngine/PineEngine/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/Game Engine/PineEngine/PineEngine/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/PineEngine/TestWithCmake/PineEngine -BD:/PineEngine/TestWithCmake/PineEngine/winBuild --check-stamp-file D:/PineEngine/TestWithCmake/PineEngine/winBuild/PineEngine/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" "-SD:/Game Engine/PineEngine" "-BD:/Game Engine/PineEngine/winBuild" --check-stamp-file "D:/Game Engine/PineEngine/winBuild/PineEngine/CMakeFiles/generate.stamp"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -251,11 +251,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\PineEngine\TestWithCmake\PineEngine\winBuild\PineEngine\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Game Engine\PineEngine\winBuild\PineEngine\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/PineEngine/TestWithCmake/PineEngine/PineEngine/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/Game Engine/PineEngine/PineEngine/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/PineEngine/TestWithCmake/PineEngine -BD:/PineEngine/TestWithCmake/PineEngine/winBuild --check-stamp-file D:/PineEngine/TestWithCmake/PineEngine/winBuild/PineEngine/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" "-SD:/Game Engine/PineEngine" "-BD:/Game Engine/PineEngine/winBuild" --check-stamp-file "D:/Game Engine/PineEngine/winBuild/PineEngine/CMakeFiles/generate.stamp"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -264,31 +264,32 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\PineEngine\TestWithCmake\PineEngine\winBuild\PineEngine\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Game Engine\PineEngine\winBuild\PineEngine\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Core\Core.cpp" />
-    <ClCompile Include="D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Core\Game.cpp" />
-    <ClCompile Include="D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Core\Input.cpp" />
-    <ClCompile Include="D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Logging\Log.cpp" />
-    <ClCompile Include="D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Maths\PMaths.cpp" />
-    <ClCompile Include="D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Networking\Networking.cpp" />
-    <ClInclude Include="D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine.h" />
-    <ClInclude Include="D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Core\Core.h" />
-    <ClInclude Include="D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Core\Game.h" />
-    <ClInclude Include="D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Core\Input.h" />
-    <ClInclude Include="D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Core\PineAPI.h" />
-    <ClInclude Include="D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Logging\Log.h" />
-    <ClInclude Include="D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Maths\PMaths.h" />
-    <ClInclude Include="D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Networking\Networking.h" />
-    <ClInclude Include="D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\Pine\Networking\ServerNetworking.h" />
-    <ClInclude Include="D:\PineEngine\TestWithCmake\PineEngine\PineEngine\Source\PineServer.h" />
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core\Core.cpp" />
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core\Game.cpp" />
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core\Input.cpp" />
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core\EntryPoint.cpp" />
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging\Log.cpp" />
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths\PMaths.cpp" />
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking\Networking.cpp" />
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine.h" />
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core\Core.h" />
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core\Game.h" />
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core\Input.h" />
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core\PineAPI.h" />
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging\Log.h" />
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths\PMaths.h" />
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking\Networking.h" />
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking\ServerNetworking.h" />
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\PineServer.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="D:\PineEngine\TestWithCmake\PineEngine\winBuild\ZERO_CHECK.vcxproj">
-      <Project>{E27143C7-8CC1-3B53-9193-D5DB279BA251}</Project>
+    <ProjectReference Include="D:\Game Engine\PineEngine\winBuild\ZERO_CHECK.vcxproj">
+      <Project>{0CD50BEC-ECD7-3556-A694-A5D85DA7C3D5}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

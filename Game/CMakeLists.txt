@@ -3,7 +3,7 @@ project(PineEngine VERSION 0.3)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(Game 
-    Source/main.cpp
+   # Source/main.cpp
     Source/MyGame.cpp
 
 )

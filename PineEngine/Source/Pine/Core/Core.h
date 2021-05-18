@@ -1,16 +1,61 @@
 #pragma once
 //Only to be used by Pine applications
+//#undef main
 
-#include "../Logging/Log.h"
+
+// FLAGS-----------------------------------------------------
+//Current flag limit is set as uint8_t, may expand if more flags are needed.
+#define Pine_Networking 0x00000001
+#define Pine_Server 0x00000002
+#define Pine_Release 0x00000004
+#define Pine_Debug 0x00000008
+//#define PINE_ENGINE_INFO
+//-----------------------------------------------------------
+
+//PINE INCLUDES
+#include "Log.h"
+#include "Networking.h"
+#include "Game.h"
+#include "Core.h"
+
+
+#include "SDL.h"
+#include "SDL_image.h"
+#include <GL/glew.h>
+#include <vector>
+#include <iostream>
+#include <SDL_opengl.h>
+#include <chrono>
+#include <time.h>
+#include <SDL_timer.h>
+#include "../Maths/PMaths.h" 
+#include "Input.h"
+#define SDL_MAIN_HANDLED
+#undef main
+
+
+
+#ifdef PINE_PLATFORM_WINDOWS
+	#include <GL/GL.h>
+#endif // PINE_PLATFORM_WINDOWS
+#ifdef PINE_PLATFORM_MACOS
+	#include <OpenGL/gl.h>
+#endif // PINE_PLATFORM_MACOS
+
+/*#include "../Logging/Log.h"
 #include "../Networking/Networking.h"
 #include "Game.h"
 #include "SDL.h"
-#include "SDL_image.h"
 #include <vector>
 #include <iostream>
-#undef main
+//#include "EntryPoint.h"
+
+
+
 
 #include <GL/glew.h>
+#include "glfw3.h"
+
 #ifdef PINE_PLATFORM_WINDOWS
 #include <GL/GL.h>
 
@@ -42,7 +87,8 @@
 #include <SDL.h>
 #include <SDL_timer.h>
 #include "../Maths/PMaths.h" 
-#include "Input.h"
+#include "Input.h"*/
+
 //#include "ECS/PineECS.h"
 namespace Pine {
 

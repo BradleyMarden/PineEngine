@@ -1,4 +1,4 @@
-# Install script for directory: D:/PineEngine/TestWithCmake/PineEngine/PineEngine
+# Install script for directory: D:/Game Engine/PineEngine/PineEngine
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

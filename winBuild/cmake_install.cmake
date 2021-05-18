@@ -1,4 +1,4 @@
-# Install script for directory: D:/PineEngine/TestWithCmake/PineEngine
+# Install script for directory: D:/Game Engine/PineEngine
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("D:/PineEngine/TestWithCmake/PineEngine/winBuild/PineEngine/cmake_install.cmake")
+  include("D:/Game Engine/PineEngine/winBuild/PineEngine/cmake_install.cmake")
 
 endif()
 
@@ -46,5 +46,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/PineEngine/TestWithCmake/PineEngine/winBuild/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/Game Engine/PineEngine/winBuild/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

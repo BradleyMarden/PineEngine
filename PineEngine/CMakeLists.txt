@@ -8,6 +8,7 @@ add_library(
     Source/Pine/Core/Core.cpp
     Source/Pine/Core/Game.cpp
     Source/Pine/Core/Input.cpp
+    Source/Pine/Core/EntryPoint.cpp
 #ECS
     
 #LOGGING
@@ -33,6 +34,7 @@ target_include_directories(PineEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Source
 #VENDOR INCLUDES
 target_include_directories(PineEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Vendor/spdlog/include")
 target_include_directories(PineEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Vendor/glew-2.1.0/include")
+target_include_directories(PineEngine PUBLIC ${GLFW_INCLUDE_DIR})
 target_include_directories(PineEngine PUBLIC ${SDL2_INCLUDE_DIR})
 target_include_directories(PineEngine PUBLIC ${SDL2_IMAGE_INCLUDE_DIR})
 target_include_directories(PineEngine PUBLIC ${SDL2TTF_INCLUDE_DIR})
