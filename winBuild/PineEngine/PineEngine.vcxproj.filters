@@ -22,6 +22,12 @@
     <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking\Networking.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Rendering\Renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Rendering\Shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine.h">
@@ -49,6 +55,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking\ServerNetworking.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Rendering\Renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Rendering\Shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\PineServer.h">

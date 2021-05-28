@@ -86,7 +86,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\Game\Source;D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include\GL;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\Game\Source;D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Rendering;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include\GL;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -104,10 +104,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\Game\Source;D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include\GL;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\Game\Source;D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Rendering;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include\GL;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\Game\Source;D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include\GL;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\Game\Source;D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Rendering;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include\GL;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -115,7 +115,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>Copying SDL2.dll to build directory	Copying SDL2_image.dll to build directory	Copying SDL2_mixer.dll to build directory	Copying SDL2_ttf.dll to build directory	Copying glew32.dll to build directory	Copying glfw3.dll to build directory</Message>
+      <Message>Copying SDL2.dll to build directory	Copying SDL2_image.dll to build directory	Copying SDL2_mixer.dll to build directory	Copying SDL2_ttf.dll to build directory	Copying glew32.dll to build directory	Copying glfw3.dll to build directory	Copying Assets to build directory</Message>
       <Command>setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -E copy "D:/Game Engine/PineEngine/PineEngine/Vendor/SDL2-2.0.14/lib/x64/SDL2.dll" "D:/Game Engine/PineEngine/winBuild/bin/Debug/SDL2.dll"
 if %errorlevel% neq 0 goto :cmEnd
@@ -169,10 +169,19 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 :cmErrorLevel
 exit /b %1
 :cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory "D:/Game Engine/PineEngine/Game/Assets" "D:/Game Engine/PineEngine/winBuild/bin/Debug/Assets"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>PineEngine\Debug\PineEngine.lib;..\PineEngine\Vendor\SDL2-2.0.14\lib\x64\SDL2main.lib;..\PineEngine\Vendor\SDL2-2.0.14\lib\x64\SDL2.lib;..\PineEngine\Vendor\SDL2_image-2.0.5\lib\x64\SDL2_image.lib;..\PineEngine\Vendor\SDL2_ttf-2.0.15\lib\x64\SDL2_ttf.lib;..\PineEngine\Vendor\SDL2_ttf-2.0.15\lib\x64\SDL2_ttf.lib;..\PineEngine\Vendor\glfw-3.3.4\lib-vc2019\glfw3.lib;..\PineEngine\Vendor\glew-2.1.0\lib\Release\x64\glew32.lib;..\PineEngine\Vendor\SDL2_mixer-2.0.4\lib\x64\SDL2_mixer.lib;..\PineEngine\Vendor\enet-1.3.16\lib\enet64.lib;wsock32.lib;ws2_32.lib;winmm.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>PineEngine\Debug\PineEngine.lib;..\PineEngine\Vendor\SDL2-2.0.14\lib\x64\SDL2main.lib;..\PineEngine\Vendor\SDL2-2.0.14\lib\x64\SDL2.lib;..\PineEngine\Vendor\SDL2_image-2.0.5\lib\x64\SDL2_image.lib;..\PineEngine\Vendor\SDL2_ttf-2.0.15\lib\x64\SDL2_ttf.lib;..\PineEngine\Vendor\SDL2_ttf-2.0.15\lib\x64\SDL2_ttf.lib;..\PineEngine\Vendor\glfw-3.3.4\lib-vc2019\glfw3.lib;..\PineEngine\Vendor\glew-2.1.0\lib\Release\x64\glew32.lib;..\PineEngine\Vendor\SDL2_mixer-2.0.4\lib\x64\SDL2_mixer.lib;..\PineEngine\Vendor\enet-1.3.16\lib\enet64.lib;wsock32.lib;ws2_32.lib;winmm.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -187,7 +196,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\Game\Source;D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include\GL;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\Game\Source;D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Rendering;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include\GL;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -205,10 +214,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\Game\Source;D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include\GL;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\Game\Source;D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Rendering;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include\GL;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\Game\Source;D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include\GL;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\Game\Source;D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Rendering;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include\GL;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -216,7 +225,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>Copying SDL2.dll to build directory	Copying SDL2_image.dll to build directory	Copying SDL2_mixer.dll to build directory	Copying SDL2_ttf.dll to build directory	Copying glew32.dll to build directory	Copying glfw3.dll to build directory</Message>
+      <Message>Copying SDL2.dll to build directory	Copying SDL2_image.dll to build directory	Copying SDL2_mixer.dll to build directory	Copying SDL2_ttf.dll to build directory	Copying glew32.dll to build directory	Copying glfw3.dll to build directory	Copying Assets to build directory</Message>
       <Command>setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -E copy "D:/Game Engine/PineEngine/PineEngine/Vendor/SDL2-2.0.14/lib/x64/SDL2.dll" "D:/Game Engine/PineEngine/winBuild/bin/Release/SDL2.dll"
 if %errorlevel% neq 0 goto :cmEnd
@@ -270,10 +279,19 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 :cmErrorLevel
 exit /b %1
 :cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory "D:/Game Engine/PineEngine/Game/Assets" "D:/Game Engine/PineEngine/winBuild/bin/Release/Assets"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>PineEngine\Release\PineEngine.lib;..\PineEngine\Vendor\SDL2-2.0.14\lib\x64\SDL2main.lib;..\PineEngine\Vendor\SDL2-2.0.14\lib\x64\SDL2.lib;..\PineEngine\Vendor\SDL2_image-2.0.5\lib\x64\SDL2_image.lib;..\PineEngine\Vendor\SDL2_ttf-2.0.15\lib\x64\SDL2_ttf.lib;..\PineEngine\Vendor\SDL2_ttf-2.0.15\lib\x64\SDL2_ttf.lib;..\PineEngine\Vendor\glfw-3.3.4\lib-vc2019\glfw3.lib;..\PineEngine\Vendor\glew-2.1.0\lib\Release\x64\glew32.lib;..\PineEngine\Vendor\SDL2_mixer-2.0.4\lib\x64\SDL2_mixer.lib;..\PineEngine\Vendor\enet-1.3.16\lib\enet64.lib;wsock32.lib;ws2_32.lib;winmm.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>PineEngine\Release\PineEngine.lib;..\PineEngine\Vendor\SDL2-2.0.14\lib\x64\SDL2main.lib;..\PineEngine\Vendor\SDL2-2.0.14\lib\x64\SDL2.lib;..\PineEngine\Vendor\SDL2_image-2.0.5\lib\x64\SDL2_image.lib;..\PineEngine\Vendor\SDL2_ttf-2.0.15\lib\x64\SDL2_ttf.lib;..\PineEngine\Vendor\SDL2_ttf-2.0.15\lib\x64\SDL2_ttf.lib;..\PineEngine\Vendor\glfw-3.3.4\lib-vc2019\glfw3.lib;..\PineEngine\Vendor\glew-2.1.0\lib\Release\x64\glew32.lib;..\PineEngine\Vendor\SDL2_mixer-2.0.4\lib\x64\SDL2_mixer.lib;..\PineEngine\Vendor\enet-1.3.16\lib\enet64.lib;wsock32.lib;ws2_32.lib;winmm.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -288,7 +306,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\Game\Source;D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include\GL;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\Game\Source;D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Rendering;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include\GL;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
@@ -306,10 +324,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\Game\Source;D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include\GL;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\Game\Source;D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Rendering;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include\GL;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\Game\Source;D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include\GL;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\Game\Source;D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Rendering;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include\GL;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -317,7 +335,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>Copying SDL2.dll to build directory	Copying SDL2_image.dll to build directory	Copying SDL2_mixer.dll to build directory	Copying SDL2_ttf.dll to build directory	Copying glew32.dll to build directory	Copying glfw3.dll to build directory</Message>
+      <Message>Copying SDL2.dll to build directory	Copying SDL2_image.dll to build directory	Copying SDL2_mixer.dll to build directory	Copying SDL2_ttf.dll to build directory	Copying glew32.dll to build directory	Copying glfw3.dll to build directory	Copying Assets to build directory</Message>
       <Command>setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -E copy "D:/Game Engine/PineEngine/PineEngine/Vendor/SDL2-2.0.14/lib/x64/SDL2.dll" "D:/Game Engine/PineEngine/winBuild/bin/MinSizeRel/SDL2.dll"
 if %errorlevel% neq 0 goto :cmEnd
@@ -371,10 +389,19 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 :cmErrorLevel
 exit /b %1
 :cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory "D:/Game Engine/PineEngine/Game/Assets" "D:/Game Engine/PineEngine/winBuild/bin/MinSizeRel/Assets"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>PineEngine\MinSizeRel\PineEngine.lib;..\PineEngine\Vendor\SDL2-2.0.14\lib\x64\SDL2main.lib;..\PineEngine\Vendor\SDL2-2.0.14\lib\x64\SDL2.lib;..\PineEngine\Vendor\SDL2_image-2.0.5\lib\x64\SDL2_image.lib;..\PineEngine\Vendor\SDL2_ttf-2.0.15\lib\x64\SDL2_ttf.lib;..\PineEngine\Vendor\SDL2_ttf-2.0.15\lib\x64\SDL2_ttf.lib;..\PineEngine\Vendor\glfw-3.3.4\lib-vc2019\glfw3.lib;..\PineEngine\Vendor\glew-2.1.0\lib\Release\x64\glew32.lib;..\PineEngine\Vendor\SDL2_mixer-2.0.4\lib\x64\SDL2_mixer.lib;..\PineEngine\Vendor\enet-1.3.16\lib\enet64.lib;wsock32.lib;ws2_32.lib;winmm.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>PineEngine\MinSizeRel\PineEngine.lib;..\PineEngine\Vendor\SDL2-2.0.14\lib\x64\SDL2main.lib;..\PineEngine\Vendor\SDL2-2.0.14\lib\x64\SDL2.lib;..\PineEngine\Vendor\SDL2_image-2.0.5\lib\x64\SDL2_image.lib;..\PineEngine\Vendor\SDL2_ttf-2.0.15\lib\x64\SDL2_ttf.lib;..\PineEngine\Vendor\SDL2_ttf-2.0.15\lib\x64\SDL2_ttf.lib;..\PineEngine\Vendor\glfw-3.3.4\lib-vc2019\glfw3.lib;..\PineEngine\Vendor\glew-2.1.0\lib\Release\x64\glew32.lib;..\PineEngine\Vendor\SDL2_mixer-2.0.4\lib\x64\SDL2_mixer.lib;..\PineEngine\Vendor\enet-1.3.16\lib\enet64.lib;wsock32.lib;ws2_32.lib;winmm.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -389,7 +416,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\Game\Source;D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include\GL;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\Game\Source;D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Rendering;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include\GL;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -406,10 +433,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\Game\Source;D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include\GL;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\Game\Source;D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Rendering;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include\GL;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\Game\Source;D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include\GL;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Game Engine\PineEngine\Game\Source;D:\Game Engine\PineEngine\PineEngine\Source;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking;D:\Game Engine\PineEngine\PineEngine\Source\Pine\Rendering;D:\Game Engine\PineEngine\PineEngine\Vendor\spdlog\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2-2.0.14\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_image-2.0.5\include;D:\Game Engine\PineEngine\PineEngine\Vendor\glew-2.1.0\include\GL;D:\Game Engine\PineEngine\PineEngine\Vendor\glfw-3.3.4\include\GLFW;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_ttf-2.0.15\include;D:\Game Engine\PineEngine\PineEngine\Vendor\SDL2_mixer-2.0.4\include;D:\Game Engine\PineEngine\PineEngine\Vendor\enet-1.3.16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -417,7 +444,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>Copying SDL2.dll to build directory	Copying SDL2_image.dll to build directory	Copying SDL2_mixer.dll to build directory	Copying SDL2_ttf.dll to build directory	Copying glew32.dll to build directory	Copying glfw3.dll to build directory</Message>
+      <Message>Copying SDL2.dll to build directory	Copying SDL2_image.dll to build directory	Copying SDL2_mixer.dll to build directory	Copying SDL2_ttf.dll to build directory	Copying glew32.dll to build directory	Copying glfw3.dll to build directory	Copying Assets to build directory</Message>
       <Command>setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -E copy "D:/Game Engine/PineEngine/PineEngine/Vendor/SDL2-2.0.14/lib/x64/SDL2.dll" "D:/Game Engine/PineEngine/winBuild/bin/RelWithDebInfo/SDL2.dll"
 if %errorlevel% neq 0 goto :cmEnd
@@ -471,10 +498,19 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 :cmErrorLevel
 exit /b %1
 :cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory "D:/Game Engine/PineEngine/Game/Assets" "D:/Game Engine/PineEngine/winBuild/bin/RelWithDebInfo/Assets"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>PineEngine\RelWithDebInfo\PineEngine.lib;..\PineEngine\Vendor\SDL2-2.0.14\lib\x64\SDL2main.lib;..\PineEngine\Vendor\SDL2-2.0.14\lib\x64\SDL2.lib;..\PineEngine\Vendor\SDL2_image-2.0.5\lib\x64\SDL2_image.lib;..\PineEngine\Vendor\SDL2_ttf-2.0.15\lib\x64\SDL2_ttf.lib;..\PineEngine\Vendor\SDL2_ttf-2.0.15\lib\x64\SDL2_ttf.lib;..\PineEngine\Vendor\glfw-3.3.4\lib-vc2019\glfw3.lib;..\PineEngine\Vendor\glew-2.1.0\lib\Release\x64\glew32.lib;..\PineEngine\Vendor\SDL2_mixer-2.0.4\lib\x64\SDL2_mixer.lib;..\PineEngine\Vendor\enet-1.3.16\lib\enet64.lib;wsock32.lib;ws2_32.lib;winmm.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>PineEngine\RelWithDebInfo\PineEngine.lib;..\PineEngine\Vendor\SDL2-2.0.14\lib\x64\SDL2main.lib;..\PineEngine\Vendor\SDL2-2.0.14\lib\x64\SDL2.lib;..\PineEngine\Vendor\SDL2_image-2.0.5\lib\x64\SDL2_image.lib;..\PineEngine\Vendor\SDL2_ttf-2.0.15\lib\x64\SDL2_ttf.lib;..\PineEngine\Vendor\SDL2_ttf-2.0.15\lib\x64\SDL2_ttf.lib;..\PineEngine\Vendor\glfw-3.3.4\lib-vc2019\glfw3.lib;..\PineEngine\Vendor\glew-2.1.0\lib\Release\x64\glew32.lib;..\PineEngine\Vendor\SDL2_mixer-2.0.4\lib\x64\SDL2_mixer.lib;..\PineEngine\Vendor\enet-1.3.16\lib\enet64.lib;wsock32.lib;ws2_32.lib;winmm.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>

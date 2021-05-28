@@ -15,12 +15,13 @@ virtual void Initialize();
 virtual void Update();
 virtual void Terminate();
 virtual void OnMouseClick();
+Pine::SourceShader shaders;
 
 };
 
 Pine::Game* Pine::CreateGame()
 {
-    std::cout << "Game Created" << std::endl;
+    //std::cout << "Game Created" << std::endl;
     Game* game = new myGame();
     game->SetWindowParameters(600, 600, "Brood Test Window");
     return game;

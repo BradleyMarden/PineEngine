@@ -17,14 +17,14 @@
 #include "Networking.h"
 #include "Game.h"
 #include "Core.h"
+#include "../Rendering/Shader.h"
 
 
 #include "SDL.h"
 #include "SDL_image.h"
-#include <GL/glew.h>
+//#include <GL/glew.h>
 #include <vector>
 #include <iostream>
-#include <SDL_opengl.h>
 #include <chrono>
 #include <time.h>
 #include <SDL_timer.h>
@@ -36,9 +36,15 @@
 
 
 #ifdef PINE_PLATFORM_WINDOWS
+
+#include <GL/glew.h>
 	#include <GL/GL.h>
+	#include <gl/GL.h>
+	#include <SDL_opengl.h>
+
 #endif // PINE_PLATFORM_WINDOWS
 #ifdef PINE_PLATFORM_MACOS
+#include <GL/glew.h>
 	#include <OpenGL/gl.h>
 #endif // PINE_PLATFORM_MACOS
 
@@ -108,8 +114,8 @@ namespace Pine {
 		static void		PineOpenSecondWindow(const char* m_windowName, unsigned int m_Width, unsigned int m_Height);
 		bool		PineInit(Game* game, uint8_t flags);
 		void		PineStart();
-		
-
+		void Render();
+		unsigned int localshader;
 		static PVector2f GetMousePos();//abstract out to another class
 		//std::vector<PObject*>objects;//temp, move back to private!!
 
@@ -133,6 +139,7 @@ namespace Pine {
 
 		static inline SDL_Window* m_Window = nullptr;
 		static inline SDL_Window* m_SecondWindow = nullptr;
+		static inline SDL_GLContext maincontext; /* Our opengl context handle */
 		Game* givenGame = nullptr;
 		SDL_Renderer* renderer;
 		SDL_Rect rect;

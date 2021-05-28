@@ -21,7 +21,8 @@ add_library(
 #PRIMITIVES -OUTDATED, SUBSEQUENTLY REMOVED
 
 #Rendering
-
+    Source/Pine/Rendering/Renderer.cpp
+    Source/Pine/Rendering/Shader.cpp
 #Headers
     ${MY_HEADERS}
 )

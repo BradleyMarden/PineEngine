@@ -19,6 +19,8 @@ namespace Pine
 
 		 s_ServerLogger = spdlog::stdout_color_mt("Server");
 		 s_ServerLogger->set_level(spdlog::level::trace);
+		 PINE_ENGINE_INFO("LOGGING INITIALIZED!");
+
 		 return true;
 
 	}

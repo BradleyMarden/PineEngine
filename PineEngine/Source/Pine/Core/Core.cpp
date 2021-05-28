@@ -63,15 +63,26 @@ namespace Pine {
 	
 	void Core::PineOpenWindow()
 	{
-		//Pine::Log::Init();
 
-		/*if (glewInit() != GLEW_OK)
-		{
-			PINE_ENGINE_ERROR("OPENGL NO INITIALIZED!");
-		}*/
+		#if DEBUG
+			Pine::Log::Init();
+		#endif // DEBUG
+			
 		//SDL_GL_CreateContext()
 		SDL_Init(SDL_INIT_VIDEO);
+		
 		m_Window = SDL_CreateWindow(PINE_WINDOW_NAME, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, PINE_WINDOW_WIDTH, PINE_WINDOW_HEIGHT, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
+		maincontext = SDL_GL_CreateContext(m_Window);
+		if (glewInit() != GLEW_OK)
+		{
+			PINE_ENGINE_ERROR("GLEW NOT INITIALIZED!");
+		}
+		else
+		{
+			PINE_ENGINE_INFO("GLEW INITIALIZED!");
+
+		}
+		
 		//glViewport(0, 0, m_Width, m_Height);
 
 	}void Core::PineOpenSecondWindow(const char* m_windowName, unsigned int m_Width, unsigned int m_Height)
@@ -84,8 +95,11 @@ namespace Pine {
 		}*/
 		//SDL_GL_CreateContext()
 		SDL_Init(SDL_INIT_VIDEO);
+		
+
 		m_SecondWindow = SDL_CreateWindow(m_windowName, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, m_Width, m_Height, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
 		//glViewport(0, 0, m_Width, m_Height);
+
 
 	}
 
@@ -144,8 +158,42 @@ namespace Pine {
 			givenGame->GameClose();//just for safety
 			return false;
 		}
-		
 
+		SourceShader localShaders = Pine::Shader::LoadShader("Assets/Shaders/default.PineShader");
+
+		localshader = Shader::CreateShader(localShaders.VertexSource, localShaders.FragmentSource);
+		glUseProgram(localshader);
+
+
+		float VertexArray[12] =
+		{
+			-0.5f, -0.5f,//0
+			0.5f, -0.5f,//1
+			0.5f,0.5f,//2
+
+			-0.5f,0.5f,//3
+
+
+		};
+		unsigned int indicies[6]
+		{
+		0,1,2,
+		2,3,0
+		
+		};
+		unsigned int buffer;
+		glGenBuffers(1, &buffer);
+		glBindBuffer(GL_ARRAY_BUFFER, buffer);
+		glBufferData(GL_ARRAY_BUFFER, 6 * 2 * sizeof(float), VertexArray,GL_STATIC_DRAW);
+
+
+		glEnableVertexAttribArray(0);
+		glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), 0);//vertex position
+
+		unsigned int ibo;
+		glGenBuffers(1, &ibo);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, 6 * sizeof(unsigned int), indicies, GL_STATIC_DRAW);
 		return true;
 	}
 	
@@ -166,6 +214,7 @@ namespace Pine {
 				break;
 			case Game::GameState::RUNNING:
 				HandleEvents();
+				Render();
 				ApplicationRunning();
 				//Draw(false);
 				break;
@@ -173,6 +222,8 @@ namespace Pine {
 				break;
 			case Game::GameState::CLOSING:
 				PINE_ENGINE_INFO("Application Closing");
+				glDeleteProgram(localshader);
+
 				closeGame = true;
 				givenGame->Terminate();
 				break;
@@ -196,6 +247,19 @@ namespace Pine {
 
 		//now finally render graphics
 		
+	}
+
+	void Core::Render()
+	{
+		glClear(GL_COLOR_BUFFER_BIT);
+		
+		//glDrawArrays(GL_TRIANGLES, 0, 6);
+		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
+
+		SDL_GL_SwapWindow(m_Window);
+
+
+	
 	}
 	void Core::Test()
 	{

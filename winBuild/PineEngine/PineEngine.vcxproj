@@ -91,7 +91,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;PINE_PLATFORM_WINDOWS;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>DEBUG;WIN32;_WINDOWS;PINE_PLATFORM_WINDOWS;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
@@ -276,6 +276,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging\Log.cpp" />
     <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths\PMaths.cpp" />
     <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking\Networking.cpp" />
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Rendering\Renderer.cpp" />
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Rendering\Shader.cpp" />
     <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine.h" />
     <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core\Core.h" />
     <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core\Game.h" />
@@ -285,6 +287,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths\PMaths.h" />
     <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking\Networking.h" />
     <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking\ServerNetworking.h" />
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Rendering\Renderer.h" />
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Rendering\Shader.h" />
     <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\PineServer.h" />
   </ItemGroup>
   <ItemGroup>

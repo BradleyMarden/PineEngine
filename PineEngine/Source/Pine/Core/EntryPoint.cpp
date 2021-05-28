@@ -10,9 +10,11 @@ int main(int argc, const char* argv[])
 {
     Pine::Core* App = new Pine::Core();
 	auto game = Pine::CreateGame();
-
-    // Pine::Core::PineOpenWindow("Game", 600, 600);
-     Pine::Core::PineOpenWindow();
+    if (glewInit() != GLEW_OK)
+    {
+        std::cout << "OPENGL NOt" << std::endl;
+    }
+    Pine::Core::PineOpenWindow();
     
     if (!App->Pine::Core::PineInit(game, NULL))
     {
