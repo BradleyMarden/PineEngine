@@ -3,6 +3,9 @@
 #include <Pine.h>
 //#ifdef PINE_PLATFORM_WINDOWS
 
+//UNDEFINE FOR RELSEASE
+#define DEBUG
+
 extern Pine::Game* Pine::CreateGame();
 
 

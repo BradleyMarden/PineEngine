@@ -28,6 +28,27 @@
     <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Rendering\Shader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Vendor\imgui1.83\imgui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Vendor\imgui1.83\imgui_demo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Vendor\imgui1.83\imgui_draw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Vendor\imgui1.83\imgui_impl_opengl3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Vendor\imgui1.83\imgui_impl_sdl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Vendor\imgui1.83\imgui_tables.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Vendor\imgui1.83\imgui_widgets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine.h">

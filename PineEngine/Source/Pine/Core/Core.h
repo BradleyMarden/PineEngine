@@ -30,6 +30,9 @@
 #include <SDL_timer.h>
 #include "../Maths/PMaths.h" 
 #include "Input.h"
+#include <imgui.h>
+#include <imgui_impl_opengl3.h>
+#include <imgui_impl_sdl.h>
 #define SDL_MAIN_HANDLED
 #undef main
 
@@ -115,6 +118,7 @@ namespace Pine {
 		bool		PineInit(Game* game, uint8_t flags);
 		void		PineStart();
 		void Render();
+		void RenderUI();
 		unsigned int localshader;
 		static PVector2f GetMousePos();//abstract out to another class
 		//std::vector<PObject*>objects;//temp, move back to private!!
@@ -139,7 +143,7 @@ namespace Pine {
 
 		static inline SDL_Window* m_Window = nullptr;
 		static inline SDL_Window* m_SecondWindow = nullptr;
-		static inline SDL_GLContext maincontext; /* Our opengl context handle */
+		static inline SDL_GLContext m_Context; /* Our opengl context handle */
 		Game* givenGame = nullptr;
 		SDL_Renderer* renderer;
 		SDL_Rect rect;
@@ -147,12 +151,18 @@ namespace Pine {
 		void HandleEvents();
 		void ApplicationRunning();
 		void Draw(bool firstDraw);//Deprecated
-
+			// Our state
+		bool show_demo_window = true;
+		bool show_another_window = false;
+		ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
+		const char* glsl_version = "#version 130";
 		//GameObjects objects;//Deprecated
 		const int fps = 60;
 		const int frameDelay = 1000 / fps;// max time between frames
 		Uint32 frameStart;
 		int frameTime;
+
+		bool limitFPS = true;
 
 
 	};

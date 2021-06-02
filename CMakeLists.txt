@@ -131,7 +131,16 @@ include_directories(
 # ------- Link based on Platform ---- #
 
 INCLUDE_DIRECTORIES(${SDL2_INCLUDE_DIR})
-TARGET_LINK_LIBRARIES(Game PineEngine ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARY} ${SDL2TTF_LIBRARY} ${GLFW_LIBRARY} ${GLEW_LIBRARY} ${SDL2Mixer_LIBRARY})
+TARGET_LINK_LIBRARIES(
+    Game 
+    PineEngine
+    ${SDL2_LIBRARY}
+    ${SDL2_IMAGE_LIBRARY}
+    ${SDL2TTF_LIBRARY}
+    ${GLFW_LIBRARY}
+    ${GLEW_LIBRARY}
+    ${SDL2Mixer_LIBRARY}
+)
 
 
 if(APPLE)

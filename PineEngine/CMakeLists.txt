@@ -23,6 +23,17 @@ add_library(
 #Rendering
     Source/Pine/Rendering/Renderer.cpp
     Source/Pine/Rendering/Shader.cpp
+
+#imgui
+Vendor/imgui1.83/imgui.cpp
+Vendor/imgui1.83/imgui_demo.cpp
+Vendor/imgui1.83/imgui_draw.cpp
+Vendor/imgui1.83/imgui_impl_opengl3.cpp
+Vendor/imgui1.83/imgui_impl_sdl.cpp
+Vendor/imgui1.83/imgui_tables.cpp
+Vendor/imgui1.83/imgui_widgets.cpp
+
+
 #Headers
     ${MY_HEADERS}
 )
@@ -35,6 +46,8 @@ target_include_directories(PineEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Source
 #VENDOR INCLUDES
 target_include_directories(PineEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Vendor/spdlog/include")
 target_include_directories(PineEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Vendor/glew-2.1.0/include")
+target_include_directories(PineEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Vendor/imgui1.83")
+
 target_include_directories(PineEngine PUBLIC ${GLFW_INCLUDE_DIR})
 target_include_directories(PineEngine PUBLIC ${SDL2_INCLUDE_DIR})
 target_include_directories(PineEngine PUBLIC ${SDL2_IMAGE_INCLUDE_DIR})

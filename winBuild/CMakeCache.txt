@@ -410,7 +410,7 @@ OPENGL_glu_LIBRARY-ADVANCED:INTERNAL=1
 SDL2Mixer_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: SDL2Mixer_LIBRARY
 SDL2Mixer_LIBRARY-ADVANCED:INTERNAL=1
-SDL2TTF_LIBRARY_TEMP:INTERNAL=D:/Game Engine/PineEngine/PineEngine/Vendor/SDL2_ttf-2.0.15/lib/x64/SDL2_ttf.lib;D:/Game Engine/PineEngine/PineEngine/Vendor/SDL2_ttf-2.0.15/lib/x64/SDL2_ttf.lib
+SDL2TTF_LIBRARY_TEMP:INTERNAL=D:/Game Engine/PineEngine/PineEngine/Vendor/SDL2_ttf-2.0.15/lib/x64/SDL2_ttf.lib;D:/Game Engine/PineEngine/PineEngine/Vendor/SDL2_ttf-2.0.15/lib/x64/SDL2_ttf.lib;D:/Game Engine/PineEngine/PineEngine/Vendor/SDL2_ttf-2.0.15/lib/x64/SDL2_ttf.lib;D:/Game Engine/PineEngine/PineEngine/Vendor/SDL2_ttf-2.0.15/lib/x64/SDL2_ttf.lib
 SDL2_IMAGE_LIBRARY_TEMP:INTERNAL=D:/Game Engine/PineEngine/PineEngine/Vendor/SDL2_image-2.0.5/lib/x64/SDL2_image.lib
-SDL2_LIBRARY_TEMP:INTERNAL=D:/Game Engine/PineEngine/PineEngine/Vendor/SDL2-2.0.14/lib/x64/SDL2main.lib;D:/Game Engine/PineEngine/PineEngine/Vendor/SDL2-2.0.14/lib/x64/SDL2main.lib;D:/Game Engine/PineEngine/PineEngine/Vendor/SDL2-2.0.14/lib/x64/SDL2.lib
+SDL2_LIBRARY_TEMP:INTERNAL=D:/Game Engine/PineEngine/PineEngine/Vendor/SDL2-2.0.14/lib/x64/SDL2main.lib;D:/Game Engine/PineEngine/PineEngine/Vendor/SDL2-2.0.14/lib/x64/SDL2main.lib;D:/Game Engine/PineEngine/PineEngine/Vendor/SDL2-2.0.14/lib/x64/SDL2main.lib;D:/Game Engine/PineEngine/PineEngine/Vendor/SDL2-2.0.14/lib/x64/SDL2main.lib;D:/Game Engine/PineEngine/PineEngine/Vendor/SDL2-2.0.14/lib/x64/SDL2main.lib;D:/Game Engine/PineEngine/PineEngine/Vendor/SDL2-2.0.14/lib/x64/SDL2main.lib;D:/Game Engine/PineEngine/PineEngine/Vendor/SDL2-2.0.14/lib/x64/SDL2.lib
 

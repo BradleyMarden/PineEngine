@@ -72,7 +72,7 @@ namespace Pine {
 		SDL_Init(SDL_INIT_VIDEO);
 		
 		m_Window = SDL_CreateWindow(PINE_WINDOW_NAME, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, PINE_WINDOW_WIDTH, PINE_WINDOW_HEIGHT, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
-		maincontext = SDL_GL_CreateContext(m_Window);
+		m_Context = SDL_GL_CreateContext(m_Window);
 		if (glewInit() != GLEW_OK)
 		{
 			PINE_ENGINE_ERROR("GLEW NOT INITIALIZED!");
@@ -194,6 +194,31 @@ namespace Pine {
 		glGenBuffers(1, &ibo);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, 6 * sizeof(unsigned int), indicies, GL_STATIC_DRAW);
+
+		int lID = glGetUniformLocation(localshader, "u_Color");
+		
+		//lID will return -1 if the uniform is not used or set. this is a feature of opengl to cleanup.
+		if (lID != -1)
+		{
+			glUniform4f(lID, 1.0f, 0.5f, 0.2f, 1.0f);
+
+		}
+		else
+		{
+			
+			PINE_ENGINE_WARN("Could not find uniform");
+		}
+
+
+		//Setup IMGUI
+		IMGUI_CHECKVERSION();
+		ImGui::CreateContext();
+		ImGuiIO& io = ImGui::GetIO(); (void)io;
+		//ImGui::StyleColorsDark();
+		ImGui_ImplSDL2_InitForOpenGL(m_Window, m_Context);
+		ImGui_ImplOpenGL3_Init(glsl_version);
+
+
 		return true;
 	}
 	
@@ -231,7 +256,8 @@ namespace Pine {
 
 			//limit FPS
 			frameTime = SDL_GetTicks() - frameStart;
-			if (frameDelay > frameTime)
+
+			if (frameDelay > frameTime && !limitFPS)
 			{
 				SDL_Delay(frameDelay - frameTime);
 			}
@@ -252,14 +278,62 @@ namespace Pine {
 	void Core::Render()
 	{
 		glClear(GL_COLOR_BUFFER_BIT);
-		
 		//glDrawArrays(GL_TRIANGLES, 0, 6);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
-
+		RenderUI();
 		SDL_GL_SwapWindow(m_Window);
+	}
+
+	void Core::RenderUI() 
+	{
+		
+		// Start the Dear ImGui frame
+		ImGui_ImplOpenGL3_NewFrame();
+		ImGui_ImplSDL2_NewFrame(m_Window);
+		ImGui::NewFrame();
+
+		
+
+		static float f = 0.0f;
+		static int counter = 0;
+
+		ImGui::Begin("Hello, world!");                          // Create a window called "Hello, world!" and append into it.
+
+		ImGui::Text("This is some useful text.");               // Display some text (you can use a format strings too)
+		ImGui::Checkbox("Demo Window", &show_demo_window);      // Edit bools storing our window open/close state
+		ImGui::Checkbox("Another Window", &show_another_window);
+
+		ImGui::SliderFloat("float", &f, 0.0f, 1.0f);            // Edit 1 float using a slider from 0.0f to 1.0f
+		ImGui::ColorEdit3("clear color", (float*)&clear_color); // Edit 3 floats representing a color
+
+		if (ImGui::Button("Button"))                            // Buttons return true when clicked (most widgets return true when edited/activated)
+			counter++;
 
 
-	
+		ImGui::SameLine();
+		ImGui::Text("counter = %d", counter);
+
+		if (ImGui::Button("Limit FPS to 60"))
+			limitFPS = !limitFPS;
+		ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+		ImGui::End();
+
+
+		// 3. Show another simple window.
+		if (show_another_window)
+		{
+			ImGui::Begin("Another Window", &show_another_window);   // Pass a pointer to our bool variable (the window will have a closing button that will clear the bool when clicked)
+			ImGui::Text("Hello from another window!");
+			if (ImGui::Button("Close Me"))
+				show_another_window = false;
+			ImGui::End();
+		}
+
+		if (show_demo_window)
+			ImGui::ShowDemoWindow(&show_demo_window);
+
+		ImGui::Render();
+		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 	}
 	void Core::Test()
 	{
@@ -336,7 +410,13 @@ namespace Pine {
 	{
 
 		//SDL_Delay(3000);
+		//Shutdown
+		ImGui_ImplOpenGL3_Shutdown();
+		ImGui_ImplSDL2_Shutdown();
+		ImGui::DestroyContext();
+
 		SDL_DestroyRenderer(renderer);
+		SDL_GL_DeleteContext(m_Context);
 		SDL_DestroyWindow(m_Window);
 		SDL_DestroyWindow(m_SecondWindow);
 		SDL_Quit();
