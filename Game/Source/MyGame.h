@@ -2,7 +2,6 @@
 #include <Pine.h>
 #include <iostream>
 using namespace Pine;
-//#undef main
 class myGame : public Pine::Game
 {
 public:
@@ -10,20 +9,20 @@ public:
     ~myGame();
 
     Pine::Core *app;
-    virtual void Start();
-virtual void Initialize();
-virtual void Update();
-virtual void Terminate();
-virtual void OnMouseClick();
+    virtual void Start()override;
+virtual void Initialize() override;
+virtual void Update() override;
+virtual void Terminate() override;
+virtual void OnMouseClick() override;
 Pine::SourceShader shaders;
+
 
 };
 
 Pine::Game* Pine::CreateGame()
 {
-    //std::cout << "Game Created" << std::endl;
     Game* game = new myGame();
-    game->SetWindowParameters(600, 600, "Brood Test Window");
+    game->SetWindowParameters(500, 500, "Brood Test Window");
     return game;
     
 }

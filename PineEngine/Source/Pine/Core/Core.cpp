@@ -11,108 +11,31 @@ namespace Pine {
 	}
 
 
-	Core::Core(const char* m_windowName, unsigned int m_Width, unsigned int m_Height)
-	{
-		/*if (Pine::Log::Init() == true)
-		{
-
-			if (glewInit() != GLEW_OK)
-			{
-				PINE_ENGINE_ERROR("OPENGL NO INITIALIZED!");
-				//std::cout << "herer";
-			}
-			else
-			{
-				PINE_ENGINE_INFO("OPENGL INITIALIZED!");
-
-			}
-		}*/
-		//std::cout << "herer";
-
-		
-		//SDL_GL_CreateContext()
-		SDL_Init(SDL_INIT_VIDEO);
-		
-		m_Window = SDL_CreateWindow(m_windowName, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, m_Width, m_Height, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
-		if (m_Window == NULL)
-		{
-			auto a = SDL_GetError();
-			PINE_ENGINE_ERROR("COULD NOT CREATE WINDOW {a}", a);
-		}
-
-		//glViewport(0, 0, m_Width, m_Height);
-		SDL_Surface* screenSurface = NULL;
-		//Get window surface
-		screenSurface = SDL_GetWindowSurface(m_Window);
-
-		SDL_UpdateWindowSurface(m_Window);
-		//Wait two seconds
-		SDL_Delay(2000);
-		if (glewInit() != GLEW_OK)
-		{
-			PINE_ENGINE_ERROR("OPENGL NO INITIALIZED!");
-		}
-		else
-		{
-			PINE_ENGINE_INFO("OPENGL INITIALIZED!");
-
-		}
-		//glewInit();
-	}
+	
 
 	
 	void Core::PineOpenWindow()
 	{
 
-		#if DEBUG
+		#if DEBUG //initialises logging to the console
 			Pine::Log::Init();
 		#endif // DEBUG
 			
-		//SDL_GL_CreateContext()
 		SDL_Init(SDL_INIT_VIDEO);
-		
 		m_Window = SDL_CreateWindow(PINE_WINDOW_NAME, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, PINE_WINDOW_WIDTH, PINE_WINDOW_HEIGHT, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
 		m_Context = SDL_GL_CreateContext(m_Window);
-		if (glewInit() != GLEW_OK)
-		{
-			PINE_ENGINE_ERROR("GLEW NOT INITIALIZED!");
-		}
-		else
-		{
-			PINE_ENGINE_INFO("GLEW INITIALIZED!");
 
-		}
-		
-		//glViewport(0, 0, m_Width, m_Height);
-
-	}void Core::PineOpenSecondWindow(const char* m_windowName, unsigned int m_Width, unsigned int m_Height)
-	{
-		//Pine::Log::Init();
-
-		/*if (glewInit() != GLEW_OK)
-		{
-			PINE_ENGINE_ERROR("OPENGL NO INITIALIZED!");
-		}*/
-		//SDL_GL_CreateContext()
-		SDL_Init(SDL_INIT_VIDEO);
-		
-
-		m_SecondWindow = SDL_CreateWindow(m_windowName, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, m_Width, m_Height, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
-		//glViewport(0, 0, m_Width, m_Height);
-
+		//abort if glew not init. 
+		assert(!glewInit());
 
 	}
 
 	bool Core::PineInit(Game* game, uint8_t flags)
 	{
-		if (!game)
-		{
+		if (game == nullptr)
 			return false;
-		}
-		else
-		{
-			givenGame = game;
-		}
+			
+		givenGame = game;
 		
 		PINE_ENGINE_INFO("Welcome To Pine Engine!");
 		PINE_ENGINE_INFO("Created By Bradley Marden : Licensed under Apache License");
@@ -242,6 +165,8 @@ namespace Pine {
 				Render();
 				ApplicationRunning();
 				//Draw(false);
+				SDL_GetWindowSize(m_Window, &Game::m_WindowWidth, &Game::m_WindowHeight);
+
 				break;
 			case Game::GameState::GAMEOVER:
 				break;
@@ -290,57 +215,30 @@ namespace Pine {
 		// Start the Dear ImGui frame
 		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplSDL2_NewFrame(m_Window);
+		//IMGUI CREATE FRAME
 		ImGui::NewFrame();
+		ImGui::SetNextWindowPos(ImVec2(0, 0), ImGuiCond_Always);
+		ImGui::SetNextWindowSize(PINE_WINDOW_WIDTH <= 1000 ? ImVec2(PINE_WINDOW_WIDTH / 3, PINE_WINDOW_HEIGHT / 3) : ImVec2(350,150), ImGuiCond_Always);
 
 		
 
 		static float f = 0.0f;
-		static int counter = 0;
-
-		ImGui::Begin("Hello, world!");                          // Create a window called "Hello, world!" and append into it.
-
-		ImGui::Text("This is some useful text.");               // Display some text (you can use a format strings too)
-		ImGui::Checkbox("Demo Window", &show_demo_window);      // Edit bools storing our window open/close state
-		ImGui::Checkbox("Another Window", &show_another_window);
-
-		ImGui::SliderFloat("float", &f, 0.0f, 1.0f);            // Edit 1 float using a slider from 0.0f to 1.0f
-		ImGui::ColorEdit3("clear color", (float*)&clear_color); // Edit 3 floats representing a color
-
-		if (ImGui::Button("Button"))                            // Buttons return true when clicked (most widgets return true when edited/activated)
-			counter++;
-
-
-		ImGui::SameLine();
-		ImGui::Text("counter = %d", counter);
+		//IMGUI START
+		ImGui::Begin("PineEngine");
+		ImGui::Text("Window Width: %i", PINE_WINDOW_WIDTH );
+		ImGui::Text("Window Height: %i", PINE_WINDOW_HEIGHT);
 
 		if (ImGui::Button("Limit FPS to 60"))
 			limitFPS = !limitFPS;
+
 		ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
 		ImGui::End();
+		//IMGUI END
 
-
-		// 3. Show another simple window.
-		if (show_another_window)
-		{
-			ImGui::Begin("Another Window", &show_another_window);   // Pass a pointer to our bool variable (the window will have a closing button that will clear the bool when clicked)
-			ImGui::Text("Hello from another window!");
-			if (ImGui::Button("Close Me"))
-				show_another_window = false;
-			ImGui::End();
-		}
-
-		if (show_demo_window)
-			ImGui::ShowDemoWindow(&show_demo_window);
-
+		//IMGUI RENDER
 		ImGui::Render();
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 	}
-	void Core::Test()
-	{
-		PINE_ENGINE_INFO("REDRAWING...");
-		Draw(false);
-	}
-
 	
 	void Core::Draw(bool firstDraw)
 	{
@@ -411,11 +309,13 @@ namespace Pine {
 
 		//SDL_Delay(3000);
 		//Shutdown
-		ImGui_ImplOpenGL3_Shutdown();
-		ImGui_ImplSDL2_Shutdown();
-		ImGui::DestroyContext();
+		if (givenGame != nullptr) {
+			ImGui_ImplOpenGL3_Shutdown();
+			ImGui_ImplSDL2_Shutdown();
+			ImGui::DestroyContext();
+			SDL_DestroyRenderer(renderer);
+		}
 
-		SDL_DestroyRenderer(renderer);
 		SDL_GL_DeleteContext(m_Context);
 		SDL_DestroyWindow(m_Window);
 		SDL_DestroyWindow(m_SecondWindow);

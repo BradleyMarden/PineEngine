@@ -11,7 +11,18 @@ INCLUDE ALL HEADERS HERE THAT THE USER WILL NEED
 #include "Pine/Core/Input.h"
 #include "Pine/Rendering/Shader.h"
 
-//#include "EntryPoint.h"
+#ifdef DEBUG
+	#define PINE_ASSERT(message, functionReturn) PineAssert(message, functionReturn)
+#endif // DEBUG
+
+//Custom Assert Macro
+inline void PineAssert(const char* p_Message, bool functionReturn)
+{
+	if (!functionReturn) {
+		std::cerr << "Error:\t" << p_Message << "\n";
+		abort();
+	}
+}
 
 
 

@@ -28,9 +28,7 @@ void myGame::Update(){
     {
 
         std::cout << shaders.FragmentSource << std::endl;
-
     }
-
 }
 void myGame::OnMouseClick(){}
 void myGame::Terminate(){}

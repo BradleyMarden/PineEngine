@@ -35,17 +35,20 @@ namespace Pine {
 		virtual void Terminate() {};
 		virtual void OnMouseClick() {};
 
-		inline void SetWindowParameters(int p_Width, int p_Height, const char* p_WindowName) { m_WindowWidth = p_Width; m_WindowHeight = p_Height; m_WindowName = p_WindowName; }
+		//NTS if not set, send event to remind developer.
+		inline void SetWindowParameters(int p_Width, int p_Height, const char* p_WindowName) { m_WindowWidth = p_Width; m_WindowHeight = p_Height; m_WindowName = p_WindowName; g_ParametersSet = true; }
 		static int GetWindowWidth() { return m_WindowWidth; }
 		static int GetWindowHeight() { return m_WindowHeight; }
 		static const char& GetWindowName() { return *m_WindowName; }
-	
+		static inline int m_WindowWidth;
+		static inline int m_WindowHeight;
+		static inline bool g_ParametersSet;
+		static inline const char* m_WindowName;
+
 	private:
 
 		GameState st;
-		static inline int m_WindowWidth;
-		static inline int m_WindowHeight;
-		static inline const char* m_WindowName; 
+		
 
 
 	protected:
