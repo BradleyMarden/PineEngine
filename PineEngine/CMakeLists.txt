@@ -23,7 +23,12 @@ add_library(
 #Rendering
     Source/Pine/Rendering/Renderer.cpp
     Source/Pine/Rendering/Shader.cpp
+    Source/Pine/Rendering/LayerManager.cpp
+    Source/Pine/Rendering/Layer.cpp
 
+#Events
+    Source/Pine/Events/EventSystem.cpp
+    Source/Pine/Events/Event.cpp
 #imgui
 Vendor/imgui1.83/imgui.cpp
 Vendor/imgui1.83/imgui_demo.cpp
@@ -42,6 +47,8 @@ target_include_directories(PineEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Source
 target_include_directories(PineEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Source/Pine/Logging")
 target_include_directories(PineEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Source/Pine/Maths")
 target_include_directories(PineEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Source/Pine/Networking")
+target_include_directories(PineEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Source/Pine/Rendering")
+target_include_directories(PineEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Source/Pine/Events")
 
 #VENDOR INCLUDES
 target_include_directories(PineEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Vendor/spdlog/include")
@@ -70,10 +77,13 @@ elseif(${DEBUG_OR_RELEASE} STREQUAL "Debug")
     #Set(CMAKE_BUILD_TYPE ${DEBUG_OR_RELEASE})
     if(APPLE)
         add_compile_definitions(PINE_PLATFORM_MACOS)
+        add_compile_definitions(DEBUG)
 
     else(WIN32)
 
         add_compile_definitions(PINE_PLATFORM_WINDOWS)
+        add_compile_definitions(DEBUG)
+
     endif()
 
 else(${DEBUG_OR_RELEASE} STREQUAL "Release")

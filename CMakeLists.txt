@@ -106,6 +106,7 @@ include_directories(
     PineEngine/Source/Pine/Maths
     PineEngine/Source/Pine/Networking
     PineEngine/Source/Pine/Rendering
+    PineEngine/Source/Pine/Events
     PineEngine/Vendor/spdlog/include
     PineEngine/Vendor/glew-2.1.0/include
     ${SDL2_INCLUDE_DIR}
@@ -162,6 +163,8 @@ elseif(WIN32)
     Message( STATUS "FINDING wsock32.lib ws2_32.lib and winmm.lib" )
 
     target_link_libraries(Game wsock32 ws2_32  winmm opengl32)
+    #sets game as startup project
+    set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT Game)
 endif()
 
 # ------- End of Inc and Link  -------- #

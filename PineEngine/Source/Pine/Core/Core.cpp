@@ -16,11 +16,11 @@ namespace Pine {
 	
 	void Core::PineOpenWindow()
 	{
-
 		#if DEBUG //initialises logging to the console
 			Pine::Log::Init();
 		#endif // DEBUG
-			
+		m_start = std::chrono::steady_clock::now();
+
 		SDL_Init(SDL_INIT_VIDEO);
 		m_Window = SDL_CreateWindow(PINE_WINDOW_NAME, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, PINE_WINDOW_WIDTH, PINE_WINDOW_HEIGHT, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
 		m_Context = SDL_GL_CreateContext(m_Window);
@@ -40,33 +40,20 @@ namespace Pine {
 		PINE_ENGINE_INFO("Welcome To Pine Engine!");
 		PINE_ENGINE_INFO("Created By Bradley Marden : Licensed under Apache License");
 		PINE_ENGINE_INFO("Refer to Documentation for Engine Use Cases");
-
 		PINE_ENGINE_INFO("Application Starting...");
+
 		
 		if (flags & Pine_Networking)
 		{
-			PINE_ENGINE_ERROR("RUNNING NETWORKING");
-			if (!Pine::Networking::PineNetworkingInit())
-			{
-				PINE_ENGINE_ERROR("Error Loading NETWORKING... closing");
-				givenGame->GameOver();
-			}
+			PINE_ASSERT("Error Initializing Networking.", Pine::Networking::PineNetworkingInit());
 		}
 		if (flags & Pine_Server)
 		{
-			PINE_ENGINE_ERROR("RUNNING SERVER");
-			if (!Pine::Networking::PineNetworkingInit())
-			{
-				PINE_ENGINE_ERROR("Error Loading NETWORKING... closing");
-				givenGame->GameOver();
-			}
-			if (Pine::Networking::PineServerCreate(2302,4) !=1)
-			{
-				PINE_ENGINE_ERROR("Error Creating Server... closing");
-				givenGame->GameOver();
-			}
+			//PINE_ASSERT("Error Initializing Networking.", Pine::Networking::PineNetworkingInit());
+			PINE_ASSERT("Error Creating Server.", Pine::Networking::PineServerCreate(2302, 4));
 		}
 		
+		//done
 		renderer = SDL_CreateRenderer(m_Window, -1, 0);
 		SDL_SetRenderDrawColor(renderer, 21, 27, 31, 255);
 		SDL_RenderClear(renderer);
@@ -82,10 +69,12 @@ namespace Pine {
 			return false;
 		}
 
+		//come back to
 		SourceShader localShaders = Pine::Shader::LoadShader("Assets/Shaders/default.PineShader");
 
 		localshader = Shader::CreateShader(localShaders.VertexSource, localShaders.FragmentSource);
 		glUseProgram(localshader);
+
 
 
 		float VertexArray[12] =
@@ -131,7 +120,7 @@ namespace Pine {
 			
 			PINE_ENGINE_WARN("Could not find uniform");
 		}
-
+		
 
 		//Setup IMGUI
 		IMGUI_CHECKVERSION();
@@ -152,15 +141,20 @@ namespace Pine {
 		givenGame->Start();
 		SDL_Event event;
 		bool closeGame = false;
-		
 		while (!closeGame)
 		{
 			frameStart = SDL_GetTicks();
+			auto end = std::chrono::steady_clock::now();
+
 			switch (givenGame->GetGameState())
 			{
+
 			default:
 				break;
 			case Game::GameState::RUNNING:
+				//std::time_t result = std::time(nullptr);
+				
+				cTime = std::chrono::duration_cast<std::chrono::seconds>(end - m_start).count();
 				HandleEvents();
 				Render();
 				ApplicationRunning();
@@ -185,6 +179,7 @@ namespace Pine {
 			if (frameDelay > frameTime && !limitFPS)
 			{
 				SDL_Delay(frameDelay - frameTime);
+				PINE_ENGINE_INFO(frameTime/ (frameDelay - frameTime));
 			}
 		}
 	}
@@ -202,6 +197,21 @@ namespace Pine {
 
 	void Core::Render()
 	{
+		//pass time to shader
+		/*int lID = glGetUniformLocation(localshader, "u_Time");
+
+		//lID will return -1 if the uniform is not used or set. this is a feature of opengl to cleanup.
+		if (lID != -1)
+		{
+			glUniform1f(lID, ImGui::GetIO().DeltaTime);
+
+		}
+		else
+		{
+
+			PINE_ENGINE_WARN("Could not find uniform");
+		}*/
+
 		glClear(GL_COLOR_BUFFER_BIT);
 		//glDrawArrays(GL_TRIANGLES, 0, 6);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);

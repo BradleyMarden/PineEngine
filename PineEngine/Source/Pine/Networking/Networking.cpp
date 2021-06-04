@@ -1,5 +1,5 @@
 #include "Networking.h"
-
+//NTA NEED TO GO THROUGH AND CHANGE RETURN TYPES FROM EXIT_... TO TRUE/FALSE
 namespace Pine{
 	 ENetHost* Networking::host;
 	 ENetPeer* Networking::peer;
@@ -44,11 +44,11 @@ namespace Pine{
 		if (enet_initialize() != 0)
 		{
 			PINE_SERVER_CRITICAL("Failed Initializing Network Functionality... Closing");
-			return EXIT_FAILURE;
+			return false;
 		}
 		atexit(enet_deinitialize);
 		PINE_SERVER_INFO("Initialized Network Functionality!");
-		return EXIT_SUCCESS;
+		return true;
 
 	}
 
@@ -162,13 +162,13 @@ namespace Pine{
 		if (host == NULL)
 		{
 			PINE_SERVER_ERROR("Unable to create a host");
-			return EXIT_FAILURE;
+			return false;
 		}
 	
 		PINE_SERVER_INFO("Created host with {} slots, on port {}", maxConnections, port);
 		isHosting = true;
 		isConnected = true;
-		return EXIT_SUCCESS;
+		return true;
 	}
 	
 
