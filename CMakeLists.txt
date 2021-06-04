@@ -149,7 +149,7 @@ if(APPLE)
 
     Message( STATUS "FINDING libenet.a" )
     
-    TARGET_LINK_LIBRARIES(Game ${CMAKE_SOURCE_DIR}/PineEngine/Vendor/enet-1.3.16/lib/libenet.a)
+    TARGET_LINK_LIBRARIES(Game ${CMAKE_SOURCE_DIR}/PineEngine/Vendor/enet-1.3.16/lib/libenet.a "-framework OpenGL")
 
 elseif(WIN32)
 

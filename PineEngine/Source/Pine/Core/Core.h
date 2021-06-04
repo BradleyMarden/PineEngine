@@ -50,6 +50,7 @@
 #ifdef PINE_PLATFORM_MACOS
 #include <GL/glew.h>
 	#include <OpenGL/gl.h>
+#include <SDL_opengl.h>
 #endif // PINE_PLATFORM_MACOS
 
 
@@ -105,7 +106,18 @@
 
 
 
+#ifdef DEBUG
+    #define PINE_ASSERT(message, functionReturn) PineAssert(message, functionReturn)
+#endif // DEBUG
 
+//Custom Assert Macro
+inline void PineAssert(const char* p_Message, bool functionReturn)
+{
+    if (!functionReturn) {
+        std::cerr << "Error:\t" << p_Message << "\n";
+        abort();
+    }
+}
 
 //#include "ECS/PineECS.h"
 namespace Pine {
@@ -138,7 +150,7 @@ namespace Pine {
 		void HandleEvents();
 		void ApplicationRunning();
 		void Draw(bool firstDraw);//Deprecated
-		const char* glsl_version = "#version 130";
+		const char* glsl_version = "#version 1.20";
 		//GameObjects objects;//Deprecated
 		const int fps = 60;
 		const int frameDelay = 1000 / fps;// max time between frames

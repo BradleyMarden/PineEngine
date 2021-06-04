@@ -21,7 +21,7 @@ int main(int argc, const char* argv[])
 
     //Open the window, currently can only be used to open one window. TBA: open multiple windows
     Pine::Core::PineOpenWindow();
-    
+    PINE_ENGINE_INFO(glGetString(GL_SHADING_LANGUAGE_VERSION));
     //Initilialise application
     PINE_ASSERT("PineEngine could not be initialised. Please check that you are passing a Pine::Game child object", App->Pine::Core::PineInit(game, NULL));
 

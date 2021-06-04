@@ -135,11 +135,11 @@ namespace Pine {
 
 		//Setup IMGUI
 		IMGUI_CHECKVERSION();
-		ImGui::CreateContext();
-		ImGuiIO& io = ImGui::GetIO(); (void)io;
+		//ImGui::CreateContext();
+		//ImGuiIO& io = ImGui::GetIO(); (void)io;
 		//ImGui::StyleColorsDark();
-		ImGui_ImplSDL2_InitForOpenGL(m_Window, m_Context);
-		ImGui_ImplOpenGL3_Init(glsl_version);
+		//ImGui_ImplSDL2_InitForOpenGL(m_Window, m_Context);
+		//ImGui_ImplOpenGL3_Init(glsl_version);
 
 
 		return true;
@@ -205,7 +205,7 @@ namespace Pine {
 		glClear(GL_COLOR_BUFFER_BIT);
 		//glDrawArrays(GL_TRIANGLES, 0, 6);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
-		RenderUI();
+		//RenderUI();
 		SDL_GL_SwapWindow(m_Window);
 	}
 
