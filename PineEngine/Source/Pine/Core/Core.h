@@ -34,6 +34,8 @@
 #include <imgui_impl_opengl3.h>
 #include <imgui_impl_sdl.h>
 #include <assert.h>
+#include <ctime>
+
 #define SDL_MAIN_HANDLED
 #undef main
 
@@ -101,7 +103,18 @@
 #include "../Maths/PMaths.h" 
 #include "Input.h"*/
 
+#ifdef DEBUG
+#define PINE_ASSERT(message, functionReturn) PineAssert(message, functionReturn)
+#endif // DEBUG
 
+//Custom Assert Macro
+inline void PineAssert(const char* p_Message, bool functionReturn)
+{
+	if (!functionReturn) {
+		std::cerr << "Error:\t" << p_Message << "\n";
+		abort();
+	}
+}
 
 
 
@@ -118,14 +131,14 @@ namespace Pine {
 		Core();
 		~Core();
 		void			PineCloseWindow();
-		static void		PineOpenWindow();
+		void		PineOpenWindow();
 		bool			PineInit(Game* game, uint8_t flags);
 		void			PineStart();
 		void			Render();
 		void			RenderUI();
 		static PVector2f GetMousePos();//abstract out to another class
 		SDL_Renderer* GetRenderer() { return  renderer; }//Move renderer to Renderer class
-
+		 std::chrono::steady_clock::time_point m_start;
 		private:
 
 		static inline SDL_Window* m_Window = nullptr;
@@ -145,6 +158,7 @@ namespace Pine {
 		Uint32 frameStart;
 		int frameTime;
 		unsigned int localshader;
+		int cTime = 0;
 
 		bool limitFPS = true;
 

@@ -15,7 +15,9 @@ virtual void Update() override;
 virtual void Terminate() override;
 virtual void OnMouseClick() override;
 Pine::SourceShader shaders;
+Pine::EventSystem* es;
 
+void eventTrigger();
 
 };
 
