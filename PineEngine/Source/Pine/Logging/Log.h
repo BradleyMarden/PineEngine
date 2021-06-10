@@ -1,6 +1,6 @@
 #pragma once
 #include <memory>//for shared pointers
-#include "../Core/Core.h"
+//#include "../Core/Core.h"
 //#include "../Core/PineAPI.h"
 #include "spdlog/spdlog.h"
 #include "spdlog/sinks/stdout_color_sinks.h"

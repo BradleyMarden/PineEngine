@@ -9,6 +9,7 @@ add_library(
     Source/Pine/Core/Game.cpp
     Source/Pine/Core/Input.cpp
     Source/Pine/Core/EntryPoint.cpp
+    Source/Pine/Core/window.cpp
 #ECS
     
 #LOGGING
@@ -29,6 +30,7 @@ add_library(
 #Events
     Source/Pine/Events/EventSystem.cpp
     Source/Pine/Events/Event.cpp
+    Source/Pine/Events/EventBinder.cpp
 #imgui
 Vendor/imgui1.83/imgui.cpp
 Vendor/imgui1.83/imgui_demo.cpp

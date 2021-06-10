@@ -273,6 +273,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core\Game.cpp" />
     <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core\Input.cpp" />
     <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core\EntryPoint.cpp" />
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core\window.cpp" />
     <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging\Log.cpp" />
     <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths\PMaths.cpp" />
     <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking\Networking.cpp" />
@@ -282,6 +283,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Rendering\Layer.cpp" />
     <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Events\EventSystem.cpp" />
     <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Events\Event.cpp" />
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Events\EventBinder.cpp" />
     <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Vendor\imgui1.83\imgui.cpp" />
     <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Vendor\imgui1.83\imgui_demo.cpp" />
     <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Vendor\imgui1.83\imgui_draw.cpp" />
@@ -294,7 +296,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core\Game.h" />
     <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core\Input.h" />
     <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core\PineAPI.h" />
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core\window.h" />
     <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Events\Event.h" />
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Events\EventBinder.h" />
     <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Events\EventSystem.h" />
     <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging\Log.h" />
     <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths\PMaths.h" />

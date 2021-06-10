@@ -1,12 +1,13 @@
 #pragma once
 #include <SDL.h>
-#include "Core.h"
+//#include "Core.h"
 #include "../Maths/PMaths.h"
+#include "Log.h"
 namespace Pine {
 	class Input {
 
 	public:
-		 enum MouseButtons { 
+		 enum  MouseButtons { 
 			DEFAULT,
 			LEFTSINGLECLICK,
 			LEFTDOUBLECLICK,
@@ -23,6 +24,11 @@ namespace Pine {
 
 		//static void MousePressed(int mouseButton);//0 for L, 2 for R, 3 For Middle
 		static void MousePressed(SDL_Event* mouseButton);//0 for L, 2 for R, 3 For Middle
+
+		//test function for event system.
+		static Input::MouseButtons Input::MouseDown(SDL_Event* e);
+
+
 		static bool OnMouseButtonUp(int mouseButton);
 		static bool CloseApplication();
 		static bool OnMouseButton(MouseButtons State);

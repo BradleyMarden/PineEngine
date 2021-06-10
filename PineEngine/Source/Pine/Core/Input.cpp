@@ -27,6 +27,27 @@ namespace Pine {
 		
 	}
 
+	Input::MouseButtons Input::MouseDown(SDL_Event* e) 
+	{
+		switch (e->button.button)
+		{
+		default:
+			break;
+		case SDL_BUTTON_RIGHT:
+			return RIGHTSINGLECLICK;
+			break;
+		case SDL_BUTTON_MIDDLE:
+			return MIDDLEMOUSECLICK;
+			break;
+		case SDL_BUTTON_LEFT://single slick
+			return LEFTSINGLECLICK;
+			break;
+		}
+	}
+
+
+
+
 	void Input::MouseReleased(SDL_Event* mouseButton)
 	{
 		switch (mouseButton->button.button)

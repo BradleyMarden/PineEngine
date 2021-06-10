@@ -20,7 +20,6 @@ namespace Pine {
 			Pine::Log::Init();
 		#endif // DEBUG
 		m_start = std::chrono::steady_clock::now();
-
 		SDL_Init(SDL_INIT_VIDEO);
 		m_Window = SDL_CreateWindow(PINE_WINDOW_NAME, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, PINE_WINDOW_WIDTH, PINE_WINDOW_HEIGHT, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
 		m_Context = SDL_GL_CreateContext(m_Window);
@@ -124,11 +123,11 @@ namespace Pine {
 
 		//Setup IMGUI
 		IMGUI_CHECKVERSION();
-		//ImGui::CreateContext();
-		//ImGuiIO& io = ImGui::GetIO(); (void)io;
-		//ImGui::StyleColorsDark();
-		//ImGui_ImplSDL2_InitForOpenGL(m_Window, m_Context);
-		//ImGui_ImplOpenGL3_Init(glsl_version);
+		ImGui::CreateContext();
+		ImGuiIO& io = ImGui::GetIO(); (void)io;
+		ImGui::StyleColorsDark();
+		ImGui_ImplSDL2_InitForOpenGL(m_Window, m_Context);
+		ImGui_ImplOpenGL3_Init(glsl_version);
 
 
 		return true;
@@ -153,13 +152,14 @@ namespace Pine {
 				break;
 			case Game::GameState::RUNNING:
 				//std::time_t result = std::time(nullptr);
-				
+
 				cTime = std::chrono::duration_cast<std::chrono::seconds>(end - m_start).count();
 				HandleEvents();
-				Render();
 				ApplicationRunning();
 				//Draw(false);
 				SDL_GetWindowSize(m_Window, &Game::m_WindowWidth, &Game::m_WindowHeight);
+				Render();
+
 
 				break;
 			case Game::GameState::GAMEOVER:
@@ -179,7 +179,7 @@ namespace Pine {
 			if (frameDelay > frameTime && !limitFPS)
 			{
 				SDL_Delay(frameDelay - frameTime);
-				PINE_ENGINE_INFO(frameTime/ (frameDelay - frameTime));
+				//PINE_ENGINE_INFO(frameTime/ (frameDelay - frameTime));
 			}
 		}
 	}
@@ -215,7 +215,7 @@ namespace Pine {
 		glClear(GL_COLOR_BUFFER_BIT);
 		//glDrawArrays(GL_TRIANGLES, 0, 6);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
-		//RenderUI();
+		RenderUI();
 		SDL_GL_SwapWindow(m_Window);
 	}
 
@@ -253,21 +253,6 @@ namespace Pine {
 	void Core::Draw(bool firstDraw)
 	{
 		SDL_RenderClear(renderer);
-		/*if (firstDraw)
-		{
-			objects[objects.size() - 1]->SetRenderer(renderer);
-			objects[objects.size() - 1]->Render();
-		}
-		else {
-			//draws all objects
-
-			for (int i = 0; i < objects.size(); i++)
-			{
-				//need to fix redrawing the same objects. Huge memory usage, especially with re-drawn images.
-				objects[i]->SetRenderer(renderer);
-				objects[i]->Render();
-			}
-		}*/
 		SDL_SetRenderDrawColor(renderer, 21, 27, 31, 255);
 		SDL_RenderPresent(renderer);
 	}
@@ -280,11 +265,18 @@ namespace Pine {
 		{
 		default:
 			break;
+		
 		case SDL_MOUSEBUTTONDOWN:
-		//	PINE_ENGINE_WARN("MOUSE BUTTON PRESSED");
+		{
+			//	PINE_ENGINE_WARN("MOUSE BUTTON PRESSED");
 			givenGame->OnMouseClick();
 			Input::MousePressed(&e);
+			Pine::MouseButtonDownEvent* event = new Pine::MouseButtonDownEvent(e.button.x, e.button.y, Input::MouseDown(&e));
+
+
+
 			break;
+		}
 		case SDL_MOUSEBUTTONUP:
 		//	PINE_ENGINE_WARN("MOUSE BUTTON RELEASED");
 			Input::MouseReleased(&e);
@@ -298,8 +290,23 @@ namespace Pine {
 			givenGame->GameClose();
 			PINE_ENGINE_WARN("CLOSING GAME");
 			break;
-			
+		
 		}
+
+		//currenty not working
+		if (e.type == SDL_WINDOWEVENT) {
+			switch (e.type)
+			{
+
+				case SDL_WINDOWEVENT_MOVED:
+				{
+					Pine::WindowResizeEvent* event = new Pine::WindowResizeEvent(e.window.data1, e.window.data2);
+					break;
+
+				}
+			}
+		}
+		EventSystem::Run();
 	}
 
 	Pine::PVector2f Core::GetMousePos()

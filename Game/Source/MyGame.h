@@ -17,7 +17,7 @@ virtual void OnMouseClick() override;
 Pine::SourceShader shaders;
 Pine::EventSystem* es;
 
-void eventTrigger();
+void eventTrigger(Pine::PEvent& e);
 
 };
 

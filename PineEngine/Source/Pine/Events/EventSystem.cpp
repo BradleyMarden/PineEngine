@@ -4,12 +4,5 @@
 
 namespace Pine {
 
-	EventSystem::EventSystem()
-	{
-	}
-
-	EventSystem::~EventSystem()
-	{
-	}
 
 }

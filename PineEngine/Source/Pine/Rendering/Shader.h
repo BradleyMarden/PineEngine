@@ -3,6 +3,7 @@
 #include <iostream>
 //#include <string>
 #include <sstream>
+#include "Core.h"
 #include "Pine/Logging/Log.h"
 namespace Pine {
 

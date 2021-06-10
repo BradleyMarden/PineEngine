@@ -16,7 +16,9 @@ target_include_directories(Game PUBLIC "../PineEngine/Source")
 target_include_directories(Game PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/../PineEngine/Source/Pine/Core")
 target_include_directories(Game PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/../PineEngine/Source/Pine/Logging")
 target_include_directories(Game PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/../PineEngine/Source/Pine/Maths")
-target_include_directories(Game PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/../PineEngine/Source/Pine/ Networking")
+target_include_directories(Game PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/../PineEngine/Source/Pine/Networking")
+target_include_directories(Game PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/../PineEngine/Source/Pine/Events")
+target_include_directories(Game PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/../PineEngine/Source/Pine/Rendering")
 
 #VENDOR INCLUDES
 target_include_directories(Game PUBLIC "../PineEngine/Vendor/spdlog/include")

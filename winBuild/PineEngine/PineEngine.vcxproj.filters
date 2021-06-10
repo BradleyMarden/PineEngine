@@ -13,6 +13,9 @@
     <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core\EntryPoint.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core\window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging\Log.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -38,6 +41,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Events\Event.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Events\EventBinder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Vendor\imgui1.83\imgui.cpp">
@@ -78,7 +84,13 @@
     <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core\PineAPI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core\window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Events\Event.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Events\EventBinder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Events\EventSystem.h">
