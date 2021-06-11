@@ -72,16 +72,17 @@ namespace Pine {
 		}
 
 		static void PublishEvent(PEvent* e)
-		{
-			assert(m_NumberPendingEvents < m_MaxPendingEvents);
+	{
+			assert((m_Tail+1) % m_MaxPendingEvents != m_Head);
 			//create new data event, pass controll of ptr
 			data* d = new data(e);
 
 			//pass data event to pending events list
-			m_PendingEvents[m_NumberPendingEvents] = d;
+			m_PendingEvents[m_Tail] = d;
 
 			//increment position
-			m_NumberPendingEvents++;
+			m_Tail = (m_Tail + 1) % m_MaxPendingEvents;
+			//m_NumberPendingEvents++;
 		}
 
 		//Pass the fucntion that you would like the events to be recieved by. NOTE: the function must take an event& as a parameter.
@@ -94,7 +95,11 @@ namespace Pine {
 		//fix loop, deletes
 		inline static void Run()
 		{
+			if (m_Head == m_Tail) { return; }
+
+
 			 int i =0;
+			//check for repeat events, for ex a key hold. If it is held, delete the old event, and replace with new one with the isHeld bool set to true,
 
 			//remove loop based event system, to on call event system
 			for (data* d : m_PendingEvents) 
@@ -106,15 +111,17 @@ namespace Pine {
 						m_PendingEvents[i] = nullptr;
 						delete d;
 						//handle tail update here
-						m_NumberPendingEvents--;
+						//m_NumberPendingEvents--;
+						m_Head = (m_Head + 1) % m_MaxPendingEvents;
 						return;
 					}
-					//works but janky. Requires user to seperate out the event types. I need to handle that.
-					m_Func(static_cast<decltype(d->GetEvent())>(d->GetEvent()));
+					//works but janky. Requires user to seperate out the event types. I need to handle that. Works with static cast too.
+					m_Func(dynamic_cast<decltype(d->GetEvent())>(d->GetEvent()));
 				}
 				i++;
 			}
 		}
+
 
 
 	private:
@@ -128,8 +135,8 @@ namespace Pine {
 			 PEvent* m_Event;
 		};
 
-		static int	m_Head;
-		static int	m_Tail;
+		inline static int	m_Head;
+		inline static int	m_Tail;
 		inline static const int			m_MaxPendingEvents = 16;
 		inline static EventCallbackFn	m_Func;
 		inline static int		m_NumberPendingEvents;
@@ -162,7 +169,7 @@ namespace Pine {
 
 	struct MouseButtonDownEvent : PEvent
 	{
-		MouseButtonDownEvent(int p_X, int p_Y, Input::MouseButtons p_Button) : x(p_X), y(p_Y),l_button(p_Button)
+		MouseButtonDownEvent(int p_X, int p_Y, Input::MouseButtons p_Button, bool p_Held) : x(p_X), y(p_Y),l_button(p_Button), held(p_Held)
 		{
 			EventSystem::PublishEvent(this);
 		}
@@ -171,14 +178,17 @@ namespace Pine {
 		int GetY() const { return y; }
 		Input::MouseButtons GetButtonDown() const { return l_button; }
 
+		bool IsHeld() const { return held; }
+
 		SET_EVENT_TYPE(MouseButtonDown);
 		SET_CATEGORY_TYPE(WindowEvent | MouseEvent | InputEvent);
 
 	private:
 		int x;
 		int y;
-
+		bool held;
 		Input::MouseButtons l_button;
+
 
 	};
 }

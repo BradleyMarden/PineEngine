@@ -21,7 +21,7 @@ namespace Pine {
 		#endif // DEBUG
 		m_start = std::chrono::steady_clock::now();
 		SDL_Init(SDL_INIT_VIDEO);
-		m_Window = SDL_CreateWindow(PINE_WINDOW_NAME, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, PINE_WINDOW_WIDTH, PINE_WINDOW_HEIGHT, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
+		m_Window = SDL_CreateWindow(PINE_WINDOW_NAME, SDL_WINDOWPOS_CENTERED_DISPLAY(1), SDL_WINDOWPOS_CENTERED_DISPLAY(1),  PINE_WINDOW_WIDTH, PINE_WINDOW_HEIGHT, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
 		m_Context = SDL_GL_CreateContext(m_Window);
 
 		//abort if glew not init. 
@@ -260,49 +260,52 @@ namespace Pine {
 	void Core::HandleEvents()//all keyboard and mouse events are handled here
 	{
 		SDL_Event e;
-		SDL_PollEvent(&e);
-		switch (e.type)
+		while (SDL_PollEvent(&e))
 		{
-		default:
-			break;
-		
-		case SDL_MOUSEBUTTONDOWN:
-		{
-			//	PINE_ENGINE_WARN("MOUSE BUTTON PRESSED");
-			givenGame->OnMouseClick();
-			Input::MousePressed(&e);
-			Pine::MouseButtonDownEvent* event = new Pine::MouseButtonDownEvent(e.button.x, e.button.y, Input::MouseDown(&e));
-
-
-
-			break;
-		}
-		case SDL_MOUSEBUTTONUP:
-		//	PINE_ENGINE_WARN("MOUSE BUTTON RELEASED");
-			Input::MouseReleased(&e);
-			break;
-
-		case SDL_KEYDOWN:
-			Input::KeyPressed(&e);
-			break;
-
-		case SDL_QUIT:
-			givenGame->GameClose();
-			PINE_ENGINE_WARN("CLOSING GAME");
-			break;
-		
-		}
-
-		//currenty not working
-		if (e.type == SDL_WINDOWEVENT) {
 			switch (e.type)
 			{
+			default:
+				break;
 
-				case SDL_WINDOWEVENT_MOVED:
+			case SDL_MOUSEBUTTONDOWN:
+			{
+				//	PINE_ENGINE_WARN("MOUSE BUTTON PRESSED");
+				givenGame->OnMouseClick();
+				Input::MousePressed(&e);
+				Pine::MouseButtonDownEvent* event = new Pine::MouseButtonDownEvent(e.button.x, e.button.y, Input::MouseDown(&e), false);
+
+
+
+				break;
+			}
+
+			case SDL_MOUSEBUTTONUP:
+				//	PINE_ENGINE_WARN("MOUSE BUTTON RELEASED");
+				Input::MouseReleased(&e);
+				break;
+
+			case SDL_KEYDOWN:
+				Input::KeyPressed(&e);
+				break;
+
+			case SDL_QUIT:
+				givenGame->GameClose();
+				PINE_ENGINE_WARN("CLOSING GAME");
+				break;
+
+			}
+
+			//currenty not working
+			if (e.type == SDL_WINDOWEVENT) {
+				switch (e.window.event)
+				{
+
+				case SDL_WINDOWEVENT_FOCUS_GAINED:
 				{
 					Pine::WindowResizeEvent* event = new Pine::WindowResizeEvent(e.window.data1, e.window.data2);
 					break;
 
+				}
 				}
 			}
 		}

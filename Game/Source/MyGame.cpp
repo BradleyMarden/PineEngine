@@ -27,21 +27,16 @@ void myGame::Update(){
     {
 
       shaders =  Pine::Shader::LoadShader("Assets/Shaders/default.PineShader");
+      //I dont like currently how the event id created. Its hard to know who has controll of the memory. in future need to abstract this into a macro or static func.
      Pine::WindowResizeEvent*  e = new Pine::WindowResizeEvent(100,100);
 
     }
     if (Input::GetKeyDown(SDLK_a))
     {
-        //Pine::EventSystem::Run();
-
-       // std::cout << shaders.VertexSource << std::endl;
 
     }
     if (Input::GetKeyDown(SDLK_d))
     {
-       // Pine::MouseButtonDownEvent* e = new Pine::MouseButtonDownEvent(100, 100);
-
-      //  std::cout << shaders.FragmentSource << std::endl;
 
 
 
