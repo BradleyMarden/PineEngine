@@ -1,13 +1,17 @@
 #pragma once
-//#include "Event.h"
 #include <vector>
 #include <assert.h>
 #include <iostream>
 #include <functional>
-#include "Log.h"
 #include <iostream>
+
+#include "Log.h"
 #include "Input.h"
+//#include "Event.h"
+
 namespace Pine {
+
+	//NEEDS TO BE MOVED INTO A BASE.CPP
 #define SETBIT(x) (1 << x) //this is set to 4 bytes, we could use a bitset for a more controlled amount of bits.
 							//for now, this works fine.
 
@@ -31,7 +35,7 @@ namespace Pine {
 	};
 
 	enum  EventCategory //define the category of event, needs to be a 
-							//bitset as an event can be more than one category
+						//bitset as an event can be more than one category
 	{
 		None = 0,
 		KeyboardEvent = SETBIT(0),	//this equates to '0000 0000 0000 0000 0000 0000 0000 0001' 32 bits or 4 bytes. The size of a int
@@ -50,7 +54,7 @@ namespace Pine {
 		virtual EventType	GetEventType()			const = 0;
 		virtual int			GetSizeOfCatFlags()		const = 0;//debug only. Returns the size of the category bitset
 
-		bool		IsInCategory(EventCategory cat){return GetCatFlags()& cat;}
+		bool		IsInCategory(EventCategory p_Cat){return GetCatFlags()& p_Cat;}
 		bool		is_Handled = false;
 	private:
 		int			s_Category = 0;
@@ -64,21 +68,18 @@ namespace Pine {
 	{
 	public:
 
-		static void init()
+		static void PublishEvent(PEvent* p_Event)
 		{
-			m_Head = 0;
-			m_Tail = 0;
-			m_NumberPendingEvents = 0;
-		}
-
-		static void PublishEvent(PEvent* e)
-	{
+			
+			//ISSUE check working, just not printing to the console.
+			if (!CheckCallbackIsSet())
+				return;
 			assert((m_Tail+1) % m_MaxPendingEvents != m_Head);
 			//create new data event, pass controll of ptr
-			data* d = new data(e);
+			data* eventData = new data(p_Event);
 
 			//pass data event to pending events list
-			m_PendingEvents[m_Tail] = d;
+			m_PendingEvents[m_Tail] = eventData;
 
 			//increment position
 			m_Tail = (m_Tail + 1) % m_MaxPendingEvents;
@@ -86,37 +87,56 @@ namespace Pine {
 		}
 
 		//Pass the fucntion that you would like the events to be recieved by. NOTE: the function must take an event& as a parameter.
-		inline static void RegisterEventCallback(EventCallbackFn fn)
+		//need to change from void to bool, to check if func register has failed.
+		inline static void RegisterEventCallback(EventCallbackFn p_Func)
 		{
-			m_Func = fn;
+			//m_Func = fn;
+			assert((m_FuncTail + 1) % m_MaxCallbackFuncs != m_FuncHead);
+
+			m_Func[m_FuncTail] = p_Func;
+			m_FuncTail = (m_FuncTail + 1) % m_MaxCallbackFuncs;
+		}
+
+		//Implement ability to remove event callbackfun, base on the classtype the func belongs to.
+		inline static bool DeregisterEventCallback() 
+		{
+			return true;
 		}
 
 
 		//fix loop, deletes
 		inline static void Run()
 		{
+			//ISSUE check working, just not printing to the console.
+			if (!CheckCallbackIsSet())
+				return;
 			if (m_Head == m_Tail) { return; }
 
 
 			 int i =0;
-			//check for repeat events, for ex a key hold. If it is held, delete the old event, and replace with new one with the isHeld bool set to true,
 
 			//remove loop based event system, to on call event system
-			for (data* d : m_PendingEvents) 
+			for (data* eventData : m_PendingEvents)
 			{
-				if (d != nullptr)
+				if (eventData != nullptr)
 				{
-					if (d->GetEvent().is_Handled)
+					if (eventData->GetEvent().is_Handled)
 					{
 						m_PendingEvents[i] = nullptr;
-						delete d;
-						//handle tail update here
-						//m_NumberPendingEvents--;
+						delete eventData;
+						//handle head update here
 						m_Head = (m_Head + 1) % m_MaxPendingEvents;
 						return;
 					}
 					//works but janky. Requires user to seperate out the event types. I need to handle that. Works with static cast too.
-					m_Func(dynamic_cast<decltype(d->GetEvent())>(d->GetEvent()));
+					//m_Func(dynamic_cast<decltype(d->GetEvent())>(d->GetEvent()));
+
+					for (EventCallbackFn func : m_Func)
+					{
+						if (func == nullptr)
+							return;
+						func(dynamic_cast<decltype(eventData->GetEvent())>(eventData->GetEvent()));
+					}
 				}
 				i++;
 			}
@@ -137,17 +157,35 @@ namespace Pine {
 
 		inline static int	m_Head;
 		inline static int	m_Tail;
+		inline static int	m_FuncHead;
+		inline static int	m_FuncTail;
 		inline static const int			m_MaxPendingEvents = 16;
-		inline static EventCallbackFn	m_Func;
+		inline static const int			m_MaxCallbackFuncs = 50;
+		inline static EventCallbackFn	m_Func[m_MaxCallbackFuncs];
 		inline static int		m_NumberPendingEvents;
-		inline static data*		m_PendingEvents[m_MaxPendingEvents];
+		inline static data*		m_PendingEvents[m_MaxPendingEvents];//This is a ring buffer, 
 
-
+		inline static bool CheckCallbackIsSet() 
+		{
+			if (m_Func == nullptr)
+			{
+				static int i = 0;
+				if (i < 1)
+				{
+					PINE_ENGINE_ERROR("EVENT SYSTEM CALLBACK NOT SET. PLEASE REGISTER A FUNCTION WITH: EventSystem::RegisterEventCallback(EventCallback fn);");
+					i++;
+				}
+				return false;
+			}
+			return true;
+		}
 	};
 
 
 
 	//Event takes care of itself, when created with a pointer
+	//The events need to be moved either to the event.cpp, or into a class that deals with the event type. 
+
 	struct WindowResizeEvent : PEvent
 	{
 
@@ -193,10 +231,8 @@ namespace Pine {
 	};
 }
 
-//using EventCallbackFn = std::function<void(Event&)>;
 
 //in window creation create a function that sets the callback function that should be run when a event occurs.
 //This will be set when the window is created, after this all events that are created will be passed to this function in application
 //we can then distribute event types to different fucntions. 
-
 //going back where the sdl event occurs, each sdl event will need to pass a struct with the screen data

@@ -1,6 +1,7 @@
 #pragma once
-#include <Pine.h>
 #include <iostream>
+#include <Pine.h>
+
 using namespace Pine;
 class myGame : public Pine::Game
 {

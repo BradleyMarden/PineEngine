@@ -2,7 +2,7 @@
 
 myGame::myGame(){}
 myGame::~myGame(){}
-#define BIND_EVENT(fn) std::bind(&myGame::fn, this, std::placeholders::_1)
+
 
 void myGame::Start()
 {
@@ -52,8 +52,8 @@ void myGame::eventTrigger(Pine::PEvent& e)
         controll over where the event gets finally handeld.
 
         EventSystem::BindTypeToFucntion(TYPE, FUNC);
-    
     */
+    
 
     std::cout << "triggered" << std::endl;
 

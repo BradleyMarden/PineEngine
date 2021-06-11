@@ -1,10 +1,11 @@
 #pragma once
 #include <memory>//for shared pointers
+#include <iostream>
+
 //#include "../Core/Core.h"
 //#include "../Core/PineAPI.h"
 #include "spdlog/spdlog.h"
 #include "spdlog/sinks/stdout_color_sinks.h"
-#include <iostream>
 
 
 namespace Pine {
@@ -55,6 +56,19 @@ namespace Pine {
 #define PINE_INFO(...)           ::Pine::Log::GetClientLogger()->info(__VA_ARGS__)
 #define PINE_TRACE(...)          ::Pine::Log::GetClientLogger()->trace(__VA_ARGS__)
 
+
+#define PINE_ASSERT(message, functionReturn) PineAssert(message, functionReturn)
+
+//Custom Assert Macro
+inline void PineAssert(const char* p_Message, bool functionReturn)
+{
+	if (!functionReturn) {
+		std::cerr << "Error:\t" << p_Message << "\n";
+		abort();
+	}
+}
+
+
 #else
 
 #define	PINE_ENGINE_ERROR(...)
@@ -76,6 +90,9 @@ namespace Pine {
 #define PINE_CRITICAL(...) 
 #define PINE_INFO(...)
 #define PINE_TRACE(...)
+
+#define PINE_ASSERT(message, functionReturn) 
+
 #endif // !PINE_RELEASE
 
 

@@ -129,11 +129,34 @@ namespace Pine {
 		ImGui_ImplSDL2_InitForOpenGL(m_Window, m_Context);
 		ImGui_ImplOpenGL3_Init(glsl_version);
 
+		//TEST EVENT FUNCTION 
+		Pine::EventSystem::RegisterEventCallback(BIND_EVENT(Core::Trigger));
 
 		return true;
 	}
 	
+	//TEST EVENT FUNCTION
+	void Core::Trigger(PEvent& e) 
+	{
+		std::cout << "triggered CORE" << std::endl;
 
+		if (&e == nullptr) { return; }
+		if (e.GetEventType() == Pine::EventType::WindowResize)
+		{
+			std::cout << "Winodw Resize CORE" << std::endl;
+			e.is_Handled = true;
+
+		}
+		else if (e.GetEventType() == Pine::EventType::MouseButtonDown)
+		{
+			//cannot get event specific data as any child object of event will not be passed down., need to link each type to a function
+			e.is_Handled = true;
+			std::cout << dynamic_cast<Pine::MouseButtonDownEvent&>(e).GetX() << std::endl;
+
+
+		}
+	
+	}
 	void Core::PineStart()
 	{
 		PINE_ENGINE_INFO("Application Started!");
@@ -300,7 +323,7 @@ namespace Pine {
 				switch (e.window.event)
 				{
 
-				case SDL_WINDOWEVENT_FOCUS_GAINED:
+				case SDL_WINDOWEVENT_RESIZED:
 				{
 					Pine::WindowResizeEvent* event = new Pine::WindowResizeEvent(e.window.data1, e.window.data2);
 					break;
