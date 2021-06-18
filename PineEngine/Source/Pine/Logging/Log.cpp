@@ -5,9 +5,10 @@ namespace Pine
 	std::shared_ptr<spdlog::logger> Log::s_ClientLogger;
 	std::shared_ptr<spdlog::logger> Log::s_ServerLogger;
 
-	 void Log::Init()
+	bool Log::Init()
 	{
 
+		 //std::cout << "INIT" << std::endl;
 		 spdlog::set_pattern("%^[%T] %n: %v%$");//Color, Timestamp, Name of the Logger, Message
 
 		 s_EngineLogger = spdlog::stdout_color_mt("Pine");
@@ -18,6 +19,9 @@ namespace Pine
 
 		 s_ServerLogger = spdlog::stdout_color_mt("Server");
 		 s_ServerLogger->set_level(spdlog::level::trace);
+		 PINE_ENGINE_INFO("LOGGING INITIALIZED!");
+
+		 return true;
 
 	}
 }

@@ -1,4 +1,0 @@
-﻿  main.cpp
-E:\PineEngine\PineEngine\PMyGame\Source\main.cpp(1,10): fatal error C1083: Cannot open include file: 'Pine.h': No such file or directory
-  PMyGameApp.cpp
-E:\PineEngine\PineEngine\PMyGame\Source\PMyGameApp.h(2,10): fatal error C1083: Cannot open include file: 'Pine.h': No such file or directory

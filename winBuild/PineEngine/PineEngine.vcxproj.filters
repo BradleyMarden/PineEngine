@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core\Core.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core\Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core\Input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core\EntryPoint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core\window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging\Log.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths\PMaths.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking\Networking.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Rendering\Renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Rendering\Shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Rendering\LayerManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Rendering\Layer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Events\EventSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Events\Event.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Events\EventBinder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Vendor\imgui1.83\imgui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Vendor\imgui1.83\imgui_demo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Vendor\imgui1.83\imgui_draw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Vendor\imgui1.83\imgui_impl_opengl3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Vendor\imgui1.83\imgui_impl_sdl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Vendor\imgui1.83\imgui_tables.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Game Engine\PineEngine\PineEngine\Vendor\imgui1.83\imgui_widgets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core\Core.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core\Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core\Input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core\PineAPI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Core\window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Events\Event.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Events\EventBinder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Events\EventSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Logging\Log.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Maths\PMaths.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking\Networking.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Networking\ServerNetworking.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Rendering\Layer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Rendering\LayerManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Rendering\Renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\Pine\Rendering\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Game Engine\PineEngine\PineEngine\Source\PineServer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Game Engine\PineEngine\PineEngine\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{4839AF56-39D9-35F9-804C-A1E41CDA2CC7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{9B3B6125-27EE-3B3C-95DB-7496CB1367FF}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

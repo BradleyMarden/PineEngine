@@ -1,16 +1,4 @@
 #pragma once
-//Only to be used by Pine applications
-
-#include "../Logging/Log.h"
-#include "../Networking/Networking.h"
-#include "Game.h"
-#include "sdl2/SDL.h"
-#include "sdl2/SDL_image.h"
-#include "../Primitives/2D/PCircle.h"
-#include"../Primitives/2D/PRect.h"
-#include <vector>
-#undef main
-
 // FLAGS-----------------------------------------------------
 //Current flag limit is set as uint8_t, may expand if more flags are needed.
 #define Pine_Networking 0x00000001
@@ -20,70 +8,97 @@
 //#define PINE_ENGINE_INFO
 //-----------------------------------------------------------
 
-#include <stdio.h>
-#include <io.h>
-#include <fcntl.h>
-#include <windows.h>
-#include "GL/glew.h"
-#include <sdl2/SDL_opengl.h>
+#include <vector>
+#include <iostream>
 #include <chrono>
 #include <time.h>
-#include <sdl2/SDL_timer.h>
-#include "Input.h"
-#include "ECS/PineECS.h"
-namespace Pine {
+#include <SDL_timer.h>
+#include <imgui.h>
+#include <imgui_impl_opengl3.h>
+#include <imgui_impl_sdl.h>
+#include <assert.h>
+#include <ctime>
 
-	typedef std::vector<std::shared_ptr<Pine::PObject>> GameObjects;//Deprecated
+#include "SDL.h"
+#include "SDL_image.h"
+
+
+#define SDL_MAIN_HANDLED
+#undef main
+
+#ifdef PINE_PLATFORM_WINDOWS
+
+	#include <GL/glew.h>
+	#include <GL/GL.h>
+	#include <gl/GL.h>
+	#include <SDL_opengl.h>
+
+#endif // PINE_PLATFORM_WINDOWS
+#ifdef PINE_PLATFORM_MACOS
+#include <GL/glew.h>
+	#include <OpenGL/gl.h>
+#include <SDL_opengl.h>
+#endif // PINE_PLATFORM_MACOS
+
+
+//PINE INCLUDES
+#include "Log.h"
+#include "Input.h"
+#include "Networking.h"
+#include "Game.h"
+#include "Core.h"
+#include "../Rendering/Shader.h"
+#include "EventSystem.h"
+#include "../Maths/PMaths.h" 
+
+//NEED TO LOOK INTO PRE COMPILED HEADERS
+
+
+//NEEDS TO BE MOVED INTO A BASE.CPP
+#define BIND_EVENT(fn) std::bind(&fn, this, std::placeholders::_1)
+
+//#include "ECS/PineECS.h"
+namespace Pine {
+	
+	
 	class Core
 	{
-		//the game application.
 	public:
 		
-		Core();
-		~Core();
-		Core(const char* m_windowName, unsigned int m_Width, unsigned int m_Height);
+						Core();
+						~Core();
+		void			PineCloseWindow();
+		void			PineOpenWindow();
+		bool			PineInit(Game* game, uint8_t flags);
+		void			PineStart();
+		void			Render();
+		void			RenderUI();
+		static PVector2f	GetMousePos();//abstract out to another class
+		SDL_Renderer*		GetRenderer() { return  renderer; }//Move renderer to Renderer class
+		std::chrono::steady_clock::time_point m_start;
+		void			Trigger(PEvent& e);
 
-		void		PineCloseWindow();
-		void		PineOpenWindow(const char* m_windowName, unsigned int m_Width, unsigned int m_Height);
-		bool		PineInit(Game* game, uint8_t flags);
-		void		PineStart();
-		
 
-		static PVector2f GetMousePos();//abstract out to another class
-		//std::vector<PObject*>objects;//temp, move back to private!!
-
-		template <typename T> void Instanciate(std::shared_ptr<T> object)//Deprecated
-		{
-			//move to an internal function
-			//need to add object to list
-			objects.push_back(object);
-			std::cout << "Instanciated" << std::endl;
-			Draw(true);
-		}
-
-		void Test();
-		int GetObjectCount() { return objects.size(); }//Deprecated
-
-		SDL_Renderer* GetRenderer() { return  renderer; }//Move renderer to Renderer class
-
-		private:
-		//NEW
-		//PECS m_PGameObjectManager;
-
-		SDL_Window* m_Window = nullptr;
-		Game* givenGame = nullptr;
-		SDL_Renderer* renderer;
-		SDL_Rect rect;
-		SDL_Texture* text = nullptr;
-		void HandleEvents();
-		void ApplicationRunning();
-		void Draw(bool firstDraw);//Deprecated
-
-		GameObjects objects;//Deprecated
-		const int fps = 60;
-		const int frameDelay = 1000 / fps;// max time between frames
-		Uint32 frameStart;
-		int frameTime;
+	private:
+		static inline SDL_Window*	m_Window = nullptr;
+		static inline SDL_Window*	m_SecondWindow = nullptr;
+		static inline SDL_GLContext m_Context; /* Our opengl context handle */
+		Game*			givenGame = nullptr;//we do not own the game, entry point does. 
+		SDL_Renderer*	renderer;
+		SDL_Rect		rect;
+		SDL_Texture*	text = nullptr;
+		void			HandleEvents();
+		void			ApplicationRunning();
+		void			Draw(bool firstDraw);//Deprecated
+		const char*		glsl_version = "#version 330";
+		//GameObjects objects;//Deprecated
+		const int		fps = 60;
+		const int		frameDelay = 1000 / fps;// max time between frames
+		Uint32			frameStart;
+		int				frameTime;
+		unsigned int	localshader;
+		int				cTime = 0;
+		bool			limitFPS = true;
 
 
 	};

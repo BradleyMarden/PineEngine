@@ -1,5 +1,4 @@
 .vs/
-bin/
 bin-int/
 
 
@@ -8,6 +7,8 @@ bin-int/
 .vs/PineEngine/v16/Solution.VC.db
 .vs/PineEngine/v16/Browse.VC.db
 .vs/PineEngine/v16/.suo
-.vs/PineEngine/v16
 .vs/PineEngine/v16/Browse.VC.db
+*.obj
+*.log
+*.tlog
 .vs/PineEngine/v16/Browse.VC.db

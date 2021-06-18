@@ -1,5 +1,5 @@
 #include "Networking.h"
-
+//NTA NEED TO GO THROUGH AND CHANGE RETURN TYPES FROM EXIT_... TO TRUE/FALSE
 namespace Pine{
 	 ENetHost* Networking::host;
 	 ENetPeer* Networking::peer;
@@ -44,11 +44,11 @@ namespace Pine{
 		if (enet_initialize() != 0)
 		{
 			PINE_SERVER_CRITICAL("Failed Initializing Network Functionality... Closing");
-			return EXIT_FAILURE;
+			return false;
 		}
 		atexit(enet_deinitialize);
 		PINE_SERVER_INFO("Initialized Network Functionality!");
-		return EXIT_SUCCESS;
+		return true;
 
 	}
 
@@ -123,13 +123,16 @@ namespace Pine{
 
 			case ENET_EVENT_TYPE_NONE:
 				break;
+                    
+                case ENET_EVENT_TYPE_CONNECT:
+					PINE_SERVER_INFO("CONNECTED: NOT TOO SURE IF THIS IS SERVER OR CLIENT AS I HAVE NO INTERNET!");
 
 			case ENET_EVENT_TYPE_RECEIVE:
 				PINE_SERVER_INFO("A Packet of length {} containing {} from {} on channel {}", event.packet->dataLength, event.packet->data, event.peer->data, event.channelID);
 				{
-					int lData = 0;
-					lData = (int)event.packet->data;
-					if ((const char*)event.packet->data == "close")
+					uint64_t lData = 0;
+					lData = (uint64_t)event.packet->data;
+					if (std::strcmp((const char*)event.packet->data, "close"))
 					{
 						PINE_SERVER_INFO("Server Closing...");
 					}
@@ -159,13 +162,13 @@ namespace Pine{
 		if (host == NULL)
 		{
 			PINE_SERVER_ERROR("Unable to create a host");
-			return EXIT_FAILURE;
+			return false;
 		}
 	
 		PINE_SERVER_INFO("Created host with {} slots, on port {}", maxConnections, port);
 		isHosting = true;
 		isConnected = true;
-		return EXIT_SUCCESS;
+		return true;
 	}
 	
 

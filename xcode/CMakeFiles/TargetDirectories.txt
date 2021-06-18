@@ -1,0 +1,4 @@
+/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode/CMakeFiles/Game.dir
+/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode/CMakeFiles/ALL_BUILD.dir
+/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode/CMakeFiles/ZERO_CHECK.dir
+/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/xcode/PineEngine/CMakeFiles/PineEngine.dir
