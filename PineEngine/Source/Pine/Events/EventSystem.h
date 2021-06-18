@@ -4,6 +4,7 @@
 #include <iostream>
 #include <functional>
 #include <iostream>
+#include <iterator>
 
 #include "Log.h"
 #include "Input.h"
@@ -54,11 +55,16 @@ namespace Pine {
 		virtual EventType	GetEventType()			const = 0;
 		virtual int			GetSizeOfCatFlags()		const = 0;//debug only. Returns the size of the category bitset
 
+
 		bool		IsInCategory(EventCategory p_Cat){return GetCatFlags()& p_Cat;}
+		void		SetRepeat(bool p_Repeat) { s_is_Repeat = p_Repeat;  }
 		bool		is_Handled = false;
+		void		SetRepeatCount(int p_Amount) { s_repeatCount = p_Amount; }
+		int			GetRepeatCount() { return s_repeatCount; }
 	private:
 		int			s_Category = 0;
-
+		bool		s_is_Repeat = false;
+		int			s_repeatCount = 0;
 	};
 
 
@@ -70,11 +76,12 @@ namespace Pine {
 
 		static void PublishEvent(PEvent* p_Event)
 		{
-			
 			//ISSUE check working, just not printing to the console.
 			if (!CheckCallbackIsSet())
 				return;
+
 			assert((m_Tail+1) % m_MaxPendingEvents != m_Head);
+
 			//create new data event, pass controll of ptr
 			data* eventData = new data(p_Event);
 
@@ -84,9 +91,11 @@ namespace Pine {
 			//increment position
 			m_Tail = (m_Tail + 1) % m_MaxPendingEvents;
 			//m_NumberPendingEvents++;
+			
+			UpdatePendingEvents();
 		}
 
-		//Pass the fucntion that you would like the events to be recieved by. NOTE: the function must take an event& as a parameter.
+		//Pass the function that you would like the events to be recieved by. NOTE: the function must take an event& as a parameter.
 		//need to change from void to bool, to check if func register has failed.
 		inline static void RegisterEventCallback(EventCallbackFn p_Func)
 		{
@@ -94,57 +103,73 @@ namespace Pine {
 			assert((m_FuncTail + 1) % m_MaxCallbackFuncs != m_FuncHead);
 
 			m_Func[m_FuncTail] = p_Func;
+
 			m_FuncTail = (m_FuncTail + 1) % m_MaxCallbackFuncs;
 		}
 
-		//Implement ability to remove event callbackfun, base on the classtype the func belongs to.
+		//Implement ability to remove event callbackfun, base on the classtype the func belongs to or when that class is deleted.
 		inline static bool DeregisterEventCallback() 
 		{
 			return true;
 		}
 
-
-		//fix loop, deletes
-		inline static void Run()
+		//unused
+		inline static void DestroyEventsOfType(EventType e) 
 		{
-			//ISSUE check working, just not printing to the console.
-			if (!CheckCallbackIsSet())
-				return;
-			if (m_Head == m_Tail) { return; }
-
-
-			 int i =0;
-
-			//remove loop based event system, to on call event system
+			std::cout << "DESTORYING" << std::endl;
 			for (data* eventData : m_PendingEvents)
 			{
 				if (eventData != nullptr)
 				{
-					if (eventData->GetEvent().is_Handled)
+					if (eventData->GetEvent().GetEventType() == e)
 					{
-						m_PendingEvents[i] = nullptr;
-						delete eventData;
-						//handle head update here
-						m_Head = (m_Head + 1) % m_MaxPendingEvents;
-						return;
-					}
-					//works but janky. Requires user to seperate out the event types. I need to handle that. Works with static cast too.
-					//m_Func(dynamic_cast<decltype(d->GetEvent())>(d->GetEvent()));
-
-					for (EventCallbackFn func : m_Func)
-					{
-						if (func == nullptr)
-							return;
-						func(dynamic_cast<decltype(eventData->GetEvent())>(eventData->GetEvent()));
+						//maybe change for func to mark for deletion
+						eventData->GetEvent().is_Handled = true;
+						
+						UpdatePendingEvents();
 					}
 				}
-				i++;
 			}
 		}
 
 
-
 	private:
+
+		inline static void UpdatePendingEvents() 
+		{
+			for (size_t num = 0; num < sizeof(m_PendingEvents) / sizeof(data); num++)
+			{
+				if (m_PendingEvents[num] != nullptr)
+				{
+					//if the event is handled we no longer need it, remove it. 
+					if (m_PendingEvents[num]->GetEvent().is_Handled)
+					{
+						std::cout << "Removing event as it has been handled" << std::endl;
+
+						delete m_PendingEvents[num];
+
+						m_PendingEvents[num] = nullptr;
+
+						m_Head = (m_Head + 1) % m_MaxPendingEvents;
+
+						continue;
+					}
+					//Works but it is janky. Requires user to seperate out the event types. I need to handle that. Works with static cast too.
+					for (EventCallbackFn func : m_Func)
+					{
+						if (func == nullptr)
+							break;
+
+						//after each function has run, it will check to see if the event has been handled as this will allow for the event 
+						//to be stopped before reaching a function. However, the event will be removed on the next UpdatePendingEvents cycle.
+						if (!m_PendingEvents[num]->GetEvent().is_Handled)
+						{
+							func(dynamic_cast<decltype(m_PendingEvents[num]->GetEvent())>(m_PendingEvents[num]->GetEvent()));
+						}
+					}
+				}
+			}
+		}
 		struct data
 		{
 			data(PEvent* p_Event) : m_Event(p_Event) {}
@@ -183,6 +208,9 @@ namespace Pine {
 
 
 
+
+	//THE EVENTS NEED TO BE MOVED OUTSIDE OF THIS CLASS
+
 	//Event takes care of itself, when created with a pointer
 	//The events need to be moved either to the event.cpp, or into a class that deals with the event type. 
 
@@ -204,7 +232,7 @@ namespace Pine {
 		int x = 100;
 		int y = 100;
 	};
-
+	//p_X is the x position of the cursor, p_Y is the y pos of the cursor, p_button for the Input::TYPE of mouse press, and bool for if the button is held. The event when created will self publish to the event system
 	struct MouseButtonDownEvent : PEvent
 	{
 		MouseButtonDownEvent(int p_X, int p_Y, Input::MouseButtons p_Button, bool p_Held) : x(p_X), y(p_Y),l_button(p_Button), held(p_Held)
@@ -227,6 +255,62 @@ namespace Pine {
 		bool held;
 		Input::MouseButtons l_button;
 
+
+	};
+	struct MouseButtonUpEvent : PEvent
+	{
+		MouseButtonUpEvent(int p_X, int p_Y, Input::MouseButtons p_Button, bool p_Held) : x(p_X), y(p_Y), l_button(p_Button), held(p_Held)
+		{
+			EventSystem::PublishEvent(this);
+		}
+
+		int GetX() const { return x; }
+		int GetY() const { return y; }
+		Input::MouseButtons GetButtonDown() const { return l_button; }
+
+		bool IsHeld() const { return held; }
+
+		SET_EVENT_TYPE(MouseButtonUp);
+		SET_CATEGORY_TYPE(WindowEvent | MouseEvent | InputEvent);
+
+	private:
+		int x;
+		int y;
+		bool held;
+		Input::MouseButtons l_button;
+
+
+	};
+	struct KeyDownEvent :PEvent 
+	{
+		
+		KeyDownEvent(Input::KeyStrokes p_Key) :l_Key(p_Key)
+		{
+			EventSystem::PublishEvent(this);
+		}
+
+		Input::KeyStrokes GetKey() { return l_Key; }
+		SET_EVENT_TYPE(KeyDown);
+		SET_CATEGORY_TYPE(WindowEvent | KeyboardEvent | InputEvent);
+	private: 
+		Input::KeyStrokes l_Key;
+	
+	};
+
+	struct KeyUpEvent :PEvent
+	{
+
+		KeyUpEvent(Input::KeyStrokes p_Key) :l_Key(p_Key)
+		{
+			EventSystem::PublishEvent(this);
+		}
+
+		Input::KeyStrokes GetKey() { return l_Key; }
+
+		SET_EVENT_TYPE(KeyUp);
+		SET_CATEGORY_TYPE(WindowEvent | KeyboardEvent | InputEvent);
+	private:
+		Input::KeyStrokes l_Key;
 
 	};
 }

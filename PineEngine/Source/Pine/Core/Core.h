@@ -59,7 +59,7 @@
 
 //#include "ECS/PineECS.h"
 namespace Pine {
-
+	
 	
 	class Core
 	{

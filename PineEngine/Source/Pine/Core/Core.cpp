@@ -147,12 +147,15 @@ namespace Pine {
 			e.is_Handled = true;
 
 		}
-		else if (e.GetEventType() == Pine::EventType::MouseButtonDown)
+		 if (e.GetEventType() == Pine::EventType::MouseButtonDown)
 		{
-			//cannot get event specific data as any child object of event will not be passed down., need to link each type to a function
-			e.is_Handled = true;
-			std::cout << dynamic_cast<Pine::MouseButtonDownEvent&>(e).GetX() << std::endl;
+			PINE_ENGINE_INFO("MOUSE BUTTON DOWN");
 
+		}
+		 if (e.GetEventType() == Pine::EventType::MouseButtonUp)
+		{
+			PINE_ENGINE_INFO("MOUSE BUTTON UP");
+			//e.is_Handled = true;
 
 		}
 	
@@ -263,6 +266,9 @@ namespace Pine {
 
 		if (ImGui::Button("Limit FPS to 60"))
 			limitFPS = !limitFPS;
+		PVector2f mousePos = Input::GetMousePosition();
+		ImGui::Text("Mouse X pos: %f",mousePos.X);
+		ImGui::Text("Mouse Y pos: %f",mousePos.Y);
 
 		ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
 		ImGui::End();
@@ -285,6 +291,7 @@ namespace Pine {
 		SDL_Event e;
 		while (SDL_PollEvent(&e))
 		{
+			static SDL_Event heldE;
 			switch (e.type)
 			{
 			default:
@@ -296,20 +303,30 @@ namespace Pine {
 				givenGame->OnMouseClick();
 				Input::MousePressed(&e);
 				Pine::MouseButtonDownEvent* event = new Pine::MouseButtonDownEvent(e.button.x, e.button.y, Input::MouseDown(&e), false);
+				heldE = e;
+				
+				break;
+			}
+			case SDL_MOUSEBUTTONUP:
+			{
+				//	PINE_ENGINE_WARN("MOUSE BUTTON RELEASED");
+				Input::MouseReleased(&e);
 
-
+				Pine::MouseButtonUpEvent* event = new Pine::MouseButtonUpEvent(e.button.x, e.button.y, Input::MouseDown(&e), false);
 
 				break;
 			}
-
-			case SDL_MOUSEBUTTONUP:
-				//	PINE_ENGINE_WARN("MOUSE BUTTON RELEASED");
-				Input::MouseReleased(&e);
-				break;
-
 			case SDL_KEYDOWN:
+			{
 				Input::KeyPressed(&e);
+				Pine::KeyDownEvent* event = new Pine::KeyDownEvent(Input::KeyDown(&e));
 				break;
+			}
+			case SDL_KEYUP:
+			{
+				Pine::KeyUpEvent* event = new Pine::KeyUpEvent(Input::KeyDown(&e));
+				break;
+			}
 
 			case SDL_QUIT:
 				givenGame->GameClose();
@@ -332,7 +349,7 @@ namespace Pine {
 				}
 			}
 		}
-		EventSystem::Run();
+		//EventSystem::Run();
 	}
 
 	Pine::PVector2f Core::GetMousePos()
