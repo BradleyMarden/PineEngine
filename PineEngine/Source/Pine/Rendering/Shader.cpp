@@ -4,6 +4,7 @@ namespace Pine {
 
 	SourceShader Shader::LoadShader(const std::string& p_fileLocation)
 	{
+        PINE_ENGINE_INFO("Loading Shader");
 		std::ifstream stream(p_fileLocation);
 
 		std::string currentLine;

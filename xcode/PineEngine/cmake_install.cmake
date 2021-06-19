@@ -1,4 +1,4 @@
-# Install script for directory: /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine
+# Install script for directory: /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

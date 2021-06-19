@@ -1,6 +1,6 @@
 dependencies: \
   /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Game.cpp \
-  /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Game.h \
+  /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Game.h \
   /usr/local/include/SDL2/SDL.h /usr/local/include/SDL2/SDL_main.h \
   /usr/local/include/SDL2/SDL_stdinc.h \
   /usr/local/include/SDL2/SDL_config.h \

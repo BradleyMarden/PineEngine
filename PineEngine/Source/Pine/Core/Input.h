@@ -35,8 +35,8 @@ namespace Pine {
 		//THESE NEED TO BE REFACTORED< LOTS OF UNUSED OR REWRITTEN CODE AS A RESUKT OF THE EVENT SYSTEM
 
 		//test function for event system.
-		static Input::MouseButtons Input::MouseDown(SDL_Event* e);
-		static Input::KeyStrokes Input::KeyDown(SDL_Event* e);
+        static MouseButtons MouseDown(SDL_Event* e);
+        static KeyStrokes KeyDown(SDL_Event* e);
 
 		static bool OnMouseButtonUp(int mouseButton);
 		static bool CloseApplication();

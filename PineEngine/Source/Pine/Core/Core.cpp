@@ -18,11 +18,24 @@ namespace Pine {
 	{
 		#if DEBUG //initialises logging to the console
 			Pine::Log::Init();
-		#endif // DEBUG
-		m_start = std::chrono::steady_clock::now();
-		SDL_Init(SDL_INIT_VIDEO);
-		m_Window = SDL_CreateWindow(PINE_WINDOW_NAME, SDL_WINDOWPOS_CENTERED_DISPLAY(1), SDL_WINDOWPOS_CENTERED_DISPLAY(1),  PINE_WINDOW_WIDTH, PINE_WINDOW_HEIGHT, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
-		m_Context = SDL_GL_CreateContext(m_Window);
+#endif // DEBUG
+            
+        
+        
+        //glsl_version = "#version 150";
+        
+                m_start = std::chrono::steady_clock::now();
+                SDL_Init(SDL_INIT_VIDEO);
+                m_Window = SDL_CreateWindow(PINE_WINDOW_NAME, SDL_WINDOWPOS_CENTERED_DISPLAY(1), SDL_WINDOWPOS_CENTERED_DISPLAY(1),  PINE_WINDOW_WIDTH, PINE_WINDOW_HEIGHT, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
+        SDL_GL_SetAttribute(SDL_GL_CONTEXT_FLAGS, SDL_GL_CONTEXT_FORWARD_COMPATIBLE_FLAG); // Always required on Mac
+        SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
+        SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
+        SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);
+        SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
+        SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
+        SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 8);
+                m_Context = SDL_GL_CreateContext(m_Window);
+       
 
 		//abort if glew not init. 
 		assert(!glewInit());
@@ -40,7 +53,8 @@ namespace Pine {
 		PINE_ENGINE_INFO("Created By Bradley Marden : Licensed under Apache License");
 		PINE_ENGINE_INFO("Refer to Documentation for Engine Use Cases");
 		PINE_ENGINE_INFO("Application Starting...");
-
+        PINE_ENGINE_INFO("Shader Version:  %s", glGetString(GL_VERSION));
+        std::cout <<"Shader Version:" << glGetString(GL_VERSION) << std::endl;
 		
 		if (flags & Pine_Networking)
 		{
@@ -68,9 +82,14 @@ namespace Pine {
 			return false;
 		}
 
-		//come back to
-		SourceShader localShaders = Pine::Shader::LoadShader("Assets/Shaders/default.PineShader");
+#ifdef PINE_PLATFORM_WINDOWS
 
+        SourceShader localShaders = Pine::Shader::LoadShader("Assets/Shaders/default.PineShader");
+#endif // PINE_PLATFORM_WINDOWS
+		
+#ifdef PINE_PLATFORM_MACOS
+        SourceShader localShaders = Pine::Shader::LoadShader("../Assets/Shaders/default.PineShader");
+#endif
 		localshader = Shader::CreateShader(localShaders.VertexSource, localShaders.FragmentSource);
 		glUseProgram(localshader);
 
@@ -106,7 +125,7 @@ namespace Pine {
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, 6 * sizeof(unsigned int), indicies, GL_STATIC_DRAW);
 
-		int lID = glGetUniformLocation(localshader, "u_Color");
+		/*int lID = glGetUniformLocation(localshader, "u_Color");
 		
 		//lID will return -1 if the uniform is not used or set. this is a feature of opengl to cleanup.
 		if (lID != -1)
@@ -119,7 +138,7 @@ namespace Pine {
 			
 			PINE_ENGINE_WARN("Could not find uniform");
 		}
-		
+		*/
 
 		//Setup IMGUI
 		IMGUI_CHECKVERSION();
