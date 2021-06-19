@@ -26,16 +26,37 @@ namespace Pine {
         
                 m_start = std::chrono::steady_clock::now();
                 SDL_Init(SDL_INIT_VIDEO);
+#ifdef PINE_PLATFORM_MACOS 
+				// Request an OpenGL 4.5 context (should be core)
+				SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1);
+				SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
+				SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 6);
+				SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK,
+					SDL_GL_CONTEXT_PROFILE_CORE);
+
+				// Also request a depth buffer
+				SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
+				SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
+				SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 8);
+#endif
+				
+				// Request an OpenGL 4.5 context (should be core)
+				SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1);
+				SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
+				SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 6);
+				SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK,
+					SDL_GL_CONTEXT_PROFILE_CORE);
+
+				// Also request a depth buffer
+				SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
+				SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
+				SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 8);
                 m_Window = SDL_CreateWindow(PINE_WINDOW_NAME, SDL_WINDOWPOS_CENTERED_DISPLAY(1), SDL_WINDOWPOS_CENTERED_DISPLAY(1),  PINE_WINDOW_WIDTH, PINE_WINDOW_HEIGHT, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
-        SDL_GL_SetAttribute(SDL_GL_CONTEXT_FLAGS, SDL_GL_CONTEXT_FORWARD_COMPATIBLE_FLAG); // Always required on Mac
-        SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
-        SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
-        SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);
-        SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
-        SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
-        SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 8);
+      //SDL_GL_SetAttribute(SDL_GL_CONTEXT_FLAGS, SDL_GL_CONTEXT_FORWARD_COMPATIBLE_FLAG); // Always required on Mac
+
                 m_Context = SDL_GL_CreateContext(m_Window);
-       
+				glViewport(0, 0, PINE_WINDOW_WIDTH, PINE_WINDOW_HEIGHT);
+				glClearColor(0.0f, 0.5f, 1.0f, 0.0f);
 
 		//abort if glew not init. 
 		assert(!glewInit());
@@ -53,8 +74,10 @@ namespace Pine {
 		PINE_ENGINE_INFO("Created By Bradley Marden : Licensed under Apache License");
 		PINE_ENGINE_INFO("Refer to Documentation for Engine Use Cases");
 		PINE_ENGINE_INFO("Application Starting...");
-        PINE_ENGINE_INFO("Shader Version:  %s", glGetString(GL_VERSION));
-        std::cout <<"Shader Version:" << glGetString(GL_VERSION) << std::endl;
+		printf("Vendor:   %s\n", glGetString(GL_VENDOR));
+		printf("Renderer: %s\n", glGetString(GL_RENDERER));
+		printf("Version:  %s\n", glGetString(GL_VERSION));
+
 		
 		if (flags & Pine_Networking)
 		{

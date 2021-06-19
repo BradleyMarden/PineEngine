@@ -10,7 +10,7 @@ void main()
 
     gl_Position = position;
     pos = gl_Position;
-};
+}
 
 
 

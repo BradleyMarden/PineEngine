@@ -1,24 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="D:\Game Engine\PineEngine\Game\Source\MyGame.cpp">
+    <ClCompile Include="C:\Users\brads\Desktop\New folder (2)\Game\Source\MyGame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="D:\Game Engine\PineEngine\Game\Source\MyGame.h">
+    <ClInclude Include="C:\Users\brads\Desktop\New folder (2)\Game\Source\MyGame.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\Game Engine\PineEngine\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\brads\Desktop\New folder (2)\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{4839AF56-39D9-35F9-804C-A1E41CDA2CC7}</UniqueIdentifier>
+      <UniqueIdentifier>{2617AAE2-D289-3109-8970-E885F5D3FF58}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{9B3B6125-27EE-3B3C-95DB-7496CB1367FF}</UniqueIdentifier>
+      <UniqueIdentifier>{DB6236CD-DFAB-3966-8916-D443C0E2CAB0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

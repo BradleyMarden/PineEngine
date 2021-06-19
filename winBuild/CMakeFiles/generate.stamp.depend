@@ -96,14 +96,14 @@ C:/Program Files/CMake/share/cmake-3.20/Modules/Platform/Windows-MSVC-CXX.cmake
 C:/Program Files/CMake/share/cmake-3.20/Modules/Platform/Windows-MSVC.cmake
 C:/Program Files/CMake/share/cmake-3.20/Modules/Platform/Windows.cmake
 C:/Program Files/CMake/share/cmake-3.20/Modules/Platform/WindowsPaths.cmake
-D:/Game Engine/PineEngine/CMAKE/FindGLEW.cmake
-D:/Game Engine/PineEngine/CMAKE/FindGLFW.cmake
-D:/Game Engine/PineEngine/CMAKE/FindSDL2.cmake
-D:/Game Engine/PineEngine/CMAKE/FindSDL2Mixer.cmake
-D:/Game Engine/PineEngine/CMAKE/FindSDL2TTF.cmake
-D:/Game Engine/PineEngine/CMAKE/FindSDL2_IMAGE.cmake
-D:/Game Engine/PineEngine/CMakeLists.txt
-D:/Game Engine/PineEngine/winBuild/CMakeFiles/3.20.2/CMakeCCompiler.cmake
-D:/Game Engine/PineEngine/winBuild/CMakeFiles/3.20.2/CMakeCXXCompiler.cmake
-D:/Game Engine/PineEngine/winBuild/CMakeFiles/3.20.2/CMakeRCCompiler.cmake
-D:/Game Engine/PineEngine/winBuild/CMakeFiles/3.20.2/CMakeSystem.cmake
+C:/Users/brads/Desktop/New folder (2)/CMAKE/FindGLEW.cmake
+C:/Users/brads/Desktop/New folder (2)/CMAKE/FindGLFW.cmake
+C:/Users/brads/Desktop/New folder (2)/CMAKE/FindSDL2.cmake
+C:/Users/brads/Desktop/New folder (2)/CMAKE/FindSDL2Mixer.cmake
+C:/Users/brads/Desktop/New folder (2)/CMAKE/FindSDL2TTF.cmake
+C:/Users/brads/Desktop/New folder (2)/CMAKE/FindSDL2_IMAGE.cmake
+C:/Users/brads/Desktop/New folder (2)/CMakeLists.txt
+C:/Users/brads/Desktop/New folder (2)/winBuild/CMakeFiles/3.20.2/CMakeCCompiler.cmake
+C:/Users/brads/Desktop/New folder (2)/winBuild/CMakeFiles/3.20.2/CMakeCXXCompiler.cmake
+C:/Users/brads/Desktop/New folder (2)/winBuild/CMakeFiles/3.20.2/CMakeRCCompiler.cmake
+C:/Users/brads/Desktop/New folder (2)/winBuild/CMakeFiles/3.20.2/CMakeSystem.cmake
