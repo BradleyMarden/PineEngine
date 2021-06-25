@@ -73,7 +73,20 @@ namespace Pine {
 	class EventSystem
 	{
 	public:
+		~EventSystem() 
+		{
+			for (int i = 0; i < (sizeof(m_PendingEvents) / sizeof(data)); i++) 
+			{
 
+				if (m_PendingEvents[i] != nullptr)
+				{
+					delete(m_PendingEvents[i]);
+
+				}
+			}
+
+			
+		}
 		static void PublishEvent(PEvent* p_Event)
 		{
 			//ISSUE check working, just not printing to the console.

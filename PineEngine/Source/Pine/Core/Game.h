@@ -58,10 +58,5 @@ namespace Pine {
 
 	Game* CreateGame();
 }
-#define PINE_WINDOW_WIDTH Pine::Game::GetWindowWidth()
-
-#define PINE_WINDOW_HEIGHT Pine::Game::GetWindowHeight()
-
-#define PINE_WINDOW_NAME &Pine::Game::GetWindowName()
 
 //$//(SolutionDir)PineEngine\Vendor\spdlog\include;$(SolutionDir)PineEngine\Vendor\SDL2-2.0.12\include;$(SolutionDir)PineEngine\Vendor\enet-1.3.16\include;

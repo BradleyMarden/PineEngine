@@ -203,12 +203,6 @@ GLEW_INCLUDE_DIR:PATH=C:/Users/brads/Desktop/New folder (2)/PineEngine/Vendor/gl
 //Where the GLEW Library can be found
 GLEW_LIBRARY:STRING=C:/Users/brads/Desktop/New folder (2)/PineEngine/Vendor/glew-2.1.0/lib/Release/x64/glew32.lib
 
-//Path to a file.
-GLFW_INCLUDE_DIR:PATH=C:/Users/brads/Desktop/New folder (2)/PineEngine/Vendor/glfw-3.3.4/include/GLFW
-
-//Where the GLFW Library can be found
-GLFW_LIBRARY:STRING=C:/Users/brads/Desktop/New folder (2)/PineEngine/Vendor/glfw-3.3.4/lib-vc2019/glfw3.lib
-
 //OpenGL library for win32
 OPENGL_gl_LIBRARY:STRING=opengl32
 
@@ -386,8 +380,6 @@ CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding GLEW
 FIND_PACKAGE_MESSAGE_DETAILS_GLEW:INTERNAL=[C:/Users/brads/Desktop/New folder (2)/PineEngine/Vendor/glew-2.1.0/lib/Release/x64/glew32.lib][C:/Users/brads/Desktop/New folder (2)/PineEngine/Vendor/glew-2.1.0/include/GL][v()]
-//Details about finding GLFW
-FIND_PACKAGE_MESSAGE_DETAILS_GLFW:INTERNAL=[C:/Users/brads/Desktop/New folder (2)/PineEngine/Vendor/glfw-3.3.4/lib-vc2019/glfw3.lib][C:/Users/brads/Desktop/New folder (2)/PineEngine/Vendor/glfw-3.3.4/include/GLFW][v()]
 //Details about finding OpenGL
 FIND_PACKAGE_MESSAGE_DETAILS_OpenGL:INTERNAL=[opengl32][c ][v()]
 //Details about finding SDL2
@@ -401,7 +393,6 @@ FIND_PACKAGE_MESSAGE_DETAILS_SDL2_IMAGE:INTERNAL=[C:/Users/brads/Desktop/New fol
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 GLEW_LIBRARY_TEMP:INTERNAL=C:/Users/brads/Desktop/New folder (2)/PineEngine/Vendor/glew-2.1.0/lib/Release/x64/glew32.lib
-GLFW_LIBRARY_TEMP:INTERNAL=C:/Users/brads/Desktop/New folder (2)/PineEngine/Vendor/glfw-3.3.4/lib-vc2019/glfw3.lib
 //ADVANCED property for variable: OPENGL_gl_LIBRARY
 OPENGL_gl_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OPENGL_glu_LIBRARY

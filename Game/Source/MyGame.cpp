@@ -36,7 +36,7 @@ void myGame::Update(){
     if (Input::GetKeyDown(SDLK_d) && Input::GetKeyDown(SDLK_w))
     {
         Pine::MouseButtonDownEvent* e = new Pine::MouseButtonDownEvent(100,100,Pine::Input::LEFTDOWN, false);
-
+        
     }
 }
 void myGame::OnMouseClick(){}

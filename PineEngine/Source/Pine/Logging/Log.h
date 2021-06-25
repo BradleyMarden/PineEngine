@@ -63,7 +63,8 @@ namespace Pine {
 inline void PineAssert(const char* p_Message, bool functionReturn)
 {
 	if (!functionReturn) {
-		std::cerr << "Error:\t" << p_Message << "\n";
+		//std::cerr << "Error:\t" << p_Message << "\n";
+		PINE_ENGINE_ERROR(p_Message);
 		abort();
 	}
 }

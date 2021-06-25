@@ -23,22 +23,6 @@
 #include "SDL_image.h"
 
 
-#define SDL_MAIN_HANDLED
-#undef main
-
-#ifdef PINE_PLATFORM_WINDOWS
-
-	#include <GL/glew.h>
-	#include <GL/GL.h>
-	#include <gl/GL.h>
-	#include <SDL_opengl.h>
-
-#endif // PINE_PLATFORM_WINDOWS
-#ifdef PINE_PLATFORM_MACOS
-#include <GL/glew.h>
-	#include <OpenGL/gl.h>
-#include <SDL_opengl.h>
-#endif // PINE_PLATFORM_MACOS
 
 
 //PINE INCLUDES
@@ -50,6 +34,8 @@
 #include "../Rendering/Shader.h"
 #include "EventSystem.h"
 #include "../Maths/PMaths.h" 
+#include "window.h"
+#include "Renderer.h"
 
 //NEED TO LOOK INTO PRE COMPILED HEADERS
 
@@ -69,6 +55,7 @@ namespace Pine {
 						~Core();
 		void			PineCloseWindow();
 		void			PineOpenWindow();
+		void			PineFirstWindow();
 		bool			PineInit(Game* game, uint8_t flags);
 		void			PineStart();
 		void			Render();
@@ -80,9 +67,9 @@ namespace Pine {
 
 
 	private:
-		static inline SDL_Window*	m_Window = nullptr;
-		static inline SDL_Window*	m_SecondWindow = nullptr;
-		static inline SDL_GLContext m_Context; /* Our opengl context handle */
+		static inline Window*	m_WindowTwo = nullptr;
+		Renderer*				m_PineRenderer = nullptr;
+
 		Game*			givenGame = nullptr;//we do not own the game, entry point does. 
 		SDL_Renderer*	renderer;
 		SDL_Rect		rect;

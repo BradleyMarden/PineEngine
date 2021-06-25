@@ -72,22 +72,22 @@ Message("")
 Message( STATUS "FINDING GLEW" )
 Message( STATUS "GLEW_FOUND: " ${GLEW_FOUND})
 IF (${GLEW_FOUND})
-    Message( STATUS "GLEW_INCLUDE_DIR: " ${GLEW_INCLUDE_DIR})
+   Message( STATUS "GLEW_INCLUDE_DIR: " ${GLEW_INCLUDE_DIR})
     Message( STATUS "GLEW_LIBRARY: " ${GLEW_LIBRARY})
 ELSE()
-    Message( FATAL_ERROR "GLEW NOT FOUND" )
+   Message( FATAL_ERROR "GLEW NOT FOUND" )
 ENDIF()
 
-FIND_PACKAGE(GLFW)
-Message("")
-Message( STATUS "FINDING GLFW" )
-Message( STATUS "GLFW_FOUND: " ${GLFW_FOUND})
-IF (${GLFW_FOUND})
-    Message( STATUS "GLFW_INCLUDE_DIR: " ${GLFW_INCLUDE_DIR})
-    Message( STATUS "GLFW_LIBRARY: " ${GLFW_LIBRARY})
-ELSE()
-    Message( FATAL_ERROR "GLFW NOT FOUND" )
-ENDIF()
+#FIND_PACKAGE(GLFW)
+#Message("")
+#Message( STATUS "FINDING GLFW" )
+#Message( STATUS "GLFW_FOUND: " ${GLFW_FOUND})
+#IF (${GLFW_FOUND})
+#    Message( STATUS "GLFW_INCLUDE_DIR: " ${GLFW_INCLUDE_DIR})
+ #   Message( STATUS "GLFW_LIBRARY: " ${GLFW_LIBRARY})
+#ELSE()
+#    Message( FATAL_ERROR "GLFW NOT FOUND" )
+#ENDIF()
 
 # ------- End Finds ------ #
 
@@ -111,8 +111,8 @@ include_directories(
     PineEngine/Vendor/glew-2.1.0/include
     ${SDL2_INCLUDE_DIR}
     ${SDL2_IMAGE_INCLUDE_DIR}
-    ${GLEW_INCLUDE_DIR}
-    ${GLFW_INCLUDE_DIR}
+    {GLEW_INCLUDE_DIR}
+   # ${GLFW_INCLUDE_DIR}
     ${SDL2TTF_INCLUDE_DIR}
     ${SDL2Mixer_INCLUDE_DIRS}
     PineEngine/Vendor/enet-1.3.16/include
@@ -138,7 +138,7 @@ TARGET_LINK_LIBRARIES(
     ${SDL2_LIBRARY}
     ${SDL2_IMAGE_LIBRARY}
     ${SDL2TTF_LIBRARY}
-    ${GLFW_LIBRARY}
+    #${GLFW_LIBRARY}
     ${GLEW_LIBRARY}
     ${SDL2Mixer_LIBRARY}
 )
@@ -151,7 +151,7 @@ if(APPLE)
     Message( STATUS "FINDING libenet.a" )
     
     TARGET_LINK_LIBRARIES(Game ${CMAKE_SOURCE_DIR}/PineEngine/Vendor/enet-1.3.16/lib/libenet.a "-framework OpenGL")
-
+    TARGET_LINK_LIBRARIES(Game ${CMAKE_SOURCE_DIR}/PineEngine/Vendor/glew-2.1.0/lib/Release/Win32/libGLEW.a)
 elseif(WIN32)
 
     set(copy_dest_dir "${CMAKE_BINARY_DIR}/bin/$<CONFIG>")
@@ -159,6 +159,10 @@ elseif(WIN32)
     Message( STATUS "FINDING enet64.lib" )
     
     TARGET_LINK_LIBRARIES(Game ${CMAKE_SOURCE_DIR}/PineEngine/Vendor/enet-1.3.16/lib/enet64.lib)
+
+   # Message( STATUS "FINDING glew32s.lib" )
+
+   #TARGET_LINK_LIBRARIES(Game ${CMAKE_SOURCE_DIR}/PineEngine/Vendor/glew-2.1.0/lib/Release/Win32/glew32s.lib)
     
     Message( STATUS "FINDING wsock32.lib ws2_32.lib and winmm.lib" )
 
@@ -192,8 +196,8 @@ set(SDL_TTF_DLL "SDL2_ttf.dll")
 set(GLEW_DLL_DIR "${CMAKE_SOURCE_DIR}/PineEngine/Vendor/glew-2.1.0/bin/Release/x64")
 set(GLEW_DLL "glew32.dll")
 
-set(GLFW_DLL_DIR "${CMAKE_SOURCE_DIR}/PineEngine/Vendor/glfw-3.3.4/lib-vc2019")
-set(GLFW_DLL "glfw3.dll")
+#set(GLFW_DLL_DIR "${CMAKE_SOURCE_DIR}/PineEngine/Vendor/glfw-3.3.4/lib-vc2019")
+#set(GLFW_DLL "glfw3.dll")
 
 add_custom_command(
     TARGET Game POST_BUILD 
@@ -221,15 +225,15 @@ add_custom_command(
 
 add_custom_command(
     TARGET Game POST_BUILD 
-    COMMAND ${CMAKE_COMMAND} -E copy "${GLEW_DLL_DIR}/${GLEW_DLL}" "${copy_dest_dir}/${GLEW_DLL}"
+  COMMAND ${CMAKE_COMMAND} -E copy "${GLEW_DLL_DIR}/${GLEW_DLL}" "${copy_dest_dir}/${GLEW_DLL}"
     COMMENT "Copying ${GLEW_DLL} to build directory"
 )
 
-add_custom_command(
-    TARGET Game POST_BUILD 
-    COMMAND ${CMAKE_COMMAND} -E copy "${GLFW_DLL_DIR}/${GLFW_DLL}" "${copy_dest_dir}/${GLFW_DLL}"
-    COMMENT "Copying ${GLFW_DLL} to build directory"
-)
+#add_custom_command(
+#    TARGET Game POST_BUILD 
+ #   COMMAND ${CMAKE_COMMAND} -E copy "${GLFW_DLL_DIR}/${GLFW_DLL}" "${copy_dest_dir}/${GLFW_DLL}"
+ #   COMMENT "Copying ${GLFW_DLL} to build directory"
+#)
 
 add_custom_command(
     TARGET Game POST_BUILD 

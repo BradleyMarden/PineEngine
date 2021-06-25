@@ -57,7 +57,8 @@ target_include_directories(PineEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Vendor
 target_include_directories(PineEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Vendor/glew-2.1.0/include")
 target_include_directories(PineEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Vendor/imgui1.83")
 
-target_include_directories(PineEngine PUBLIC ${GLFW_INCLUDE_DIR})
+#target_include_directories(PineEngine PUBLIC ${GLFW_INCLUDE_DIR})
+target_include_directories(PineEngine PUBLIC ${GLEW_INCLUDE_DIR})
 target_include_directories(PineEngine PUBLIC ${SDL2_INCLUDE_DIR})
 target_include_directories(PineEngine PUBLIC ${SDL2_IMAGE_INCLUDE_DIR})
 target_include_directories(PineEngine PUBLIC ${SDL2TTF_INCLUDE_DIR})

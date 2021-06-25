@@ -1,6 +1,7 @@
 #include "Core.h"
 
-namespace Pine {
+namespace Pine 
+{
 	Core::Core()
 	{
 
@@ -8,58 +9,32 @@ namespace Pine {
 	Core::~Core()
 	{
 		//hello
+		delete m_WindowTwo;
+		delete m_PineRenderer;
 	}
 
-
-	
-
-	
-	void Core::PineOpenWindow()
+	//first window to open the application, can ONLY be called once
+	void Core::PineFirstWindow() 
 	{
 		#if DEBUG //initialises logging to the console
-			Pine::Log::Init();
-#endif // DEBUG
-            
-        
-        
-        //glsl_version = "#version 150";
-        
-                m_start = std::chrono::steady_clock::now();
-                SDL_Init(SDL_INIT_VIDEO);
-#ifdef PINE_PLATFORM_MACOS 
-				// Request an OpenGL 4.5 context (should be core)
-				SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1);
-				SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
-				SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 6);
-				SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK,
-					SDL_GL_CONTEXT_PROFILE_CORE);
+				Pine::Log::Init();
+		#endif // DEBUG
 
-				// Also request a depth buffer
-				SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
-				SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
-				SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 8);
-#endif
+				m_start = std::chrono::steady_clock::now();
+				m_WindowTwo = new Window(PINE_WINDOW_NAME);
+				//m_WindowTwo = l_Window;
+				//
+				//assert(!glewInit());
 				
-				// Request an OpenGL 4.5 context (should be core)
-				SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1);
-				SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
-				SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 6);
-				SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK,
-					SDL_GL_CONTEXT_PROFILE_CORE);
+				std::cerr << "Status: Using GLEW " << glewGetString(GLEW_VERSION) << std::endl;
+			m_PineRenderer = new Renderer();
 
-				// Also request a depth buffer
-				SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
-				SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
-				SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 8);
-                m_Window = SDL_CreateWindow(PINE_WINDOW_NAME, SDL_WINDOWPOS_CENTERED_DISPLAY(1), SDL_WINDOWPOS_CENTERED_DISPLAY(1),  PINE_WINDOW_WIDTH, PINE_WINDOW_HEIGHT, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
-      //SDL_GL_SetAttribute(SDL_GL_CONTEXT_FLAGS, SDL_GL_CONTEXT_FORWARD_COMPATIBLE_FLAG); // Always required on Mac
+	}
 
-                m_Context = SDL_GL_CreateContext(m_Window);
-				glViewport(0, 0, PINE_WINDOW_WIDTH, PINE_WINDOW_HEIGHT);
-				glClearColor(0.0f, 0.5f, 1.0f, 0.0f);
-
-		//abort if glew not init. 
-		assert(!glewInit());
+	//unused, will be fo opening more windows
+	void Core::PineOpenWindow()
+	{
+		
 
 	}
 
@@ -90,7 +65,7 @@ namespace Pine {
 		}
 		
 		//done
-		renderer = SDL_CreateRenderer(m_Window, -1, 0);
+		renderer = SDL_CreateRenderer(m_WindowTwo->GetMainWindow(), -1, 0);
 		SDL_SetRenderDrawColor(renderer, 21, 27, 31, 255);
 		SDL_RenderClear(renderer);
 
@@ -113,9 +88,10 @@ namespace Pine {
 #ifdef PINE_PLATFORM_MACOS
         SourceShader localShaders = Pine::Shader::LoadShader("../Assets/Shaders/default.PineShader");
 #endif
-		localshader = Shader::CreateShader(localShaders.VertexSource, localShaders.FragmentSource);
-		glUseProgram(localshader);
 
+		localshader = Shader::CreateShader(localShaders.VertexSource, localShaders.FragmentSource);
+
+		glUseProgram(localshader);
 
 
 		float VertexArray[12] =
@@ -168,7 +144,7 @@ namespace Pine {
 		ImGui::CreateContext();
 		ImGuiIO& io = ImGui::GetIO(); (void)io;
 		ImGui::StyleColorsDark();
-		ImGui_ImplSDL2_InitForOpenGL(m_Window, m_Context);
+		ImGui_ImplSDL2_InitForOpenGL(m_WindowTwo->GetMainWindow(), &m_WindowTwo->GetMainWindowContext());
 		ImGui_ImplOpenGL3_Init(glsl_version);
 
 		//TEST EVENT FUNCTION 
@@ -225,7 +201,7 @@ namespace Pine {
 				HandleEvents();
 				ApplicationRunning();
 				//Draw(false);
-				SDL_GetWindowSize(m_Window, &Game::m_WindowWidth, &Game::m_WindowHeight);
+				SDL_GetWindowSize(m_WindowTwo->GetMainWindow(), &Game::m_WindowWidth, &Game::m_WindowHeight);
 				Render();
 
 
@@ -284,7 +260,7 @@ namespace Pine {
 		//glDrawArrays(GL_TRIANGLES, 0, 6);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
 		RenderUI();
-		SDL_GL_SwapWindow(m_Window);
+		SDL_GL_SwapWindow(m_WindowTwo->GetMainWindow());
 	}
 
 	void Core::RenderUI() 
@@ -292,7 +268,7 @@ namespace Pine {
 		
 		// Start the Dear ImGui frame
 		ImGui_ImplOpenGL3_NewFrame();
-		ImGui_ImplSDL2_NewFrame(m_Window);
+		ImGui_ImplSDL2_NewFrame(m_WindowTwo->GetMainWindow());
 		//IMGUI CREATE FRAME
 		ImGui::NewFrame();
 		ImGui::SetNextWindowPos(ImVec2(0, 0), ImGuiCond_Always);
@@ -417,10 +393,9 @@ namespace Pine {
 			ImGui::DestroyContext();
 			SDL_DestroyRenderer(renderer);
 		}
-
-		SDL_GL_DeleteContext(m_Context);
-		SDL_DestroyWindow(m_Window);
-		SDL_DestroyWindow(m_SecondWindow);
+		
+		SDL_GL_DeleteContext(&m_WindowTwo->GetMainWindowContext());
+		SDL_DestroyWindow(m_WindowTwo->GetMainWindow());
 		SDL_Quit();
 	}
 
