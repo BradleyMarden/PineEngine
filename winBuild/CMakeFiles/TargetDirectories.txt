@@ -1,4 +1,0 @@
-C:/Users/brads/Desktop/New folder (2)/winBuild/CMakeFiles/Game.dir
-C:/Users/brads/Desktop/New folder (2)/winBuild/CMakeFiles/ALL_BUILD.dir
-C:/Users/brads/Desktop/New folder (2)/winBuild/CMakeFiles/ZERO_CHECK.dir
-C:/Users/brads/Desktop/New folder (2)/winBuild/PineEngine/CMakeFiles/PineEngine.dir

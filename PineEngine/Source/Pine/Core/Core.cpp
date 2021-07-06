@@ -4,7 +4,7 @@ namespace Pine
 {
 	Core::Core()
 	{
-
+		//adw
 	}
 	Core::~Core()
 	{

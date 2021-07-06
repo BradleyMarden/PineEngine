@@ -44,6 +44,8 @@ Vendor/imgui1.83/imgui_widgets.cpp
 #Headers
     ${MY_HEADERS}
 )
+
+
 target_include_directories(PineEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Source")
 target_include_directories(PineEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Source/Pine/Core")
 target_include_directories(PineEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Source/Pine/Logging")
@@ -66,7 +68,6 @@ target_include_directories(PineEngine PUBLIC ${SDL2_IMAGE_INCLUDE_DIR})
 target_include_directories(PineEngine PUBLIC ${SDL2TTF_INCLUDE_DIR})
 target_include_directories(PineEngine PUBLIC ${SDL2Mixer_INCLUDE_DIRS})
 target_include_directories(PineEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Vendor/enet-1.3.16/include")
-
 
 
 #PRE-PROCESSOR DIRECTIVES
