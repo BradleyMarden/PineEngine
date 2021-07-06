@@ -56,6 +56,8 @@ target_include_directories(PineEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Source
 target_include_directories(PineEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Vendor/spdlog/include")
 target_include_directories(PineEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Vendor/glew-2.1.0/include")
 target_include_directories(PineEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Vendor/imgui1.83")
+target_include_directories(PineEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Vendor/glm")
+
 
 #target_include_directories(PineEngine PUBLIC ${GLFW_INCLUDE_DIR})
 target_include_directories(PineEngine PUBLIC ${GLEW_INCLUDE_DIR})

@@ -25,6 +25,8 @@ target_include_directories(Game PUBLIC "../PineEngine/Vendor/spdlog/include")
 target_include_directories(Game PUBLIC "../PineEngine/Vendor/glew-2.1.0/include")
 target_include_directories(Game PUBLIC "../PineEngine/Vendor/SDL/2.0.14/include")
 target_include_directories(Game PUBLIC "../PineEngine/Vendor/enet-1.3.16/include")
+#might not need glm here
+target_include_directories(Game PUBLIC "../PineEngine/Vendor/glm")
 
 
 add_library(
