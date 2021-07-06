@@ -1,12 +1,6 @@
 #pragma once
 #include <iostream>
 #include <Pine.h>
-//#define GLEW_STATIC
-
-//#ifdef PINE_PLATFORM_WINDOWS
-
-//UNDEFINE FOR RELSEASE
-//#define DEBUG
 
 //External function, which allows the main functions to get the developers game class. NOTE: this function MUST be implemented in a child of the Game class, see documentation.
 extern Pine::Game* Pine::CreateGame();
@@ -14,20 +8,17 @@ extern Pine::Game* Pine::CreateGame();
 //I have abstracted the main loop away from the developer as I want PineEngine to have controll of the flow of the application
 int main(int argc, const char* argv[])
 {
-    //_CrtSetBreakAlloc(152);
-
-   // _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
     //Create game, this is where all the logic for the game lives
     Pine::Game* game = Pine::CreateGame();
     if (!game->g_ParametersSet)
         game->SetWindowParameters(600, 600, "Pine Engine Application");
+
     //Create core, this is where the logic for the engine lives
     Pine::Core* App = new Pine::Core();
 
     //Open the window, currently can only be used to open one window. TBA: open multiple windows
     App->Pine::Core::PineFirstWindow();
-    //App->Pine::Core::PineOpenWindow();
 
 
     //Initilialise application
@@ -40,7 +31,5 @@ int main(int argc, const char* argv[])
 
 	delete game;
     delete App;
-    //_CrtDumpMemoryLeaks();
     return 0;
 }
-//#endif

@@ -69,7 +69,7 @@ namespace Pine {
 
 
 	private:
-		static inline Window*	m_WindowTwo = nullptr;
+		static inline Window*	m_Window = nullptr;
 		Renderer*				m_PineRenderer = nullptr;
 
 		Game*			givenGame = nullptr;//we do not own the game, entry point does. 
