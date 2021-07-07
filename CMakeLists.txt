@@ -151,7 +151,6 @@ if(APPLE)
     Message( STATUS "FINDING libenet.a" )
     
     TARGET_LINK_LIBRARIES(Game ${CMAKE_SOURCE_DIR}/PineEngine/Vendor/enet-1.3.16/lib/libenet.a "-framework OpenGL")
-    TARGET_LINK_LIBRARIES(Game ${CMAKE_SOURCE_DIR}/PineEngine/Vendor/glew-2.1.0/lib/Release/Win32/libGLEW.a)
 elseif(WIN32)
 
     set(copy_dest_dir "${CMAKE_BINARY_DIR}/bin/$<CONFIG>")

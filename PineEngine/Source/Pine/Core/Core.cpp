@@ -47,9 +47,9 @@ namespace Pine
 		PINE_ENGINE_INFO("Created By Bradley Marden : Licensed under Apache License");
 		PINE_ENGINE_INFO("Refer to Documentation for Engine Use Cases");
 		PINE_ENGINE_INFO("Application Starting...");
-		printf("Vendor:   %s\n", glGetString(GL_VENDOR));
-		printf("Renderer: %s\n", glGetString(GL_RENDERER));
-		printf("Version:  %s\n", glGetString(GL_VERSION));
+//		printf("Vendor:   %s\n", glGetString(GL_VENDOR));
+	//	printf("Renderer: %s\n", glGetString(GL_RENDERER));
+		//printf("Version:  %s\n", glGetString(GL_VERSION));
 
 		//check flags
 		

@@ -72,7 +72,7 @@ namespace Pine {
 		static void		CloseAllWindows();
 		static SDL_GLContext& GetWindowContext();
 		static WindowData* GetMainWindow();
-		static WindowData* GetMainWindow();
+        static void CloseWindow(const char* pName);
 
 		int				GetWindowID() { return m_WindowId; }
 		inline static int GetOpenWindowCount() { return (sizeof(m_Windows) / sizeof(WindowData)); }
