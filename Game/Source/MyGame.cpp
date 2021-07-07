@@ -5,42 +5,31 @@ myGame::~myGame(){}
 
 void myGame::Start()
 {
-   // std::cout << "Started" << std::endl;
     Pine::EventSystem::RegisterEventCallback(BIND_EVENT(myGame::eventTrigger));
 
-   // es = new Pine::EventSystem();
-
-   // Pine::PineEvent* event = new Pine::PineEvent("Launch");
-
-   // int id = es->Register(event);
-    //es->Subscribe(this, &Pine::Game::Start);
-    //es->Subscribe("Launch",&myGame::eventTrigger);
-    //es->Publish("Launch");
+ 
 }
 
-void myGame::Initialize(){}
-void myGame::Update(){
-
-    /*if(Input::GetKeyDown(SDLK_w))
-    {
-
-      shaders =  Pine::Shader::LoadShader("Assets/Shaders/default.PineShader");
-      //I dont like currently how the event id created. Its hard to know who has controll of the memory. in future need to abstract this into a macro or static func.
-     Pine::WindowResizeEvent*  e = new Pine::WindowResizeEvent(100,100);
-
-    }*/
-    if (Input::GetKeyDown(SDLK_a))
-    {
-
-    }
-    if (Input::GetKeyDown(SDLK_d) && Input::GetKeyDown(SDLK_w))
-    {
-        Pine::MouseButtonDownEvent* e = new Pine::MouseButtonDownEvent(100,100,Pine::Input::LEFTDOWN, false);
-        
-    }
+void myGame::Initialize()
+{
+    //app->Pine::Core::PineCreateWindow(600, 600);
+    MainWindow = new Pine::Window("Brood Main");
+    SecondWindow = new Pine::Window("Brood Second");
+    std::cout << "Num of Windows" << Pine::Window::GetOpenWindowCount() << std::endl;
 }
-void myGame::OnMouseClick(){}
-void myGame::Terminate(){}
+void myGame::Update()
+{
+  
+  
+}
+void myGame::OnMouseClick()
+{
+
+}
+void myGame::Terminate()
+{
+
+}
 
 void myGame::eventTrigger(Pine::PEvent& e) 
 {
@@ -50,13 +39,12 @@ void myGame::eventTrigger(Pine::PEvent& e)
 
     */
     
-
     std::cout << "triggered" << std::endl;
 
     if (&e == nullptr) { return; }
     if (e.GetEventType() == Pine::EventType::WindowResize)
     {
-        std::cout << "Winodw Resize" << std::endl;
+        std::cout << "Window Resize" << std::endl;
         e.is_Handled = true;
 
     }
@@ -82,7 +70,6 @@ void myGame::eventTrigger(Pine::PEvent& e)
         }
 
     }
-
      if (e.GetEventType() == Pine::EventType::KeyDown)
      {
          std::cout << "In Game" << std::endl;
@@ -97,7 +84,6 @@ void myGame::eventTrigger(Pine::PEvent& e)
          e.is_Handled = true;
 
          std::cout << dynamic_cast<Pine::KeyUpEvent&>(e).GetKey() << std::endl;
-
      }
 }
 

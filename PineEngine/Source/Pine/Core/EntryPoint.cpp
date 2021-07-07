@@ -11,21 +11,19 @@ int main(int argc, const char* argv[])
 
     //Create game, this is where all the logic for the game lives
     Pine::Game* game = Pine::CreateGame();
-    if (!game->g_ParametersSet)
-        game->SetWindowParameters(600, 600, "Pine Engine Application");
 
     //Create core, this is where the logic for the engine lives
     Pine::Core* App = new Pine::Core();
 
-    //Open the window, currently can only be used to open one window. TBA: open multiple windows
-    App->Pine::Core::PineFirstWindow();
-
+   // App->Pine::Core::PineCreateWindow(600, 600);
 
     //Initilialise application
-    PINE_ASSERT("PineEngine could not be initialised. Please check that you are passing a Pine::Game child object", App->Pine::Core::PineInit(game, NULL));
+    App->Pine::Core::PineInit(game, NULL);
 
     //Main game loop contained inside.
     App->Pine::Core::PineStart();
+
+    //close game
     App->Pine::Core::PineCloseWindow();
 
 

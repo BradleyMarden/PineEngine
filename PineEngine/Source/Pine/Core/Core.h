@@ -57,36 +57,24 @@ namespace Pine {
 						~Core();
 		void			PineCloseWindow();
 		void			PineOpenWindow();
-		void			PineFirstWindow();
-		bool			PineInit(Game* game, uint8_t flags);
+		void			PineInit(Game* game, uint8_t flags);
 		void			PineStart();
-		void			Render();
 		void			RenderUI();
-		static PVector2f	GetMousePos();//abstract out to another class
-		SDL_Renderer*		GetRenderer() { return  renderer; }//Move renderer to Renderer class
-		std::chrono::steady_clock::time_point m_start;
 		void			Trigger(PEvent& e);
-
+		void			PineCreateWindow(int m_Width, int m_Height);
 
 	private:
 		static inline Window*	m_Window = nullptr;
 		Renderer*				m_PineRenderer = nullptr;
 
 		Game*			givenGame = nullptr;//we do not own the game, entry point does. 
-		SDL_Renderer*	renderer;
-		SDL_Rect		rect;
-		SDL_Texture*	text = nullptr;
 		void			HandleEvents();
 		void			ApplicationRunning();
-		void			Draw(bool firstDraw);//Deprecated
 		const char*		glsl_version = "#version 330";
-		//GameObjects objects;//Deprecated
 		const int		fps = 60;
 		const int		frameDelay = 1000 / fps;// max time between frames
 		Uint32			frameStart;
 		int				frameTime;
-		unsigned int	localshader;
-		int				cTime = 0;
 		bool			limitFPS = true;
 
 

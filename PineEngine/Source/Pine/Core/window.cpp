@@ -46,14 +46,40 @@ namespace Pine
 
 		SDL_Init(SDL_INIT_VIDEO);
 
-		//create window
-		m_MainWindow = SDL_CreateWindow(p_WindowName, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,600,600, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
+		if (m_Windows[0] == nullptr)
+		{
+			//create window
+			m_Window = SDL_CreateWindow(p_WindowName, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 600, 600, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
+			//create context
+			m_WindowContext = SDL_GL_CreateContext(m_Window);
+			m_WindowHeight = 600;
+			m_WindowWidth = 600;
+			m_WindowId = 0;
+			WindowData* data = new WindowData(p_WindowName, m_WindowId, this, true);
+			m_Windows[0] = data;
+		}
+		else
+		{
+			int counter = 0;
+			for (size_t i = 0; i < (sizeof(m_Windows) / sizeof(WindowData)); i++)
+			{
+				if (m_Windows[i] == nullptr)
+				{
+					//create window
+					m_Window = SDL_CreateWindow(p_WindowName, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 600, 600, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
+					//create context
+					m_WindowContext = SDL_GL_CreateContext(m_Window);
+					m_WindowHeight = 600;
+					m_WindowWidth = 600;
+					m_WindowId = counter;
+					WindowData* data = new WindowData(p_WindowName, m_WindowId, this, false);
+					m_Windows[i] = data;
+					return;
+				}
 
-		//create context
-		m_MainWindowContext = SDL_GL_CreateContext(m_MainWindow);
-		m_WindowHeight = 600;
-		m_WindowWidth = 600;
-
+			}
+			
+		}
 		GLenum err = glewInit();
 		if (GLEW_OK != err)
 		{
@@ -68,19 +94,63 @@ namespace Pine
 
 	Window::~Window() 
 	{
+		//remove from list
+		m_Windows[m_WindowId] = nullptr;
+		SDL_GL_DeleteContext(m_WindowContext);
+		SDL_DestroyWindow(m_Window);
+		PINE_ENGINE_ERROR("Destoryed");
+	}
+
+	Window::WindowData* Window::GetMainWindow() 
+	{
+		PINE_ASSERT("MAIN WINDOW HAS BOT BEEN CREATED!", m_Windows[0]);
+		return m_Windows[0];
+	}
+	SDL_GLContext& Window::GetWindowContext() 
+	{
+		PINE_ASSERT("MAIN WINDOW CONTEXT HAS NOT BEEN CREATED!", m_WindowContext);
+		return m_WindowContext;
+	}
+	void Window::CloseWindow(const char* pName) 
+	{
+
+		for (size_t i = 0; i < (sizeof(m_Windows) / sizeof(WindowData)); i++)
+		{
+
+			//PINE_ENGINE_ERROR(m_Windows[i]->s_WindowName);
+			if (m_Windows[i] == nullptr)
+			{
+				return;
+			}
+			else if (m_Windows[i] != nullptr)
+			{
+
+				PINE_ENGINE_ERROR("HERE");
+
+				if (strcmp(m_Windows[i]->s_WindowName, pName))
+				{
+					PINE_ENGINE_ERROR(m_Windows[i]->s_WindowName);
+
+					SDL_DestroyWindow(m_Windows[i]->s_Window->m_Window);
+					delete m_Windows[i];
+					m_Windows[i] = nullptr;
+					return;
+				}
+			}
+			
+		}
+	}
+	void Window::CloseAllWindows() 
+	{
+		for (WindowData* winData : m_Windows)
+		{
+			if (winData != nullptr)
+			{
+				std::cout << "WINDOW" << std::endl;
+				SDL_DestroyWindow(winData->s_Window->m_Window);
+			}
+		}
 		
 	}
-
-	SDL_Window* Window::GetMainWindow() 
-	{
-		PINE_ASSERT("MAIN WINDOW HAS BOT BEEN CREATED!", m_MainWindow);
-		return m_MainWindow;
-	}
-	SDL_GLContext& Window::GetMainWindowContext() 
-	{
-		PINE_ASSERT("MAIN WINDOW CONTEXT HAS NOT BEEN CREATED!", m_MainWindowContext);
-		return m_MainWindowContext;
-	}
-
 }
 

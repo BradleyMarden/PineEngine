@@ -54,8 +54,6 @@ namespace Pine {
 		virtual int			GetCatFlags()			const = 0;
 		virtual EventType	GetEventType()			const = 0;
 		virtual int			GetSizeOfCatFlags()		const = 0;//debug only. Returns the size of the category bitset
-
-
 		bool		IsInCategory(EventCategory p_Cat){return GetCatFlags()& p_Cat;}
 		void		SetRepeat(bool p_Repeat) { s_is_Repeat = p_Repeat;  }
 		bool		is_Handled = false;
@@ -245,6 +243,23 @@ namespace Pine {
 		int x = 100;
 		int y = 100;
 	};
+
+	struct WindowCloseEvent : PEvent
+	{
+
+		WindowCloseEvent(const char* p_WindowName): windowName(p_WindowName)
+		{
+			EventSystem::PublishEvent(this);
+		}
+
+		const char* GetWindowName() const { return windowName; }
+		SET_EVENT_TYPE(WindowClose);
+		SET_CATEGORY_TYPE(WindowEvent);
+
+	private:
+		const char* windowName;
+	};
+
 	//p_X is the x position of the cursor, p_Y is the y pos of the cursor, p_button for the Input::TYPE of mouse press, and bool for if the button is held. The event when created will self publish to the event system
 	struct MouseButtonDownEvent : PEvent
 	{
