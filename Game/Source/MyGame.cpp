@@ -54,51 +54,44 @@ void myGame::eventTrigger(Pine::PEvent& e)
         controll over where the event gets finally handeld.
 
     */
-    
-    std::cout << "triggered" << std::endl;
 
     if (&e == nullptr) { return; }
     if (e.GetEventType() == Pine::EventType::WindowResize)
     {
-        std::cout << "Window Resize" << std::endl;
         e.is_Handled = true;
 
     }
      if (e.GetEventType() == Pine::EventType::MouseButtonDown) 
     {
-        std::cout << "In Game" << std::endl;
         e.is_Handled = true;
 
-            std::cout << dynamic_cast<Pine::MouseButtonDownEvent&>(e).GetX() << std::endl;
-            std::cout << dynamic_cast<Pine::MouseButtonDownEvent&>(e).GetButtonDown() << std::endl;
-
+            std::cout << "Mouse X pos: "<< dynamic_cast<Pine::MouseButtonDownEvent&>(e).GetX() << std::endl;
+            std::cout << "Mouse y pos: "<< dynamic_cast<Pine::MouseButtonDownEvent&>(e).GetY() << std::endl;
+            std::cout << "Key Code: " << dynamic_cast<Pine::MouseButtonDownEvent&>(e).GetButtonDown() << std::endl;
+            if (dynamic_cast<Pine::MouseButtonDownEvent&>(e).GetButtonDown() == Input::LEFTSINGLECLICK)
+            {
+                std::cout << "Left Down" << std::endl;
+            }
     }
      if (e.GetEventType() == Pine::EventType::MouseButtonUp)
     {
-        std::cout << "In Game" << std::endl;
         e.is_Handled = true;
-
-        std::cout << dynamic_cast<Pine::MouseButtonUpEvent&>(e).GetButtonDown() << std::endl;
+        std::cout << "Mouse X pos: " << dynamic_cast<Pine::MouseButtonUpEvent&>(e).GetX() << std::endl;
+        std::cout << "Mouse Y pos: " << dynamic_cast<Pine::MouseButtonUpEvent&>(e).GetY() << std::endl;
+        std::cout << "Key Code: " << dynamic_cast<Pine::MouseButtonUpEvent&>(e).GetButtonDown() << std::endl;
         if (dynamic_cast<Pine::MouseButtonUpEvent&>(e).GetButtonDown() == Input::LEFTSINGLECLICK)
         {
-            std::cout << "EYYYYYYY" << std::endl;
-
+            std::cout << "Left Up" << std::endl;
         }
-
     }
      if (e.GetEventType() == Pine::EventType::KeyDown)
      {
-         std::cout << "In Game" << std::endl;
          e.is_Handled = true;
-
          std::cout << dynamic_cast<Pine::KeyDownEvent&>(e).GetKey() << std::endl;
-
      }
      if (e.GetEventType() == Pine::EventType::KeyUp)
      {
-         std::cout << "In Game" << std::endl;
          e.is_Handled = true;
-
          std::cout << dynamic_cast<Pine::KeyUpEvent&>(e).GetKey() << std::endl;
      }
 }

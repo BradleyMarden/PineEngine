@@ -78,33 +78,44 @@ namespace Pine
 		if (&e == nullptr) { return; }
 		if (e.GetEventType() == Pine::EventType::WindowResize)
 		{
+			std::cout << "------------------------------------- " << std::endl;
+
 			const char* name = dynamic_cast<Pine::WindowResizeEvent&>(e).GetWindowName();
-			std::cout << name << std::endl;
-			e.is_Handled = true;
+			std::cout << "Window: " << name << std::endl;
+			//e.is_Handled = true;
+
 		}
 
 		if (e.GetEventType() == Pine::EventType::WindowClose)
 		{
+			std::cout << "------------------------------------- " << std::endl;
+
 			const char* name = dynamic_cast<Pine::WindowCloseEvent&>(e).GetWindowName();
-			std::cout << name  << std::endl;
+			std::cout << "Window: " << name  << std::endl;
 			Window::CloseWindow(name);
 			if (Window::GetMainWindow() == nullptr)
 			{
 				givenGame->GameClose();
 			}
-			e.is_Handled = true;
+			//e.is_Handled = true;
 		}
 		 if (e.GetEventType() == Pine::EventType::MouseButtonDown)
 		{
+			 std::cout << "------------------------------------- " << std::endl;
+
 			 const char* name = dynamic_cast<Pine::MouseButtonDownEvent&>(e).GetWindowName();
-			 std::cout << name << std::endl;
+			 std::cout << "Window: "<< name << std::endl;
+			// e.is_Handled = true;
+
 		}
 		 if (e.GetEventType() == Pine::EventType::MouseButtonUp)
 		{
+			 std::cout << "------------------------------------- " << std::endl;
+
 			 const char* name = dynamic_cast<Pine::MouseButtonUpEvent&>(e).GetWindowName();
-			 std::cout << name << std::endl;
+			 std::cout << "Window: "<< name << std::endl;
+			// e.is_Handled = true;
 		}
-	
 	}
 	void Core::PineStart()
 	{
