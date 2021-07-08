@@ -12,14 +12,30 @@ void myGame::Start()
 
 void myGame::Initialize()
 {
-    //app->Pine::Core::PineCreateWindow(600, 600);
-    MainWindow = new Pine::Window("Brood Main");
-    SecondWindow = new Pine::Window("Brood Second");
+
+    Pine::Window::CreateNewWindow("Main");
+    SecondWindow = Pine::Window::CreateNewWindow("Second");
+    Pine::Window::CreateNewWindow("Third", 1920,1080);
+
+    //Pine::Window::CreateNewWindow("Four");
+
     std::cout << "Num of Windows" << Pine::Window::GetOpenWindowCount() << std::endl;
+    std::cout << "Main Window Size" << Pine::Window::GetWindowWidth("temp") << std::endl;
+    std::cout << "Second Window Size" << SecondWindow->GetWidth() << std::endl;
+   // SecondWindow->CloseWindow("Second");
+    std::cout << SDL_GetWindowTitle(Pine::Window::GetWindowGLData("Second")->s_Window) << std::endl;
 }
 void myGame::Update()
 {
-  
+    if (!Window::CheckWindowAlive("Second"))
+    {
+        static bool runOnce = false;
+        if (!runOnce)
+        {
+            std::cout << "DEAD" << std::endl;
+            runOnce = !runOnce;
+        }
+    }
   
 }
 void myGame::OnMouseClick()

@@ -55,13 +55,11 @@ namespace Pine {
 		
 						Core();
 						~Core();
-		void			PineCloseWindow();
-		void			PineOpenWindow();
+		void			PineCloseEngine();
 		void			PineInit(Game* game, uint8_t flags);
 		void			PineStart();
 		void			RenderUI();
 		void			Trigger(PEvent& e);
-		void			PineCreateWindow(int m_Width, int m_Height);
 
 	private:
 		static inline Window*	m_Window = nullptr;
@@ -76,6 +74,7 @@ namespace Pine {
 		Uint32			frameStart;
 		int				frameTime;
 		bool			limitFPS = true;
+		Pine::Window* FourthWindow = nullptr;
 
 
 	};

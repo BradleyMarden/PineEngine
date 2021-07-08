@@ -24,7 +24,7 @@ int main(int argc, const char* argv[])
     App->Pine::Core::PineStart();
 
     //close game
-    App->Pine::Core::PineCloseWindow();
+    App->Pine::Core::PineCloseEngine();
 
 
 	delete game;

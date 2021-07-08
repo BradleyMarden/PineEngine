@@ -11,25 +11,6 @@ namespace Pine
 		delete m_PineRenderer;
 	}
 
-	void Core::PineCreateWindow(int x, int y) 
-	{
-		//create Main Window
-		if (m_Window == nullptr)
-		{
-			m_Window = new Window("Brood");
-			PineAssert("Window has not been created!", m_Window);
-
-			//Create renderer
-			m_PineRenderer = new Renderer(*m_Window);
-			
-		}
-		else//create secondary windows 
-		{
-			
-		
-		}
-	
-	}
 
 	void Core::PineInit(Game* game, uint8_t flags)
 	{
@@ -67,12 +48,7 @@ namespace Pine
 		
 		//start game flow
 		givenGame->Initialize();
-
-		//PINE_ASSERT("Please Create a window", Window::GetMainWindow());
-		if (Window::GetMainWindow()->s_Window == nullptr)
-		{
-			PINE_ENGINE_WARN("No Window has been created!");
-		}
+		
 		givenGame->GameRun();
 		if (!givenGame->IsGameRunning())//if game is initialized
 		{
@@ -99,37 +75,34 @@ namespace Pine
 	//TEST EVENT FUNCTION
 	void Core::Trigger(PEvent& e) 
 	{
-		std::cout << "triggered CORE" << std::endl;
-
 		if (&e == nullptr) { return; }
 		if (e.GetEventType() == Pine::EventType::WindowResize)
 		{
-			std::cout << "Winodw Resize CORE" << std::endl;
+			const char* name = dynamic_cast<Pine::WindowResizeEvent&>(e).GetWindowName();
+			std::cout << name << std::endl;
 			e.is_Handled = true;
-
 		}
 
 		if (e.GetEventType() == Pine::EventType::WindowClose)
 		{
-			std::cout << "Window Close CORE" << std::endl;
 			const char* name = dynamic_cast<Pine::WindowCloseEvent&>(e).GetWindowName();
-
 			std::cout << name  << std::endl;
 			Window::CloseWindow(name);
-			//givenGame->GameClose();
+			if (Window::GetMainWindow() == nullptr)
+			{
+				givenGame->GameClose();
+			}
 			e.is_Handled = true;
-
 		}
 		 if (e.GetEventType() == Pine::EventType::MouseButtonDown)
 		{
-			PINE_ENGINE_INFO("MOUSE BUTTON DOWN");
-
+			 const char* name = dynamic_cast<Pine::MouseButtonDownEvent&>(e).GetWindowName();
+			 std::cout << name << std::endl;
 		}
 		 if (e.GetEventType() == Pine::EventType::MouseButtonUp)
 		{
-			PINE_ENGINE_INFO("MOUSE BUTTON UP");
-			//e.is_Handled = true;
-
+			 const char* name = dynamic_cast<Pine::MouseButtonUpEvent&>(e).GetWindowName();
+			 std::cout << name << std::endl;
 		}
 	
 	}
@@ -143,23 +116,21 @@ namespace Pine
 			frameStart = SDL_GetTicks();
 			switch (givenGame->GetGameState())
 			{
-
-			default:
-				break;
-			case Game::GameState::RUNNING:
-				HandleEvents();
-				ApplicationRunning();
-				//SDL_GetWindowSize(m_Window->GetMainWindow(), &Game::m_WindowWidth, &Game::m_WindowHeight);
-				break;
-			case Game::GameState::GAMEOVER:
-				break;
-			case Game::GameState::CLOSING:
-				PINE_ENGINE_INFO("Application Closing");
-				closeGame = true;
-				givenGame->Terminate();
-				break;
+				default:
+					break;
+				case Game::GameState::RUNNING:
+					HandleEvents();
+					ApplicationRunning();
+					//SDL_GetWindowSize(m_Window->GetMainWindow(), &Game::m_WindowWidth, &Game::m_WindowHeight);
+					break;
+				case Game::GameState::GAMEOVER:
+					break;
+				case Game::GameState::CLOSING:
+					PINE_ENGINE_INFO("Application Closing");
+					closeGame = true;
+					givenGame->Terminate();
+					break;
 			}
-
 			//limit FPS
 			frameTime = SDL_GetTicks() - frameStart;
 			if (frameDelay > frameTime && !limitFPS)
@@ -224,72 +195,55 @@ namespace Pine
 			static SDL_Event heldE;
 			switch (e.type)
 			{
-			default:
-				break;
-
-			case SDL_MOUSEBUTTONDOWN:
-			{
-				//	PINE_ENGINE_WARN("MOUSE BUTTON PRESSED");
-				givenGame->OnMouseClick();
-				Input::MousePressed(&e);
-				Pine::MouseButtonDownEvent* event = new Pine::MouseButtonDownEvent(e.button.x, e.button.y, Input::MouseDown(&e), false);
-				heldE = e;
-				
-				break;
-			}
-			case SDL_MOUSEBUTTONUP:
-			{
-				//	PINE_ENGINE_WARN("MOUSE BUTTON RELEASED");
-				Input::MouseReleased(&e);
-
-				Pine::MouseButtonUpEvent* event = new Pine::MouseButtonUpEvent(e.button.x, e.button.y, Input::MouseDown(&e), false);
-
-				break;
-			}
-			case SDL_KEYDOWN:
-			{
-				Input::KeyPressed(&e);
-				Pine::KeyDownEvent* event = new Pine::KeyDownEvent(Input::KeyDown(&e));
-				break;
-			}
-			case SDL_KEYUP:
-			{
-				Pine::KeyUpEvent* event = new Pine::KeyUpEvent(Input::KeyDown(&e));
-				break;
+				default:
+					break;
+				case SDL_MOUSEBUTTONDOWN:
+				{
+					givenGame->OnMouseClick();
+					Input::MousePressed(&e);
+					Pine::MouseButtonDownEvent* event = new Pine::MouseButtonDownEvent(e.button.x, e.button.y, Input::MouseDown(&e), false, SDL_GetWindowTitle(SDL_GetWindowFromID(e.window.windowID)));
+					heldE = e;
+					break;
+				}
+				case SDL_MOUSEBUTTONUP:
+				{
+					Input::MouseReleased(&e);
+					Pine::MouseButtonUpEvent* event = new Pine::MouseButtonUpEvent(e.button.x, e.button.y, Input::MouseDown(&e), false, SDL_GetWindowTitle(SDL_GetWindowFromID(e.window.windowID)));
+					break;
+				}
+				case SDL_KEYDOWN:
+				{
+					Input::KeyPressed(&e);
+					Pine::KeyDownEvent* event = new Pine::KeyDownEvent(Input::KeyDown(&e));
+					break;
+				}
+				case SDL_KEYUP:
+				{
+					Pine::KeyUpEvent* event = new Pine::KeyUpEvent(Input::KeyDown(&e));
+					break;
+				}
 			}
 
-			case SDL_QUIT:
-				givenGame->GameClose();
-				PINE_ENGINE_WARN("CLOSING GAME");
-				break;
-
-			}
-
-			//currenty not working
 			if (e.type == SDL_WINDOWEVENT) 
 			{
 				switch (e.window.event)
 				{
-
 					case SDL_WINDOWEVENT_RESIZED:
 					{
-						Pine::WindowResizeEvent* event = new Pine::WindowResizeEvent(e.window.data1, e.window.data2);
+						Pine::WindowResizeEvent* event = new Pine::WindowResizeEvent(e.window.data1, e.window.data2, SDL_GetWindowTitle(SDL_GetWindowFromID(e.window.windowID)));
 						break;
-
 					}
 					case SDL_WINDOWEVENT_CLOSE:
 					{	
 						SDL_GetWindowTitle(SDL_GetWindowFromID(e.window.windowID));
-
 						Pine::WindowCloseEvent* event = new Pine::WindowCloseEvent(SDL_GetWindowTitle(SDL_GetWindowFromID(e.window.windowID)));
-
 					}
 				}
 			}
 		}
 	}
 
-	void Core::PineCloseWindow()
+	void Core::PineCloseEngine()
 	{
 
 		if (givenGame != nullptr) {

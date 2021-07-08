@@ -228,13 +228,14 @@ namespace Pine {
 	struct WindowResizeEvent : PEvent
 	{
 
-		WindowResizeEvent(unsigned int width, unsigned int height) : x(width), y(height)
+		WindowResizeEvent(unsigned int width, unsigned int height, const char* p_WindowName) : x(width), y(height), windowName(p_WindowName)
 		{
 			EventSystem::PublishEvent(this);
 		}
 
 		unsigned int GetWidth() const { return x; }
 		unsigned int GetHeight() const { return y; }
+		const char* GetWindowName() const { return windowName; }
 
 		SET_EVENT_TYPE(WindowResize);
 		SET_CATEGORY_TYPE(WindowEvent);
@@ -242,6 +243,8 @@ namespace Pine {
 	private:
 		int x = 100;
 		int y = 100;
+		const char* windowName;
+
 	};
 
 	struct WindowCloseEvent : PEvent
@@ -263,7 +266,7 @@ namespace Pine {
 	//p_X is the x position of the cursor, p_Y is the y pos of the cursor, p_button for the Input::TYPE of mouse press, and bool for if the button is held. The event when created will self publish to the event system
 	struct MouseButtonDownEvent : PEvent
 	{
-		MouseButtonDownEvent(int p_X, int p_Y, Input::MouseButtons p_Button, bool p_Held) : x(p_X), y(p_Y),l_button(p_Button), held(p_Held)
+		MouseButtonDownEvent(int p_X, int p_Y, Input::MouseButtons p_Button, bool p_Held, const char* p_WindowName) : x(p_X), y(p_Y),l_button(p_Button), held(p_Held), windowName(p_WindowName)
 		{
 			EventSystem::PublishEvent(this);
 		}
@@ -271,6 +274,7 @@ namespace Pine {
 		int GetX() const { return x; }
 		int GetY() const { return y; }
 		Input::MouseButtons GetButtonDown() const { return l_button; }
+		const char* GetWindowName() const { return windowName; }
 
 		bool IsHeld() const { return held; }
 
@@ -282,12 +286,11 @@ namespace Pine {
 		int y;
 		bool held;
 		Input::MouseButtons l_button;
-
-
+		const char* windowName;
 	};
 	struct MouseButtonUpEvent : PEvent
 	{
-		MouseButtonUpEvent(int p_X, int p_Y, Input::MouseButtons p_Button, bool p_Held) : x(p_X), y(p_Y), l_button(p_Button), held(p_Held)
+		MouseButtonUpEvent(int p_X, int p_Y, Input::MouseButtons p_Button, bool p_Held, const char* p_WindowName) : x(p_X), y(p_Y), l_button(p_Button), held(p_Held), windowName(p_WindowName)
 		{
 			EventSystem::PublishEvent(this);
 		}
@@ -295,6 +298,7 @@ namespace Pine {
 		int GetX() const { return x; }
 		int GetY() const { return y; }
 		Input::MouseButtons GetButtonDown() const { return l_button; }
+		const char* GetWindowName() const { return windowName; }
 
 		bool IsHeld() const { return held; }
 
@@ -306,6 +310,7 @@ namespace Pine {
 		int y;
 		bool held;
 		Input::MouseButtons l_button;
+		const char* windowName;
 
 
 	};

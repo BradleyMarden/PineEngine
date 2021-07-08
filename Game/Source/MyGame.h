@@ -21,7 +21,7 @@ public:
     void eventTrigger(Pine::PEvent& e);
 
     Pine::Window* MainWindow = nullptr;
-    Pine::Window* SecondWindow = nullptr;
+    const Pine::Window* SecondWindow = nullptr;
 
 };
 
