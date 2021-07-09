@@ -19,7 +19,7 @@ void myGame::Initialize()
     std::cout << "Num of Windows" << Pine::Window::GetOpenWindowCount() << std::endl;
     std::cout << "Main Window Size" << Pine::Window::GetWindowWidth("Main") << std::endl;
     //std::cout << "Second Window Size" << SecondWindow->GetWidth() << std::endl;
-    std::cout << SDL_GetWindowTitle(Pine::Window::GetWindowGLData("Second")->s_Window) << std::endl;
+//    std::cout << SDL_GetWindowTitle(Pine::Window::GetWindowGLData("Second")->s_Window) << std::endl;
 }
 void myGame::Update()
 {

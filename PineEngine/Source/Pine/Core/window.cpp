@@ -75,8 +75,7 @@ namespace Pine
 		}
 
 		//needs to be in renderer
-		glViewport(0, 0, 600, 600);
-		glClearColor(0.0f, 0.5f, 1.0f, 0.0f);
+		
 		return nullptr;
 
 	}

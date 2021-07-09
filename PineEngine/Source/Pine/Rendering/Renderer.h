@@ -41,12 +41,24 @@ namespace Pine {
         //load scene from file.
         inline static void InitRendering()
         {
-            SDL_Renderer* renderer = Window::GetWindowGLData(Window::GetMainWindow()->s_WindowName)->s_Renderer;
+			
+            SDL_Renderer** renderer = &Window::GetWindowGLData(Window::GetMainWindow()->s_WindowName)->s_Renderer;
+
+			if (renderer == nullptr)
+			{
+				PINE_ENGINE_WARN("Rendering NOT loaded");
+
+			}
 			PINE_ENGINE_WARN("Rendering loaded");
 
 			//SDL_CreateRenderer(m_WindowTwo->GetMainWindow(), -1, 0);
-			SDL_SetRenderDrawColor(renderer, 21, 27, 31, 255);
-			SDL_RenderClear(renderer);
+			glViewport(0, 0, 600, 600);
+			glClearColor(0.0f, 0.5f, 1.0f, 0.0f);
+			SDL_RenderClear(*renderer);
+			SDL_SetRenderDrawColor(*renderer, 21, 27, 31, 255);
+			SDL_RenderPresent(*renderer);
+
+			
             
         }
         static void LoadScene(const char* p_FilePath);
