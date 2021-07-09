@@ -280,5 +280,6 @@ dependencies: \
   /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/window.h \
   /usr/local/include/SDL2/SDL_opengl.h \
   /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Renderer.h \
+  /usr/local/include/GL/glew.h \
   /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Shader.h \
   /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/Event.h

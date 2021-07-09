@@ -73,7 +73,7 @@ namespace Pine {
 		const int		frameDelay = 1000 / fps;// max time between frames
 		Uint32			frameStart;
 		int				frameTime;
-		bool			limitFPS = true;
+		bool			limitFPS = false;
 		Pine::Window* FourthWindow = nullptr;
 
 

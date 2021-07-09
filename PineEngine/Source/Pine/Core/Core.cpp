@@ -48,7 +48,15 @@ namespace Pine
 		
 		//start game flow
 		givenGame->Initialize();
-		
+        
+        //maybe we should check if we need atleast one window open
+        if (Window::GetMainWindow() == nullptr) {
+            PINE_ENGINE_WARN("No window created, creating one automatically...");
+            Window::CreateNewWindow("Default Window");
+            Renderer::InitRendering();
+        }
+       
+        
 		givenGame->GameRun();
 		if (!givenGame->IsGameRunning())//if game is initialized
 		{

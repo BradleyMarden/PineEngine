@@ -53,6 +53,7 @@ namespace Pine {
 		{
 			SDL_Window* s_Window = nullptr;
 			SDL_GLContext s_Context;
+            SDL_Renderer* s_Renderer = nullptr;
 		};
 		Window(const char* p_WindowName, int p_ScreenAlignmentX, int p_ScreenAlignmentY, int p_WindowPosX, int p_WindowPosY);
 		Window(const char* p_WindowName, int p_WindowPosX, int p_WindowPosY);
@@ -68,13 +69,14 @@ namespace Pine {
 	
 
 		//Returns struct containing sdl window and context.
-		static const WindowGlData* Window::GetWindowGLData(const char* p_WindowName);
+        static WindowGlData* GetWindowGLData(const char* p_WindowName);
+        //static void             SetRenderer();
 		//Create window with p_WindowName. Returns const window*
 		static const Window*	CreateNewWindow(const char* p_WindowName);
 		//Create window with p_WindowName, with width and height. Returns const window*
 		static const Window*	CreateNewWindow(const char* p_WindowName, int p_WindowPosX, int p_WindowPosY);
 		//Returns const * to p_WindowName. If not found, will return nullptr.
-		static const Window*	GetWindow(const char* p_WindowName);
+		static Window*	GetWindow(const char* p_WindowName);
 		//Returns raw * to main window. If not found, will return nullptr.
 		static WindowData*		GetMainWindow();
 		//Closes all windows that are open

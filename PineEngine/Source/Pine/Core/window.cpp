@@ -40,6 +40,7 @@ namespace Pine
 			l_Window->m_GlData.s_Window = SDL_CreateWindow(p_WindowName, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, PINE_MAIN_WINDOW_SIZE, PINE_MAIN_WINDOW_SIZE, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
 			//create context
 			l_Window->m_GlData.s_Context = SDL_GL_CreateContext(l_Window->m_GlData.s_Window);
+            l_Window->m_GlData.s_Renderer =  SDL_CreateRenderer(l_Window->m_GlData.s_Window, -1, 0);
 			l_Window->m_WindowHeight = PINE_MAIN_WINDOW_SIZE;
 			l_Window->m_WindowWidth = PINE_MAIN_WINDOW_SIZE;
 			l_Window->m_WindowId = 0;
@@ -47,7 +48,8 @@ namespace Pine
 			m_Windows[0] = data;
 			GLenum err = glewInit();
 			if (GLEW_OK != err)
-				std::cerr << "Error: " << glewGetErrorString(err) << std::endl;
+				PINE_ENGINE_ERROR("ERROR WITH GLEW");
+
 			return l_Window;
 		}
 		else
@@ -91,6 +93,7 @@ namespace Pine
 			l_Window->m_GlData.s_Window = SDL_CreateWindow(p_WindowName, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, p_WindowWidthX, p_WindowWidthY, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
 			//create context
 			l_Window->m_GlData.s_Context = SDL_GL_CreateContext(l_Window->m_GlData.s_Window);
+            //l_Window->m_GlData.s_Renderer =  SDL_CreateRenderer(l_Window->m_GlData.s_Window, -1, 0);
 			l_Window->m_WindowHeight = p_WindowWidthY;
 			l_Window->m_WindowWidth = p_WindowWidthX;
 			l_Window->m_WindowId = 0;
@@ -124,8 +127,8 @@ namespace Pine
 		}
 
 		//needs to be in renderer
-		glViewport(0, 0, 600, 600);
-		glClearColor(0.0f, 0.5f, 1.0f, 0.0f);
+		//glViewport(0, 0, 600, 600);
+		//glClearColor(0.0f, 0.5f, 1.0f, 0.0f);
 		return nullptr;
 	
 	}
@@ -181,7 +184,7 @@ namespace Pine
 		return false;
 	}
 
-	const Window* Window::GetWindow(const char* p_WindowName) 
+	 Window* Window::GetWindow(const char* p_WindowName) 
 	{
 		for (WindowData* wind : m_Windows)
 		{
@@ -193,14 +196,14 @@ namespace Pine
 		return nullptr;
 	}
 	
-	const Window::WindowGlData* Window::GetWindowGLData(const char* p_WindowName)
+	 Window::WindowGlData* Window::GetWindowGLData(const char* p_WindowName)
 	{
 
-		if (const Window* wind = GetWindow(p_WindowName))
+		if (Window* wind = GetWindow(p_WindowName))
 		{
 			//This feels like a really baaaaad thing to do. But, it works so..
-			const WindowGlData* data = &wind->m_GlData;
-			return data;
+			//WindowGlData* data = wind->m_GlData;
+			return &wind->m_GlData;
 		}
 	}
 

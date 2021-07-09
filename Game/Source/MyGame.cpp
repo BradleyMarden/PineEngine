@@ -13,16 +13,12 @@ void myGame::Start()
 void myGame::Initialize()
 {
 
-    Pine::Window::CreateNewWindow("Main");
-    SecondWindow = Pine::Window::CreateNewWindow("Second");
-    Pine::Window::CreateNewWindow("Third", 1920,1080);
-
-    //Pine::Window::CreateNewWindow("Four");
+   // Pine::Window::CreateNewWindow("Main");
+    //SecondWindow = Pine::Window::CreateNewWindow("Second");
 
     std::cout << "Num of Windows" << Pine::Window::GetOpenWindowCount() << std::endl;
-    std::cout << "Main Window Size" << Pine::Window::GetWindowWidth("temp") << std::endl;
-    std::cout << "Second Window Size" << SecondWindow->GetWidth() << std::endl;
-   // SecondWindow->CloseWindow("Second");
+    std::cout << "Main Window Size" << Pine::Window::GetWindowWidth("Main") << std::endl;
+    //std::cout << "Second Window Size" << SecondWindow->GetWidth() << std::endl;
     std::cout << SDL_GetWindowTitle(Pine::Window::GetWindowGLData("Second")->s_Window) << std::endl;
 }
 void myGame::Update()
