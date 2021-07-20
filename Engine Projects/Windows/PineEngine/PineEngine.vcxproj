@@ -281,6 +281,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\Shader.cpp" />
     <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\LayerManager.cpp" />
     <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\Layer.cpp" />
+    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\VertexBuffer.cpp" />
+    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\IndexBuffer.cpp" />
     <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Events\EventSystem.cpp" />
     <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Events\Event.cpp" />
     <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Events\EventBinder.cpp" />
@@ -304,10 +306,12 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Maths\PMaths.h" />
     <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Networking\Networking.h" />
     <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Networking\ServerNetworking.h" />
+    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\IndexBuffer.h" />
     <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\Layer.h" />
     <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\LayerManager.h" />
     <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\Renderer.h" />
     <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\Shader.h" />
+    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\VertexBuffer.h" />
     <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\PineServer.h" />
   </ItemGroup>
   <ItemGroup>

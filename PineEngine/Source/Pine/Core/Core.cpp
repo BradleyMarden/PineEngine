@@ -8,7 +8,7 @@ namespace Pine
 	Core::~Core()
 	{
 		delete m_Window;
-		delete m_PineRenderer;
+		//delete m_PineRenderer;
 	}
 
 
@@ -53,9 +53,14 @@ namespace Pine
         if (Window::GetMainWindow() == nullptr) {
             PINE_ENGINE_WARN("No window created, creating one automatically...");
             Window::CreateNewWindow("Default Window");
-            Renderer::InitRendering();
         }
-       
+
+		if (!Renderer::GetIconSet())
+			Renderer::SetWindowIcon("Assets/PineEngineTransparent.png");
+
+
+		Renderer::InitRendering();
+
         
 		givenGame->GameRun();
 		if (!givenGame->IsGameRunning())//if game is initialized
@@ -65,13 +70,14 @@ namespace Pine
 			return;
 		}
 
-
+		
 		//Setup IMGUI
 		/*IMGUI_CHECKVERSION();
 		ImGui::CreateContext();
 		ImGuiIO& io = ImGui::GetIO(); (void)io;
 		ImGui::StyleColorsDark();
-		ImGui_ImplSDL2_InitForOpenGL(m_Window->GetMainWindow(), &m_Window->GetMainWindowContext());
+		ImGui_Impl
+		2_InitForOpenGL(m_Window->GetMainWindow(), &m_Window->GetMainWindowContext());
 		ImGui_ImplOpenGL3_Init(glsl_version);*/
 
 		//TEST EVENT FUNCTION 
@@ -128,8 +134,10 @@ namespace Pine
 	void Core::PineStart()
 	{
 		PINE_ENGINE_INFO("Application Started!");
-		givenGame->Start();
+		
+
 		bool closeGame = false;
+		bool hasStarted = false;
 		while (!closeGame)
 		{
 			frameStart = SDL_GetTicks();
@@ -138,21 +146,31 @@ namespace Pine
 				default:
 					break;
 				case Game::GameState::RUNNING:
-					HandleEvents();
+					
+					if (!hasStarted)
+					{
+						PINE_ENGINE_WARN("Starting");
+						givenGame->Start();
+						hasStarted = true;
+					}
 					ApplicationRunning();
-					//SDL_GetWindowSize(m_Window->GetMainWindow(), &Game::m_WindowWidth, &Game::m_WindowHeight);
+					//Renderer::Flush();
+					Renderer::BeginBatch();
+
+					HandleEvents();
 					break;
 				case Game::GameState::GAMEOVER:
 					break;
 				case Game::GameState::CLOSING:
 					PINE_ENGINE_INFO("Application Closing");
 					closeGame = true;
+					//Renderer::Shutdown();
 					givenGame->Terminate();
 					break;
 			}
 			//limit FPS
 			frameTime = SDL_GetTicks() - frameStart;
-			if (frameDelay > frameTime && !limitFPS)
+			if (frameDelay > frameTime && Renderer::limitFPS)
 			{
 				SDL_Delay(frameDelay - frameTime);
 			}
@@ -172,7 +190,11 @@ namespace Pine
 	
 	void Core::RenderUI() 
 	{
-		
+		//SDL_SetRenderDrawColor(Window::GetWindowGLData(Window::GetMainWindow()->s_WindowName)->s_Renderer, 21, 27, 31, 255);
+
+	
+
+
 		/*// Start the Dear ImGui frame
 		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplSDL2_NewFrame(m_Window->GetMainWindow());
@@ -202,6 +224,11 @@ namespace Pine
 		//IMGUI RENDER
 		ImGui::Render();
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());*/
+
+
+	
+
+		
 	}
 	
 	
@@ -250,6 +277,8 @@ namespace Pine
 					case SDL_WINDOWEVENT_RESIZED:
 					{
 						Pine::WindowResizeEvent* event = new Pine::WindowResizeEvent(e.window.data1, e.window.data2, SDL_GetWindowTitle(SDL_GetWindowFromID(e.window.windowID)));
+						Window::GetMainWindow()->s_WindowSize = glm::vec2(e.window.data1, e.window.data2);
+						
 						break;
 					}
 					case SDL_WINDOWEVENT_CLOSE:

@@ -37,6 +37,12 @@
     <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\Layer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\VertexBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\IndexBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Events\EventSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -108,6 +114,9 @@
     <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Networking\ServerNetworking.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\IndexBuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\Layer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -118,6 +127,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\VertexBuffer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\PineServer.h">

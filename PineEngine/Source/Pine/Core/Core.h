@@ -49,6 +49,8 @@
 namespace Pine {
 	
 	
+	
+
 	class Core
 	{
 	public:
@@ -63,8 +65,9 @@ namespace Pine {
 
 	private:
 		static inline Window*	m_Window = nullptr;
-		Renderer*				m_PineRenderer = nullptr;
-
+		//Renderer*				m_PineRenderer = nullptr;
+		GLuint l_VertexArray;
+		GLuint l_VertexBuffer;
 		Game*			givenGame = nullptr;//we do not own the game, entry point does. 
 		void			HandleEvents();
 		void			ApplicationRunning();
@@ -73,7 +76,7 @@ namespace Pine {
 		const int		frameDelay = 1000 / fps;// max time between frames
 		Uint32			frameStart;
 		int				frameTime;
-		bool			limitFPS = false;
+		//bool			limitFPS = false;
 		Pine::Window* FourthWindow = nullptr;
 
 

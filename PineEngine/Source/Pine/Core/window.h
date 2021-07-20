@@ -2,8 +2,11 @@
 
 #include "SDL.h"
 #include "Log.h"
+#include <glm.hpp>
 
 
+
+#include <SDL_image.h>
 #define SDL_MAIN_HANDLED
 #undef main
 
@@ -34,7 +37,7 @@ namespace Pine {
 	public:
 		struct WindowData
 		{
-			WindowData(const char* p_Name, int p_ID, Window* p_Window, bool p_IsMainWindow) : s_WindowName(p_Name), s_WindowID(p_ID), s_Window(p_Window), s_IsMainWindow(p_IsMainWindow)
+			WindowData(const char* p_Name, int p_ID, Window* p_Window, bool p_IsMainWindow, glm::vec2 p_WindowSize) : s_WindowName(p_Name), s_WindowID(p_ID), s_Window(p_Window), s_IsMainWindow(p_IsMainWindow), s_WindowSize(p_WindowSize)
 			{
 				PINE_ENGINE_WARN(SDL_GetWindowTitle(s_Window->m_GlData.s_Window));
 			}
@@ -47,6 +50,7 @@ namespace Pine {
 			Window*		s_Window;
 			bool		s_IsMainWindow = false;
 			int			s_WindowID;
+			glm::vec2   s_WindowSize;
 		};
 
 		struct WindowGlData 
@@ -85,6 +89,8 @@ namespace Pine {
 		static bool				CheckWindowAlive(const char* p_WindowName);
 		//If found, closes window p_WindowName
         static void				CloseWindow(const char* p_WindowName);
+
+		static void				SetWindowToRendeer(const char* p_WindowName);
 		
 
 		//Width in pixels of p_WindowName. Will return 0 if no window found

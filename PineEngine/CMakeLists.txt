@@ -26,7 +26,8 @@ add_library(
     Source/Pine/Rendering/Shader.cpp
     Source/Pine/Rendering/LayerManager.cpp
     Source/Pine/Rendering/Layer.cpp
-
+    Source/Pine/Rendering/VertexBuffer.cpp
+    Source/Pine/Rendering/IndexBuffer.cpp
 #Events
     Source/Pine/Events/EventSystem.cpp
     Source/Pine/Events/Event.cpp

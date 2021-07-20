@@ -24,31 +24,48 @@ namespace Pine
 		PINE_ENGINE_WARN(m_WindowId);
 		m_Windows[m_WindowId] = nullptr;
 		SDL_GL_DeleteContext(m_GlData.s_Context);
+		
 
 		PINE_ENGINE_WARN(SDL_GetWindowTitle(m_GlData.s_Window));
 		SDL_DestroyWindow(m_GlData.s_Window);
 	}
 	const Window* Window::CreateNewWindow(const char* p_WindowName) 
 	{
-		InitSDL();
 
-
+		
 		if (m_Windows[0] == nullptr)
 		{
+			InitSDL();
+
 			Window* l_Window = new Window(p_WindowName);
 			//create window
 			l_Window->m_GlData.s_Window = SDL_CreateWindow(p_WindowName, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, PINE_MAIN_WINDOW_SIZE, PINE_MAIN_WINDOW_SIZE, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
 			//create context
 			l_Window->m_GlData.s_Context = SDL_GL_CreateContext(l_Window->m_GlData.s_Window);
+			//create Renderer
             l_Window->m_GlData.s_Renderer =  SDL_CreateRenderer(l_Window->m_GlData.s_Window, -1, 0);
+			//SDL_SetRenderDrawColor(l_Window->m_GlData.s_Renderer, 21, 27, 31, 255);
+			//SDL_RenderClear(l_Window->m_GlData.s_Renderer);
+			printf("Vendor:   %s\n", glGetString(GL_VENDOR));
+			printf("Renderer: %s\n", glGetString(GL_RENDERER));
+			printf("Version:  %s\n", glGetString(GL_VERSION));
 			l_Window->m_WindowHeight = PINE_MAIN_WINDOW_SIZE;
 			l_Window->m_WindowWidth = PINE_MAIN_WINDOW_SIZE;
+			//l_Window->s_WindowSize = ;
 			l_Window->m_WindowId = 0;
-			WindowData* data = new WindowData(p_WindowName, l_Window->m_WindowId, l_Window, true);
+			WindowData* data = new WindowData(p_WindowName, l_Window->m_WindowId, l_Window, true, glm::vec2{ PINE_MAIN_WINDOW_SIZE,PINE_MAIN_WINDOW_SIZE });
 			m_Windows[0] = data;
 			GLenum err = glewInit();
 			if (GLEW_OK != err)
 				PINE_ENGINE_ERROR("ERROR WITH GLEW");
+			if (l_Window->m_GlData.s_Context == nullptr)
+				PINE_ENGINE_WARN("ERROR Loading context");
+			//Initialize PNG loading
+			int imgFlags = IMG_INIT_PNG;
+			if (!(IMG_Init(imgFlags) & imgFlags))
+			{
+				printf("SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError());
+			}
 
 			return l_Window;
 		}
@@ -64,11 +81,14 @@ namespace Pine
 					l_Window->m_GlData.s_Window = SDL_CreateWindow(p_WindowName, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, PINE_SECONDARY_WINDOW_SIZE, PINE_SECONDARY_WINDOW_SIZE, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
 					//create context
 					l_Window->m_GlData.s_Context = SDL_GL_CreateContext(l_Window->m_GlData.s_Window);
+					l_Window->m_GlData.s_Renderer = SDL_CreateRenderer(l_Window->m_GlData.s_Window, -1, 0);
 					l_Window->m_WindowHeight = PINE_SECONDARY_WINDOW_SIZE;
 					l_Window->m_WindowWidth = PINE_SECONDARY_WINDOW_SIZE;
 					l_Window->m_WindowId = i;
-					WindowData* data = new WindowData(p_WindowName, l_Window->m_WindowId, l_Window, true);
+					WindowData* data = new WindowData(p_WindowName, l_Window->m_WindowId, l_Window, true, glm::vec2{ PINE_SECONDARY_WINDOW_SIZE ,PINE_SECONDARY_WINDOW_SIZE });
 					m_Windows[i] = data;
+					SetWindowToRendeer(GetMainWindow()->s_WindowName);
+
 					return l_Window;
 				}
 			}
@@ -87,20 +107,34 @@ namespace Pine
 
 		if (m_Windows[0] == nullptr)
 		{
+			
 			Window* l_Window = new Window(p_WindowName);
 			//create window
 			l_Window->m_GlData.s_Window = SDL_CreateWindow(p_WindowName, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, p_WindowWidthX, p_WindowWidthY, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
 			//create context
 			l_Window->m_GlData.s_Context = SDL_GL_CreateContext(l_Window->m_GlData.s_Window);
-            //l_Window->m_GlData.s_Renderer =  SDL_CreateRenderer(l_Window->m_GlData.s_Window, -1, 0);
+			//create Renderer
+			l_Window->m_GlData.s_Renderer = SDL_CreateRenderer(l_Window->m_GlData.s_Window, -1, 0);
+			printf("Vendor:   %s\n", glGetString(GL_VENDOR));
+			printf("Renderer: %s\n", glGetString(GL_RENDERER));
+			printf("Version:  %s\n", glGetString(GL_VERSION));
 			l_Window->m_WindowHeight = p_WindowWidthY;
 			l_Window->m_WindowWidth = p_WindowWidthX;
 			l_Window->m_WindowId = 0;
-			WindowData* data = new WindowData(p_WindowName, l_Window->m_WindowId, l_Window, true);
+			WindowData* data = new WindowData(p_WindowName, l_Window->m_WindowId, l_Window, true, glm::vec2{ p_WindowWidthX,p_WindowWidthY });
 			m_Windows[0] = data;
 			GLenum err = glewInit();
 			if (GLEW_OK != err)
-				std::cerr << "Error: " << glewGetErrorString(err) << std::endl;
+				PINE_ENGINE_ERROR("ERROR WITH GLEW");
+			if (l_Window->m_GlData.s_Context == nullptr)
+				PINE_ENGINE_WARN("ERROR Loading context");
+			//Initialize PNG loading
+			int imgFlags = IMG_INIT_PNG;
+			if (!(IMG_Init(imgFlags) & imgFlags))
+			{
+				printf("SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError());
+			}
+
 			return l_Window;
 		}
 		else
@@ -115,11 +149,14 @@ namespace Pine
 					l_Window->m_GlData.s_Window = SDL_CreateWindow(p_WindowName, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, p_WindowWidthX, p_WindowWidthY, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
 					//create context
 					l_Window->m_GlData.s_Context = SDL_GL_CreateContext(l_Window->m_GlData.s_Window);
+					//l_Window->m_GlData.s_Renderer = SDL_CreateRenderer(l_Window->m_GlData.s_Window, -1, 0);
 					l_Window->m_WindowHeight = p_WindowWidthY;
 					l_Window->m_WindowWidth = p_WindowWidthX;
 					l_Window->m_WindowId = i;
-					WindowData* data = new WindowData(p_WindowName, l_Window->m_WindowId, l_Window, true);
+					WindowData* data = new WindowData(p_WindowName, l_Window->m_WindowId, l_Window, true, glm::vec2{ p_WindowWidthX,p_WindowWidthY });
 					m_Windows[i] = data;
+					SetWindowToRendeer(GetMainWindow()->s_WindowName);
+
 					return l_Window;
 				}
 			}
@@ -201,11 +238,20 @@ namespace Pine
 		if (Window* wind = GetWindow(p_WindowName))
 		{
 			//This feels like a really baaaaad thing to do. But, it works so..
-			//WindowGlData* data = wind->m_GlData;
 			return &wind->m_GlData;
 		}
+
 	}
 
+	 void Window::SetWindowToRendeer(const char* p_WindowName)
+	 {
+
+		 if (Window* wind = GetWindow(p_WindowName))
+		 {
+
+			SDL_GL_MakeCurrent(wind->m_GlData.s_Window, wind->m_GlData.s_Context);
+		 }
+	 }
 	void Window::InitSDL() 
 	{
 #ifdef PINE_PLATFORM_MACOS 
@@ -223,12 +269,9 @@ namespace Pine
 #elif PINE_PLATFORM_WINDOWS
 
 		SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1);
-		//Currently not working, new renderer shoud fix
-		//SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
-		//SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 6);
-
+		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
+		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 6);
 		SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
-
 		// Also request a depth buffer
 		SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 		SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
@@ -236,6 +279,7 @@ namespace Pine
 #endif
 
 		SDL_Init(SDL_INIT_VIDEO);
+		
 	}
 }
 

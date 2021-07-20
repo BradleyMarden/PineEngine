@@ -19,10 +19,10 @@ public:
     Pine::SourceShader shaders;
     Pine::EventSystem* es;
     void eventTrigger(Pine::PEvent& e);
-
+    unsigned int shader;
     Pine::Window* MainWindow = nullptr;
     const Pine::Window* SecondWindow = nullptr;
-
+    glm::mat4 vp;
 };
 
 Pine::Game* Pine::CreateGame()

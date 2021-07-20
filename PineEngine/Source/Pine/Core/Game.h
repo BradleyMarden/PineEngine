@@ -1,7 +1,7 @@
 #pragma once
 //#include <sdl2/SDL.h>
 #define SDL_MAIN_HANDLED
-
+#include <Log.h>
 #include <SDL.h>
 #include <memory>
 //#include "PineAPI.h"
@@ -19,7 +19,7 @@ namespace Pine {
 		inline GameState GetGameState() { return st; }
 		inline void GameRun() { SetState(RUNNING); }
 		inline void GameOver() { SetState(GAMEOVER); }
-		inline void GameClose() { SetState(CLOSING); }
+		inline void GameClose() { SetState(CLOSING); PINE_ENGINE_WARN("State Close"); }
 
 
 		inline bool IsGameRunning() { return st == RUNNING; }

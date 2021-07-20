@@ -64,7 +64,17 @@ namespace Pine {
 		}
 		return id;
 	}
+	void Shader::SetUniformMat4f(const std::string& p_Name, glm::mat4 p_Mat4)
+	{
+		//OPENGL(glUniformMatrix4fv(glGetUniformLocation(p_Name), 1, GL_FALSE, &p_Mat4[0][0]));
+	
+	}
 
+	int Shader::ReturnUniformLocation(const std::string& p_Name)
+	{
+		return 0;
+	
+	}
 	int Shader::CreateShader(const std::string& vertexShader, const std::string& fragmentShader)
 	{
 		unsigned int program = glCreateProgram();
