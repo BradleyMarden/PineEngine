@@ -37,7 +37,7 @@ in vec4 col;
 in vec2 texCoord;
 in float tex;
 
-uniform sampler2D u_tex[2];
+uniform sampler2D u_tex[3];
 
 void main()
 {
@@ -47,5 +47,5 @@ void main()
 
     int index = int(tex);
     
-    color = texture(u_tex[index], texCoord);
+    color = texture(u_tex[index], texCoord) * col;
 }

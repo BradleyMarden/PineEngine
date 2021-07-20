@@ -44,7 +44,7 @@ void myGame::Initialize()
 
     Pine::Window::CreateNewWindow("Main");
    // Pine::Renderer::SetWindowIcon("Assets/PineEngineText.png");
-    Pine::Window::CreateNewWindow("Second");
+    //Pine::Window::CreateNewWindow("Second");
 
     std::cout << "Num of Windows" << Pine::Window::GetOpenWindowCount() << std::endl;
     std::cout << "Main Window Size" << Pine::Window::GetWindowWidth("Main") << std::endl;
@@ -53,6 +53,7 @@ void myGame::Initialize()
 
    
 }
+int x, y = 0;
 void myGame::Update()
 {
     if (!Window::CheckWindowAlive("Second"))
@@ -66,8 +67,15 @@ void myGame::Update()
     }
     if (Renderer::HasInit() ==true)
     {
+        glm::vec4 col = { 0.0f ,1.0f, 1.0f ,1.0f };
 
-        //glm::vec4 col = { 1.0f ,1.0f, 1.0f ,1.0f };
+        PVector2f mousePos = Input::GetMousePosition();
+        Renderer::ResetStats();
+        Renderer::BeginBatch();
+        Renderer::DrawQuad({ mousePos.X,mousePos.Y}, { 100.0f ,100.0f }, col);
+        Renderer::DrawQuad({ 100,100}, { 100.0f ,100.0f }, 1);
+        Renderer::EndBatch();
+        Renderer::Flush();
 
        // Pine::Renderer::ResetStats();
         //glUseProgram(shader);
@@ -158,6 +166,23 @@ void myGame::eventTrigger(Pine::PEvent& e)
      {
          e.is_Handled = true;
          std::cout << dynamic_cast<Pine::KeyDownEvent&>(e).GetKey() << std::endl;
+         if (dynamic_cast<Pine::KeyDownEvent&>(e).GetKey() == 26)//w
+         {
+             y++;
+         }
+         if (dynamic_cast<Pine::KeyDownEvent&>(e).GetKey() == 22)//s
+         {
+             y--;
+         }
+
+         if (dynamic_cast<Pine::KeyDownEvent&>(e).GetKey() == 4)//a
+         {
+             x--;
+         }
+         if (dynamic_cast<Pine::KeyDownEvent&>(e).GetKey() == 7)//d
+         {
+             x++;
+         }
      }
      if (e.GetEventType() == Pine::EventType::KeyUp)
      {

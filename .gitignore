@@ -12,3 +12,10 @@ bin-int/
 *.log
 *.tlog
 .vs/PineEngine/v16/Browse.VC.db
+Engine Projects/Windows/bin/Debug/Game.exe
+Engine Projects/Windows/bin/Debug/Game.ilk
+Engine Projects/Windows/bin/Debug/Game.pdb
+Engine Projects/Windows/Game.dir/Debug/vc142.pdb
+Engine Projects/Windows/PineEngine/Debug/PineEngine.lib
+Engine Projects/Windows/PineEngine/Debug/PineEngine.pdb
+Engine Projects/Windows/PineEngine/PineEngine.dir/Debug/PineEngine.pdb

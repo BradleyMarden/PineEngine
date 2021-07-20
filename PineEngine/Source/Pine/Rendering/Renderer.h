@@ -47,6 +47,7 @@ namespace Pine {
 		static void Shutdown();
 
 		static void DrawQuad(const glm::vec2& p_Pos, const glm::vec2& p_Size, const glm::vec4& p_Color);
+		static void DrawQuad(const glm::vec2& p_Pos, const glm::vec2& p_Size, const GLuint tex);
         
         static void LoadScene(const char* p_FilePath);
 
@@ -56,7 +57,10 @@ namespace Pine {
 	
         static void CreateQuad(const char* p_Name, int p_Width, int p_Height);
 
+        static void CreateQuad(const char* p_Name, int p_Width, int p_Height, GLuint p_Shader);
+
         static void CreateQuad(const char* p_Name, int p_Width, int p_Height,GLint m_Texture);
+        static void CreateQuad(const char* p_Name, int p_Width, int p_Height,GLint m_Texture, GLuint p_Shader);
 
         static void LoadTextureMap(const char* p_FilePath);
 
@@ -73,45 +77,16 @@ namespace Pine {
 
 	private:
 
-		static const size_t m_MaxQuadCount = 1000;					//per flush
-		static const size_t m_MaxVertexCount = m_MaxQuadCount * 4;	//each quad has 4 vertex
-		static const size_t m_MaxIndexCount = m_MaxQuadCount * 6;	//each quad has 6 index
-		static const size_t m_MaxTextureCount = 32;					//max texture slot on MY current system. Will be different depending on the device. Need to add some checking in a future build
+		/*static const size_t m_MaxQuadCount;					//per flush
+		static const size_t m_MaxVertexCount;	//each quad has 4 vertex
+		static const size_t m_MaxIndexCount;	//each quad has 6 index
+		static const size_t m_MaxTextureCount;					//max texture slot on MY current system. Will be different depending on the device. Need to add some checking in a future build*/
 		static SDL_Renderer** renderer;
 		static bool hasRun;
 		static bool m_IconSet;
-
-		struct Vertex
-		{
-			glm::vec3 s_Position;
-			glm::vec4 s_Color;
-			glm::vec2 s_TextureCoords;
-			float s_TextureIndex;
-
-		};
-
-		struct RendererData
-		{
-			GLuint s_VertexArray;
-			GLuint s_VertexBuffer;
-			GLuint s_IndexBuffer;
-			GLuint s_WhiteTexture = 0;
-
-			uint32_t s_WHiteTextureSlot = 0;
-			uint32_t s_IndexCount = 0;
-
-			Vertex* buffer = nullptr;//holds all vertices
-			Vertex* bufferPtr = nullptr;//reference to a single vertex in above
-
-			std::array<uint32_t, m_MaxTextureCount> s_TextureSlots;
-			uint32_t s_TextureSlotIndex = 1;
-
-			int renderCalls;
-			int indexCount;
-			int quadCount;
-		};
-		static RendererData m_RendererData;
-
+		static void CreateWhiteTexture();
+	
+		
 		enum  RenderCategory		//define the category of render, needs to be a 
 									//bitset as an event can be more than one category
 		{

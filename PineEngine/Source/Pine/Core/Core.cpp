@@ -155,7 +155,7 @@ namespace Pine
 					}
 					ApplicationRunning();
 					//Renderer::Flush();
-					Renderer::BeginBatch();
+					//Renderer::BeginBatch();
 
 					HandleEvents();
 					break;

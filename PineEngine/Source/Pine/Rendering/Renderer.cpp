@@ -1,18 +1,46 @@
 #include "Renderer.h"
 namespace Pine {
+	 static const size_t m_MaxQuadCount = 1000;					//per flush
+	 static const size_t m_MaxVertexCount = m_MaxQuadCount * 4;	//each quad has 4 vertex
+	 static const size_t m_MaxIndexCount = m_MaxQuadCount * 6;	//each quad has 6 index
+	 static const size_t m_MaxTextureCount = 32;
 
-	const size_t Renderer::m_MaxQuadCount;
-	const size_t Renderer::m_MaxVertexCount;
-	const size_t Renderer::m_MaxIndexCount;
-	const size_t Renderer::m_MaxTextureCount;
 	SDL_Renderer**	Renderer::renderer;
 	bool Renderer::limitFPS = false;
 	bool Renderer::hasRun = false;
-	Renderer::RendererData Renderer::m_RendererData;
 	bool Renderer::m_IconSet = false;
 
+	struct Vertex
+	{
+		glm::vec3 s_Position;
+		glm::vec4 s_Color;
+		glm::vec2 s_TextureCoords;
+		float s_TextureIndex;
 
-	
+	};
+
+	struct RendererData
+	{
+		GLuint s_VertexArray;
+		GLuint s_VertexBuffer;
+		GLuint s_IndexBuffer;
+		GLuint s_WhiteTexture = 0;
+
+		uint32_t s_WHiteTextureSlot = 0;
+		uint32_t s_IndexCount = 0;
+
+		Vertex* buffer = nullptr;//holds all vertices
+		Vertex* bufferPtr = nullptr;//reference to a single vertex in above
+
+		std::array<uint32_t, m_MaxTextureCount> s_TextureSlots;
+		uint32_t s_TextureSlotIndex = 1;
+
+		int renderCalls;
+		int indexCount;
+		int quadCount;
+	};
+	static RendererData m_RendererData;
+
 
 	void Renderer::GLClearError()
 	{
@@ -34,14 +62,106 @@ namespace Pine {
 	{
 
 		renderer = &Window::GetWindowGLData(Window::GetMainWindow()->s_WindowName)->s_Renderer;
+		m_RendererData.buffer = new Vertex[m_MaxVertexCount];
 		Window::SetWindowToRendeer(Window::GetMainWindow()->s_WindowName);
 		if (renderer == nullptr)
 		{
 			PINE_ENGINE_WARN("Rendering NOT loaded");
 		}
 		PINE_ENGINE_WARN("Rendering loaded");
+		//load shader
+		SourceShader localShaders = Pine::Shader::LoadShader("Assets/Shaders/default.PineShader");
+		shader = Shader::CreateShader(localShaders.VertexSource, localShaders.FragmentSource);
+		glUseProgram(shader);
 
-	//SHADER
+
+		//TEXTURE
+			//load texture
+		CreateWhiteTexture();//must be called first as it sets all remaining tex slots to zero for safety;
+		m_RendererData.s_TextureSlots[1] = LoadTexture("Assets/PineEngineText.png");
+		m_RendererData.s_TextureSlots[2] = LoadTexture("Assets/PineEngine.png");
+
+		//set texture
+		int location = glGetUniformLocation(shader, "u_tex");
+		int samplers[3] = { 0,1,2 };
+		glUniform1iv(location, 3, samplers);
+		//VERTEX LAYOUT  
+
+		glm::mat4 projection = glm::ortho(0.0f, Window::GetMainWindow()->s_WindowSize.x, 0.0f, Window::GetMainWindow()->s_WindowSize.y, -1.0f, 1.0f);//converts screen space to values between -1:1
+		glm::mat4 view = glm::translate(glm::mat4(1.0f), glm::vec3(-100, 0, 0));//can be used to imitate move camera(works by shifting all onjects in scene)
+		glm::mat4 model = glm::translate(glm::mat4(1.0f), glm::vec3(200, 200, 0));//controls positon of object on screen
+		glm::mat4 mvp = projection * view * model;
+
+		//glm::mat4 projection = glm::ortho(-2.0f, 2.0f, -1.5f, 1.5f, -1.0f, 1.0f);
+		int location2 = glGetUniformLocation(shader, "u_Proj");
+		glUniformMatrix4fv(location2, 1, GL_FALSE, &mvp[0][0]);
+
+
+		//set and bind vertex array
+		glCreateVertexArrays(1, &m_RendererData.s_VertexArray);
+		GLCheckError();
+
+		glBindVertexArray(m_RendererData.s_VertexArray);
+		GLCheckError();
+
+		//set and bind buffers
+		glCreateBuffers(1, &m_RendererData.s_VertexBuffer);
+		GLCheckError();
+
+		glBindBuffer(GL_ARRAY_BUFFER, m_RendererData.s_VertexBuffer);
+		GLCheckError();
+
+		glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * m_MaxVertexCount, nullptr , GL_DYNAMIC_DRAW);
+		GLCheckError();
+
+		//SHADER PROPERTIES
+		//POSITION
+		//glEnableVertexArrayAttrib(m_RendererData.s_VertexBuffer, 0);
+		glEnableVertexAttribArray(0);
+		GLCheckError();
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)offsetof(Vertex, s_Position));
+		GLCheckError();
+		//COLOR
+		//glEnableVertexArrayAttrib(m_RendererData.s_VertexBuffer, 1);
+		glEnableVertexAttribArray(1);
+		glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)offsetof(Vertex, s_Color));
+		GLCheckError();
+		//TEX COORD
+		glEnableVertexAttribArray(2);
+		GLCheckError();
+		glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)offsetof(Vertex, s_TextureCoords));
+		GLCheckError();
+		//TEX INDEX
+		glEnableVertexAttribArray(3);
+		GLCheckError();
+		glVertexAttribPointer(3, 1, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)offsetof(Vertex, s_TextureIndex));
+		GLCheckError();
+
+		//set Indices
+		uint32_t indices[m_MaxIndexCount];
+		uint32_t offset = 0;
+
+		for (int i = 0; i < m_MaxIndexCount; i += 6)
+		{
+			indices[i + 0] = 0 + offset;
+			indices[i + 1] = 1 + offset;
+			indices[i + 2] = 2 + offset;
+
+			indices[i + 3] = 2 + offset;
+			indices[i + 4] = 3 + offset;
+			indices[i + 5] = 0 + offset;
+
+			offset += 4;
+
+		}
+
+		glCreateBuffers(1, &m_RendererData.s_IndexBuffer);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_RendererData.s_IndexBuffer);
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+
+
+
+	/*//SHADER///////////////////////////////////////////////////////////////////////////////////////////////////
 		//load shader
 		SourceShader localShaders = Pine::Shader::LoadShader("Assets/Shaders/default.PineShader");
 		shader  = Shader::CreateShader(localShaders.VertexSource, localShaders.FragmentSource);
@@ -146,8 +266,7 @@ namespace Pine {
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 		GLCheckError();
 
-
-
+		*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		//SDL_SetRenderDrawColor(*renderer, 21, 27, 31, 255);
 
@@ -211,6 +330,9 @@ namespace Pine {
 		}
 		*/
 
+
+
+
 		//Setup IMGUI
 		IMGUI_CHECKVERSION();
 		ImGui::CreateContext();
@@ -231,7 +353,7 @@ namespace Pine {
 
 	void Renderer::BeginBatch() 
 	{
-		
+		/*
 
 		//CLEAR SCREEN
 		glClearColor(1.0f, 0.1f, 0.1f, 1.0f);
@@ -256,7 +378,10 @@ namespace Pine {
 			glUseProgram(0);
 
 		}
-		//m_RendererData.bufferPtr = m_RendererData.buffer;
+
+		*/
+		//set the bufferptr to the first vertex
+		m_RendererData.bufferPtr = m_RendererData.buffer;
 		
 	}
 	void Renderer::EndBatch() 
@@ -277,10 +402,39 @@ namespace Pine {
 
 	void Renderer::Flush() 
 	{
-		for (uint32_t i = 0; i < m_RendererData.s_TextureSlotIndex; i++)
+		/*for (uint32_t i = 0; i < m_RendererData.s_TextureSlotIndex; i++)
 		{
 			glBindTextureUnit(i, m_RendererData.s_TextureSlots[i]);
+		}*/
+
+		glClearColor(1.0f, 0.1f, 0.1f, 1.0f);
+		GLCheckError();
+		//LOAD SHADER AND TEXTURES
+		glUseProgram(shader);
+		glBindTextureUnit(0, m_RendererData.s_TextureSlots[0]);
+		glBindTextureUnit(1, m_RendererData.s_TextureSlots[1]);
+		glBindTextureUnit(2, m_RendererData.s_TextureSlots[2]);
+
+
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		GLCheckError();
+
+		//DRAW
+		glBindVertexArray(m_RendererData.s_VertexArray);
+		glDrawElements(GL_TRIANGLES, m_RendererData.s_IndexCount, GL_UNSIGNED_INT, nullptr);
+		GLCheckError();
+		RenderUI();
+		if (Window::GetMainWindow() != nullptr)
+		{
+			SDL_GL_SwapWindow(Window::GetWindowGLData(Window::GetMainWindow()->s_WindowName)->s_Window);
+			GLCheckError();
+			glUseProgram(0);
+
 		}
+		m_RendererData.renderCalls++;
+		m_RendererData.s_IndexCount = 0;
+		//m_RendererData.s_TextureSlotIndex = 1;
+
 		//was working/////////////////
 		/*
 		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
@@ -299,18 +453,13 @@ namespace Pine {
 		}
 		*///////////////////////
 
-		glBindVertexArray(m_RendererData.s_VertexArray);
-		glDrawElements(GL_TRIANGLES, m_RendererData.s_IndexCount, GL_UNSIGNED_INT, nullptr);
+		//glBindVertexArray(m_RendererData.s_VertexArray);
+		//glDrawElements(GL_TRIANGLES, m_RendererData.s_IndexCount, GL_UNSIGNED_INT, nullptr);
 		//m_RendererData.renderCalls++;
 		//m_RendererData.s_IndexCount = 0;
 		//m_RendererData.s_TextureSlotIndex = 1;
 		//RenderUI();
 
-		if (Window::GetMainWindow() != nullptr)
-		{
-			SDL_GL_SwapWindow(Window::GetWindowGLData(Window::GetMainWindow()->s_WindowName)->s_Window);
-
-		}
 
 	}
 	void Renderer::RenderUI()
@@ -396,6 +545,57 @@ namespace Pine {
 		
 	
 	}
+	void Renderer::DrawQuad(const glm::vec2& p_Pos, const glm::vec2& p_Size, const GLuint tex) 
+	{
+		PINE_ENGINE_WARN(m_RendererData.quadCount);
+		if (m_RendererData.s_IndexCount >= m_MaxIndexCount)
+		{
+			PINE_ENGINE_WARN("START AGAIN");
+
+			EndBatch();
+			Flush();
+			BeginBatch();
+		}
+		//float textureIndex = 0.0f;
+		glm::vec4 col = { 1.0f,1.0f,1.0f,1.0f };
+
+		m_RendererData.bufferPtr->s_Position = { p_Pos.x, p_Pos.y, 0.0f };
+		m_RendererData.bufferPtr->s_Color = col;
+		m_RendererData.bufferPtr->s_TextureCoords = { 0.0f, 0.0f };
+		m_RendererData.bufferPtr->s_TextureIndex = tex;
+		m_RendererData.bufferPtr++;
+
+		m_RendererData.bufferPtr->s_Position = { p_Pos.x + p_Size.x, p_Pos.y, 0.0f };
+		m_RendererData.bufferPtr->s_Color = col;
+		m_RendererData.bufferPtr->s_TextureCoords = { 1.0f, 0.0f };
+		m_RendererData.bufferPtr->s_TextureIndex = tex;
+		m_RendererData.bufferPtr++;
+
+		m_RendererData.bufferPtr->s_Position = { p_Pos.x + p_Size.x, p_Pos.y + p_Size.y, 0.0f };
+		m_RendererData.bufferPtr->s_Color = col;
+		m_RendererData.bufferPtr->s_TextureCoords = { 1.0f, 1.0f };
+		m_RendererData.bufferPtr->s_TextureIndex = tex;
+		m_RendererData.bufferPtr++;
+
+		m_RendererData.bufferPtr->s_Position = { p_Pos.x, p_Pos.y + p_Size.y, 0.0f };
+		m_RendererData.bufferPtr->s_Color = col;
+		m_RendererData.bufferPtr->s_TextureCoords = { 0.0f, 1.0f };
+		m_RendererData.bufferPtr->s_TextureIndex = tex;
+		m_RendererData.bufferPtr++;
+
+
+		m_RendererData.s_IndexCount += 6;
+
+		m_RendererData.quadCount++;
+
+	
+	}
+
+	void Renderer::CreateQuad(const char* p_Name, int p_Width, int p_Height, GLuint p_Shader)
+	{
+	
+	
+	}
 	void Renderer::SetWindowIcon(const char* path)
 	{
 		SDL_Surface* loadedSurface = IMG_Load(path);
@@ -414,7 +614,26 @@ namespace Pine {
 		
 	
 	}
+	void Renderer::CreateWhiteTexture() 
+	{
+		glCreateTextures(GL_TEXTURE_2D, 1, &m_RendererData.s_WhiteTexture);
+		glBindTexture(GL_TEXTURE_2D, m_RendererData.s_WhiteTexture);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+		GLuint color = 0xffffffff;
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, 1, 1, 0, GL_RGBA, GL_UNSIGNED_BYTE, &color);
 
+		//set slot 0 to white texture
+		m_RendererData.s_TextureSlots[0] = m_RendererData.s_WhiteTexture;
+		//set all other texture slots to zero
+		for (size_t i = 1; i < m_MaxTextureCount; i++)
+		{
+			m_RendererData.s_TextureSlots[i] = 0;
+		}
+	
+	}
 	GLuint Renderer::LoadTexture(const char* path)
 	{
 		
