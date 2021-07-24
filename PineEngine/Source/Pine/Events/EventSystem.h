@@ -155,8 +155,7 @@ namespace Pine {
 					//if the event is handled we no longer need it, remove it. 
 					if (m_PendingEvents[num]->GetEvent().is_Handled)
 					{
-						std::cout << "Removing event as it has been handled" << std::endl;
-
+						PINE_ENGINE_INFO("Removing event as it has been handled");
 						delete m_PendingEvents[num];
 
 						m_PendingEvents[num] = nullptr;
@@ -313,6 +312,22 @@ namespace Pine {
 		const char* windowName;
 
 
+	};
+
+	struct MouseScrollEvent : PEvent
+	{
+
+		MouseScrollEvent(float p_Ofset) : l_Offset(p_Ofset)
+		{
+			EventSystem::PublishEvent(this);
+		}
+
+		int GetOffset() const { return l_Offset; }
+		SET_EVENT_TYPE(MiddleMouseScroll);
+		SET_CATEGORY_TYPE(MouseEvent | InputEvent);
+
+	private:
+		const float l_Offset;
 	};
 	struct KeyDownEvent :PEvent 
 	{

@@ -11,6 +11,7 @@
 #include <imgui.h>
 #include <imgui_impl_opengl3.h>
 #include <imgui_impl_sdl.h>
+#include "OrthographicCameraController.h"
 
 namespace Pine {
 #define OPENGL(x) Renderer::GLClearError();\
@@ -22,7 +23,7 @@ namespace Pine {
 #endif
 	*/
 
-
+	class OrthographicCameraController;
 	//renderer will only be allowed to, 
 	class Renderer
 	{
@@ -63,7 +64,7 @@ namespace Pine {
         static void CreateQuad(const char* p_Name, int p_Width, int p_Height,GLint m_Texture, GLuint p_Shader);
 
         static void LoadTextureMap(const char* p_FilePath);
-
+		inline static void SetCamera(OrthographicCameraController* p_Cam) { m_Cam = p_Cam; }
 		static void SetWindowIcon(const char* path);
 		//Returns true if icon has been set.
 		inline static bool GetIconSet() { return m_IconSet; }
@@ -85,7 +86,7 @@ namespace Pine {
 		static bool hasRun;
 		static bool m_IconSet;
 		static void CreateWhiteTexture();
-	
+		static OrthographicCameraController* m_Cam;
 		
 		enum  RenderCategory		//define the category of render, needs to be a 
 									//bitset as an event can be more than one category

@@ -4,9 +4,15 @@
     <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\Game\Source\MyGame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\Game\Source\Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\Game\Source\MyGame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\Game\Source\Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

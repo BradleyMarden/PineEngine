@@ -37,7 +37,7 @@ in vec4 col;
 in vec2 texCoord;
 in float tex;
 
-uniform sampler2D u_tex[3];
+uniform sampler2D u_tex[4];
 
 void main()
 {

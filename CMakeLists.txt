@@ -102,6 +102,7 @@ include_directories(
     Game/Source
     PineEngine/Source
     PineEngine/Source/Pine/Core
+    PineEngine/Source/Pine/Components
     PineEngine/Source/Pine/Logging
     PineEngine/Source/Pine/Maths
     PineEngine/Source/Pine/Networking
@@ -125,6 +126,9 @@ include_directories(
     #Game/Source/main.cpp
     Game/Source/MyGame.cpp
     Game/Source/MyGame.h
+    Game/Source/Player.cpp
+    Game/Source/Player.h
+
  )
    # ------- End of Game Project files -------- #
 

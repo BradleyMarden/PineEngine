@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
+#define SDL_MAIN_HANDLED
 #include <Pine.h>
-
 //External function, which allows the main functions to get the developers game class. NOTE: this function MUST be implemented in a child of the Game class, see documentation.
 extern Pine::Game* Pine::CreateGame();
 

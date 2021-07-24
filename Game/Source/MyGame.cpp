@@ -1,4 +1,6 @@
 #include "MyGame.h"
+//enables console logging
+#define DEBUG
 
 myGame::myGame(){}
 myGame::~myGame(){}
@@ -6,6 +8,109 @@ myGame::~myGame(){}
 void myGame::Start()
 {
     Pine::EventSystem::RegisterEventCallback(BIND_EVENT(myGame::eventTrigger));
+
+    Pine::MaterialComponent comp();
+
+    Pine::NetworkComponent net();
+
+    //create and add scene
+    std::shared_ptr<Scene> _Scene = std::make_shared<Scene>("Menu");
+    AddScene<Scene>(_Scene);
+
+    std::shared_ptr<Player> _Player1 = std::make_shared<Player>("Player1");
+    _Player1->SetPlayerName("Brad");
+    _Scene->AddPineObject<Player>(_Player1);
+
+    std::weak_ptr<Player> _Player2 = _Scene->AddPineObject<Player>("Player2");
+    _Player2.lock()->SetPlayerName("Tayla");
+
+    std::weak_ptr<Scene> _WeakScene = GetScene<Scene>("Menu");
+    PINE_ENGINE_WARN(_WeakScene.lock()->GetName());
+
+
+    PINE_ENGINE_WARN(_Scene->GetPineObject<Player>("Player1").lock()->GetName());
+
+    _Scene->AddPineObject<Player>("Player3");
+    _Scene->GetPineObject<Player>("Player3").lock()->SetPlayerName("Nathan");
+    _Player1->AddComponentToPineObject<MaterialComponent>("TestComponent");
+    _Player1->GetComponent<MaterialComponent>("TestComponent").lock()->SetMatName("Material");
+    PINE_ENGINE_WARN(_Player1->GetComponent<MaterialComponent>("TestComponent").lock()->GetMatName());
+
+
+    PINE_ENGINE_WARN(_Scene->GetPineObject<Player>("Player1").lock()->GetPlayerName());
+    PINE_ENGINE_WARN(_Scene->GetPineObject<Player>("Player2").lock()->GetPlayerName());
+    PINE_ENGINE_WARN(_Scene->GetPineObject<Player>("Player3").lock()->GetPlayerName());
+
+    
+
+
+    PINE_ENGINE_WARN(GetScene<Scene>("Menu").lock()->GetPineObject<Player>("Player1").lock()->GetPlayerName());
+    PINE_ENGINE_WARN(GetScene<Scene>("Menu").lock()->GetPineObject<Player>("Player2").lock()->GetPlayerName());
+    PINE_ENGINE_WARN(GetScene<Scene>("Menu").lock()->GetPineObject<Player>("Player3").lock()->GetPlayerName());
+                                                                                            
+    PINE_ENGINE_WARN(GetScene<Scene>("Menu").lock()->GetPineObject<Player>("Player1").lock()->GetPlayerName());
+    PINE_ENGINE_WARN(GetScene<Scene>("Menu").lock()->GetPineObject<Player>("Player2").lock()->GetPlayerName());
+    PINE_ENGINE_WARN(GetScene<Scene>("Menu").lock()->GetPineObject<Player>("Player3").lock()->GetPlayerName());
+
+
+    LoadScene<Scene>("Menu");
+
+    
+   /* std::shared_ptr<Scene> sc =  std::make_shared<Scene>("Menu");
+    AddScene(sc);
+    std::weak_ptr<Scene> sc2 = GetScene<Scene>("Menu").lock();
+    std::weak_ptr<Player> p1 = GetScene<Scene>("Menu").lock()->GetPineObject<Player>("Bradley");
+
+    std::shared_ptr<Player> player = std::make_shared<Player>("Brood");
+    GetScene<Scene>("Menu").lock()->AddPineObject<Player>(player);
+
+    GetScene<Scene>("Menu").lock()->AddPineObject<Player>("Bradley");
+
+    GetScene<Scene>("Menu").lock()->GetPineObject<Player>("Bradley").lock()->SetName("Bradley Marden");
+    GetScene<Scene>("Menu").lock()->GetPineObject<Player>("Brood").lock()->SetName("Bradley James Charles Hanson-Marden");
+
+    PINE_ENGINE_WARN("Name in scene: {0}", GetScene<Scene>("Menu").lock()->GetPineObject<Player>("Bradley").lock()->GetName());
+    std::string n = LoadScene<Scene>("Menu").lock()->GetSceneName();
+    PINE_ERROR("Scene Name: {0}", n);
+   // Pine::ComponentSystem::AddComponent<NetworkComponent>(1);
+    //Pine::ComponentSystem::AddComponent<NetworkComponent>(1);
+
+    m_Scene = new Scene("Menu");
+    m_Scene->AddPineObject<PineObject>("Test");
+    m_Scene->AddPineObject<Player>("Player");
+    m_Scene->AddPineObject<Player>("Player2");
+    m_Scene->AddPineObject<PineObject>("Test");
+
+    //PineObject* _PO = m_Scene->GetPineObject<PineObject>("Test");
+    m_Scene->GetPineObject<Player>("Player").lock()->SetName("Broodley");
+    m_Scene->GetPineObject<Player>("Player2").lock()->SetName("Tayla");
+
+    std::weak_ptr<Player> _PO1 = m_Scene->GetPineObject<Player>("Player");
+    PINE_ERROR(_PO1.lock()->GetName());
+    PINE_ERROR(m_Scene->GetPineObject<Player>("Player2").lock()->GetName());
+    PINE_ERROR(m_Scene->GetPineObject<Player>("Player").lock()->GetInstanceID());
+    PINE_ERROR(m_Scene->GetPineObject<Player>("Player2").lock()->GetInstanceID());
+    PINE_ERROR(m_Scene->GetPineObject<Player>("Test").lock()->GetInstanceID());
+
+    //returns all PineObjects of type
+    std::unordered_map <std::string, std::weak_ptr<Player>>& map = m_Scene->GetAllPineObjectsOfType<Player>();
+    PINE_ERROR("Size: {0}", map.size());
+
+
+    for (auto x : map)
+    {
+        //x.second->SetName("Nath");
+    }
+
+    PINE_ERROR(_PO1.lock()->GetName());
+    PINE_ERROR(m_Scene->GetPineObject<Player>("Player2").lock()->GetName());
+    m_Scene->GetPineObject<Player>("Player2").lock()->AddComponentToPineObject<MaterialComponent>("Render");
+    m_Scene->GetPineObject<Player>("Player2").lock()->AddComponentToPineObject<MaterialComponent>("Render");*/
+   // m_Scene->AddPineObject<Player>("Player");
+
+    //m_Scene->GetPineObject<Player>("Player")->GetName();
+
+    
 
    /* //load shader
     SourceShader localShaders = Pine::Shader::LoadShader("Assets/Shaders/default.PineShader");
@@ -42,26 +147,31 @@ void myGame::Start()
 void myGame::Initialize()
 {
 
-    Pine::Window::CreateNewWindow("Main");
+    Pine::Window::CreateNewWindow("Main", 960,540);
    // Pine::Renderer::SetWindowIcon("Assets/PineEngineText.png");
     //Pine::Window::CreateNewWindow("Second");
-
-    std::cout << "Num of Windows" << Pine::Window::GetOpenWindowCount() << std::endl;
-    std::cout << "Main Window Size" << Pine::Window::GetWindowWidth("Main") << std::endl;
+    Renderer::SetCamera(&cam);
+    //std::cout << "Num of Windows" << Pine::Window::GetOpenWindowCount() << std::endl;
+    //std::cout << "Main Window Size" << Pine::Window::GetWindowWidth("Main") << std::endl;
     //std::cout << "Second Window Size" << SecondWindow->GetWidth() << std::endl;
 //    std::cout << SDL_GetWindowTitle(Pine::Window::GetWindowGLData("Second")->s_Window) << std::endl;
 
    
 }
 int x, y = 0;
-void myGame::Update()
+void myGame::Update(int m_StepTime)
 {
+
+    if (Input::GetKeyDown(SDL_SCANCODE_P))
+    {
+       // std::cout << "PRESSED" << std::endl;
+    }
     if (!Window::CheckWindowAlive("Second"))
     {
         static bool runOnce = false;
         if (!runOnce)
         {
-            std::cout << "DEAD" << std::endl;
+           // std::cout << "DEAD" << std::endl;
             runOnce = !runOnce;
         }
     }
@@ -72,49 +182,22 @@ void myGame::Update()
         PVector2f mousePos = Input::GetMousePosition();
         Renderer::ResetStats();
         Renderer::BeginBatch();
-        Renderer::DrawQuad({ mousePos.X,mousePos.Y}, { 100.0f ,100.0f }, col);
-        Renderer::DrawQuad({ 100,100}, { 100.0f ,100.0f }, 1);
+        Pine::Renderer::DrawQuad({ 0,0 }, { Window::GetMainWindow()->s_WindowSize.x,Window::GetMainWindow()->s_WindowSize.y }, 3);
+
+        for (float y = 0; y < Window::GetMainWindow()->s_WindowSize.y/4; y += 30.0f)
+        {
+            for (float x = 0; x < Window::GetMainWindow()->s_WindowSize.x; x += 30.0f)
+            {
+                glm::vec4 col = { (x + 0.25) / 20.0f, 0.2f, (y + 1) / 20.0f, 1.0f };
+                Pine::Renderer::DrawQuad({ x,y }, { 30.0f,30.0f }, 2);
+            }
+        }
+        
+        Renderer::DrawQuad({ 400,400}, { 100.0f ,100.0f }, col);
         Renderer::EndBatch();
         Renderer::Flush();
 
-       // Pine::Renderer::ResetStats();
-        //glUseProgram(shader);
-        //glClear(GL_COLOR_BUFFER_BIT);
-       // Pine::Renderer::BeginBatch();
-/*
-        for (float y = -10.f; y  < 10.0f; y+= 0.25f)
-        {
-            for (float x = -10.f; y < 10.0f; y += 0.25f)
-            {
-                glm::vec4 col = { (x + 10) / 20.0f, 0.2f, (y + 10) / 20.0f, 1.0f };
-                Pine::Renderer::DrawQuad({ x,y }, { 0.25f,0.25f }, col);
-            }
-        }*/
-        for (size_t i = 0; i < 200; i++)
-        {
-            //Pine::Renderer::DrawQuad({ 100.0f,100.0f }, { 0.25f,0.25f }, col);
-
-        }
-
-      //  Renderer::EndBatch();
-        //int location = glGetUniformLocation(shader, "u_ViewProj");
-
-        //glUniformMatrix4fv(location, 1, GL_FALSE, &vp[0][0]);
-
-       // int location2 = glGetUniformLocation(shader, "u_ViewProj");
-       // glm::mat4 p = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 0));
-       // glUniformMatrix4fv(location2, 1, GL_FALSE, &p[0][0]);
-        //Renderer::Flush();
-
     }
-    //for (float y = -10.f; y  < 10.0f; y+= 0.25f)
-    //{
-       // for (float x = -10.f; y < 10.0f; y += 0.25f)
-      //  {
-   // glm::vec4 col = { (x + 10) / 20.0f, 0.2f, (y + 10) / 20.0f, 1.0f };
-       // }
-    //}
-  
 }
 void myGame::OnMouseClick()
 {
@@ -139,33 +222,40 @@ void myGame::eventTrigger(Pine::PEvent& e)
         e.is_Handled = true;
 
     }
+
+    
      if (e.GetEventType() == Pine::EventType::MouseButtonDown) 
     {
         e.is_Handled = true;
 
-            std::cout << "Mouse X pos: "<< dynamic_cast<Pine::MouseButtonDownEvent&>(e).GetX() << std::endl;
-            std::cout << "Mouse y pos: "<< dynamic_cast<Pine::MouseButtonDownEvent&>(e).GetY() << std::endl;
-            std::cout << "Key Code: " << dynamic_cast<Pine::MouseButtonDownEvent&>(e).GetButtonDown() << std::endl;
+           // std::cout << "Mouse X pos: "<< dynamic_cast<Pine::MouseButtonDownEvent&>(e).GetX() << std::endl;
+           // std::cout << "Mouse y pos: "<< dynamic_cast<Pine::MouseButtonDownEvent&>(e).GetY() << std::endl;
+           // std::cout << "Key Code: " << dynamic_cast<Pine::MouseButtonDownEvent&>(e).GetButtonDown() << std::endl;
             if (dynamic_cast<Pine::MouseButtonDownEvent&>(e).GetButtonDown() == Input::LEFTSINGLECLICK)
             {
-                std::cout << "Left Down" << std::endl;
+               
+                PINE_INFO("Left Down");
             }
     }
      if (e.GetEventType() == Pine::EventType::MouseButtonUp)
     {
         e.is_Handled = true;
-        std::cout << "Mouse X pos: " << dynamic_cast<Pine::MouseButtonUpEvent&>(e).GetX() << std::endl;
-        std::cout << "Mouse Y pos: " << dynamic_cast<Pine::MouseButtonUpEvent&>(e).GetY() << std::endl;
-        std::cout << "Key Code: " << dynamic_cast<Pine::MouseButtonUpEvent&>(e).GetButtonDown() << std::endl;
+        //std::cout << "Mouse X pos: " << dynamic_cast<Pine::MouseButtonUpEvent&>(e).GetX() << std::endl;
+       // std::cout << "Mouse Y pos: " << dynamic_cast<Pine::MouseButtonUpEvent&>(e).GetY() << std::endl;
+       // std::cout << "Key Code: " << dynamic_cast<Pine::MouseButtonUpEvent&>(e).GetButtonDown() << std::endl;
         if (dynamic_cast<Pine::MouseButtonUpEvent&>(e).GetButtonDown() == Input::LEFTSINGLECLICK)
         {
-            std::cout << "Left Up" << std::endl;
+            PINE_INFO("Left Up");
+
         }
     }
      if (e.GetEventType() == Pine::EventType::KeyDown)
      {
          e.is_Handled = true;
          std::cout << dynamic_cast<Pine::KeyDownEvent&>(e).GetKey() << std::endl;
+
+         PINE_INFO("Key Down: {0}", dynamic_cast<Pine::KeyDownEvent&>(e).GetKey());
+
          if (dynamic_cast<Pine::KeyDownEvent&>(e).GetKey() == 26)//w
          {
              y++;
@@ -183,6 +273,14 @@ void myGame::eventTrigger(Pine::PEvent& e)
          {
              x++;
          }
+     }
+     if (e.GetEventType() == Pine::EventType::MiddleMouseScroll)
+     {
+         //std::cout << "------------------------------------- " << std::endl;
+
+         float offset = dynamic_cast<Pine::MouseScrollEvent&>(e).GetOffset();
+         e.is_Handled = true;
+
      }
      if (e.GetEventType() == Pine::EventType::KeyUp)
      {

@@ -7,8 +7,7 @@
 
 
 #include <SDL_image.h>
-#define SDL_MAIN_HANDLED
-#undef main
+
 
 #ifdef PINE_PLATFORM_WINDOWS
 
@@ -39,7 +38,9 @@ namespace Pine {
 		{
 			WindowData(const char* p_Name, int p_ID, Window* p_Window, bool p_IsMainWindow, glm::vec2 p_WindowSize) : s_WindowName(p_Name), s_WindowID(p_ID), s_Window(p_Window), s_IsMainWindow(p_IsMainWindow), s_WindowSize(p_WindowSize)
 			{
-				PINE_ENGINE_WARN(SDL_GetWindowTitle(s_Window->m_GlData.s_Window));
+				
+				
+				(SDL_GetWindowTitle(s_Window->m_GlData.s_Window));
 			}
 			~WindowData() 
 			{

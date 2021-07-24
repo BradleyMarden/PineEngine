@@ -38,14 +38,22 @@
 #include "../Maths/PMaths.h" 
 #include "window.h"
 #include "Renderer.h"
+#include "PineObject.h"
+#include "ComponentSystem.h"
+#include "Component.h"
+#include "MaterialComponent.h"
+#include "NetworkComponent.h"
+#include "RendererComponent.h"
+#include "Scene.h"
+#include "PineObject.h"
 
+//#include "OrthographicCameraController.h"
 //NEED TO LOOK INTO PRE COMPILED HEADERS
 
 
 //NEEDS TO BE MOVED INTO A BASE.CPP
 #define BIND_EVENT(fn) std::bind(&fn, this, std::placeholders::_1)
 
-//#include "ECS/PineECS.h"
 namespace Pine {
 	
 	
@@ -60,25 +68,23 @@ namespace Pine {
 		void			PineCloseEngine();
 		void			PineInit(Game* game, uint8_t flags);
 		void			PineStart();
-		void			RenderUI();
 		void			Trigger(PEvent& e);
+		
 
 	private:
-		static inline Window*	m_Window = nullptr;
-		//Renderer*				m_PineRenderer = nullptr;
-		GLuint l_VertexArray;
-		GLuint l_VertexBuffer;
-		Game*			givenGame = nullptr;//we do not own the game, entry point does. 
 		void			HandleEvents();
 		void			ApplicationRunning();
-		const char*		glsl_version = "#version 330";
+		void			TimeStep();
+		void			FPSLimit();
+
+	private:
 		const int		fps = 60;
 		const int		frameDelay = 1000 / fps;// max time between frames
 		Uint32			frameStart;
 		int				frameTime;
-		//bool			limitFPS = false;
-		Pine::Window* FourthWindow = nullptr;
-
-
+		int				m_StepTime = 0;
+		int				m_LastStepTime = 0;
+		Game* givenGame = nullptr;//we do not own the game, entry point does. 
+		Scene* m_Scene = nullptr;
 	};
 }

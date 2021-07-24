@@ -173,7 +173,8 @@ namespace Pine {
 		default:
 			break;
 		case SDL_QUIT:
-			PINE_ENGINE_WARN("CLOSE BUTTON PRESSED");
+			
+			("CLOSE BUTTON PRESSED");
 			return true;
 		}
 		return false;
@@ -226,16 +227,29 @@ namespace Pine {
 		}
 	
 	}
-	bool Input::GetKeyDown(SDL_KeyCode key)
+	bool Input::GetKeyDown(SDL_Scancode key)
 	{
-		
+		//auto* window = static_cast<SDL_Window*>(Window::GetWindowGLData(Window::GetMainWindow()->s_WindowName)->s_Window);
+		int count = 0;
+		const uint8_t* state = SDL_GetKeyboardState(NULL);
+
+		if (state[key]) {
+			//PINE_ENGINE_WARN("PRESSED");
+			return true;
+		}
+		else {
+
+			//PINE_ENGINE_WARN("NOT PRESSED");
+			return false;
+		}
+/*
 		if (key != m_key)
 		{
 			return false;
 		}
 		m_key = SDLK_UNKNOWN;
 		return true;
-
+		*/
 		
 	}
 

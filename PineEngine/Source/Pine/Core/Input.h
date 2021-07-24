@@ -2,6 +2,7 @@
 #include <SDL.h>
 #include "../Maths/PMaths.h"
 #include "Log.h"
+#include "window.h"
 namespace Pine {
 	class Input {
 
@@ -46,7 +47,8 @@ namespace Pine {
 		static PVector2f GetMousePosition();
 		static void KeyPressed(SDL_Event* Key);
 		static SDL_KeyCode m_key;
-		static bool GetKeyDown(SDL_KeyCode key);
+		//returns true if key is down
+		static bool GetKeyDown(SDL_Scancode key);
 
 	private:
 		bool clicked;

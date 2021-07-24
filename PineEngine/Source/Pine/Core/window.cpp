@@ -46,9 +46,9 @@ namespace Pine
             l_Window->m_GlData.s_Renderer =  SDL_CreateRenderer(l_Window->m_GlData.s_Window, -1, 0);
 			//SDL_SetRenderDrawColor(l_Window->m_GlData.s_Renderer, 21, 27, 31, 255);
 			//SDL_RenderClear(l_Window->m_GlData.s_Renderer);
-			printf("Vendor:   %s\n", glGetString(GL_VENDOR));
-			printf("Renderer: %s\n", glGetString(GL_RENDERER));
-			printf("Version:  %s\n", glGetString(GL_VERSION));
+			PINE_ENGINE_INFO("Vendor: {0}", glGetString(GL_VENDOR));
+			PINE_ENGINE_INFO("Renderer: {0}", glGetString(GL_RENDERER));
+			PINE_ENGINE_INFO("Version: {0}", glGetString(GL_VERSION));
 			l_Window->m_WindowHeight = PINE_MAIN_WINDOW_SIZE;
 			l_Window->m_WindowWidth = PINE_MAIN_WINDOW_SIZE;
 			//l_Window->s_WindowSize = ;
@@ -115,9 +115,9 @@ namespace Pine
 			l_Window->m_GlData.s_Context = SDL_GL_CreateContext(l_Window->m_GlData.s_Window);
 			//create Renderer
 			l_Window->m_GlData.s_Renderer = SDL_CreateRenderer(l_Window->m_GlData.s_Window, -1, 0);
-			printf("Vendor:   %s\n", glGetString(GL_VENDOR));
-			printf("Renderer: %s\n", glGetString(GL_RENDERER));
-			printf("Version:  %s\n", glGetString(GL_VERSION));
+			PINE_ENGINE_INFO("Vendor: {0}", glGetString(GL_VENDOR));
+			PINE_ENGINE_INFO("Renderer: {0}", glGetString(GL_RENDERER));
+			PINE_ENGINE_INFO("Version: {0}", glGetString(GL_VERSION));
 			l_Window->m_WindowHeight = p_WindowWidthY;
 			l_Window->m_WindowWidth = p_WindowWidthX;
 			l_Window->m_WindowId = 0;
@@ -132,7 +132,7 @@ namespace Pine
 			int imgFlags = IMG_INIT_PNG;
 			if (!(IMG_Init(imgFlags) & imgFlags))
 			{
-				printf("SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError());
+				PINE_ENGINE_ERROR("SDL_image could not initialize! SDL_image Error: {0}", IMG_GetError());
 			}
 
 			return l_Window;

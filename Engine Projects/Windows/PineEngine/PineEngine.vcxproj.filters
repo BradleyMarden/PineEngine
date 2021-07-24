@@ -10,10 +10,37 @@
     <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\Input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\EntryPoint.cpp">
+    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\Scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\EntryPoint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\PineObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\IPineObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\ComponentSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Components\Component.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Components\MaterialComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Components\NetworkComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Components\RendererComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Components\TransformComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Logging\Log.cpp">
@@ -41,6 +68,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\IndexBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\OrthographicCamera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\OrthographicCameraController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Events\EventSystem.cpp">
@@ -78,16 +111,43 @@
     <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Components\Component.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Components\MaterialComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Components\NetworkComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Components\RendererComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Components\TransformComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\ComponentSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\Core.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\IPineObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\Input.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\PineAPI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\PineObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\Scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\window.h">
@@ -121,6 +181,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\LayerManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\OrthographicCamera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\OrthographicCameraController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\Renderer.h">
