@@ -2,7 +2,7 @@
 #include "OrthographicCameraController.h"
 namespace Pine
 {
-	OrthographicCameraController::OrthographicCameraController(float p_AspectRatio, bool p_Rotation): m_Cam(-p_AspectRatio * m_Zoom, p_AspectRatio* m_Zoom, -m_Zoom, m_Zoom)
+	OrthographicCameraController::OrthographicCameraController(float p_AspectRatio, bool p_Rotation): m_Cam(0* m_Zoom, 920 * m_Zoom, 0, 540)
 	{
 		 m_AspectRatio = p_AspectRatio;
 		 m_Rotation = p_Rotation;

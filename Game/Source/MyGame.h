@@ -17,6 +17,7 @@ public:
     virtual void Initialize() override;
     virtual void Update(int p_StepTime) override;
     virtual void Terminate() override;
+    virtual void Draw() override;
     virtual void OnMouseClick() override;
     Pine::SourceShader shaders;
     Pine::EventSystem* es;
@@ -25,7 +26,10 @@ public:
     Pine::Window* MainWindow = nullptr;
     const Pine::Window* SecondWindow = nullptr;
     glm::mat4 vp;
-    OrthographicCameraController cam = {960 / 540, false};//16:9 1.77777
+    OrthographicCamera m_Cam = { 0, 960, 0, 540};
+
+    glm::vec2 p = { 0.0f,0.0f };
+    glm::vec2 m_Pos;
 };
 
 Pine::Game* Pine::CreateGame()

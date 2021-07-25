@@ -16,6 +16,10 @@ namespace Pine
 
 		inline std::string GetName() { return m_Name; }
 
+		virtual void Render() = 0;
+
+		virtual void Update(float p_StepTime) = 0;
+
 	protected:
 
 	private:

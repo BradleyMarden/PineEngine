@@ -229,7 +229,6 @@ namespace Pine {
 	}
 	bool Input::GetKeyDown(SDL_Scancode key)
 	{
-		//auto* window = static_cast<SDL_Window*>(Window::GetWindowGLData(Window::GetMainWindow()->s_WindowName)->s_Window);
 		int count = 0;
 		const uint8_t* state = SDL_GetKeyboardState(NULL);
 
@@ -242,15 +241,19 @@ namespace Pine {
 			//PINE_ENGINE_WARN("NOT PRESSED");
 			return false;
 		}
-/*
-		if (key != m_key)
-		{
+		
+	}
+
+	//need to change to take in Pine state
+	bool Input::GetMouseDown(int  mouse)
+	{
+		Uint32 button = SDL_GetMouseState(NULL, NULL);
+		if (button == mouse) {
+			return true;
+		}
+		else {
 			return false;
 		}
-		m_key = SDLK_UNKNOWN;
-		return true;
-		*/
-		
 	}
 
 

@@ -1,30 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\Game\Source\MyGame.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\Game\Source\MyGame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\Game\Source\Player.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\Game\Source\Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\Game\Source\MyGame.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\Game\Source\MyGame.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\Game\Source\Player.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\Game\Source\Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\CMakeLists.txt" />
+    <CustomBuild Include="D:\FinalVersion\PineEngine\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{DFD21084-7C3E-36A1-B785-6F1F2FD3A63A}</UniqueIdentifier>
+      <UniqueIdentifier>{B376534A-16EC-3C15-AEAF-ADFA84C7612F}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{63958D0D-A88C-36B5-A390-E01DAE520CB6}</UniqueIdentifier>
+      <UniqueIdentifier>{4108419F-A177-376C-B459-6B844001DF97}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

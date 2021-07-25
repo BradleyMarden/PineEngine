@@ -9,7 +9,8 @@ namespace Pine {
 	bool Renderer::limitFPS = false;
 	bool Renderer::hasRun = false;
 	bool Renderer::m_IconSet = false;
-	OrthographicCameraController* Renderer::m_Cam = nullptr;
+	OrthographicCamera* Renderer::m_Camera = nullptr;
+	int Renderer::loc;
 	struct Vertex
 	{
 		glm::vec3 s_Position;
@@ -61,9 +62,8 @@ namespace Pine {
 	void Renderer::InitRendering()
 	{
 
-		renderer = &Window::GetWindowGLData(Window::GetMainWindow()->s_WindowName)->s_Renderer;
+
 		m_RendererData.buffer = new Vertex[m_MaxVertexCount];
-		Window::SetWindowToRendeer(Window::GetMainWindow()->s_WindowName);
 		if (renderer == nullptr)
 		{
 			PINE_ENGINE_WARN("Rendering NOT loaded");
@@ -73,7 +73,9 @@ namespace Pine {
 		SourceShader localShaders = Pine::Shader::LoadShader("Assets/Shaders/default.PineShader");
 		shader = Shader::CreateShader(localShaders.VertexSource, localShaders.FragmentSource);
 		glUseProgram(shader);
+		int loc = glGetUniformLocation(shader, "u_Proj");
 
+		glUniformMatrix4fv(loc, 1, GL_FALSE, &m_Camera->GetViewProjectionMatrix()[0][0]);
 
 		//TEXTURE
 			//load texture
@@ -88,14 +90,13 @@ namespace Pine {
 		glUniform1iv(location, 4, samplers);
 		//VERTEX LAYOUT  
 
-		glm::mat4 projection = glm::ortho(0.0f, Window::GetMainWindow()->s_WindowSize.x, 0.0f, Window::GetMainWindow()->s_WindowSize.y, -1.0f, 1.0f);//converts screen space to values between -1:1
-		glm::mat4 view = glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0));//can be used to imitate move camera(works by shifting all onjects in scene)
-		glm::mat4 model = glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0));//controls positon of object on screen
-		glm::mat4 mvp = projection * view * model;
+		//glm::mat4 projection = glm::ortho(0.0f, Window::GetMainWindow()->s_WindowSize.x, 0.0f, Window::GetMainWindow()->s_WindowSize.y, -1.0f, 1.0f);//converts screen space to values between -1:1
+		//glm::mat4 view = glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0));//can be used to imitate move camera(works by shifting all onjects in scene)
+		//glm::mat4 model = glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0));//controls positon of object on screen
+		//glm::mat4 mvp = projection * view * model;
 
 		//glm::mat4 projection = glm::ortho(-2.0f, 2.0f, -1.5f, 1.5f, -1.0f, 1.0f);
-		int location2 = glGetUniformLocation(shader, "u_Proj");
-		glUniformMatrix4fv(location2, 1, GL_FALSE, &mvp[0][0]);
+		
 
 
 		//set and bind vertex array
@@ -184,7 +185,7 @@ namespace Pine {
 	void Renderer::BeginBatch() 
 	{
 		m_RendererData.bufferPtr = m_RendererData.buffer;
-		
+
 	}
 	void Renderer::EndBatch() 
 	{
@@ -204,16 +205,8 @@ namespace Pine {
 
 	void Renderer::Flush() 
 	{
-		/*for (uint32_t i = 0; i < m_RendererData.s_TextureSlotIndex; i++)
-		{
-			glBindTextureUnit(i, m_RendererData.s_TextureSlots[i]);
-		}*/
 		m_RendererData.renderCalls++;
 
-		glm::mat4 projection = glm::ortho(0.0f, Window::GetMainWindow()->s_WindowSize.x, 0.0f, Window::GetMainWindow()->s_WindowSize.y, -1.0f, 1.0f);//converts screen space to values between -1:1
-		glm::mat4 view = glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0));//can be used to imitate move camera(works by shifting all onjects in scene)
-		glm::mat4 model = glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0));//controls positon of object on screen
-		glm::mat4 mvp = projection * view * model;
 
 		glClearColor(1.0f, 0.1f, 0.1f, 1.0f);
 		GLCheckError();
@@ -242,8 +235,7 @@ namespace Pine {
 		}
 		m_RendererData.s_IndexCount = 0;
 	}
-	static glm::vec4& m_Color = glm::vec4{0.0f,0.0f ,0.0f ,1.0f};
-
+	static glm::vec4& m_Color = glm::vec4{ 0.0f,0.0f ,0.0f ,1.0f };
 	void Renderer::RenderUI()
 	{
 
@@ -291,30 +283,31 @@ namespace Pine {
 			EndBatch();
 			Flush();
 			BeginBatch();
+
 		}
 
 		float textureIndex = 0.0f;
 
 		m_RendererData.bufferPtr->s_Position = { p_Pos.x, p_Pos.y, 0.0f };
-		m_RendererData.bufferPtr->s_Color = m_Color;
+		m_RendererData.bufferPtr->s_Color = p_Color;
 		m_RendererData.bufferPtr->s_TextureCoords = { 0.0f, 1.0f };
 		m_RendererData.bufferPtr->s_TextureIndex = textureIndex;
 		m_RendererData.bufferPtr++;
 
 		m_RendererData.bufferPtr->s_Position = { p_Pos.x + p_Size.x, p_Pos.y, 0.0f };
-		m_RendererData.bufferPtr->s_Color = m_Color;
+		m_RendererData.bufferPtr->s_Color = p_Color;
 		m_RendererData.bufferPtr->s_TextureCoords = { 1.0f, 1.0f };
 		m_RendererData.bufferPtr->s_TextureIndex = textureIndex;
 		m_RendererData.bufferPtr++;
 
 		m_RendererData.bufferPtr->s_Position = { p_Pos.x + p_Size.x , p_Pos.y + p_Size.y, 0.0f };
-		m_RendererData.bufferPtr->s_Color = m_Color;
+		m_RendererData.bufferPtr->s_Color = p_Color;
 		m_RendererData.bufferPtr->s_TextureCoords = { 1.0f, 0.0f };
 		m_RendererData.bufferPtr->s_TextureIndex = textureIndex;
 		m_RendererData.bufferPtr++;
 
 		m_RendererData.bufferPtr->s_Position = { p_Pos.x, p_Pos.y + p_Size.y, 0.0f };
-		m_RendererData.bufferPtr->s_Color = m_Color;
+		m_RendererData.bufferPtr->s_Color = p_Color;
 		m_RendererData.bufferPtr->s_TextureCoords = { 0.0f, 0.0f };
 		m_RendererData.bufferPtr->s_TextureIndex = textureIndex;
 		m_RendererData.bufferPtr++;

@@ -1,8 +1,10 @@
 #pragma once
 #include "Component.h"
 #include "MaterialComponent.h"
+#include "RendererComponent.h"
 #include <utility>
 #include <typeinfo>
+//#include "Renderer.h"
 namespace Pine
 {
 	namespace Priv
@@ -44,14 +46,17 @@ namespace Pine
 
 	public:
 
-		  virtual void OnInit() {  };
+		  virtual void Start() = 0;
 
-		  virtual void Start() {  };
+		  virtual void Update(float p_StepTime) = 0;
 
-		  virtual void Update(float p_StepTime) {  };
+		  virtual void OnTerminate() = 0;
 
-		  virtual void OnTerminate() {  };
+		  virtual void Render() = 0;
 
+		  virtual void UIRender() = 0;
+
+		  virtual void Trigger(PEvent& e) = 0;
 	protected:
 		std::string m_Name;
 
@@ -62,22 +67,24 @@ namespace Pine
 		std::unordered_map<std::string, std::shared_ptr<Component>> m_Components;
 
 	public:
+
+
 		//Returns unordered map of all Components on PineObject with type T
-		template<class T> inline std::unordered_map<std::string, std::weak_ptr<T>> GetAllComponentsOfType()
+		template<class T> inline std::unordered_map<std::string, std::shared_ptr<T>> GetAllComponentsOfType()
 		{
 			//iterator of Component in scene
-			std::unordered_map<std::string, std::weak_ptr<Component>>::iterator it = m_Components.begin();
+			std::unordered_map<std::string, std::shared_ptr<Component>>::iterator it = m_Components.begin();
 			//map to return
-			std::unordered_map<std::string, std::weak_ptr<T>> map;
+			std::unordered_map<std::string, std::shared_ptr<T>> map;
 			//gets id associated with T type
 			int _ComponentID = GetComponentID<T>();
 			//checks all Component in scene to see if they match type T
-			while (it != m_PineObjects.end())
+			while (it != m_Components.end())
 			{
 				if (it->second->GetInstanceID() == _ComponentID)
 				{
 					//match found, adding to return map
-					map.try_emplace(it->first, static_cast<std::weak_ptr<T>>(it->second));
+					map.try_emplace(it->first, std::static_pointer_cast<T>(it->second));
 
 				}
 				it++;
@@ -119,10 +126,10 @@ namespace Pine
 
 			if (!std::get<bool>(m_Components.try_emplace(_ComponentName, p_Component)))
 			{
-				PINE_ENGINE_WARN("Component '{0}' already exists on current PineObject: {1}", p_ComponentName, m_Name);
+				PINE_ENGINE_WARN("Component '{0}' already exists on current PineObject: {1}", _ComponentName, m_Name);
 
 			}
-			PINE_ENGINE_WARN("Component '{0}' aded to PineObject: {1}", p_ComponentName, m_Name);
+			PINE_ENGINE_WARN("Component '{0}' aded to PineObject: {1}", _ComponentName, m_Name);
 
 		}
 

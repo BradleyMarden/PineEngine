@@ -42,7 +42,6 @@ namespace Pine
 		
 		//start game flow
 		givenGame->Initialize();
-        
         //maybe we should check if we need atleast one window open
         if (Window::GetMainWindow() == nullptr) 
 		{
@@ -80,11 +79,16 @@ namespace Pine
 		bool closeGame = false;
 
 		bool hasStarted = false;
-		
+		Uint64 NOW = SDL_GetPerformanceCounter();
+		Uint64 LAST = 0;
+		float deltaTime = 0;
 		while (!closeGame)
 		{
-			TimeStep();
+			//TimeStep();
+			LAST = NOW;
+			NOW = SDL_GetPerformanceCounter();
 
+			deltaTime = (float)((NOW - LAST) * 1000 / (float)SDL_GetPerformanceFrequency());
 			switch (givenGame->GetGameState())
 			{
 				default:
@@ -103,8 +107,27 @@ namespace Pine
 						givenGame->Start();
 						hasStarted = true;
 					}
-					ApplicationRunning();
+
+					Renderer::ResetStats();
+					Renderer::BeginBatch();
+					givenGame->Update(deltaTime);
+					givenGame->GetCurrentScene().lock()->Update(deltaTime);
+
+					givenGame->Draw();
+					givenGame->GetCurrentScene().lock()->Render();
+
+					for (auto _Comp : givenGame->GetCurrentScene().lock()->GetAllRenderComponentsinScene())
+					{
+						std::vector<std::shared_ptr<RendererComponent::Quad>> _Quads = _Comp->GetAllQuads();
+						for (size_t i = 0; i < _Quads.size(); i++)
+						{
+							Renderer::DrawQuad(_Quads[i]->s_Pos, _Quads[i]->s_Size, _Quads[i]->s_Texture);
+						}
+					}
+					Renderer::EndBatch();
+					Renderer::Flush();
 					HandleEvents();
+
 					break;
 				}
 
@@ -115,6 +138,7 @@ namespace Pine
 				{
 					PINE_ENGINE_INFO("Application Closing");
 					closeGame = true;
+					givenGame->GetCurrentScene().lock()->OnSceneClose();
 					givenGame->Terminate();
 					break;
 				}
@@ -132,6 +156,8 @@ namespace Pine
 	void Core::HandleEvents()//all keyboard and mouse events are handled here
 	{
 		SDL_Event e;
+		
+
 		while (SDL_PollEvent(&e))
 		{
 			static SDL_Event heldE;
@@ -253,11 +279,18 @@ namespace Pine
 	}
 	void Core::TimeStep()
 	{
-		//set frame time
-		frameStart = SDL_GetTicks();
-		m_StepTime = frameStart - m_LastStepTime;
-		m_LastStepTime = frameStart;
 
+		//m_StepTime = 0;
+		//set frame time
+		//frameStart = (float)SDL_GetTicks();
+		//m_StepTime = frameStart - m_LastStepTime;
+		//m_LastStepTime = frameStart;
+		frameStart = SDL_GetTicks();
+		m_StepTime = m_LastStepTime;
+		m_LastStepTime = frameStart;
+		
+
+		
 	}
 
 	void Core::FPSLimit()

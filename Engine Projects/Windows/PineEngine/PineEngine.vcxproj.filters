@@ -1,216 +1,216 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\Core.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\Core.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\Game.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\Input.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\Input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\Scene.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\Scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\window.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\EntryPoint.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\EntryPoint.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\PineObject.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\PineObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\IPineObject.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\IPineObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\ComponentSystem.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\ComponentSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Components\Component.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Components\Component.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Components\MaterialComponent.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Components\MaterialComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Components\NetworkComponent.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Components\NetworkComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Components\RendererComponent.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Components\RendererComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Components\TransformComponent.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Components\TransformComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Logging\Log.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Logging\Log.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Maths\PMaths.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Maths\PMaths.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Networking\Networking.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Networking\Networking.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\Renderer.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Rendering\Renderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\Shader.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Rendering\Shader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\LayerManager.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Rendering\LayerManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\Layer.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Rendering\Layer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\VertexBuffer.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Rendering\VertexBuffer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\IndexBuffer.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Rendering\IndexBuffer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\OrthographicCamera.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Rendering\OrthographicCamera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\OrthographicCameraController.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Rendering\OrthographicCameraController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Events\EventSystem.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Events\EventSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Events\Event.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Events\Event.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Events\EventBinder.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Events\EventBinder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Vendor\imgui1.83\imgui.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Vendor\imgui1.83\imgui.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Vendor\imgui1.83\imgui_demo.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Vendor\imgui1.83\imgui_demo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Vendor\imgui1.83\imgui_draw.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Vendor\imgui1.83\imgui_draw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Vendor\imgui1.83\imgui_impl_opengl3.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Vendor\imgui1.83\imgui_impl_opengl3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Vendor\imgui1.83\imgui_impl_sdl.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Vendor\imgui1.83\imgui_impl_sdl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Vendor\imgui1.83\imgui_tables.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Vendor\imgui1.83\imgui_tables.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Vendor\imgui1.83\imgui_widgets.cpp">
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Vendor\imgui1.83\imgui_widgets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Components\Component.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Components\Component.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Components\MaterialComponent.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Components\MaterialComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Components\NetworkComponent.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Components\NetworkComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Components\RendererComponent.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Components\RendererComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Components\TransformComponent.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Components\TransformComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\ComponentSystem.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\ComponentSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\Core.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\Core.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\Game.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\IPineObject.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\IPineObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\Input.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\Input.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\PineAPI.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\PineAPI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\PineObject.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\PineObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\Scene.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\Scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Core\window.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Events\Event.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Events\Event.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Events\EventBinder.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Events\EventBinder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Events\EventSystem.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Events\EventSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Logging\Log.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Logging\Log.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Maths\PMaths.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Maths\PMaths.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Networking\Networking.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Networking\Networking.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Networking\ServerNetworking.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Networking\ServerNetworking.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\IndexBuffer.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Rendering\IndexBuffer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\Layer.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Rendering\Layer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\LayerManager.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Rendering\LayerManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\OrthographicCamera.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Rendering\OrthographicCamera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\OrthographicCameraController.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Rendering\OrthographicCameraController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\Renderer.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Rendering\Renderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\Shader.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Rendering\Shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\Pine\Rendering\VertexBuffer.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Rendering\VertexBuffer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\Source\PineServer.h">
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\PineServer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\brads\Desktop\PineEngine Cleanup\PineEngine\PineEngine\CMakeLists.txt" />
+    <CustomBuild Include="D:\FinalVersion\PineEngine\PineEngine\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{DFD21084-7C3E-36A1-B785-6F1F2FD3A63A}</UniqueIdentifier>
+      <UniqueIdentifier>{B376534A-16EC-3C15-AEAF-ADFA84C7612F}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{63958D0D-A88C-36B5-A390-E01DAE520CB6}</UniqueIdentifier>
+      <UniqueIdentifier>{4108419F-A177-376C-B459-6B844001DF97}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

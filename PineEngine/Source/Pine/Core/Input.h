@@ -39,6 +39,8 @@ namespace Pine {
         static MouseButtons MouseDown(SDL_Event* e);
         static KeyStrokes KeyDown(SDL_Event* e);
 
+		//left 1, middle 2,right 3, x1 4, x2 5.   Need to change to take in Pine state
+		static bool GetMouseDown(int mouse);
 		static bool OnMouseButtonUp(int mouseButton);
 		static bool CloseApplication();
 		static bool OnMouseButton(MouseButtons State);

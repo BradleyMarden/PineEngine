@@ -37,6 +37,8 @@ namespace Pine {
 
 		void	Update(float p_StepTime);
 
+		void	Init();
+
 		void	OnSceneLoad();
 
 		void	OnSceneClose();
@@ -48,13 +50,15 @@ namespace Pine {
 		inline std::string GetName() { return m_SceneName; }
 
 		inline void SetID(int p_ID) { m_ID = p_ID; }
+
+		void Render();	
 	
 
 	
 		int GetPineObjectCount() { return m_PineObjects.size(); }
 
 		
-
+		inline std::vector<std::shared_ptr<RendererComponent>> GetAllRenderComponentsinScene() { return _RendererComponents; };
 		
 	protected:
 
@@ -65,6 +69,9 @@ namespace Pine {
 
 		//All PineObjects currently in scene
 		std::unordered_map<std::string, std::shared_ptr<PineObject>> m_PineObjects;
+
+		//std::unordered_map<std::string, std::weak_ptr<RendererComponent>> _RendererComponents;
+		std::vector<std::shared_ptr<RendererComponent>> _RendererComponents;
 
 	public:
 		//Returns unordered map of all PineObjects with type T

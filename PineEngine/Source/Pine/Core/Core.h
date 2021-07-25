@@ -32,7 +32,6 @@
 #include "Input.h"
 #include "Networking.h"
 #include "Game.h"
-#include "Core.h"
 #include "../Rendering/Shader.h"
 #include "EventSystem.h"
 #include "../Maths/PMaths.h" 
@@ -81,9 +80,9 @@ namespace Pine {
 		const int		fps = 60;
 		const int		frameDelay = 1000 / fps;// max time between frames
 		Uint32			frameStart;
-		int				frameTime;
-		int				m_StepTime = 0;
-		int				m_LastStepTime = 0;
+		float				frameTime = SDL_GetPerformanceCounter();
+		float				m_StepTime = 0;
+		float				m_LastStepTime = 0;
 		Game* givenGame = nullptr;//we do not own the game, entry point does. 
 		Scene* m_Scene = nullptr;
 	};

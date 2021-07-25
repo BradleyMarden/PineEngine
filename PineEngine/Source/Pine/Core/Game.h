@@ -68,6 +68,7 @@ namespace Pine {
 
 		virtual void OnMouseClick() {};
 
+		virtual void Draw() {};
 		void CloseScene(std::string p_SceneName);
 	protected:
 
@@ -78,9 +79,17 @@ namespace Pine {
 	private:
 		GameState st;
 
+		std::string m_CurrentScene;
+
 		std::unordered_map<std::string, std::shared_ptr<Scene>> m_Scenes;
 
 	public:
+
+		inline std::weak_ptr<Scene> GetCurrentScene()
+		{
+			return GetScene<Scene>(m_CurrentScene);
+		}
+
 		//Add Scene to game ready for use
 		template<class T> inline void AddScene(std::shared_ptr <T> p_Scene)
 		{
@@ -110,7 +119,7 @@ namespace Pine {
 				got->second->OnSceneLoad();
 
 				int _NumOfPineObjects = got->second->GetPineObjectCount();
-
+				m_CurrentScene = got->first;
 				PINE_ENGINE_WARN("Scene '{0}' Loaded with: {1} PineObjects", p_SceneName, _NumOfPineObjects);
 				return;
 			}

@@ -8,20 +8,31 @@ namespace Pine {
 	{
 	public:
 		OrthographicCamera(float p_Left, float p_Right, float p_bottom, float p_Top);
-		const glm::mat4& GetProjectionMatrix() const { return m_ProjectionMat; }
-		const glm::mat4& GetViewMatrix() const { return m_ViewMat; }
-		glm::mat4& GetViewProjectionMatrix()  { return m_ViewProjectionMat; }
+		
+
+
+		glm::vec3 GetPosition() const { return m_Pos; }
+		void SetPosition(const glm::vec3& p_Pos) { m_Pos = p_Pos; UpdateViewMatrix(); }
+
+		float GetRotation() const { return m_Rotation; }
+
+		void SetRotation(float p_Rot) { m_Rotation = p_Rot; UpdateViewMatrix(); }
+
 		void SetProjection(float left, float right, float bottom, float top);
 
-		void SetPosition(const glm::vec3& p_Pos) { m_Pos = p_Pos; UpdateViewMatrix(); }
-		void SetRotation(float p_Rot) { m_Rotation = p_Rot; UpdateViewMatrix(); }
-		
+		const glm::mat4& GetProjectionMatrix() const { return m_ProjectionMat; }
+
+		const glm::mat4& GetViewMatrix() const { return m_ViewMat; }
+
+		const glm::mat4& GetViewProjectionMatrix() { return m_ViewProjectionMat; }
 	private:
 		void UpdateViewMatrix();
+
 		glm::mat4 m_ProjectionMat;
 		glm::mat4 m_ViewMat;
 		glm::mat4 m_ViewProjectionMat;
-		glm::vec3 m_Pos = { 0.0f,0.0f,0.0f };
+
+		glm::vec3 m_Pos;
 		float m_Rotation = 0;
 	
 	};

@@ -155,7 +155,6 @@ namespace Pine
 					l_Window->m_WindowId = i;
 					WindowData* data = new WindowData(p_WindowName, l_Window->m_WindowId, l_Window, true, glm::vec2{ p_WindowWidthX,p_WindowWidthY });
 					m_Windows[i] = data;
-					SetWindowToRendeer(GetMainWindow()->s_WindowName);
 
 					return l_Window;
 				}

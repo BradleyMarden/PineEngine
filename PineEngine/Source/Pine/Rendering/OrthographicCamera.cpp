@@ -2,11 +2,8 @@
 #include "OrthographicCamera.h"
 namespace Pine
 {
-	OrthographicCamera::OrthographicCamera(float p_Left, float p_Right, float p_Bottom, float p_Top) 
+	OrthographicCamera::OrthographicCamera(float p_Left, float p_Right, float p_Bottom, float p_Top) : m_ProjectionMat(glm::ortho(p_Left, p_Right, p_Bottom, p_Top, -1.0f, 1.0f)),m_ViewMat(1.0f)
 	{
-		//create cam at center
-		m_ProjectionMat = glm::ortho(p_Left, p_Right, p_Bottom, p_Top, -1.0f, 1.0f);//converts screen space to values between -1:1
-		m_ViewMat = glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0));
 		m_ViewProjectionMat = m_ProjectionMat * m_ViewMat;
 	
 	}
