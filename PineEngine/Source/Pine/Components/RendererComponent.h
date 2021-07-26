@@ -17,6 +17,7 @@ namespace Pine
 		{
 			glm::vec2		s_Pos		= { 0.0f, 0.0f};
 			glm::vec2		s_Size		= { 0.0f, 0.0f };
+			glm::vec2		s_Rotation	= { 0.0f, 0.0f };
 			glm::vec4		s_Color		= { 0.0f, 0.0f, 0.0f, 1.0f };
 			int				s_Texture	= 0;
 			int				s_QuadID	= 0;
@@ -42,14 +43,16 @@ namespace Pine
 
 		std::weak_ptr<Quad> GetQuad(int p_ID);
 
-		std::weak_ptr<Quad> GetQuad(std::string p_Name);
+		std::shared_ptr<Quad> GetQuad(std::string p_Name);
 
-		void HitTest();
+		void HitTest(std::string p_ObjectName);
+
+		bool CheckCollision(glm::vec2 _PosOne, glm::vec2 _PosTwo, glm::vec2 p_SizeOne, glm::vec2 p_SizeTwo);// AABB - AABB collision
 
 		void DeleteQuad(std::shared_ptr<Quad> p_Quad);
 
 		void DeleteQuad(std::string p_QuadName);
-
+		//unused
 		std::vector<std::weak_ptr<Quad>> GetQuads();
 
 		std::vector<std::shared_ptr<Quad>> GetAllQuads() { return m_Quads; }

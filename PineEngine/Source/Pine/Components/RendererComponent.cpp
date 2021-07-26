@@ -79,10 +79,22 @@ namespace Pine
 
 	 void RendererComponent::Update(float p_StepTime) {}
 
-	 void RendererComponent::HitTest()
+	 void RendererComponent::HitTest(std::string p_ObjectName)
 	 {
 
+		 GetQuad(p_ObjectName);
+	 }
 
+	 bool RendererComponent::CheckCollision(glm::vec2 _PosOne, glm::vec2 _PosTwo, glm::vec2 p_SizeOne, glm::vec2 p_SizeTwo) // AABB - AABB collision
+	 {
+		 // collision x-axis?
+		 bool collisionX = _PosOne.x + p_SizeOne.x >= _PosTwo.x &&
+			 _PosTwo.x + p_SizeTwo.x >= _PosOne.x;
+		 // collision y-axis?
+		 bool collisionY = _PosOne.y + p_SizeOne.y >= _PosTwo.y &&
+			 _PosTwo.y + p_SizeTwo.y >= _PosOne.y;
+		 // collision only if on both axes
+		 return collisionX && collisionY;
 	 }
 
 	 void RendererComponent::DeleteQuad(std::shared_ptr<Quad> p_Quad)
@@ -126,6 +138,20 @@ namespace Pine
 			 [](std::weak_ptr<Quad> weakPtr){ return weakPtr.lock(); });
 
 		 return quad;
+	 
+	 }
+
+	 std::shared_ptr<RendererComponent::Quad> RendererComponent::GetQuad(std::string p_Name) 
+	 {
+		std::vector<std::shared_ptr<Quad>>::iterator it = m_Quads.begin();
+
+		if (it != m_Quads.end())
+		{
+			int index = std::distance(m_Quads.begin(), it);
+			
+			return m_Quads[index];
+		}
+
 	 
 	 }
 }

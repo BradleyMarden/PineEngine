@@ -30,6 +30,8 @@ public:
 
     glm::vec2 p = { 0.0f,0.0f };
     glm::vec2 m_Pos;
+
+    bool wait = true;
 };
 
 Pine::Game* Pine::CreateGame()

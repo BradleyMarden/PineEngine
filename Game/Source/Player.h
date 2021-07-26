@@ -5,6 +5,7 @@
 
 class Player : public Pine::PineObject
 {
+	
 
 public:
 
@@ -32,6 +33,7 @@ private:
 	void MoveUp(float p_StepTime);
 	std::weak_ptr<Pine::RendererComponent> m_RendComp;
 	glm::vec3 m_PlayerPos = {0,0,0};
+	glm::vec2 pos;
 	std::string m_PlayerName;
 	bool shoot = false;
 };

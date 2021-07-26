@@ -3,6 +3,7 @@
 #include "../Logging/Log.h"
 #include <stdlib.h>
 #include <string>
+#include "EventSystem.h"
 
 #define PINE_MAX_NETWORK_MESSAGES 100000
 namespace Pine {
@@ -11,7 +12,12 @@ namespace Pine {
 
 
 	
+	struct NetPlayerData 
+	{
+		float x;
+		float y;
 	
+	};
 
 	class Networking
 	{
@@ -30,6 +36,7 @@ namespace Pine {
 		static bool    PineClientNetworkLoop(int delayBetweenLoops);//Place in update, checks for incoming packets 
 		static void    PineSendPacket(std::string text);//send a packet containing text
 		static void    PineSendGlobalPacket(std::string text);//Send a global packet containing text
+		static void    PineSendGlobalDataPacket(float p_X, float p_Y);//Send a global packet containing text
 		static void    PineServerDisconnect();//Disconnect from server
 		inline static char* PineGetLastMessage() { return lastMessage; }//TEST returns last message
 

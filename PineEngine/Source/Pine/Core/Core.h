@@ -53,10 +53,8 @@
 //NEEDS TO BE MOVED INTO A BASE.CPP
 #define BIND_EVENT(fn) std::bind(&fn, this, std::placeholders::_1)
 
+
 namespace Pine {
-	
-	
-	
 
 	class Core
 	{

@@ -10,6 +10,13 @@ namespace Pine
 	public:
 		NetworkComponent(std::string p_Name) : Component(p_Name) {};
 
+		void Render() override;
+
+		void Update(float p_StepTime)override;
+
+		//void 
+
+		
 	};
 
 

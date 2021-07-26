@@ -31,7 +31,8 @@ namespace Pine {
 		WindowResize, WindowClose, WindowMinimize, WindowMoved, WindowFocus, WindowLostFocus,
 		KeyDown, KeyUp, KeyHold,
 		MouseButtonDown, MouseButtonUp, MouseMoved,
-		MiddleMouseScroll
+		MiddleMouseScroll,
+		NetworkPacketRecieve, NetworkPlayerConnected, NetworkPlayerDisconnected
 
 	};
 
@@ -43,7 +44,8 @@ namespace Pine {
 		MouseEvent =	SETBIT(1),	//this equates to '0000 0000 0000 0000 0000 0000 0000 0010'
 		InputEvent =	SETBIT(2),	//this equates to '0000 0000 0000 0000 0000 0000 0000 0100'
 		WindowEvent =	SETBIT(3),	//this equates to '0000 0000 0000 0000 0000 0000 0000 1000'
-		GameEvent =		SETBIT(4)	//this equates to '0000 0000 0000 0000 0000 0000 0001 0000'
+		GameEvent =		SETBIT(4),	//this equates to '0000 0000 0000 0000 0000 0000 0001 0000'
+		NetworkEvent =  SETBIT(5)
 	};
 
 
@@ -223,6 +225,41 @@ namespace Pine {
 
 	//Event takes care of itself, when created with a pointer
 	//The events need to be moved either to the event.cpp, or into a class that deals with the event type. 
+
+
+	struct NetworkPlayerJoinedEvent : PEvent
+	{
+
+		NetworkPlayerJoinedEvent() : Name(), pos()
+		{
+			EventSystem::PublishEvent(this);
+		}
+
+		//std::string GetName() const { return Name; }
+		//glm::vec2 GetPosition() const { return pos; }
+		SET_EVENT_TYPE(NetworkPlayerConnected);
+		SET_CATEGORY_TYPE(NetworkEvent);
+
+	private:
+		std::string Name;
+		glm::vec2 pos;
+	};
+	struct NetworkPacketEvent : PEvent
+	{
+
+		NetworkPacketEvent(std::string p_Packet) : packet(p_Packet)
+		{
+			EventSystem::PublishEvent(this);
+		}
+
+		std::string GetPacket() const { return packet; }
+		int SizeOfPacket() const { return sizeof(packet); }
+		SET_EVENT_TYPE(NetworkPacketRecieve);
+		SET_CATEGORY_TYPE(NetworkEvent);
+
+	private:
+		std::string packet;
+	};
 
 	struct WindowResizeEvent : PEvent
 	{
