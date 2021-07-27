@@ -4,6 +4,8 @@
 #include <iostream>
 #include <Pine.h>
 #include "Player.h"
+#include "Obstacles.h"
+#include "StaticImage.h"
 #include "Log.h"
 using namespace Pine;
 class myGame : public Pine::Game
@@ -18,6 +20,7 @@ public:
     virtual void Update(int p_StepTime) override;
     virtual void Terminate() override;
     virtual void Draw() override;
+    virtual void RenderUI() override;
     virtual void OnMouseClick() override;
     Pine::SourceShader shaders;
     Pine::EventSystem* es;
@@ -30,8 +33,10 @@ public:
 
     glm::vec2 p = { 0.0f,0.0f };
     glm::vec2 m_Pos;
-
+    int m_HitCount = 0;
     bool wait = true;
+
+    void Restart();
 };
 
 Pine::Game* Pine::CreateGame()

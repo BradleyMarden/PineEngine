@@ -23,8 +23,6 @@ namespace Pine
 #endif 
 		
 
-		
-
 		PINE_ENGINE_INFO("Welcome To Pine Engine!");
 		PINE_ENGINE_INFO("Created By Bradley Marden : Licensed under Apache License");
 		PINE_ENGINE_INFO("Refer to Documentation for Engine Use Cases");
@@ -84,6 +82,8 @@ namespace Pine
 		float deltaTime = 0;
 		while (!closeGame)
 		{
+			frameStart = SDL_GetTicks();
+
 			//TimeStep();
 			LAST = NOW;
 			NOW = SDL_GetPerformanceCounter();
@@ -120,7 +120,7 @@ namespace Pine
 					{
 						static bool runOnce = true;
 
-						if (runOnce)
+						/*if (runOnce)
 						{
 							std::vector<GLuint>_Textures = _Comp->GetAllTextures();
 
@@ -130,7 +130,7 @@ namespace Pine
 								PINE_ENGINE_ERROR("UP {0}", _Textures[j]);
 							}
 							runOnce = false;
-						}
+						}*/
 						
 
 						std::vector<std::shared_ptr<RendererComponent::Quad>> _Quads = _Comp->GetAllQuads();
@@ -171,8 +171,8 @@ namespace Pine
 
 							}
 						_Quads.clear();
-						_NormalQuads.clear();
 						_TopQuads.clear();
+						_NormalQuads.clear();
 						_BottomQuads.clear();
 
 						
@@ -182,6 +182,8 @@ namespace Pine
 					Renderer::EndBatch();
 					Renderer::Flush();
 					givenGame->GetCurrentScene().lock()->RenderUI();
+					givenGame->RenderUI();
+					Renderer::RenderUI();
 					Renderer::SwapWindow();
 
 					HandleEvents();
@@ -201,8 +203,12 @@ namespace Pine
 					break;
 				}
 			}
-
-			FPSLimit();
+			frameTime = SDL_GetTicks() - frameStart;
+			if (frameDelay > frameTime && Renderer::limitFPS)
+			{
+				SDL_Delay(frameDelay - frameTime);
+			}
+			//FPSLimit();
 		}
 	}
 
@@ -288,7 +294,7 @@ namespace Pine
 
 			const char* name = dynamic_cast<Pine::WindowResizeEvent&>(e).GetWindowName();
 			PINE_ENGINE_INFO("Window: {0}", name);
-			//e.is_Handled = true;
+			e.is_Handled = true;
 
 		}
 
@@ -303,7 +309,7 @@ namespace Pine
 			{
 				givenGame->GameClose();
 			}
-			//e.is_Handled = true;
+			e.is_Handled = true;
 		}
 		if (e.GetEventType() == Pine::EventType::MouseButtonDown)
 		{
@@ -312,7 +318,7 @@ namespace Pine
 			const char* name = dynamic_cast<Pine::MouseButtonDownEvent&>(e).GetWindowName();
 			PINE_ENGINE_INFO("Window: {0}", name);
 
-			// e.is_Handled = true;
+			 e.is_Handled = true;
 
 		}
 		if (e.GetEventType() == Pine::EventType::MouseButtonUp)
@@ -321,7 +327,22 @@ namespace Pine
 
 			const char* name = dynamic_cast<Pine::MouseButtonUpEvent&>(e).GetWindowName();
 			PINE_ENGINE_INFO("Window: {0}", name);
-			// e.is_Handled = true;
+			 e.is_Handled = true;
+		}
+		if (e.GetEventType() == Pine::EventType::MiddleMouseScroll)
+		{
+			PINE_ENGINE_INFO("------------------------------------- ");
+
+			e.is_Handled = true;
+		}
+
+		if (e.GetEventType() == Pine::EventType::ImageLoad)
+		{
+			GLuint _Index = dynamic_cast<Pine::ImageLoadedEvent&>(e).GetImageIndex();
+			Renderer::UploadTexture(_Index);
+			PINE_ENGINE_ERROR("UP {0}", _Index);
+			e.is_Handled = true;
+
 		}
 	}
 	void Core::PineCloseEngine()

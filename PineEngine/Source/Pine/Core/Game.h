@@ -69,6 +69,9 @@ namespace Pine {
 		virtual void OnMouseClick() {};
 
 		virtual void Draw() {};
+
+		virtual void RenderUI() {};
+
 		void CloseScene(std::string p_SceneName);
 	protected:
 

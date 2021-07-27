@@ -8,6 +8,7 @@
 
 #include "Log.h"
 #include "Input.h"
+#include "glew.h"
 //#include "Event.h"
 
 namespace Pine {
@@ -32,7 +33,8 @@ namespace Pine {
 		KeyDown, KeyUp, KeyHold,
 		MouseButtonDown, MouseButtonUp, MouseMoved,
 		MiddleMouseScroll,
-		NetworkPacketRecieve, NetworkPlayerConnected, NetworkPlayerDisconnected
+		NetworkPacketRecieve, NetworkPlayerConnected, NetworkPlayerDisconnected,
+		ImageLoad
 
 	};
 
@@ -45,7 +47,8 @@ namespace Pine {
 		InputEvent =	SETBIT(2),	//this equates to '0000 0000 0000 0000 0000 0000 0000 0100'
 		WindowEvent =	SETBIT(3),	//this equates to '0000 0000 0000 0000 0000 0000 0000 1000'
 		GameEvent =		SETBIT(4),	//this equates to '0000 0000 0000 0000 0000 0000 0001 0000'
-		NetworkEvent =  SETBIT(5)
+		NetworkEvent =  SETBIT(5),
+		ImageEvent =	SETBIT(6)
 	};
 
 
@@ -226,7 +229,21 @@ namespace Pine {
 	//Event takes care of itself, when created with a pointer
 	//The events need to be moved either to the event.cpp, or into a class that deals with the event type. 
 
+	struct ImageLoadedEvent : PEvent
+	{
 
+		ImageLoadedEvent(GLuint p_TexPos) : imageIndex(p_TexPos)
+		{
+			EventSystem::PublishEvent(this);
+		}
+
+		GLuint GetImageIndex() const { return imageIndex; }
+		SET_EVENT_TYPE(ImageLoad);
+		SET_CATEGORY_TYPE(ImageEvent);
+
+	private:
+		GLuint imageIndex;
+	};
 	struct NetworkPlayerJoinedEvent : PEvent
 	{
 

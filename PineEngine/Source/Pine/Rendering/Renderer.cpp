@@ -258,9 +258,14 @@ namespace Pine {
 		glBindVertexArray(m_RendererData.s_VertexArray);
 		glDrawElements(GL_TRIANGLES, m_RendererData.s_IndexCount, GL_UNSIGNED_INT, nullptr);
 		GLCheckError();
-		RenderUI();
+		//RenderUI();
 		
 		m_RendererData.s_IndexCount = 0;
+		// Start the Dear ImGui frame
+		ImGui_ImplOpenGL3_NewFrame();
+		ImGui_ImplSDL2_NewFrame(Window::GetWindowGLData(Window::GetMainWindow()->s_WindowName)->s_Window);
+		//IMGUI CREATE FRAME
+		ImGui::NewFrame();
 	}
 
 	void Renderer::SwapWindow() 
@@ -275,14 +280,11 @@ namespace Pine {
 	}
 	static glm::vec4& m_Color = glm::vec4{ 0.0f,0.0f ,0.0f ,1.0f };
 
+	
 	void Renderer::RenderUI()
 	{
 
-		// Start the Dear ImGui frame
-		ImGui_ImplOpenGL3_NewFrame();
-		ImGui_ImplSDL2_NewFrame(Window::GetWindowGLData(Window::GetMainWindow()->s_WindowName)->s_Window);
-		//IMGUI CREATE FRAME
-		ImGui::NewFrame();
+		
 		ImGui::SetNextWindowPos(ImVec2(0, 0), ImGuiCond_Always);
 		ImGui::SetNextWindowSize(Window::GetMainWindow()->s_WindowSize.x <= 1000 ? ImVec2(Window::GetMainWindow()->s_WindowSize.x / 3, Window::GetMainWindow()->s_WindowSize.y/ 2) : ImVec2(500, 400), ImGuiCond_Always);
 

@@ -9,7 +9,7 @@
 #include <gtc/matrix_transform.hpp>
 #include "SDL.h"
 #include <SDL_image.h>
-
+#include "EventSystem.h"
 //#include "Shader.h"
 
 namespace Pine
@@ -67,7 +67,7 @@ namespace Pine
 
 		bool CheckCollision(glm::vec2 _PosOne, glm::vec2 _PosTwo, glm::vec2 p_SizeOne, glm::vec2 p_SizeTwo);// AABB - AABB collision
 
-		bool CheckWithTriangleCollision(glm::vec2 _PosOne, glm::vec2 _PosTwo, glm::vec2 p_SizeOne, glm::vec2 p_SizeTwo);
+		bool CheckWithTriangleCollision(glm::vec2 _PosOne, glm::vec2 _PosTwo, glm::vec2 p_SizeOne, glm::vec2 p_SizeTwo, bool p_SinglePointAtTop);
 
 		float area(const glm::vec2& p0, const glm::vec2& p1, const glm::vec2& p2);
 

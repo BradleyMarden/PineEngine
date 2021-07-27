@@ -130,6 +130,9 @@ include_directories(
     Game/Source/Player.h
     Game/Source/Obstacles.cpp
     Game/Source/Obstacles.h
+    Game/Source/StaticImage.cpp
+    Game/Source/StaticImage.h
+
  )
    # ------- End of Game Project files -------- #
 

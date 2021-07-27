@@ -10,6 +10,9 @@
     <ClCompile Include="D:\FinalVersion\PineEngine\Game\Source\Obstacles.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\Game\Source\StaticImage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="D:\FinalVersion\PineEngine\Game\Source\MyGame.h">
@@ -19,6 +22,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="D:\FinalVersion\PineEngine\Game\Source\Obstacles.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FinalVersion\PineEngine\Game\Source\StaticImage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

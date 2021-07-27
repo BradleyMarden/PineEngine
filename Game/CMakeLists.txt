@@ -7,6 +7,7 @@ add_executable(Game
     Source/MyGame.cpp
     Source/Player.cpp
     Source/Obstacles.cpp
+    Source/StaticImage.cpp
 
 )
 

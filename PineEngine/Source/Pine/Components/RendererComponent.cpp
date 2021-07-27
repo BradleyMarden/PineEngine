@@ -108,6 +108,9 @@ namespace Pine
 			PINE_ENGINE_WARN("Texture '{0}' already exists", p_Name);
 		}
 		PINE_ENGINE_WARN("Texture '{0}' added {1}", p_Name, texID);
+
+		Pine::ImageLoadedEvent* event = new Pine::ImageLoadedEvent(texID);
+
 	
 	}
 
@@ -176,7 +179,7 @@ namespace Pine
 	}
 
 
-	bool RendererComponent::CheckWithTriangleCollision(glm::vec2 _PosOne, glm::vec2 _PosTwo, glm::vec2 p_SizeOne, glm::vec2 p_SizeTwo)
+	bool RendererComponent::CheckWithTriangleCollision(glm::vec2 _PosOne, glm::vec2 _PosTwo, glm::vec2 p_SizeOne, glm::vec2 p_SizeTwo, bool p_SinglePointAtTop)
 	{
 		glm::vec4 _PlayerTransVertices[4];
 
@@ -187,29 +190,64 @@ namespace Pine
 		{ _PosOne.x, _PosOne.y + p_SizeOne.y, 0.0f, 0.0f }
 		};
 
-		glm::vec4 PillarVertices[4] = {
-		{ _PosTwo.x, _PosTwo.y, 0.0f, 0.0f },
-		{  _PosTwo.x + p_SizeTwo.x, _PosTwo.y, 0.0f, 0.0f },
-		{  _PosTwo.x + p_SizeTwo.x,  _PosTwo.y + p_SizeTwo.y, 0.0f, 0.0f },
-		{ _PosTwo.x, _PosTwo.y + p_SizeTwo.y, 0.0f, 0.0f }
-		};
 
-		for (int i = 0; i < 3; i++)
+		if (p_SinglePointAtTop)
 		{
-			glm::vec2 tri[3];
-
-			PillarVertices[2].x -= 35;
 
 
-			tri[0] = { PillarVertices[0].x, PillarVertices[0].y };
-			tri[1] = { PillarVertices[1].x, PillarVertices[1].y };
-			tri[2] = { PillarVertices[2].x, PillarVertices[2].y };
+			glm::vec4 PillarVertices[3] = {
+			{ _PosTwo.x, _PosTwo.y, 0.0f, 0.0f },
+			{  _PosTwo.x + p_SizeTwo.x, _PosTwo.y, 0.0f, 0.0f },
+			{  _PosTwo.x + (p_SizeTwo.x/2),  _PosTwo.y + p_SizeTwo.y, 0.0f, 0.0f },
+			};
 
-			if (PointInTri(_PosOne, tri[0], tri[1], tri[2]))
-				return true;
+			for (int i = 0; i < 3; i++)
+			{
+				glm::vec2 tri[3];
 
+
+
+				//PillarVertices[2].x -= (p_SizeTwo.x / 2 - (p_SizeTwo.x * 30 / 100));
+
+
+				tri[0] = { PillarVertices[0].x, PillarVertices[0].y };
+				tri[1] = { PillarVertices[1].x, PillarVertices[1].y };
+				tri[2] = { PillarVertices[2].x, PillarVertices[2].y };
+
+				if (PointInTri(_PosOne, tri[0], tri[1], tri[2]))
+					return true;
+
+			}
+			return false;
 		}
-		return false;
+		if(!p_SinglePointAtTop)
+		{
+			glm::vec4 PillarVertices[3] = {
+				{ _PosTwo.x + (p_SizeTwo.x/2),  _PosTwo.y, 0.0f, 0.0f },
+				{  _PosTwo.x + p_SizeTwo.x, _PosTwo.y + p_SizeTwo.y, 0.0f, 0.0f },
+				{  _PosTwo.x,  _PosTwo.y + p_SizeTwo.y, 0.0f, 0.0f },
+				
+			};
+
+			for (int i = 0; i < 3; i++)
+			{
+				glm::vec2 tri[3];
+
+
+
+				//PillarVertices[0].x -= (p_SizeTwo.x / 2 - (p_SizeTwo.x * 30 / 100));
+
+
+				tri[0] = { PillarVertices[0].x, PillarVertices[0].y };
+				tri[1] = { PillarVertices[1].x, PillarVertices[1].y };
+				tri[2] = { PillarVertices[2].x, PillarVertices[2].y };
+
+				if (PointInTri(_PosOne, tri[0], tri[1], tri[2]))
+					return true;
+
+			}
+			return false;
+		}
 	 
 	}
 
