@@ -24,7 +24,7 @@ void Obstacles::Start()
 	float _Width = Pine::Window::GetWindowWidth(Pine::Window::GetMainWindow()->s_WindowName) - 180;
 	m_LastPos = _Width;
 	m_RendComp.lock()->DrawQuad({ _Width+40, 0 },	{ 200 ,320.0f }, "Triangle", m_BottomTriColor,"ObstacleB", Pine::RendererComponent::NONE);
-	m_RendComp.lock()->DrawQuad({ _Width + 300, 0 }, { 200 ,200.0f }, "Triangle",m_BottomTriColor,"ObstacleB",Pine::RendererComponent::NONE);
+	m_RendComp.lock()->DrawQuad({ _Width + 450, 0 }, { 200 ,200.0f }, "Triangle",m_BottomTriColor,"ObstacleB",Pine::RendererComponent::NONE);
 	m_RendComp.lock()->DrawQuad({ _Width + 800, 0 }, { 200 ,300.0f }, "Triangle",m_BottomTriColor,"ObstacleB",Pine::RendererComponent::NONE);
 	m_RendComp.lock()->DrawQuad({ _Width + 500, 0 }, { 200 ,300.0f }, "Triangle",m_BottomTriColor,"ObstacleB",Pine::RendererComponent::NONE);
 	m_RendComp.lock()->DrawQuad({ _Width + 100, 0 }, { 200 ,300.0f }, "Triangle",m_BottomTriColor,"ObstacleB",Pine::RendererComponent::NONE);
