@@ -4,6 +4,9 @@
 #include "RendererComponent.h"
 #include <utility>
 #include <typeinfo>
+#include <imgui.h>
+#include <imgui_impl_opengl3.h>
+#include <imgui_impl_sdl.h>
 //#include "Renderer.h"
 namespace Pine
 {

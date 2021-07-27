@@ -6,6 +6,7 @@ add_executable(Game
    # Source/main.cpp
     Source/MyGame.cpp
     Source/Player.cpp
+    Source/Obstacles.cpp
 
 )
 

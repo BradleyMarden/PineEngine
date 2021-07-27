@@ -58,7 +58,16 @@ namespace Pine {
 	}
 
 	static unsigned int shader;
+	void Renderer::UploadTexture(int p_Tex)
+	{
+		PINE_ENGINE_WARN("UPLOADING");
+		static int i = 1;
+		m_RendererData.s_TextureSlots[i] = p_Tex;
+		m_RendererData.s_TextureSlotIndex++;
+		i++;
 
+	
+	}
 	void Renderer::InitRendering()
 	{
 
@@ -80,14 +89,32 @@ namespace Pine {
 		//TEXTURE
 			//load texture
 		CreateWhiteTexture();//must be called first as it sets all remaining tex slots to zero for safety;
-		m_RendererData.s_TextureSlots[1] = LoadTexture("Assets/PineEngineText.png");
-		m_RendererData.s_TextureSlots[2] = LoadTexture("Assets/soil.png");
-		m_RendererData.s_TextureSlots[3] = LoadTexture("Assets/clouds.png");
 
+		//UploadTexture(LoadTexture("Assets/PineEngineText.png"));
+		//m_RendererData.s_TextureSlots[1] = LoadTexture("Assets/PineEngineText.png");
+		//m_RendererData.s_TextureSlotIndex++;
+
+		//UploadTexture(LoadTexture("Assets/soil.png"));
+		//m_RendererData.s_TextureSlots[2] = LoadTexture("Assets/soil.png");
+		//m_RendererData.s_TextureSlotIndex++;
+
+		//UploadTexture(LoadTexture("Assets/Background.png"));
+		//m_RendererData.s_TextureSlots[3] = LoadTexture("Assets/Background.png");
+		//m_RendererData.s_TextureSlotIndex++;
+
+		//UploadTexture(LoadTexture("Assets/Vinette.png"));
+		//m_RendererData.s_TextureSlots[4] = LoadTexture("Assets/Vinette.png");
+		//m_RendererData.s_TextureSlotIndex++;
+		
 		//set texture
+
 		int location = glGetUniformLocation(shader, "u_tex");
-		int samplers[4] = { 0,1,2,3};
-		glUniform1iv(location, 4, samplers);
+		int samplers[32];
+		for (size_t i = 0; i < 32; i++)
+		{
+			samplers[i] = i;
+		}
+		glUniform1iv(location, 32, samplers);
 		//VERTEX LAYOUT  
 
 		//glm::mat4 projection = glm::ortho(0.0f, Window::GetMainWindow()->s_WindowSize.x, 0.0f, Window::GetMainWindow()->s_WindowSize.y, -1.0f, 1.0f);//converts screen space to values between -1:1
@@ -206,16 +233,22 @@ namespace Pine {
 	void Renderer::Flush() 
 	{
 		m_RendererData.renderCalls++;
+		for (size_t i = 0; i < m_RendererData.s_TextureSlotIndex; i++)
+		{
+			glBindTextureUnit(i, m_RendererData.s_TextureSlots[i]);
 
+		}
 
 		glClearColor(1.0f, 0.1f, 0.1f, 1.0f);
 		GLCheckError();
 		//LOAD SHADER AND TEXTURES
 		glUseProgram(shader);
-		glBindTextureUnit(0, m_RendererData.s_TextureSlots[0]);
-		glBindTextureUnit(1, m_RendererData.s_TextureSlots[1]);
-		glBindTextureUnit(2, m_RendererData.s_TextureSlots[2]);
-		glBindTextureUnit(3, m_RendererData.s_TextureSlots[3]);
+		
+		//glBindTextureUnit(0, m_RendererData.s_TextureSlots[0]);
+		//glBindTextureUnit(1, m_RendererData.s_TextureSlots[1]);
+		//glBindTextureUnit(2, m_RendererData.s_TextureSlots[2]);
+		//glBindTextureUnit(3, m_RendererData.s_TextureSlots[3]);
+		//glBindTextureUnit(4, m_RendererData.s_TextureSlots[4]);
 
 
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -226,6 +259,12 @@ namespace Pine {
 		glDrawElements(GL_TRIANGLES, m_RendererData.s_IndexCount, GL_UNSIGNED_INT, nullptr);
 		GLCheckError();
 		RenderUI();
+		
+		m_RendererData.s_IndexCount = 0;
+	}
+
+	void Renderer::SwapWindow() 
+	{
 		if (Window::GetMainWindow() != nullptr)
 		{
 			SDL_GL_SwapWindow(Window::GetWindowGLData(Window::GetMainWindow()->s_WindowName)->s_Window);
@@ -233,9 +272,9 @@ namespace Pine {
 			glUseProgram(0);
 
 		}
-		m_RendererData.s_IndexCount = 0;
 	}
 	static glm::vec4& m_Color = glm::vec4{ 0.0f,0.0f ,0.0f ,1.0f };
+
 	void Renderer::RenderUI()
 	{
 
@@ -287,7 +326,7 @@ namespace Pine {
 		}
 
 		float textureIndex = 0.0f;
-
+		//vetex data
 		m_RendererData.bufferPtr->s_Position = { p_Pos.x, p_Pos.y, 0.0f };
 		m_RendererData.bufferPtr->s_Color = p_Color;
 		m_RendererData.bufferPtr->s_TextureCoords = { 0.0f, 1.0f };
@@ -317,7 +356,7 @@ namespace Pine {
 		
 	
 	}
-	void Renderer::DrawQuad(const glm::vec2& p_Pos, const glm::vec2& p_Size, const GLuint tex) 
+	void Renderer::DrawQuad(const glm::vec2& p_Pos, const glm::vec2& p_Size, const GLuint tex, const glm::vec4& p_Col) 
 	{
 		if (m_RendererData.s_IndexCount >= m_MaxIndexCount || m_RendererData.s_TextureSlotIndex > 31)
 		{
@@ -330,27 +369,27 @@ namespace Pine {
 		//float textureIndex = 0.0f;
 		glm::vec4 col = { 1.0f,1.0f,1.0f,1.0f };
 		
-
+		//vetex data
 		m_RendererData.bufferPtr->s_Position = { p_Pos.x, p_Pos.y, 0.0f };
-		m_RendererData.bufferPtr->s_Color = col;
+		m_RendererData.bufferPtr->s_Color = p_Col;
 		m_RendererData.bufferPtr->s_TextureCoords = { 0.0f, 1.0f };
 		m_RendererData.bufferPtr->s_TextureIndex = tex;
 		m_RendererData.bufferPtr++;
 
 		m_RendererData.bufferPtr->s_Position = { p_Pos.x + p_Size.x, p_Pos.y, 0.0f };
-		m_RendererData.bufferPtr->s_Color = col;
+		m_RendererData.bufferPtr->s_Color = p_Col;
 		m_RendererData.bufferPtr->s_TextureCoords = { 1.0f, 1.0f };
 		m_RendererData.bufferPtr->s_TextureIndex = tex;
 		m_RendererData.bufferPtr++;
 
 		m_RendererData.bufferPtr->s_Position = { p_Pos.x + p_Size.x, p_Pos.y + p_Size.y, 0.0f };
-		m_RendererData.bufferPtr->s_Color = col;
+		m_RendererData.bufferPtr->s_Color = p_Col;
 		m_RendererData.bufferPtr->s_TextureCoords = { 1.0f, 0.0f };
 		m_RendererData.bufferPtr->s_TextureIndex = tex;
 		m_RendererData.bufferPtr++;
 
 		m_RendererData.bufferPtr->s_Position = { p_Pos.x, p_Pos.y + p_Size.y, 0.0f };
-		m_RendererData.bufferPtr->s_Color = col;
+		m_RendererData.bufferPtr->s_Color = p_Col;
 		m_RendererData.bufferPtr->s_TextureCoords = { 0.0f, 0.0f };
 		m_RendererData.bufferPtr->s_TextureIndex = tex;
 		m_RendererData.bufferPtr++;

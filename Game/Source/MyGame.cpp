@@ -85,29 +85,6 @@ void myGame::Update(int m_StepTime)
 void myGame::Draw() 
 {
 
-    glm::vec4 col = { 0.0f ,1.0f, 1.0f ,1.0f };
-
-    Pine::Renderer::DrawQuad({ 0,0 }, { Window::GetMainWindow()->s_WindowSize.x,Window::GetMainWindow()->s_WindowSize.y }, 3);
-
-    for (float y = 0; y < Window::GetMainWindow()->s_WindowSize.y / 4; y += 30.0f)
-    {
-        for (float x = 0; x < Window::GetMainWindow()->s_WindowSize.x; x += 30.0f)
-        {
-            glm::vec4 col = { (x + 0.25) / 20.0f, 0.2f, (y + 1) / 20.0f, 1.0f };
-            Pine::Renderer::DrawQuad({ x,y }, { 30.0f,30.0f }, 2);
-        }
-    }
-
-    Pine::Renderer::DrawQuad({ p.x,p.y }, { 30.0f,30.0f }, 1);
-
-    if (Input::GetKeyDown(SDL_SCANCODE_W))
-        p.y++;
-    if (Input::GetKeyDown(SDL_SCANCODE_S))
-        p.y--;
-    if (Input::GetKeyDown(SDL_SCANCODE_A))
-        p.x--;
-    if (Input::GetKeyDown(SDL_SCANCODE_D))
-        p.x++;
 
     m_Cam.SetPosition({ 10,p.y, 0 });
 

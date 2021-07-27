@@ -8,11 +8,33 @@ void Player::Start()
 	
 	//cache render component
 	m_RendComp = GetComponent<Pine::RendererComponent>("RendererComponent");
-	m_RendComp.lock()->DrawQuad({ Pine::Window::GetWindowWidth(Pine::Window::GetMainWindow()->s_WindowName)/2-150,Pine::Window::GetWindowHeight(Pine::Window::GetMainWindow()->s_WindowName)/2-150 }, { 30 ,30}, 1, "Player");
 
-	m_RendComp.lock()->DrawQuad({ 40, 0 },	{ 70.0f ,320.0f }, 1, "ob");
-	m_RendComp.lock()->DrawQuad({ 300, 0 }, { 70.0f ,200.0f }, 1, "ob");
-	m_RendComp.lock()->DrawQuad({ 800, 0 }, { 70.0f ,300.0f }, 1, "ob");     
+	m_RendComp.lock()->LoadTexture("PineLogo", "Assets/PineEngineText.png");
+	m_RendComp.lock()->LoadTexture("Triangle", "Assets/tri.png");
+	m_RendComp.lock()->LoadTexture("TriangleTop", "Assets/triTop.png");
+
+	m_RendComp.lock()->LoadTexture("BG", "Assets/Background.png");
+	m_RendComp.lock()->LoadTexture("Vinette", "Assets/Vinette.png");
+
+	m_RendComp.lock()->DrawQuad({ 3,3 }, { 30 ,30 }, { 0.0,1.0,0.0,1.0 }, "thing", Pine::RendererComponent::TOP);
+	m_RendComp.lock()->DrawQuad({ 3,3 }, { 30 ,30 }, { 1.0,0.0,0.0,1.0 }, "thing1", Pine::RendererComponent::TOP);
+	m_RendComp.lock()->DrawQuad({ 3,3 }, { 30 ,30 }, { 0.0,0.0,1.0,1.0 }, "thing2", Pine::RendererComponent::TOP);
+	m_RendComp.lock()->DrawQuad({ 3,3 }, { 30 ,30 }, { 0.0,1.0,1.0,1.0 }, "thing3", Pine::RendererComponent::TOP);
+
+	m_RendComp.lock()->DrawQuad({ 40, 20 },	{ 200 ,320.0f }, "Triangle", { 1.0,1.0,1.0,1.0 },"ob", Pine::RendererComponent::NONE);
+	m_RendComp.lock()->DrawQuad({ 300, 20 }, { 200 ,200.0f }, "Triangle", { 1.0,1.0,1.0,1.0 },"ob",Pine::RendererComponent::NONE);
+	m_RendComp.lock()->DrawQuad({ 800, 20 }, { 200 ,300.0f }, "Triangle", { 1.0,1.0,1.0,1.0 },"ob",Pine::RendererComponent::NONE);
+
+	m_RendComp.lock()->DrawQuad({ 50, 20 }, { 200 ,320.0f }, "TriangleTop", { 1.0,1.0,1.0,1.0 }, "ob", Pine::RendererComponent::NONE);
+	m_RendComp.lock()->DrawQuad({ 600, 20 }, { 200 ,200.0f }, "TriangleTop", { 1.0,1.0,1.0,1.0 }, "ob", Pine::RendererComponent::NONE);
+	m_RendComp.lock()->DrawQuad({ 400, 20 }, { 200 ,300.0f }, "TriangleTop", { 1.0,1.0,1.0,1.0 }, "ob", Pine::RendererComponent::NONE);
+
+	m_RendComp.lock()->DrawQuad({ Pine::Window::GetWindowWidth(Pine::Window::GetMainWindow()->s_WindowName) / 2 - 150,20 }, { 30 ,30 }, "test", { 1.0,1.0,1.0,1.0 }, "Player", Pine::RendererComponent::NONE);
+	m_RendComp.lock()->DrawQuad({ 300,20 }, { 30 ,30 }, "PineLogo", { 1.0,1.0,1.0,0.5 }, "play", Pine::RendererComponent::NONE);
+	m_RendComp.lock()->DrawQuad({ 0,0 }, { Pine::Window::GetWindowWidth(Pine::Window::GetMainWindow()->s_WindowName),Pine::Window::GetWindowHeight(Pine::Window::GetMainWindow()->s_WindowName) }, "Vinette", { 1.0,1.0,1.0,1.0 }, "Vinette", Pine::RendererComponent::TOP);
+	m_RendComp.lock()->DrawQuad({ 0,0 }, { Pine::Window::GetWindowWidth(Pine::Window::GetMainWindow()->s_WindowName),Pine::Window::GetWindowHeight(Pine::Window::GetMainWindow()->s_WindowName) }, "BG", { 1.0,1.0,1.0,1.0 }, "Background", Pine::RendererComponent::BOTTOM);
+
+
 	
 }
 
@@ -28,148 +50,69 @@ void Player::Update(float p_StepTime)
 	{
 		shoot = false;
 	}
-
-
-	if (Pine::Input::GetKeyDown(SDL_SCANCODE_K))
-	{
-		//shoot = true;
-		std::vector<std::shared_ptr<Pine::RendererComponent::Quad>> _Quads = m_RendComp.lock()->GetAllQuads();
-		for (size_t i = 0; i < _Quads.size(); i++)
-		{
-			if (_Quads[i]->s_ID == 1) 
-			{
-				m_RendComp.lock()->DeleteQuad(_Quads[i]);
-			}
-		}
-	}
-
-	if (Pine::Input::GetKeyDown(SDL_SCANCODE_O))
-	{
-		//shoot = true;
-		std::vector<std::shared_ptr<Pine::RendererComponent::Quad>> _Quads = m_RendComp.lock()->GetAllQuads();
-		for (size_t i = 0; i < _Quads.size(); i++)
-		{
-			if (_Quads[i]->s_Name == "LOGO")
-			{
-				m_RendComp.lock()->DeleteQuad(_Quads[i]);
-			}
-		}
-	}
-
-
+	PINE_ENGINE_INFO(m_RendComp.lock()->GetTexture("test"));
+	
 
 
 	std::vector<std::shared_ptr<Pine::RendererComponent::Quad>> _Quads = m_RendComp.lock()->GetAllQuads();
-	glm::vec2 _Pos = m_RendComp.lock()->GetQuad("Player")->s_Pos;
-	glm::vec2 _Size = m_RendComp.lock()->GetQuad("Player")->s_Size;
-		for (size_t i = 0; i < _Quads.size(); i++)
-		{
-			if (_Quads[i]->s_Name == "LOGO")
-			{
-				//m_RendComp.lock()->DeleteQuad(_Quads[i]);
-				_Quads[i]->s_Pos.y += 1;
-				if (m_RendComp.lock()->CheckCollision(_Pos, _Quads[i]->s_Pos, _Size, _Quads[i]->s_Size))
-				{
-					m_RendComp.lock()->DeleteQuad(_Quads[i]);
-				}
-			}
-			if (_Quads[i]->s_Name == "ob")
-			{
-				_Quads[i]->s_Pos.x -= 1;
-
-				if (_Quads[i]->s_Pos.x < -_Quads[i]->s_Size.x)
-				{
-					_Quads[i]->s_Pos.x = 915;
-				}
-
-			}
-			if (_Quads[i]->s_Pos.y == 540 )
-			{
-				m_RendComp.lock()->DeleteQuad(_Quads[i]);
-			}
-
-			
-			//if (_Quads[i]->s_Pos.y <= _Pos.y + 30)
-			//{
-				//m_RendComp.lock()->DeleteQuad(_Quads[i]);
-
-			///}
-		}
-		if (Pine::Input::GetKeyDown(SDL_SCANCODE_SPACE))
-		{
-			m_RendComp.lock()->GetQuad("Player")->s_Pos.y += 0.5 * p_StepTime;
-
-		}
-		else
-		{
-			m_RendComp.lock()->GetQuad("Player")->s_Pos.y -= 0.7 *p_StepTime;
-		}
-		m_RendComp.lock()->GetQuad("Player")->s_Pos.y = glm::clamp(m_RendComp.lock()->GetQuad("Player")->s_Pos.y, 50.0f, 400.0f);
-
-
-		
-
- }
-
-void Player::OnTerminate() 
-{
-}
-
-static glm::vec2 pos = {400,400};
-void Player::Render() 
-{
-
-
-	
-
-	if (Pine::Input::GetKeyDown(SDL_SCANCODE_F))
+	glm::vec2 _Pos = m_RendComp.lock()->GetQuad("play")->s_Pos;
+	glm::vec2 _Size = m_RendComp.lock()->GetQuad("play")->s_Size;
+	for (size_t i = 0; i < _Quads.size(); i++)
 	{
-		for (size_t i = 0; i < 100; i++)
+
+		if (_Quads[i]->s_Name == "ob")
 		{
-			int x = (rand() % 750) + 50; //picks a random number out of 48
+			glm::vec2 _PillarSize = _Quads[i]->s_Size;
+			glm::vec2 _PillarPos = _Quads[i]->s_Pos;
 
-			int y = (rand() % 500) - 300;//picks a random number out of 10
+			glm::vec2 _PillarPosL = _PillarPos;
 
-			int size = (rand() % 60) + 15;
-
-			glm::vec4 col = { 0.0f ,1.0f, 0.0f ,1.0f };
-
-			m_RendComp.lock()->DrawQuad({ x,y }, { size ,size }, 2, 1);
+			glm::vec2 _PillarPosR = _PillarPos;
+			_PillarPosR.x += _PillarSize.x;
+			glm::vec2 _PillarPosT = _PillarPos;
+			_PillarPosT.x += _PillarSize.x/2;
+			_PillarPosT.y = _PillarSize.y;
+			m_RendComp.lock()->GetQuad("thing")->s_Pos = _PillarPosT;
+			m_RendComp.lock()->GetQuad("thing1")->s_Pos = _PillarPosL;
+			m_RendComp.lock()->GetQuad("thing2")->s_Pos = _PillarPosR;
+			m_RendComp.lock()->GetQuad("thing3")->s_Pos = _Pos;
 			
-		}
-		std::string _Pos = std::to_string((double)Pine::Input::GetMousePosition().X) + "," + std::to_string((double)Pine::Input::GetMousePosition().Y);
+			if (m_RendComp.lock()->CheckWithTriangleCollision(_Pos, _Quads[i]->s_Pos, _Size, _Quads[i]->s_Size))
+			{
+				PINE_ENGINE_WARN("ITS IN");
 
-		Pine::Networking::PineSendGlobalPacket("aaaaa");
-		//Pine::Networking::PineSendGlobalDataPacket(Pine::Input::GetMousePosition().X, Pine::Input::GetMousePosition().Y);
+			}
+			else
+			{
+				//PINE_ENGINE_WARN("ITS OUT");
+
+			}
+			if (_Quads[i]->s_Pos.x < -70)
+			{
+				_Quads[i]->s_Pos.x = Pine::Window::GetWindowWidth(Pine::Window::GetMainWindow()->s_WindowName) + 70;
+			}
+			_Quads[i]->s_Pos.x -= 1;
+		}
 	}
+	if (Pine::Input::GetKeyDown(SDL_SCANCODE_SPACE))
+	{
+		m_RendComp.lock()->GetQuad("play")->s_Pos.y += 0.5 * p_StepTime;
+			
+	}
+	else
+	{
+		m_RendComp.lock()->GetQuad("play")->s_Pos.y -= 0.7 *p_StepTime;
+	}
+	m_RendComp.lock()->GetQuad("play")->s_Pos.y = glm::clamp(m_RendComp.lock()->GetQuad("play")->s_Pos.y, 50.0f, 400.0f);
+
 
 	if (Pine::Input::GetMouseDown(1))
 	{
 		int size = (rand() % 60) + 15;
-		m_RendComp.lock()->DrawQuad({ Pine::Input::GetMousePosition().X,-Pine::Input::GetMousePosition().Y + 540 }, { size ,size }, 1, "LOGO");
+		m_RendComp.lock()->DrawQuad({ Pine::Input::GetMousePosition().X,-Pine::Input::GetMousePosition().Y + 540 }, { size ,size }, "PineLogo", { 1.0,1.0,1.0,1.0 }, "LOGO", Pine::RendererComponent::NONE);
 
 	}
 
-	if (Pine::Input::GetKeyDown(SDL_SCANCODE_G))
-	{
-		float d = (rand() % 1); //picks a random number out of 48
-
-		PINE_WARN("Delay {0}", d);
-
-		for (size_t i = 0; i < 100; i++)
-		{
-			int x = (rand() % 750) + 50; //picks a random number out of 48
-
-			int y = (rand() % 500) - 300;//picks a random number out of 10
-
-			int size = (rand() % 60) + 15;
-
-			glm::vec4 col = { 0.0f ,1.0f, 0.0f ,1.0f };
-
-			m_RendComp.lock()->DrawQuad({ Pine::Input::GetMousePosition().X,-Pine::Input::GetMousePosition().Y +540 }, { size ,size }, 1, "LOGO");
-		}
-
-	}
 
 	if (shoot)
 	{
@@ -178,16 +121,50 @@ void Player::Render()
 		Pine::Renderer::DrawQuad({ m_PlayerPos.x,m_PlayerPos.y }, { 100.0f ,100.0f }, col);
 	}
 	
+		
+ }
+
+
+
+void Player::Render() 
+{
+	
+	
 }
 
 void Player::UIRender() 
 {
+	glm::vec2 _Pos = m_RendComp.lock()->GetQuad("play")->s_Pos;
+
+	// Start the Dear ImGui frame
+	ImGui_ImplOpenGL3_NewFrame();
+	ImGui_ImplSDL2_NewFrame(Pine::Window::GetWindowGLData(Pine::Window::GetMainWindow()->s_WindowName)->s_Window);
+	//IMGUI CREATE FRAME
+	ImGui::NewFrame();
+	ImGui::SetNextWindowPos(ImVec2(0, Pine::Window::GetWindowHeight(Pine::Window::GetMainWindow()->s_WindowName)/2), ImGuiCond_Always);
+	ImGui::SetNextWindowSize(ImVec2(300, 100), ImGuiCond_Always);
+
+	static float f = 0.0f;
+	//IMGUI START
+	ImGui::Begin("PLAYER");
+	ImGui::Text("Player x pos: %f", _Pos.x);
+	ImGui::Text("Player y pos: %f", _Pos.y);
+	ImGui::End();
+	//IMGUI END
+
+	//IMGUI RENDER
+	ImGui::Render();
+	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
 }
 
 void Player::MoveUp(float p_StepTime)
 {
 	m_PlayerPos.y += 0.5 * p_StepTime;
+
+}
+void Player::OnTerminate()
+{
 
 }
 
@@ -215,19 +192,6 @@ void Player::Trigger(Pine::PEvent& e)
 	if (e.GetEventType() == Pine::EventType::NetworkPacketRecieve)
 	{
 		std::string _Packet = dynamic_cast<Pine::NetworkPacketEvent&>(e).GetPacket();
-
-		/*
-		std::vector<int> _results;
-
-		std::stringstream _ss(_Packet);
-
-		while (_ss.good())
-		{
-			std::string _subString;
-			std::getline(_ss, _subString, ',');
-			_results.push_back(std::stoi(_subString));
-		}
-		*/
 		e.is_Handled = true;
 	}
 }

@@ -52,7 +52,8 @@ namespace Pine {
 		inline void SetID(int p_ID) { m_ID = p_ID; }
 
 		void Render();	
-	
+		
+		void RenderUI();
 
 	
 		int GetPineObjectCount() { return m_PineObjects.size(); }

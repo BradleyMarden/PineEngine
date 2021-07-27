@@ -118,14 +118,72 @@ namespace Pine
 
 					for (auto _Comp : givenGame->GetCurrentScene().lock()->GetAllRenderComponentsinScene())
 					{
-						std::vector<std::shared_ptr<RendererComponent::Quad>> _Quads = _Comp->GetAllQuads();
-						for (size_t i = 0; i < _Quads.size(); i++)
+						static bool runOnce = true;
+
+						if (runOnce)
 						{
-							Renderer::DrawQuad(_Quads[i]->s_Pos, _Quads[i]->s_Size, _Quads[i]->s_Texture);
+							std::vector<GLuint>_Textures = _Comp->GetAllTextures();
+
+							for (size_t j = 0; j < _Textures.size(); j++)
+							{
+								Renderer::UploadTexture(_Textures[j]);
+								PINE_ENGINE_ERROR("UP {0}", _Textures[j]);
+							}
+							runOnce = false;
 						}
+						
+
+						std::vector<std::shared_ptr<RendererComponent::Quad>> _Quads = _Comp->GetAllQuads();
+						std::vector<std::shared_ptr<RendererComponent::Quad>> _TopQuads;
+						std::vector<std::shared_ptr<RendererComponent::Quad>> _NormalQuads;
+						std::vector<std::shared_ptr<RendererComponent::Quad>> _BottomQuads;
+						//if (_Quads.size() != 0)
+						//{
+							for (size_t i = 0; i < _Quads.size(); i++)
+							{
+								if (_Quads[i]->s_LayerLevel == RendererComponent::NONE)
+								{
+									_NormalQuads.push_back(_Quads[i]);
+								}
+								else if(_Quads[i]->s_LayerLevel == RendererComponent::TOP)
+								{
+									_TopQuads.push_back(_Quads[i]);
+								}
+								else if (_Quads[i]->s_LayerLevel == RendererComponent::BOTTOM)
+								{
+									_BottomQuads.push_back(_Quads[i]);
+								}
+							}
+
+							for (size_t i = 0; i < _BottomQuads.size(); i++)
+							{
+								Renderer::DrawQuad(_BottomQuads[i]->s_Pos, _BottomQuads[i]->s_Size, _BottomQuads[i]->s_Texture, _BottomQuads[i]->s_Color);
+
+							}
+							for (size_t i = 0; i < _NormalQuads.size(); i++)
+							{
+								Renderer::DrawQuad(_NormalQuads[i]->s_Pos, _NormalQuads[i]->s_Size, _NormalQuads[i]->s_Texture, _NormalQuads[i]->s_Color);
+
+							}
+							for (size_t i = 0; i < _TopQuads.size(); i++)
+							{
+								Renderer::DrawQuad(_TopQuads[i]->s_Pos, _TopQuads[i]->s_Size, _TopQuads[i]->s_Texture, _TopQuads[i]->s_Color);
+
+							}
+						_Quads.clear();
+						_NormalQuads.clear();
+						_TopQuads.clear();
+						_BottomQuads.clear();
+
+						
 					}
+
+
 					Renderer::EndBatch();
 					Renderer::Flush();
+					givenGame->GetCurrentScene().lock()->RenderUI();
+					Renderer::SwapWindow();
+
 					HandleEvents();
 
 					break;

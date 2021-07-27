@@ -128,7 +128,8 @@ include_directories(
     Game/Source/MyGame.h
     Game/Source/Player.cpp
     Game/Source/Player.h
-
+    Game/Source/Obstacles.cpp
+    Game/Source/Obstacles.h
  )
    # ------- End of Game Project files -------- #
 

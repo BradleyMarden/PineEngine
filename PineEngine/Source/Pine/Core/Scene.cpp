@@ -48,9 +48,19 @@ namespace Pine {
 				_RendererComponents.push_back(_Comp.second);
 			}
 		}
-
+		
 
 	}
+
+	void Scene::RenderUI()
+	{
+		for (auto x : m_PineObjects)
+		{
+			x.second->UIRender();
+		}
+		
+	}
+
 	void Scene::OnSceneClose() 
 	{
 		for (auto x : m_PineObjects)

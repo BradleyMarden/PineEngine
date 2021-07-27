@@ -49,13 +49,17 @@ namespace Pine {
 		static void Shutdown();
 
 		static void DrawQuad(const glm::vec2& p_Pos, const glm::vec2& p_Size, const glm::vec4& p_Color);
-		static void DrawQuad(const glm::vec2& p_Pos, const glm::vec2& p_Size, const GLuint tex);
+		static void DrawQuad(const glm::vec2& p_Pos, const glm::vec2& p_Size, const GLuint tex, const glm::vec4& p_Col);
         
         static void LoadScene(const char* p_FilePath);
+
+		static void UploadTexture(int p_Tex);
 
 		static void RenderUI();
 
 		static void Render();
+
+		static void SwapWindow();
 	
         static void CreateQuad(const char* p_Name, int p_Width, int p_Height);
 
