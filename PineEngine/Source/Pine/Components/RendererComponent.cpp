@@ -104,14 +104,11 @@ namespace Pine
 			
 
 		if (!std::get<bool>(m_Textures.try_emplace(p_Name, texID)))
-		{
 			PINE_ENGINE_WARN("Texture '{0}' already exists", p_Name);
-		}
+
 		PINE_ENGINE_WARN("Texture '{0}' added {1}", p_Name, texID);
 
 		Pine::ImageLoadedEvent* event = new Pine::ImageLoadedEvent(texID);
-
-	
 	}
 
 	GLuint RendererComponent::GetTexture(std::string p_Name)
@@ -119,11 +116,7 @@ namespace Pine
 		for (auto q : m_Textures)
 		{
 			if (q.first == p_Name)
-			{
-				PINE_ENGINE_WARN("Tex {0} at {1}", q.first, q.second);
-				return --q.second;
-
-			}
+				return --q.second;//decrement becasuse this is the position in m_Textures that the data is stored
 		}
 	}
 	std::vector<GLuint> RendererComponent::GetAllTextures()
@@ -131,35 +124,24 @@ namespace Pine
 		std::vector<GLuint> _Textures;
 
 		for (auto tex : m_Textures)
-		{
-
 			_Textures.push_back(tex.second);
-			PINE_ENGINE_WARN("PUSHING");
-		}
 
 		return _Textures;
-		
 	}
 	void RendererComponent::Render() {}
 
 	void RendererComponent::Update(float p_StepTime) {}
 
-	void RendererComponent::HitTest(std::string p_ObjectName)
-	{
-
-		GetQuad(p_ObjectName);
-	}
-
-	bool RendererComponent::CheckCollision(glm::vec2 _PosOne, glm::vec2 _PosTwo, glm::vec2 p_SizeOne, glm::vec2 p_SizeTwo) // AABB - AABB collision
+	bool RendererComponent::CheckCollision(glm::vec2 p_PosOne, glm::vec2 p_PosTwo, glm::vec2 p_SizeOne, glm::vec2 p_SizeTwo) // AABB - AABB collision
 	{
 		// collision x-axis?
-		bool collisionX = _PosOne.x + p_SizeOne.x >= _PosTwo.x &&
-			_PosTwo.x + p_SizeTwo.x >= _PosOne.x;
+		bool _CollisionX = p_PosOne.x + p_SizeOne.x >= p_PosTwo.x &&
+			p_PosTwo.x + p_SizeTwo.x >= p_PosOne.x;
 		// collision y-axis?
-		bool collisionY = _PosOne.y + p_SizeOne.y >= _PosTwo.y &&
-			_PosTwo.y + p_SizeTwo.y >= _PosOne.y;
+		bool _CollisionY = p_PosOne.y + p_SizeOne.y >= p_PosTwo.y &&
+			p_PosTwo.y + p_SizeTwo.y >= p_PosOne.y;
 		// collision only if on both axes
-		return collisionX && collisionY;
+		return _CollisionX && _CollisionY;
 	}
 	float RendererComponent::area(const glm::vec2& p1, const glm::vec2& p2, const glm::vec2& p3)
 	{
@@ -167,19 +149,15 @@ namespace Pine
 	}
 	bool RendererComponent::PointInTri(const glm::vec2& p, const glm::vec2& p0, const  glm::vec2& p1, const  glm::vec2& p2)
 	{
-		float A = area(p0, p1, p2);
-		float A1 = area(p, p0, p1);
-		float A2 = area(p, p1, p2);
-		float A3 = area(p, p2, p0);
-		
-
-		 
-
-		return (A == A1 + A2 + A3);
+		float _A = area(p0, p1, p2);
+		float _A1 = area(p, p0, p1);
+		float _A2 = area(p, p1, p2);
+		float _A3 = area(p, p2, p0);
+		return (_A == _A1 + _A2 + _A3);
 	}
 
 
-	bool RendererComponent::CheckWithTriangleCollision(glm::vec2 _PosOne, glm::vec2 _PosTwo, glm::vec2 p_SizeOne, glm::vec2 p_SizeTwo, bool p_SinglePointAtTop)
+	bool RendererComponent::CheckWithTriangleCollision(glm::vec2 _PosOne, glm::vec2 _PosTwo, glm::vec2 p_SizeOne, glm::vec2 p_SizeTwo, bool p_SinglePointAtTop)//Triangle area collision 
 	{
 		glm::vec4 _PlayerTransVertices[4];
 
@@ -190,33 +168,24 @@ namespace Pine
 		{ _PosOne.x, _PosOne.y + p_SizeOne.y, 0.0f, 0.0f }
 		};
 
-
 		if (p_SinglePointAtTop)
 		{
-
-
 			glm::vec4 PillarVertices[3] = {
 			{ _PosTwo.x, _PosTwo.y, 0.0f, 0.0f },
 			{  _PosTwo.x + p_SizeTwo.x, _PosTwo.y, 0.0f, 0.0f },
-			{  _PosTwo.x + (p_SizeTwo.x/2),  _PosTwo.y + p_SizeTwo.y, 0.0f, 0.0f },
+			{  _PosTwo.x + ((p_SizeTwo.x/2) - 10),  _PosTwo.y + p_SizeTwo.y, 0.0f, 0.0f },
 			};
 
 			for (int i = 0; i < 3; i++)
 			{
-				glm::vec2 tri[3];
+				glm::vec2 _Tri[3];
 
+				_Tri[0] = { PillarVertices[0].x, PillarVertices[0].y };
+				_Tri[1] = { PillarVertices[1].x, PillarVertices[1].y };
+				_Tri[2] = { PillarVertices[2].x, PillarVertices[2].y };
 
-
-				//PillarVertices[2].x -= (p_SizeTwo.x / 2 - (p_SizeTwo.x * 30 / 100));
-
-
-				tri[0] = { PillarVertices[0].x, PillarVertices[0].y };
-				tri[1] = { PillarVertices[1].x, PillarVertices[1].y };
-				tri[2] = { PillarVertices[2].x, PillarVertices[2].y };
-
-				if (PointInTri(_PosOne, tri[0], tri[1], tri[2]))
+				if (PointInTri(_PosOne, _Tri[0], _Tri[1], _Tri[2]))
 					return true;
-
 			}
 			return false;
 		}
@@ -226,29 +195,21 @@ namespace Pine
 				{ _PosTwo.x + (p_SizeTwo.x/2),  _PosTwo.y, 0.0f, 0.0f },
 				{  _PosTwo.x + p_SizeTwo.x, _PosTwo.y + p_SizeTwo.y, 0.0f, 0.0f },
 				{  _PosTwo.x,  _PosTwo.y + p_SizeTwo.y, 0.0f, 0.0f },
-				
 			};
 
 			for (int i = 0; i < 3; i++)
 			{
-				glm::vec2 tri[3];
+				glm::vec2 _Tri[3];
 
+				_Tri[0] = { PillarVertices[0].x, PillarVertices[0].y };
+				_Tri[1] = { PillarVertices[1].x, PillarVertices[1].y };
+				_Tri[2] = { PillarVertices[2].x, PillarVertices[2].y };
 
-
-				//PillarVertices[0].x -= (p_SizeTwo.x / 2 - (p_SizeTwo.x * 30 / 100));
-
-
-				tri[0] = { PillarVertices[0].x, PillarVertices[0].y };
-				tri[1] = { PillarVertices[1].x, PillarVertices[1].y };
-				tri[2] = { PillarVertices[2].x, PillarVertices[2].y };
-
-				if (PointInTri(_PosOne, tri[0], tri[1], tri[2]))
+				if (PointInTri(_PosOne, _Tri[0], _Tri[1], _Tri[2]))
 					return true;
-
 			}
 			return false;
 		}
-	 
 	}
 
 
@@ -257,12 +218,10 @@ namespace Pine
 		
 		std::vector<std::shared_ptr<Quad>>::iterator it;// = m_Quads.begin
 		it = std::find(m_Quads.begin(), m_Quads.end(), p_Quad);
-	 
+		
+		//remove quad
 		if (it != m_Quads.end())
-		{
-			//remove quad;
 			m_Quads.erase(it);
-		}
 	}
 
 	void RendererComponent::DeleteQuad(std::string p_QuadName)
@@ -272,43 +231,35 @@ namespace Pine
 		while (it != m_Quads.end())
 		{
 			int index = std::distance(m_Quads.begin(), it);
+
 			if (it[index]->s_Name == p_QuadName)
-			{
 				m_Quads.erase(it);
-			}
 		}
+
+		//remove quad;
 		if (it != m_Quads.end())
-		{
-			//remove quad;
 			m_Quads.erase(it);
-		}
 	}
 
 	std::vector<std::weak_ptr<RendererComponent::Quad>> RendererComponent::GetQuads() 
 	{
 		
-		std::vector<std::weak_ptr<Quad>> quad;
-		//lambda
-		std::transform(m_Quads.begin(), m_Quads.end(), quad.begin(), 
+		std::vector<std::weak_ptr<Quad>> _Quad;
+		//lambda to get quads
+		std::transform(m_Quads.begin(), m_Quads.end(), _Quad.begin(),
 			[](std::weak_ptr<Quad> weakPtr){ return weakPtr.lock(); });
 
-		return quad;
+		return _Quad;
 	 
 	}
 
 	std::shared_ptr<RendererComponent::Quad> RendererComponent::GetQuad(std::string p_Name) 
 	{
-	//std::vector<std::shared_ptr<Quad>>::iterator it = m_Quads.begin();
 		for (auto q : m_Quads) 
-		{
 			if (q->s_Name == p_Name)
-			{
 				return q;
-
-			}
-		}
 		
-	return std::shared_ptr<RendererComponent::Quad>(nullptr);
+		return std::shared_ptr<RendererComponent::Quad>(nullptr);
 	 
 	}
 }

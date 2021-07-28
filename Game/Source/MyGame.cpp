@@ -17,7 +17,7 @@ void myGame::Initialize()
     Pine::Window::CreateNewWindow("Main", 960, 540);
 
     Renderer::SetCamera(&m_Cam);
-
+    //test code, will create a server. Change define to false and client define to true to create a client build. NOTE: You need to portforward on the ip address that ther server is hosted from. Currently its: 2302.
     if (SERVER)
     {
         Pine::Networking::PineNetworkingInit();
@@ -42,39 +42,32 @@ void myGame::Start()
     std::shared_ptr<Player> _Player1 = std::make_shared<Player>("Player1");
     _Player1->SetPlayerName("Brad");
 
-    //create other
+    //create Scene Pineobjects
     std::shared_ptr<Obstacles> _Obstacles = std::make_shared<Obstacles>("Obstacles");
-   // _Obstacles->SetObstacleName("Obs");
-
 
     std::shared_ptr<StaticImage> _Vinette = std::make_shared<StaticImage>("Vinette");
 
     std::shared_ptr<StaticImage> _Background = std::make_shared<StaticImage>("Background");
 
-    //add player to scene
-
-
-
+    //Add Pinobjects to scene
     _Scene->AddPineObject<Obstacles>(_Obstacles);
     _Scene->AddPineObject<Player>(_Player1);
     _Scene->AddPineObject<StaticImage>(_Vinette);
     _Scene->AddPineObject<StaticImage>(_Background);
 
-   // _Scene->AddPineObject<PineObject>(_Vinette);
-
-    //add component to player and Obstacles
+    //create component
     std::shared_ptr<RendererComponent> _PlayerRendererComponent = std::make_shared<RendererComponent>("RendererComponent");
     std::shared_ptr<RendererComponent> _ObstaclesRendererComponent = std::make_shared<RendererComponent>("RendererComponent");
     std::shared_ptr<RendererComponent> _VinetteRendererComponent = std::make_shared<RendererComponent>("RendererComponent");
     std::shared_ptr<RendererComponent> _BackgroundRendererComponent = std::make_shared<RendererComponent>("RendererComponent");
-   // std::shared_ptr<RendererComponent> _VinetteRendererComponent = std::make_shared<RendererComponent>("RendererComponent");
 
+    //add component to PineObjects
     _Player1->AddComponentToPineObject<RendererComponent>(_PlayerRendererComponent);
     _Obstacles->AddComponentToPineObject<RendererComponent>(_ObstaclesRendererComponent);
     _Vinette->AddComponentToPineObject<RendererComponent>(_VinetteRendererComponent);
     _Background->AddComponentToPineObject<RendererComponent>(_BackgroundRendererComponent);
 
- 
+    //Another way of loading images and drawing quads to a component without needing to hardcode it in the child PineObject class
     _Vinette->GetComponent<RendererComponent>("RendererComponent").lock()->LoadTexture("VinetteImage", "Assets/Vinette.png");
     _Background->GetComponent<RendererComponent>("RendererComponent").lock()->LoadTexture("BackgroundImage", "Assets/Background.png");
 
@@ -96,6 +89,7 @@ void myGame::Start()
 
 void myGame::Restart() 
 {
+    //moves player back to start point
     std::shared_ptr<Pine::RendererComponent::Quad>  _PlayerQuad = GetScene<Scene>("Menu").lock()->GetPineObject<Player>("Player1").lock()->GetComponent<RendererComponent>("RendererComponent").lock()->GetQuad("Player");
     _PlayerQuad->s_Pos = GetScene<Scene>("Menu").lock()->GetPineObject<Player>("Player1").lock()->GetPlayerStartPos();
     GetScene<Scene>("Menu").lock()->GetPineObject<Obstacles>("Obstacles").lock()->Reset();
@@ -105,9 +99,10 @@ void myGame::Restart()
 int x, y = 0;
 void myGame::Update(int m_StepTime)
 {
+    //polls for packets. as there are none being sent, this will do nothing.
     if (SERVER)
         Pine::Networking::PineServerNetworkLoop(0);
-
+    //Trys to join server, will delay between each attempt to connect.
     if (CLIENT)
     {
         if (Pine::Networking::PineClientNetworkLoop(0) == EXIT_FAILURE)
@@ -116,17 +111,16 @@ void myGame::Update(int m_StepTime)
                 PINE_WARN("Retrying Connection...");
         }
     }
-    //PINE_ENGINE_WARN("ITS OUT");
 
+
+    //collision detection
     std::vector<std::shared_ptr<Pine::RendererComponent::Quad>> _Quads = GetScene<Scene>("Menu").lock()->GetPineObject<Obstacles>("Obstacles").lock()->GetComponent<RendererComponent>("RendererComponent").lock()->GetAllQuads();
-   std::shared_ptr<Pine::RendererComponent::Quad>  _PlayerQuad = GetScene<Scene>("Menu").lock()->GetPineObject<Player>("Player1").lock()->GetComponent<RendererComponent>("RendererComponent").lock()->GetQuad("Player");
-   std::weak_ptr<Pine::RendererComponent> _PlayerRenderComp = GetScene<Scene>("Menu").lock()->GetPineObject<Player>("Player1").lock()->GetComponent<RendererComponent>("RendererComponent");
+    std::shared_ptr<Pine::RendererComponent::Quad>  _PlayerQuad = GetScene<Scene>("Menu").lock()->GetPineObject<Player>("Player1").lock()->GetComponent<RendererComponent>("RendererComponent").lock()->GetQuad("Player");
+    std::weak_ptr<Pine::RendererComponent> _PlayerRenderComp = GetScene<Scene>("Menu").lock()->GetPineObject<Player>("Player1").lock()->GetComponent<RendererComponent>("RendererComponent");
     for (size_t i = 0; i < _Quads.size(); i++)
     {
         if (_Quads[i]->s_Name == "ObstacleB")
         {
-
-
             if (_PlayerRenderComp.lock()->CheckWithTriangleCollision(_PlayerQuad->s_Pos, _Quads[i]->s_Pos, _PlayerQuad->s_Size, _Quads[i]->s_Size, true))
             {
                 PINE_ENGINE_WARN("ITS IN");
@@ -144,16 +138,11 @@ void myGame::Update(int m_StepTime)
             }
         }
     }
-
-
 }
 
 void myGame::Draw() 
 {
-
-
     m_Cam.SetPosition({ 10,p.y, 0 });
-
 }
 
 void myGame::RenderUI()
@@ -230,10 +219,7 @@ void myGame::eventTrigger(Pine::PEvent& e)
          PINE_INFO("Key Down: {0}", dynamic_cast<Pine::KeyDownEvent&>(e).GetKey());
 
          if (dynamic_cast<Pine::KeyDownEvent&>(e).GetKey() == 26)//w
-         {
-
              y++;
-         }
 
          if (dynamic_cast<Pine::KeyDownEvent&>(e).GetKey() == 22)//s
              y--;

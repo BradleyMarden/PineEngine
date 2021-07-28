@@ -36,8 +36,6 @@ namespace Pine
 		if (flags & Pine_Server)
 			PINE_ASSERT("Error Creating Server.", Pine::Networking::PineServerCreate(2302, 4));
 		
-		//ComponentSystem::InitComponentSystem();
-		
 		//start game flow
 		givenGame->Initialize();
         //maybe we should check if we need atleast one window open
@@ -84,7 +82,6 @@ namespace Pine
 		{
 			frameStart = SDL_GetTicks();
 
-			//TimeStep();
 			LAST = NOW;
 			NOW = SDL_GetPerformanceCounter();
 
@@ -118,76 +115,40 @@ namespace Pine
 
 					for (auto _Comp : givenGame->GetCurrentScene().lock()->GetAllRenderComponentsinScene())
 					{
-						static bool runOnce = true;
-
-						/*if (runOnce)
-						{
-							std::vector<GLuint>_Textures = _Comp->GetAllTextures();
-
-							for (size_t j = 0; j < _Textures.size(); j++)
-							{
-								Renderer::UploadTexture(_Textures[j]);
-								PINE_ENGINE_ERROR("UP {0}", _Textures[j]);
-							}
-							runOnce = false;
-						}*/
-						
-
 						std::vector<std::shared_ptr<RendererComponent::Quad>> _Quads = _Comp->GetAllQuads();
 						std::vector<std::shared_ptr<RendererComponent::Quad>> _TopQuads;
 						std::vector<std::shared_ptr<RendererComponent::Quad>> _NormalQuads;
 						std::vector<std::shared_ptr<RendererComponent::Quad>> _BottomQuads;
-						//if (_Quads.size() != 0)
-						//{
-							for (size_t i = 0; i < _Quads.size(); i++)
-							{
-								if (_Quads[i]->s_LayerLevel == RendererComponent::NONE)
-								{
-									_NormalQuads.push_back(_Quads[i]);
-								}
-								else if(_Quads[i]->s_LayerLevel == RendererComponent::TOP)
-								{
-									_TopQuads.push_back(_Quads[i]);
-								}
-								else if (_Quads[i]->s_LayerLevel == RendererComponent::BOTTOM)
-								{
-									_BottomQuads.push_back(_Quads[i]);
-								}
-							}
+						for (size_t i = 0; i < _Quads.size(); i++)
+						{
+							if (_Quads[i]->s_LayerLevel == RendererComponent::NONE)
+								_NormalQuads.push_back(_Quads[i]);
+							else if(_Quads[i]->s_LayerLevel == RendererComponent::TOP)
+								_TopQuads.push_back(_Quads[i]);
+							else if (_Quads[i]->s_LayerLevel == RendererComponent::BOTTOM)
+								_BottomQuads.push_back(_Quads[i]);
+						}
 
-							for (size_t i = 0; i < _BottomQuads.size(); i++)
-							{
-								Renderer::DrawQuad(_BottomQuads[i]->s_Pos, _BottomQuads[i]->s_Size, _BottomQuads[i]->s_Texture, _BottomQuads[i]->s_Color);
+						for (size_t i = 0; i < _BottomQuads.size(); i++)
+							Renderer::DrawQuad(_BottomQuads[i]->s_Pos, _BottomQuads[i]->s_Size, _BottomQuads[i]->s_Texture, _BottomQuads[i]->s_Color);
+						for (size_t i = 0; i < _NormalQuads.size(); i++)
+							Renderer::DrawQuad(_NormalQuads[i]->s_Pos, _NormalQuads[i]->s_Size, _NormalQuads[i]->s_Texture, _NormalQuads[i]->s_Color);
+						for (size_t i = 0; i < _TopQuads.size(); i++)
+							Renderer::DrawQuad(_TopQuads[i]->s_Pos, _TopQuads[i]->s_Size, _TopQuads[i]->s_Texture, _TopQuads[i]->s_Color);
 
-							}
-							for (size_t i = 0; i < _NormalQuads.size(); i++)
-							{
-								Renderer::DrawQuad(_NormalQuads[i]->s_Pos, _NormalQuads[i]->s_Size, _NormalQuads[i]->s_Texture, _NormalQuads[i]->s_Color);
-
-							}
-							for (size_t i = 0; i < _TopQuads.size(); i++)
-							{
-								Renderer::DrawQuad(_TopQuads[i]->s_Pos, _TopQuads[i]->s_Size, _TopQuads[i]->s_Texture, _TopQuads[i]->s_Color);
-
-							}
 						_Quads.clear();
 						_TopQuads.clear();
 						_NormalQuads.clear();
 						_BottomQuads.clear();
-
 						
 					}
-
-
 					Renderer::EndBatch();
 					Renderer::Flush();
 					givenGame->GetCurrentScene().lock()->RenderUI();
 					givenGame->RenderUI();
 					Renderer::RenderUI();
 					Renderer::SwapWindow();
-
 					HandleEvents();
-
 					break;
 				}
 
@@ -208,7 +169,6 @@ namespace Pine
 			{
 				SDL_Delay(frameDelay - frameTime);
 			}
-			//FPSLimit();
 		}
 	}
 
@@ -217,7 +177,7 @@ namespace Pine
 		givenGame->Update(m_StepTime);
 	}
 
-	void Core::HandleEvents()//all keyboard and mouse events are handled here
+	void Core::HandleEvents()//Main events are fired here. IF you get a crash after adding an event, ensure that you are setting 'e.is_Handled = true;' somewhere down the line when the event is recieved. Otherwise, it will fill the ringbuffer.
 	{
 		SDL_Event e;
 		
@@ -340,9 +300,7 @@ namespace Pine
 		{
 			GLuint _Index = dynamic_cast<Pine::ImageLoadedEvent&>(e).GetImageIndex();
 			Renderer::UploadTexture(_Index);
-			PINE_ENGINE_ERROR("UP {0}", _Index);
 			e.is_Handled = true;
-
 		}
 	}
 	void Core::PineCloseEngine()
@@ -353,23 +311,16 @@ namespace Pine
 			ImGui_ImplSDL2_Shutdown();
 			ImGui::DestroyContext();
 		}
+		Renderer::Shutdown();
 		SDL_Quit();
 		IMG_Quit();
+		Mix_Quit();
 	}
 	void Core::TimeStep()
 	{
-
-		//m_StepTime = 0;
-		//set frame time
-		//frameStart = (float)SDL_GetTicks();
-		//m_StepTime = frameStart - m_LastStepTime;
-		//m_LastStepTime = frameStart;
 		frameStart = SDL_GetTicks();
 		m_StepTime = m_LastStepTime;
 		m_LastStepTime = frameStart;
-		
-
-		
 	}
 
 	void Core::FPSLimit()
@@ -377,8 +328,6 @@ namespace Pine
 		//limit FPS
 		frameTime = SDL_GetTicks() - frameStart;
 		if (frameDelay > frameTime && Renderer::limitFPS)
-		{
 			SDL_Delay(frameDelay - frameTime);
-		}
 	}
 }

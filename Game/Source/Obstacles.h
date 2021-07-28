@@ -39,5 +39,6 @@ private:
 	glm::vec4 m_BottomTriColor = { 1.0 ,1.0 ,1.0 ,1.0 };
 	int m_SpeedIncreaseRequirement = 10;
 	//std::string m_ObstacleName;
+	Mix_Chunk* m_Crash = nullptr;
 
 };

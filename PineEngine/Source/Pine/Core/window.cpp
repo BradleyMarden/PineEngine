@@ -66,7 +66,11 @@ namespace Pine
 			{
 				printf("SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError());
 			}
-
+			//Initialize SDL_mixer
+			if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0)
+			{
+				printf("SDL_mixer could not initialize! SDL_mixer Error: %s\n", Mix_GetError());
+			}
 			return l_Window;
 		}
 		else
@@ -134,7 +138,11 @@ namespace Pine
 			{
 				PINE_ENGINE_ERROR("SDL_image could not initialize! SDL_image Error: {0}", IMG_GetError());
 			}
-
+			//Initialize SDL_mixer
+			if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0)
+			{
+				printf("SDL_mixer could not initialize! SDL_mixer Error: %s\n", Mix_GetError());
+			}
 			return l_Window;
 		}
 		else
@@ -280,7 +288,7 @@ namespace Pine
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 #endif
 
-		SDL_Init(SDL_INIT_VIDEO);
+		SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO);
 		
 	}
 }

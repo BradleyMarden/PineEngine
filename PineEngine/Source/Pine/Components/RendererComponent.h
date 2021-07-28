@@ -10,7 +10,6 @@
 #include "SDL.h"
 #include <SDL_image.h>
 #include "EventSystem.h"
-//#include "Shader.h"
 
 namespace Pine
 {
@@ -47,8 +46,6 @@ namespace Pine
 
 		void DrawQuad(const glm::vec2& p_Pos, const glm::vec2& p_Size, const glm::vec4& p_Color, LayerLevel p_Level);
 
-		//void SetShader(std::string p_Name, SourceShader& p_Shader);
-
 		void DrawQuad(const glm::vec2& p_Pos, const glm::vec2& p_Size, const glm::vec4& p_Color, const int p_ID, LayerLevel p_Level);
 
 		void DrawQuad(const glm::vec2& p_Pos, const glm::vec2& p_Size, const glm::vec4& p_Color, std::string p_Name, LayerLevel p_Level);
@@ -59,11 +56,7 @@ namespace Pine
 
 		void DrawQuad(const glm::vec2& p_Pos, const glm::vec2& p_Size, const char* tex, const glm::vec4& p_Col, std::string p_Name, LayerLevel p_Level);
 
-		std::weak_ptr<Quad> GetQuad(int p_ID);
-
 		std::shared_ptr<Quad> GetQuad(std::string p_Name);
-
-		void HitTest(std::string p_ObjectName);
 
 		bool CheckCollision(glm::vec2 _PosOne, glm::vec2 _PosTwo, glm::vec2 p_SizeOne, glm::vec2 p_SizeTwo);// AABB - AABB collision
 
@@ -87,8 +80,6 @@ namespace Pine
 		std::vector<std::weak_ptr<Quad>> GetQuads();
 
 		std::vector<std::shared_ptr<Quad>> GetAllQuads() { return m_Quads; }
-
-		//std::unordered_map<std::string, int> m_Shaders;
 
 		std::unordered_map<std::string, GLuint> m_Textures;
 

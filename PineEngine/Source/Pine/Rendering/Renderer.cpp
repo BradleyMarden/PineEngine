@@ -49,7 +49,6 @@ namespace Pine {
 	}
 	void Renderer::GLCheckError()
 	{
-		//PINE_ENGINE_INFO("Checking gl");
 		GLenum err;
 		while ((err = glGetError()) != GL_NO_ERROR)
 		{
@@ -60,17 +59,13 @@ namespace Pine {
 	static unsigned int shader;
 	void Renderer::UploadTexture(int p_Tex)
 	{
-		PINE_ENGINE_WARN("UPLOADING");
 		static int i = 1;
 		m_RendererData.s_TextureSlots[i] = p_Tex;
 		m_RendererData.s_TextureSlotIndex++;
 		i++;
-
-	
 	}
 	void Renderer::InitRendering()
 	{
-
 
 		m_RendererData.buffer = new Vertex[m_MaxVertexCount];
 		if (renderer == nullptr)
@@ -87,26 +82,7 @@ namespace Pine {
 		glUniformMatrix4fv(loc, 1, GL_FALSE, &m_Camera->GetViewProjectionMatrix()[0][0]);
 
 		//TEXTURE
-			//load texture
 		CreateWhiteTexture();//must be called first as it sets all remaining tex slots to zero for safety;
-
-		//UploadTexture(LoadTexture("Assets/PineEngineText.png"));
-		//m_RendererData.s_TextureSlots[1] = LoadTexture("Assets/PineEngineText.png");
-		//m_RendererData.s_TextureSlotIndex++;
-
-		//UploadTexture(LoadTexture("Assets/soil.png"));
-		//m_RendererData.s_TextureSlots[2] = LoadTexture("Assets/soil.png");
-		//m_RendererData.s_TextureSlotIndex++;
-
-		//UploadTexture(LoadTexture("Assets/Background.png"));
-		//m_RendererData.s_TextureSlots[3] = LoadTexture("Assets/Background.png");
-		//m_RendererData.s_TextureSlotIndex++;
-
-		//UploadTexture(LoadTexture("Assets/Vinette.png"));
-		//m_RendererData.s_TextureSlots[4] = LoadTexture("Assets/Vinette.png");
-		//m_RendererData.s_TextureSlotIndex++;
-		
-		//set texture
 
 		int location = glGetUniformLocation(shader, "u_tex");
 		int samplers[32];
@@ -116,15 +92,6 @@ namespace Pine {
 		}
 		glUniform1iv(location, 32, samplers);
 		//VERTEX LAYOUT  
-
-		//glm::mat4 projection = glm::ortho(0.0f, Window::GetMainWindow()->s_WindowSize.x, 0.0f, Window::GetMainWindow()->s_WindowSize.y, -1.0f, 1.0f);//converts screen space to values between -1:1
-		//glm::mat4 view = glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0));//can be used to imitate move camera(works by shifting all onjects in scene)
-		//glm::mat4 model = glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0));//controls positon of object on screen
-		//glm::mat4 mvp = projection * view * model;
-
-		//glm::mat4 projection = glm::ortho(-2.0f, 2.0f, -1.5f, 1.5f, -1.0f, 1.0f);
-		
-
 
 		//set and bind vertex array
 		glCreateVertexArrays(1, &m_RendererData.s_VertexArray);
@@ -212,14 +179,12 @@ namespace Pine {
 	void Renderer::BeginBatch() 
 	{
 		m_RendererData.bufferPtr = m_RendererData.buffer;
-
 	}
 	void Renderer::EndBatch() 
 	{
 		GLsizeiptr size = (uint8_t*)m_RendererData.bufferPtr - (uint8_t*)m_RendererData.buffer;
 		glBindBuffer(GL_ARRAY_BUFFER, m_RendererData.s_VertexBuffer);
 		glBufferSubData(GL_ARRAY_BUFFER, 0,size,m_RendererData.buffer);
-	
 	}
 
 	void Renderer::ResetStats()
@@ -244,12 +209,6 @@ namespace Pine {
 		//LOAD SHADER AND TEXTURES
 		glUseProgram(shader);
 		
-		//glBindTextureUnit(0, m_RendererData.s_TextureSlots[0]);
-		//glBindTextureUnit(1, m_RendererData.s_TextureSlots[1]);
-		//glBindTextureUnit(2, m_RendererData.s_TextureSlots[2]);
-		//glBindTextureUnit(3, m_RendererData.s_TextureSlots[3]);
-		//glBindTextureUnit(4, m_RendererData.s_TextureSlots[4]);
-
 
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		GLCheckError();
@@ -258,8 +217,6 @@ namespace Pine {
 		glBindVertexArray(m_RendererData.s_VertexArray);
 		glDrawElements(GL_TRIANGLES, m_RendererData.s_IndexCount, GL_UNSIGNED_INT, nullptr);
 		GLCheckError();
-		//RenderUI();
-		
 		m_RendererData.s_IndexCount = 0;
 		// Start the Dear ImGui frame
 		ImGui_ImplOpenGL3_NewFrame();
@@ -275,7 +232,6 @@ namespace Pine {
 			SDL_GL_SwapWindow(Window::GetWindowGLData(Window::GetMainWindow()->s_WindowName)->s_Window);
 			GLCheckError();
 			glUseProgram(0);
-
 		}
 	}
 	static glm::vec4& m_Color = glm::vec4{ 0.0f,0.0f ,0.0f ,1.0f };
@@ -293,11 +249,7 @@ namespace Pine {
 		ImGui::Begin("PineEngine");
 		ImGui::Text("Window Width: %f", Window::GetMainWindow()->s_WindowSize.x);
 		ImGui::Text("Window Height: %f", Window::GetMainWindow()->s_WindowSize.y);
-
-		ImGui::SliderFloat4("Color", &m_Color.r, 0.0f, 1.0f);
 		ImGui::Checkbox("Limit FPS to 60", &limitFPS);
-		//if (ImGui::Checkbox("Limit FPS to 60", &limitFPS))
-			//limitFPS = !limitFPS;
 		PVector2f mousePos = Input::GetMousePosition();
 		ImGui::Text("Mouse X pos: %f", mousePos.X);
 		ImGui::Text("Mouse Y pos: %f", mousePos.Y);
@@ -398,7 +350,6 @@ namespace Pine {
 
 
 		m_RendererData.s_IndexCount += 6;
-
 		m_RendererData.quadCount++;
 
 	
@@ -466,7 +417,6 @@ namespace Pine {
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, loadedSurface->w, loadedSurface->h, 0, GL_RGBA, GL_UNSIGNED_BYTE, loadedSurface->pixels);
-			//printf("IMG_Load: %s\n", IMG_GetError());
 			SDL_FreeSurface(loadedSurface);
 			return texID;
 		}

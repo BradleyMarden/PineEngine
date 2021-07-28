@@ -12,13 +12,6 @@ void Obstacles::Start()
 	m_RendComp.lock()->LoadTexture("Triangle", "Assets/BottomTriangle.png");
 	m_RendComp.lock()->LoadTexture("TriangleTop", "Assets/TopTriangle.png");
 
-	//m_RendComp.lock()->LoadTexture("BG", "Assets/Background.png");
-	//m_RendComp.lock()->LoadTexture("Vinette", "Assets/Vinette.png");
-
-	//m_RendComp.lock()->DrawQuad({ 3,3 }, { 30 ,30 }, { 0.0,1.0,0.0,1.0 }, "thing", Pine::RendererComponent::TOP);
-	//m_RendComp.lock()->DrawQuad({ 3,3 }, { 30 ,30 }, { 1.0,0.0,0.0,1.0 }, "thing1", Pine::RendererComponent::TOP);
-	//m_RendComp.lock()->DrawQuad({ 3,3 }, { 30 ,30 }, { 0.0,0.0,1.0,1.0 }, "thing2", Pine::RendererComponent::TOP);
-	//m_RendComp.lock()->DrawQuad({ 3,3 }, { 30 ,30 }, { 0.0,1.0,1.0,1.0 }, "thing3", Pine::RendererComponent::TOP);
 
 	float _Height = Pine::Window::GetWindowHeight(Pine::Window::GetMainWindow()->s_WindowName) - 180;
 	float _Width = Pine::Window::GetWindowWidth(Pine::Window::GetMainWindow()->s_WindowName) - 180;
@@ -35,11 +28,6 @@ void Obstacles::Start()
 	m_RendComp.lock()->DrawQuad({ _Width + 200, _Height }, { 200 ,180 }, "TriangleTop", m_TopTriColor, "ObstacleT", Pine::RendererComponent::NONE);
 	m_RendComp.lock()->DrawQuad({ _Width + 900, _Height }, { 200 ,180 }, "TriangleTop", m_TopTriColor, "ObstacleT", Pine::RendererComponent::NONE);
 
-	//m_RendComp.lock()->DrawQuad({ Pine::Window::GetWindowWidth(Pine::Window::GetMainWindow()->s_WindowName) / 2 - 150,20 }, { 30 ,30 }, "test", { 1.0,1.0,1.0,1.0 }, "Player", Pine::RendererComponent::NONE);
-	//m_RendComp.lock()->DrawQuad({ 300,20 }, { 30 ,30 }, "PineLogo", { 1.0,1.0,1.0,0.5 }, "play", Pine::RendererComponent::NONE);
-	//m_RendComp.lock()->DrawQuad({ 0,0 }, { Pine::Window::GetWindowWidth(Pine::Window::GetMainWindow()->s_WindowName),Pine::Window::GetWindowHeight(Pine::Window::GetMainWindow()->s_WindowName) }, "Vinette", { 1.0,1.0,1.0,1.0 }, "Vinette", Pine::RendererComponent::TOP);
-	//m_RendComp.lock()->DrawQuad({ 0,0 }, { Pine::Window::GetWindowWidth(Pine::Window::GetMainWindow()->s_WindowName),Pine::Window::GetWindowHeight(Pine::Window::GetMainWindow()->s_WindowName) }, "BG", { 1.0,1.0,1.0,1.0 }, "Background", Pine::RendererComponent::BOTTOM);
-
 
 
 }
@@ -49,13 +37,12 @@ void Obstacles::Update(float p_StepTime)
 	std::vector<std::shared_ptr<Pine::RendererComponent::Quad>> _Quads = GetComponent<Pine::RendererComponent>("RendererComponent").lock()->GetAllQuads();
 	for (size_t i = 0; i < _Quads.size(); i++)
 	{
+		//Obstacle off screen
 		if (_Quads[i]->s_Pos.x < -_Quads[i]->s_Size.x/2)
 		{
 			if (_Quads[i]->s_Name == "ObstacleT")
 			{
 				_Quads[i]->s_Pos.x = m_LastPos;
-				//_Quads[i]->s_Pos.x += (rand() % 800 + 1);
-				//_Quads[i]->s_Size.x = (rand() % 70 + 120);
 				_Quads[i]->s_Size.y = _Quads[i]->s_Size.x = (rand() % 90 + 140);
 				_Quads[i]->s_Pos.y = Pine::Window::GetWindowHeight(Pine::Window::GetMainWindow()->s_WindowName) - _Quads[i]->s_Size.y;
 				m_PassedScreenCounter++;
@@ -66,8 +53,6 @@ void Obstacles::Update(float p_StepTime)
 			if (_Quads[i]->s_Name == "ObstacleB")
 			{
 				_Quads[i]->s_Pos.x = m_LastPos;
-				//_Quads[i]->s_Pos.x += (rand() % 800+ 1);
-				//_Quads[i]->s_Size.x = (rand() % 70 + 120);
 				_Quads[i]->s_Size.y = _Quads[i]->s_Size.x = (rand() % 90 + 140);
 				m_PassedScreenCounter++;
 
@@ -75,8 +60,10 @@ void Obstacles::Update(float p_StepTime)
 		
 
 		}
+		//scroll obstacle
 		_Quads[i]->s_Pos.x -= m_ScrollSpeed;
 
+		//set obstacle color
 		if (_Quads[i]->s_Name == "ObstacleT")
 		{
 			_Quads[i]->s_Color = m_TopTriColor;
@@ -87,6 +74,7 @@ void Obstacles::Update(float p_StepTime)
 
 		}
 	}
+	//some game logic
 	if (m_PassedScreenCounter > m_SpeedIncreaseRequirement)
 	{
 	
@@ -106,26 +94,19 @@ void Obstacles::Update(float p_StepTime)
 void Obstacles::Reset()
 {
 	std::vector<std::shared_ptr<Pine::RendererComponent::Quad>> _Quads = GetComponent<Pine::RendererComponent>("RendererComponent").lock()->GetAllQuads();
-
 	for (size_t i = 0; i < _Quads.size(); i++)
 	{
 
 			if (_Quads[i]->s_Name == "ObstacleT")
 			{
-				//m_LastPos = (rand() % 800 + 100);
 				_Quads[i]->s_Pos.x += m_LastPos;
-				//_Quads[i]->s_Pos.x += (rand() % 800 + 1);
-				//_Quads[i]->s_Size.x = (rand() % 70 + 120);
 				_Quads[i]->s_Size.y = _Quads[i]->s_Size.x = (rand() % 90 + 140);
 				_Quads[i]->s_Pos.y = Pine::Window::GetWindowHeight(Pine::Window::GetMainWindow()->s_WindowName) - _Quads[i]->s_Size.y;
 
 			}
 			if (_Quads[i]->s_Name == "ObstacleB")
 			{
-				//m_LastPos = (rand() %  800 + 100);
 				_Quads[i]->s_Pos.x += m_LastPos;
-				//_Quads[i]->s_Pos.x += (rand() % 800 + 1);
-				//_Quads[i]->s_Size.x = (rand() % 70 + 120);
 				_Quads[i]->s_Size.y = _Quads[i]->s_Size.x = (rand() % 90 + 140);
 			}
 
@@ -151,23 +132,18 @@ void Obstacles::Render()
 
 void Obstacles::UIRender()
 {
-
-	
-	//ImGui::NewFrame();
 	ImGui::SetNextWindowPos(ImVec2(0, Pine::Window::GetWindowHeight(Pine::Window::GetMainWindow()->s_WindowName) / 2), ImGuiCond_Always);
 	ImGui::SetNextWindowSize(ImVec2(300, 100), ImGuiCond_Always);
 
 	static float f = 0.0f;
 	//IMGUI START
-	ImGui::Begin("PLAYER");
+	ImGui::Begin("Obstacles");
 	ImGui::SliderFloat4("Top Tri Colors", &m_TopTriColor.r, 0.0f, 1.0f);
 	ImGui::SliderFloat4("Bottom Tri Colors", &m_BottomTriColor.r, 0.0f, 1.0f);
+	ImGui::SliderInt("ScrollSpeed", &m_ScrollSpeed, 0.0f, 10.0f);
 	ImGui::Text("Score: %i", m_PassedScreenCounter);
 	ImGui::End();
 	//IMGUI END
-
-	
-	
 }
 
 void Obstacles::OnTerminate()

@@ -7,6 +7,7 @@
 
 
 #include <SDL_image.h>
+#include <SDL_mixer.h>
 
 
 #ifdef PINE_PLATFORM_WINDOWS

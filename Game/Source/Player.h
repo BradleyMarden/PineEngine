@@ -36,5 +36,6 @@ private:
 	glm::vec3 m_PlayerPos = { 0.0f,0.0f ,0.0f };
 	glm::vec2 pos;
 	std::string m_PlayerName;
-	bool shoot = false;
+	//The music that will be played
+	Mix_Music* gMusic = NULL;
 };
