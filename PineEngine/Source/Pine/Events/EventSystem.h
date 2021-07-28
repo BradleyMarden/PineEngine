@@ -8,6 +8,7 @@
 
 #include "Log.h"
 #include "Input.h"
+#include "glew.h"
 //#include "Event.h"
 
 namespace Pine {
@@ -31,7 +32,9 @@ namespace Pine {
 		WindowResize, WindowClose, WindowMinimize, WindowMoved, WindowFocus, WindowLostFocus,
 		KeyDown, KeyUp, KeyHold,
 		MouseButtonDown, MouseButtonUp, MouseMoved,
-		MiddleMouseScroll
+		MiddleMouseScroll,
+		NetworkPacketRecieve, NetworkPlayerConnected, NetworkPlayerDisconnected,
+		ImageLoad
 
 	};
 
@@ -43,7 +46,9 @@ namespace Pine {
 		MouseEvent =	SETBIT(1),	//this equates to '0000 0000 0000 0000 0000 0000 0000 0010'
 		InputEvent =	SETBIT(2),	//this equates to '0000 0000 0000 0000 0000 0000 0000 0100'
 		WindowEvent =	SETBIT(3),	//this equates to '0000 0000 0000 0000 0000 0000 0000 1000'
-		GameEvent =		SETBIT(4)	//this equates to '0000 0000 0000 0000 0000 0000 0001 0000'
+		GameEvent =		SETBIT(4),	//this equates to '0000 0000 0000 0000 0000 0000 0001 0000'
+		NetworkEvent =  SETBIT(5),
+		ImageEvent =	SETBIT(6)
 	};
 
 
@@ -54,8 +59,6 @@ namespace Pine {
 		virtual int			GetCatFlags()			const = 0;
 		virtual EventType	GetEventType()			const = 0;
 		virtual int			GetSizeOfCatFlags()		const = 0;//debug only. Returns the size of the category bitset
-
-
 		bool		IsInCategory(EventCategory p_Cat){return GetCatFlags()& p_Cat;}
 		void		SetRepeat(bool p_Repeat) { s_is_Repeat = p_Repeat;  }
 		bool		is_Handled = false;
@@ -73,7 +76,20 @@ namespace Pine {
 	class EventSystem
 	{
 	public:
+		~EventSystem() 
+		{
+			for (int i = 0; i < (sizeof(m_PendingEvents) / sizeof(data)); i++) 
+			{
 
+				if (m_PendingEvents[i] != nullptr)
+				{
+					delete(m_PendingEvents[i]);
+
+				}
+			}
+
+			
+		}
 		static void PublishEvent(PEvent* p_Event)
 		{
 			//ISSUE check working, just not printing to the console.
@@ -144,8 +160,7 @@ namespace Pine {
 					//if the event is handled we no longer need it, remove it. 
 					if (m_PendingEvents[num]->GetEvent().is_Handled)
 					{
-						std::cout << "Removing event as it has been handled" << std::endl;
-
+						PINE_ENGINE_INFO("Removing event as it has been handled");
 						delete m_PendingEvents[num];
 
 						m_PendingEvents[num] = nullptr;
@@ -214,16 +229,66 @@ namespace Pine {
 	//Event takes care of itself, when created with a pointer
 	//The events need to be moved either to the event.cpp, or into a class that deals with the event type. 
 
+	struct ImageLoadedEvent : PEvent
+	{
+
+		ImageLoadedEvent(GLuint p_TexPos) : imageIndex(p_TexPos)
+		{
+			EventSystem::PublishEvent(this);
+		}
+
+		GLuint GetImageIndex() const { return imageIndex; }
+		SET_EVENT_TYPE(ImageLoad);
+		SET_CATEGORY_TYPE(ImageEvent);
+
+	private:
+		GLuint imageIndex;
+	};
+	struct NetworkPlayerJoinedEvent : PEvent
+	{
+
+		NetworkPlayerJoinedEvent() : Name(), pos()
+		{
+			EventSystem::PublishEvent(this);
+		}
+
+		//std::string GetName() const { return Name; }
+		//glm::vec2 GetPosition() const { return pos; }
+		SET_EVENT_TYPE(NetworkPlayerConnected);
+		SET_CATEGORY_TYPE(NetworkEvent);
+
+	private:
+		std::string Name;
+		glm::vec2 pos;
+	};
+	struct NetworkPacketEvent : PEvent
+	{
+
+		NetworkPacketEvent(std::string p_Packet) : packet(p_Packet)
+		{
+			EventSystem::PublishEvent(this);
+		}
+
+		std::string GetPacket() const { return packet; }
+		int SizeOfPacket() const { return sizeof(packet); }
+		SET_EVENT_TYPE(NetworkPacketRecieve);
+		SET_CATEGORY_TYPE(NetworkEvent);
+
+	private:
+		std::string packet;
+	};
+
 	struct WindowResizeEvent : PEvent
 	{
 
-		WindowResizeEvent(unsigned int width, unsigned int height) : x(width), y(height)
+		WindowResizeEvent(unsigned int width, unsigned int height, const char* p_WindowName) : x(width), y(height), windowName(p_WindowName)
 		{
 			EventSystem::PublishEvent(this);
 		}
 
 		unsigned int GetWidth() const { return x; }
 		unsigned int GetHeight() const { return y; }
+		const char* GetWindowName() const { return windowName; }
 
 		SET_EVENT_TYPE(WindowResize);
 		SET_CATEGORY_TYPE(WindowEvent);
@@ -231,11 +296,30 @@ namespace Pine {
 	private:
 		int x = 100;
 		int y = 100;
+		const char* windowName;
+
 	};
+
+	struct WindowCloseEvent : PEvent
+	{
+
+		WindowCloseEvent(const char* p_WindowName): windowName(p_WindowName)
+		{
+			EventSystem::PublishEvent(this);
+		}
+
+		const char* GetWindowName() const { return windowName; }
+		SET_EVENT_TYPE(WindowClose);
+		SET_CATEGORY_TYPE(WindowEvent);
+
+	private:
+		const char* windowName;
+	};
+
 	//p_X is the x position of the cursor, p_Y is the y pos of the cursor, p_button for the Input::TYPE of mouse press, and bool for if the button is held. The event when created will self publish to the event system
 	struct MouseButtonDownEvent : PEvent
 	{
-		MouseButtonDownEvent(int p_X, int p_Y, Input::MouseButtons p_Button, bool p_Held) : x(p_X), y(p_Y),l_button(p_Button), held(p_Held)
+		MouseButtonDownEvent(int p_X, int p_Y, Input::MouseButtons p_Button, bool p_Held, const char* p_WindowName) : x(p_X), y(p_Y),l_button(p_Button), held(p_Held), windowName(p_WindowName)
 		{
 			EventSystem::PublishEvent(this);
 		}
@@ -243,6 +327,7 @@ namespace Pine {
 		int GetX() const { return x; }
 		int GetY() const { return y; }
 		Input::MouseButtons GetButtonDown() const { return l_button; }
+		const char* GetWindowName() const { return windowName; }
 
 		bool IsHeld() const { return held; }
 
@@ -254,12 +339,11 @@ namespace Pine {
 		int y;
 		bool held;
 		Input::MouseButtons l_button;
-
-
+		const char* windowName;
 	};
 	struct MouseButtonUpEvent : PEvent
 	{
-		MouseButtonUpEvent(int p_X, int p_Y, Input::MouseButtons p_Button, bool p_Held) : x(p_X), y(p_Y), l_button(p_Button), held(p_Held)
+		MouseButtonUpEvent(int p_X, int p_Y, Input::MouseButtons p_Button, bool p_Held, const char* p_WindowName) : x(p_X), y(p_Y), l_button(p_Button), held(p_Held), windowName(p_WindowName)
 		{
 			EventSystem::PublishEvent(this);
 		}
@@ -267,6 +351,7 @@ namespace Pine {
 		int GetX() const { return x; }
 		int GetY() const { return y; }
 		Input::MouseButtons GetButtonDown() const { return l_button; }
+		const char* GetWindowName() const { return windowName; }
 
 		bool IsHeld() const { return held; }
 
@@ -278,8 +363,25 @@ namespace Pine {
 		int y;
 		bool held;
 		Input::MouseButtons l_button;
+		const char* windowName;
 
 
+	};
+
+	struct MouseScrollEvent : PEvent
+	{
+
+		MouseScrollEvent(float p_Ofset) : l_Offset(p_Ofset)
+		{
+			EventSystem::PublishEvent(this);
+		}
+
+		int GetOffset() const { return l_Offset; }
+		SET_EVENT_TYPE(MiddleMouseScroll);
+		SET_CATEGORY_TYPE(MouseEvent | InputEvent);
+
+	private:
+		const float l_Offset;
 	};
 	struct KeyDownEvent :PEvent 
 	{

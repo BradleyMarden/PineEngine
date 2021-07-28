@@ -182,33 +182,6 @@ Game/Source/MyGame.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/Game/Source/MyGame.cpp.s
 .PHONY : Game/Source/MyGame.cpp.s
 
-Game/Source/main.o: Game/Source/main.cpp.o
-
-.PHONY : Game/Source/main.o
-
-# target to build an object file
-Game/Source/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/Game/Source/main.cpp.o
-.PHONY : Game/Source/main.cpp.o
-
-Game/Source/main.i: Game/Source/main.cpp.i
-
-.PHONY : Game/Source/main.i
-
-# target to preprocess a source file
-Game/Source/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/Game/Source/main.cpp.i
-.PHONY : Game/Source/main.cpp.i
-
-Game/Source/main.s: Game/Source/main.cpp.s
-
-.PHONY : Game/Source/main.s
-
-# target to generate assembly for a file
-Game/Source/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/Game/Source/main.cpp.s
-.PHONY : Game/Source/main.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -222,9 +195,6 @@ help:
 	@echo "... Game/Source/MyGame.o"
 	@echo "... Game/Source/MyGame.i"
 	@echo "... Game/Source/MyGame.s"
-	@echo "... Game/Source/main.o"
-	@echo "... Game/Source/main.i"
-	@echo "... Game/Source/main.s"
 .PHONY : help
 
 

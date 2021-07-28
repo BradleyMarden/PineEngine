@@ -79,89 +79,313 @@ include PineEngine/CMakeFiles/PineEngine.dir/flags.make
 PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/Core.cpp.o: PineEngine/CMakeFiles/PineEngine.dir/flags.make
 PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/Core.cpp.o: ../PineEngine/Source/Pine/Core/Core.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/Core.cpp.o"
-	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PineEngine.dir/Source/Pine/Core/Core.cpp.o -c /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Core.cpp
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PineEngine.dir/Source/Pine/Core/Core.cpp.o -c /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Core.cpp
 
 PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/Core.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PineEngine.dir/Source/Pine/Core/Core.cpp.i"
-	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Core.cpp > CMakeFiles/PineEngine.dir/Source/Pine/Core/Core.cpp.i
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Core.cpp > CMakeFiles/PineEngine.dir/Source/Pine/Core/Core.cpp.i
 
 PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/Core.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PineEngine.dir/Source/Pine/Core/Core.cpp.s"
-	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Core.cpp -o CMakeFiles/PineEngine.dir/Source/Pine/Core/Core.cpp.s
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Core.cpp -o CMakeFiles/PineEngine.dir/Source/Pine/Core/Core.cpp.s
 
 PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/Game.cpp.o: PineEngine/CMakeFiles/PineEngine.dir/flags.make
 PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/Game.cpp.o: ../PineEngine/Source/Pine/Core/Game.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/Game.cpp.o"
-	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PineEngine.dir/Source/Pine/Core/Game.cpp.o -c /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Game.cpp
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PineEngine.dir/Source/Pine/Core/Game.cpp.o -c /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Game.cpp
 
 PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/Game.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PineEngine.dir/Source/Pine/Core/Game.cpp.i"
-	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Game.cpp > CMakeFiles/PineEngine.dir/Source/Pine/Core/Game.cpp.i
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Game.cpp > CMakeFiles/PineEngine.dir/Source/Pine/Core/Game.cpp.i
 
 PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/Game.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PineEngine.dir/Source/Pine/Core/Game.cpp.s"
-	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Game.cpp -o CMakeFiles/PineEngine.dir/Source/Pine/Core/Game.cpp.s
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Game.cpp -o CMakeFiles/PineEngine.dir/Source/Pine/Core/Game.cpp.s
 
 PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/Input.cpp.o: PineEngine/CMakeFiles/PineEngine.dir/flags.make
 PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/Input.cpp.o: ../PineEngine/Source/Pine/Core/Input.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/Input.cpp.o"
-	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PineEngine.dir/Source/Pine/Core/Input.cpp.o -c /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Input.cpp
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PineEngine.dir/Source/Pine/Core/Input.cpp.o -c /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Input.cpp
 
 PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/Input.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PineEngine.dir/Source/Pine/Core/Input.cpp.i"
-	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Input.cpp > CMakeFiles/PineEngine.dir/Source/Pine/Core/Input.cpp.i
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Input.cpp > CMakeFiles/PineEngine.dir/Source/Pine/Core/Input.cpp.i
 
 PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/Input.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PineEngine.dir/Source/Pine/Core/Input.cpp.s"
-	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Input.cpp -o CMakeFiles/PineEngine.dir/Source/Pine/Core/Input.cpp.s
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Input.cpp -o CMakeFiles/PineEngine.dir/Source/Pine/Core/Input.cpp.s
+
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/EntryPoint.cpp.o: PineEngine/CMakeFiles/PineEngine.dir/flags.make
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/EntryPoint.cpp.o: ../PineEngine/Source/Pine/Core/EntryPoint.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/EntryPoint.cpp.o"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PineEngine.dir/Source/Pine/Core/EntryPoint.cpp.o -c /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/EntryPoint.cpp
+
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/EntryPoint.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PineEngine.dir/Source/Pine/Core/EntryPoint.cpp.i"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/EntryPoint.cpp > CMakeFiles/PineEngine.dir/Source/Pine/Core/EntryPoint.cpp.i
+
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/EntryPoint.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PineEngine.dir/Source/Pine/Core/EntryPoint.cpp.s"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/EntryPoint.cpp -o CMakeFiles/PineEngine.dir/Source/Pine/Core/EntryPoint.cpp.s
+
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/window.cpp.o: PineEngine/CMakeFiles/PineEngine.dir/flags.make
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/window.cpp.o: ../PineEngine/Source/Pine/Core/window.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/window.cpp.o"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PineEngine.dir/Source/Pine/Core/window.cpp.o -c /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/window.cpp
+
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/window.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PineEngine.dir/Source/Pine/Core/window.cpp.i"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/window.cpp > CMakeFiles/PineEngine.dir/Source/Pine/Core/window.cpp.i
+
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/window.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PineEngine.dir/Source/Pine/Core/window.cpp.s"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/window.cpp -o CMakeFiles/PineEngine.dir/Source/Pine/Core/window.cpp.s
 
 PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Logging/Log.cpp.o: PineEngine/CMakeFiles/PineEngine.dir/flags.make
 PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Logging/Log.cpp.o: ../PineEngine/Source/Pine/Logging/Log.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Logging/Log.cpp.o"
-	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PineEngine.dir/Source/Pine/Logging/Log.cpp.o -c /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Logging/Log.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Logging/Log.cpp.o"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PineEngine.dir/Source/Pine/Logging/Log.cpp.o -c /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Logging/Log.cpp
 
 PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Logging/Log.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PineEngine.dir/Source/Pine/Logging/Log.cpp.i"
-	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Logging/Log.cpp > CMakeFiles/PineEngine.dir/Source/Pine/Logging/Log.cpp.i
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Logging/Log.cpp > CMakeFiles/PineEngine.dir/Source/Pine/Logging/Log.cpp.i
 
 PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Logging/Log.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PineEngine.dir/Source/Pine/Logging/Log.cpp.s"
-	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Logging/Log.cpp -o CMakeFiles/PineEngine.dir/Source/Pine/Logging/Log.cpp.s
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Logging/Log.cpp -o CMakeFiles/PineEngine.dir/Source/Pine/Logging/Log.cpp.s
 
 PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Maths/PMaths.cpp.o: PineEngine/CMakeFiles/PineEngine.dir/flags.make
 PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Maths/PMaths.cpp.o: ../PineEngine/Source/Pine/Maths/PMaths.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Maths/PMaths.cpp.o"
-	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PineEngine.dir/Source/Pine/Maths/PMaths.cpp.o -c /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Maths/PMaths.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Maths/PMaths.cpp.o"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PineEngine.dir/Source/Pine/Maths/PMaths.cpp.o -c /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Maths/PMaths.cpp
 
 PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Maths/PMaths.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PineEngine.dir/Source/Pine/Maths/PMaths.cpp.i"
-	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Maths/PMaths.cpp > CMakeFiles/PineEngine.dir/Source/Pine/Maths/PMaths.cpp.i
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Maths/PMaths.cpp > CMakeFiles/PineEngine.dir/Source/Pine/Maths/PMaths.cpp.i
 
 PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Maths/PMaths.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PineEngine.dir/Source/Pine/Maths/PMaths.cpp.s"
-	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Maths/PMaths.cpp -o CMakeFiles/PineEngine.dir/Source/Pine/Maths/PMaths.cpp.s
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Maths/PMaths.cpp -o CMakeFiles/PineEngine.dir/Source/Pine/Maths/PMaths.cpp.s
 
 PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Networking/Networking.cpp.o: PineEngine/CMakeFiles/PineEngine.dir/flags.make
 PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Networking/Networking.cpp.o: ../PineEngine/Source/Pine/Networking/Networking.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Networking/Networking.cpp.o"
-	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PineEngine.dir/Source/Pine/Networking/Networking.cpp.o -c /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Networking/Networking.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Networking/Networking.cpp.o"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PineEngine.dir/Source/Pine/Networking/Networking.cpp.o -c /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Networking/Networking.cpp
 
 PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Networking/Networking.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PineEngine.dir/Source/Pine/Networking/Networking.cpp.i"
-	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Networking/Networking.cpp > CMakeFiles/PineEngine.dir/Source/Pine/Networking/Networking.cpp.i
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Networking/Networking.cpp > CMakeFiles/PineEngine.dir/Source/Pine/Networking/Networking.cpp.i
 
 PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Networking/Networking.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PineEngine.dir/Source/Pine/Networking/Networking.cpp.s"
-	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Networking/Networking.cpp -o CMakeFiles/PineEngine.dir/Source/Pine/Networking/Networking.cpp.s
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Networking/Networking.cpp -o CMakeFiles/PineEngine.dir/Source/Pine/Networking/Networking.cpp.s
+
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Renderer.cpp.o: PineEngine/CMakeFiles/PineEngine.dir/flags.make
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Renderer.cpp.o: ../PineEngine/Source/Pine/Rendering/Renderer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Renderer.cpp.o"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Renderer.cpp.o -c /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Renderer.cpp
+
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Renderer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Renderer.cpp.i"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Renderer.cpp > CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Renderer.cpp.i
+
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Renderer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Renderer.cpp.s"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Renderer.cpp -o CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Renderer.cpp.s
+
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Shader.cpp.o: PineEngine/CMakeFiles/PineEngine.dir/flags.make
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Shader.cpp.o: ../PineEngine/Source/Pine/Rendering/Shader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Shader.cpp.o"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Shader.cpp.o -c /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Shader.cpp
+
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Shader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Shader.cpp.i"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Shader.cpp > CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Shader.cpp.i
+
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Shader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Shader.cpp.s"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Shader.cpp -o CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Shader.cpp.s
+
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/LayerManager.cpp.o: PineEngine/CMakeFiles/PineEngine.dir/flags.make
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/LayerManager.cpp.o: ../PineEngine/Source/Pine/Rendering/LayerManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/LayerManager.cpp.o"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PineEngine.dir/Source/Pine/Rendering/LayerManager.cpp.o -c /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/LayerManager.cpp
+
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/LayerManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PineEngine.dir/Source/Pine/Rendering/LayerManager.cpp.i"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/LayerManager.cpp > CMakeFiles/PineEngine.dir/Source/Pine/Rendering/LayerManager.cpp.i
+
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/LayerManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PineEngine.dir/Source/Pine/Rendering/LayerManager.cpp.s"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/LayerManager.cpp -o CMakeFiles/PineEngine.dir/Source/Pine/Rendering/LayerManager.cpp.s
+
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Layer.cpp.o: PineEngine/CMakeFiles/PineEngine.dir/flags.make
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Layer.cpp.o: ../PineEngine/Source/Pine/Rendering/Layer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Layer.cpp.o"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Layer.cpp.o -c /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Layer.cpp
+
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Layer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Layer.cpp.i"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Layer.cpp > CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Layer.cpp.i
+
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Layer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Layer.cpp.s"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Layer.cpp -o CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Layer.cpp.s
+
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Events/EventSystem.cpp.o: PineEngine/CMakeFiles/PineEngine.dir/flags.make
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Events/EventSystem.cpp.o: ../PineEngine/Source/Pine/Events/EventSystem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Events/EventSystem.cpp.o"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PineEngine.dir/Source/Pine/Events/EventSystem.cpp.o -c /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/EventSystem.cpp
+
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Events/EventSystem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PineEngine.dir/Source/Pine/Events/EventSystem.cpp.i"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/EventSystem.cpp > CMakeFiles/PineEngine.dir/Source/Pine/Events/EventSystem.cpp.i
+
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Events/EventSystem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PineEngine.dir/Source/Pine/Events/EventSystem.cpp.s"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/EventSystem.cpp -o CMakeFiles/PineEngine.dir/Source/Pine/Events/EventSystem.cpp.s
+
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Events/Event.cpp.o: PineEngine/CMakeFiles/PineEngine.dir/flags.make
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Events/Event.cpp.o: ../PineEngine/Source/Pine/Events/Event.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Events/Event.cpp.o"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PineEngine.dir/Source/Pine/Events/Event.cpp.o -c /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/Event.cpp
+
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Events/Event.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PineEngine.dir/Source/Pine/Events/Event.cpp.i"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/Event.cpp > CMakeFiles/PineEngine.dir/Source/Pine/Events/Event.cpp.i
+
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Events/Event.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PineEngine.dir/Source/Pine/Events/Event.cpp.s"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/Event.cpp -o CMakeFiles/PineEngine.dir/Source/Pine/Events/Event.cpp.s
+
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Events/EventBinder.cpp.o: PineEngine/CMakeFiles/PineEngine.dir/flags.make
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Events/EventBinder.cpp.o: ../PineEngine/Source/Pine/Events/EventBinder.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Events/EventBinder.cpp.o"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PineEngine.dir/Source/Pine/Events/EventBinder.cpp.o -c /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/EventBinder.cpp
+
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Events/EventBinder.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PineEngine.dir/Source/Pine/Events/EventBinder.cpp.i"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/EventBinder.cpp > CMakeFiles/PineEngine.dir/Source/Pine/Events/EventBinder.cpp.i
+
+PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Events/EventBinder.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PineEngine.dir/Source/Pine/Events/EventBinder.cpp.s"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/EventBinder.cpp -o CMakeFiles/PineEngine.dir/Source/Pine/Events/EventBinder.cpp.s
+
+PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui.cpp.o: PineEngine/CMakeFiles/PineEngine.dir/flags.make
+PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui.cpp.o: ../PineEngine/Vendor/imgui1.83/imgui.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui.cpp.o"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui.cpp.o -c /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui.cpp
+
+PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui.cpp.i"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui.cpp > CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui.cpp.i
+
+PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui.cpp.s"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui.cpp -o CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui.cpp.s
+
+PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_demo.cpp.o: PineEngine/CMakeFiles/PineEngine.dir/flags.make
+PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_demo.cpp.o: ../PineEngine/Vendor/imgui1.83/imgui_demo.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_demo.cpp.o"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_demo.cpp.o -c /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_demo.cpp
+
+PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_demo.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_demo.cpp.i"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_demo.cpp > CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_demo.cpp.i
+
+PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_demo.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_demo.cpp.s"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_demo.cpp -o CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_demo.cpp.s
+
+PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_draw.cpp.o: PineEngine/CMakeFiles/PineEngine.dir/flags.make
+PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_draw.cpp.o: ../PineEngine/Vendor/imgui1.83/imgui_draw.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_draw.cpp.o"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_draw.cpp.o -c /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_draw.cpp
+
+PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_draw.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_draw.cpp.i"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_draw.cpp > CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_draw.cpp.i
+
+PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_draw.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_draw.cpp.s"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_draw.cpp -o CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_draw.cpp.s
+
+PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_impl_opengl3.cpp.o: PineEngine/CMakeFiles/PineEngine.dir/flags.make
+PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_impl_opengl3.cpp.o: ../PineEngine/Vendor/imgui1.83/imgui_impl_opengl3.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_impl_opengl3.cpp.o"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_impl_opengl3.cpp.o -c /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_impl_opengl3.cpp
+
+PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_impl_opengl3.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_impl_opengl3.cpp.i"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_impl_opengl3.cpp > CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_impl_opengl3.cpp.i
+
+PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_impl_opengl3.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_impl_opengl3.cpp.s"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_impl_opengl3.cpp -o CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_impl_opengl3.cpp.s
+
+PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_impl_sdl.cpp.o: PineEngine/CMakeFiles/PineEngine.dir/flags.make
+PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_impl_sdl.cpp.o: ../PineEngine/Vendor/imgui1.83/imgui_impl_sdl.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_impl_sdl.cpp.o"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_impl_sdl.cpp.o -c /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_impl_sdl.cpp
+
+PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_impl_sdl.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_impl_sdl.cpp.i"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_impl_sdl.cpp > CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_impl_sdl.cpp.i
+
+PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_impl_sdl.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_impl_sdl.cpp.s"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_impl_sdl.cpp -o CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_impl_sdl.cpp.s
+
+PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_tables.cpp.o: PineEngine/CMakeFiles/PineEngine.dir/flags.make
+PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_tables.cpp.o: ../PineEngine/Vendor/imgui1.83/imgui_tables.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_tables.cpp.o"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_tables.cpp.o -c /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_tables.cpp
+
+PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_tables.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_tables.cpp.i"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_tables.cpp > CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_tables.cpp.i
+
+PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_tables.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_tables.cpp.s"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_tables.cpp -o CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_tables.cpp.s
+
+PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_widgets.cpp.o: PineEngine/CMakeFiles/PineEngine.dir/flags.make
+PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_widgets.cpp.o: ../PineEngine/Vendor/imgui1.83/imgui_widgets.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_widgets.cpp.o"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_widgets.cpp.o -c /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_widgets.cpp
+
+PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_widgets.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_widgets.cpp.i"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_widgets.cpp > CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_widgets.cpp.i
+
+PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_widgets.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_widgets.cpp.s"
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_widgets.cpp -o CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_widgets.cpp.s
 
 # Object files for target PineEngine
 PineEngine_OBJECTS = \
 "CMakeFiles/PineEngine.dir/Source/Pine/Core/Core.cpp.o" \
 "CMakeFiles/PineEngine.dir/Source/Pine/Core/Game.cpp.o" \
 "CMakeFiles/PineEngine.dir/Source/Pine/Core/Input.cpp.o" \
+"CMakeFiles/PineEngine.dir/Source/Pine/Core/EntryPoint.cpp.o" \
+"CMakeFiles/PineEngine.dir/Source/Pine/Core/window.cpp.o" \
 "CMakeFiles/PineEngine.dir/Source/Pine/Logging/Log.cpp.o" \
 "CMakeFiles/PineEngine.dir/Source/Pine/Maths/PMaths.cpp.o" \
-"CMakeFiles/PineEngine.dir/Source/Pine/Networking/Networking.cpp.o"
+"CMakeFiles/PineEngine.dir/Source/Pine/Networking/Networking.cpp.o" \
+"CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Renderer.cpp.o" \
+"CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Shader.cpp.o" \
+"CMakeFiles/PineEngine.dir/Source/Pine/Rendering/LayerManager.cpp.o" \
+"CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Layer.cpp.o" \
+"CMakeFiles/PineEngine.dir/Source/Pine/Events/EventSystem.cpp.o" \
+"CMakeFiles/PineEngine.dir/Source/Pine/Events/Event.cpp.o" \
+"CMakeFiles/PineEngine.dir/Source/Pine/Events/EventBinder.cpp.o" \
+"CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui.cpp.o" \
+"CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_demo.cpp.o" \
+"CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_draw.cpp.o" \
+"CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_impl_opengl3.cpp.o" \
+"CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_impl_sdl.cpp.o" \
+"CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_tables.cpp.o" \
+"CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_widgets.cpp.o"
 
 # External object files for target PineEngine
 PineEngine_EXTERNAL_OBJECTS =
@@ -169,12 +393,28 @@ PineEngine_EXTERNAL_OBJECTS =
 PineEngine/libPineEngine.a: PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/Core.cpp.o
 PineEngine/libPineEngine.a: PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/Game.cpp.o
 PineEngine/libPineEngine.a: PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/Input.cpp.o
+PineEngine/libPineEngine.a: PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/EntryPoint.cpp.o
+PineEngine/libPineEngine.a: PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/window.cpp.o
 PineEngine/libPineEngine.a: PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Logging/Log.cpp.o
 PineEngine/libPineEngine.a: PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Maths/PMaths.cpp.o
 PineEngine/libPineEngine.a: PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Networking/Networking.cpp.o
+PineEngine/libPineEngine.a: PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Renderer.cpp.o
+PineEngine/libPineEngine.a: PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Shader.cpp.o
+PineEngine/libPineEngine.a: PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/LayerManager.cpp.o
+PineEngine/libPineEngine.a: PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Layer.cpp.o
+PineEngine/libPineEngine.a: PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Events/EventSystem.cpp.o
+PineEngine/libPineEngine.a: PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Events/Event.cpp.o
+PineEngine/libPineEngine.a: PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Events/EventBinder.cpp.o
+PineEngine/libPineEngine.a: PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui.cpp.o
+PineEngine/libPineEngine.a: PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_demo.cpp.o
+PineEngine/libPineEngine.a: PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_draw.cpp.o
+PineEngine/libPineEngine.a: PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_impl_opengl3.cpp.o
+PineEngine/libPineEngine.a: PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_impl_sdl.cpp.o
+PineEngine/libPineEngine.a: PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_tables.cpp.o
+PineEngine/libPineEngine.a: PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_widgets.cpp.o
 PineEngine/libPineEngine.a: PineEngine/CMakeFiles/PineEngine.dir/build.make
 PineEngine/libPineEngine.a: PineEngine/CMakeFiles/PineEngine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library libPineEngine.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking CXX static library libPineEngine.a"
 	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && $(CMAKE_COMMAND) -P CMakeFiles/PineEngine.dir/cmake_clean_target.cmake
 	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/PineEngine && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/PineEngine.dir/link.txt --verbose=$(VERBOSE)
 

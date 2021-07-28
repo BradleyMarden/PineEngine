@@ -56,18 +56,26 @@ namespace Pine {
 #define PINE_INFO(...)           ::Pine::Log::GetClientLogger()->info(__VA_ARGS__)
 #define PINE_TRACE(...)          ::Pine::Log::GetClientLogger()->trace(__VA_ARGS__)
 
-
-#define PINE_ASSERT(message, functionReturn) PineAssert(message, functionReturn)
+//old assert
+//#define PINE_ASSERT(message, functionReturn) PineAssert(message, functionReturn)
+#define PINE_ASSERT(message, functionReturn, ...) PineAssert(message,functionReturn,  __VA_ARGS__)
 
 //Custom Assert Macro
-inline void PineAssert(const char* p_Message, bool functionReturn)
+/*inline void PineAssert(const char* p_Message, bool functionReturn)
 {
 	if (!functionReturn) {
-		std::cerr << "Error:\t" << p_Message << "\n";
+		//std::cerr << "Error:\t" << p_Message << "\n";
+		PINE_ENGINE_ERROR(p_Message);
+		abort();
+	}
+}*/
+template<typename... T>inline void PineAssert(const char* p_Message,bool functionReturn, T... t)
+{
+	if (!functionReturn) {
+		PINE_ENGINE_ERROR(p_Message, t...);
 		abort();
 	}
 }
-
 
 #else
 

@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\Core.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\Input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\Scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\EntryPoint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\PineObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\IPineObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\ComponentSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Components\Component.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Components\MaterialComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Components\NetworkComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Components\RendererComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Components\TransformComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Logging\Log.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Maths\PMaths.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Networking\Networking.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Rendering\Renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Rendering\Shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Rendering\LayerManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Rendering\Layer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Rendering\VertexBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Rendering\IndexBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Rendering\OrthographicCamera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Rendering\OrthographicCameraController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Events\EventSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Events\Event.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Events\EventBinder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Vendor\imgui1.83\imgui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Vendor\imgui1.83\imgui_demo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Vendor\imgui1.83\imgui_draw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Vendor\imgui1.83\imgui_impl_opengl3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Vendor\imgui1.83\imgui_impl_sdl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Vendor\imgui1.83\imgui_tables.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FinalVersion\PineEngine\PineEngine\Vendor\imgui1.83\imgui_widgets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Components\Component.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Components\MaterialComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Components\NetworkComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Components\RendererComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Components\TransformComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\ComponentSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\Core.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\IPineObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\Input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\PineAPI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\PineObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\Scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Core\window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Events\Event.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Events\EventBinder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Events\EventSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Logging\Log.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Maths\PMaths.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Networking\Networking.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Networking\ServerNetworking.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Rendering\IndexBuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Rendering\Layer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Rendering\LayerManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Rendering\OrthographicCamera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Rendering\OrthographicCameraController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Rendering\Renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Rendering\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\Pine\Rendering\VertexBuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FinalVersion\PineEngine\PineEngine\Source\PineServer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\FinalVersion\PineEngine\PineEngine\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{B376534A-16EC-3C15-AEAF-ADFA84C7612F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4108419F-A177-376C-B459-6B844001DF97}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

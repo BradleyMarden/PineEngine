@@ -35,7 +35,16 @@ namespace Pine{
 		enet_host_flush(host);
 
 	}
+	void Networking::PineSendGlobalDataPacket(float p_X, float p_Y)
+	{
+		NetPlayerData _PD;
+		_PD.x = p_X;
+		_PD.y = p_Y;
+		ENetPacket* packet = enet_packet_create(&_PD, sizeof(_PD), ENET_PACKET_FLAG_RELIABLE);
+		enet_host_broadcast(host, 0, packet);
+		enet_host_flush(host);
 
+	}
 	//client networking
 	bool Networking::PineNetworkingInit()
 	{
@@ -69,7 +78,6 @@ namespace Pine{
 		enet_address_set_host(&address, ipAddress);
 		address.port = port;
 
-
 		peer = enet_host_connect(host, &address, 1, 0);
 		if (peer == NULL)
 		{
@@ -80,6 +88,7 @@ namespace Pine{
 		if (enet_host_service(host, &event, 5000) > 0 && event.type == ENET_EVENT_TYPE_CONNECT)
 		{
 			PINE_SERVER_INFO("Connected to server: {}", ipAddress);
+
 		}
 		else
 		{
@@ -109,45 +118,7 @@ namespace Pine{
 
 		}
 	}
-	bool Networking::PineClientNetworkLoop(int delayBetweenLoops)
-	{
-		if (!isConnected)
-		{
-			return EXIT_FAILURE;
-		}
-		ENetEvent event;
-
-		while (enet_host_service(host, &event, delayBetweenLoops) > 0)
-		{
-			switch (event.type) {
-
-			case ENET_EVENT_TYPE_NONE:
-				break;
-                    
-                case ENET_EVENT_TYPE_CONNECT:
-					PINE_SERVER_INFO("CONNECTED: NOT TOO SURE IF THIS IS SERVER OR CLIENT AS I HAVE NO INTERNET!");
-
-			case ENET_EVENT_TYPE_RECEIVE:
-				PINE_SERVER_INFO("A Packet of length {} containing {} from {} on channel {}", event.packet->dataLength, event.packet->data, event.peer->data, event.channelID);
-				{
-					uint64_t lData = 0;
-					lData = (uint64_t)event.packet->data;
-					if (std::strcmp((const char*)event.packet->data, "close"))
-					{
-						PINE_SERVER_INFO("Server Closing...");
-					}
-					enet_packet_destroy(event.packet);
-				}
-				break;
-			case ENET_EVENT_TYPE_DISCONNECT:
-				PINE_SERVER_INFO("Server has Closed.");
-				return EXIT_FAILURE;
-				break;
-			}
-			return EXIT_SUCCESS;
-		}
-		return EXIT_SUCCESS;
-	}
+	
 
 	//Server Networking
 	int Networking::PineServerCreate(unsigned int port, unsigned int maxConnections)
@@ -183,8 +154,53 @@ namespace Pine{
 		 PineSendGlobalPacket("close");
 		 enet_host_destroy(host);
 	 }
-	 
-	 void Networking::PineServerNetworkLoop(int delayBetweenLoops)//Use on server to check clients state
+	 bool Networking::PineClientNetworkLoop(int delayBetweenLoops)
+	{
+		if (!isConnected)
+		{
+			return EXIT_FAILURE;
+		}
+		ENetEvent event;
+
+		while (enet_host_service(host, &event, delayBetweenLoops) > 0)
+		{
+			switch (event.type) {
+
+			case ENET_EVENT_TYPE_NONE:
+				break;
+                    
+                case ENET_EVENT_TYPE_CONNECT:
+					PINE_SERVER_INFO("CONNECTED: NOT TOO SURE IF THIS IS SERVER OR CLIENT AS I HAVE NO INTERNET!");
+
+			case ENET_EVENT_TYPE_RECEIVE:
+				PINE_SERVER_INFO("A Packet of length {} containing {} from {} on channel {}", event.packet->dataLength, event.packet->data, event.peer->data, event.channelID);
+				{
+					uint64_t lData = 0;
+
+					 
+					for (size_t i = 0; i < event.packet->dataLength; i++)
+					{
+
+						lastMessage[i] = static_cast<const char>(event.packet->data[i]);
+					}
+					Pine::NetworkPacketEvent* e = new Pine::NetworkPacketEvent(lastMessage);
+
+					enet_packet_destroy(event.packet);
+				}
+				break;
+			case ENET_EVENT_TYPE_DISCONNECT:
+				PINE_SERVER_INFO("Server has Closed.");
+				return EXIT_FAILURE;
+				break;
+			}
+			return EXIT_SUCCESS;
+		}
+		return EXIT_SUCCESS;
+	}
+
+
+
+	void Networking::PineServerNetworkLoop(int delayBetweenLoops)//Use on server to check clients state
 	 {
 		 if (!isConnected)
 		 {
@@ -197,20 +213,29 @@ namespace Pine{
 			 switch(event.type)
 			 {
 			 case ENET_EVENT_TYPE_CONNECT:
+			 {
 				 PINE_INFO("A Client has connected from: {}:{}", event.peer->address.host, event.peer->address.port);
+			 }
 				 break;
 			 case ENET_EVENT_TYPE_DISCONNECT:
 				 PINE_INFO("A Client has Disconnected from: {}:{}", event.peer->address.host, event.peer->address.port);
 				 break;
 			 case ENET_EVENT_TYPE_RECEIVE:
-				 PINE_INFO("A Packet of length {} containing {} from {} on channel {}", event.packet->dataLength, event.packet->data, event.peer->data, event.channelID);
-				 for (size_t i = 0; i < event.packet->dataLength; i++)
-				 {
-					 lastMessage[i] = static_cast<const char>(event.packet->data[i]);
-				 }
-				 
-				enet_packet_destroy(event.packet);
-				break;
+				 PINE_SERVER_INFO("A Packet of length {} containing {} from {} on channel {}", event.packet->dataLength, event.packet->data, event.peer->data, event.channelID);
+			 {
+					 uint64_t lData = 0;
+
+
+					 for (size_t i = 0; i < event.packet->dataLength; i++)
+					 {
+						 lastMessage[i] = static_cast<const char>(event.packet->data[i]);
+					 }
+					 Pine::NetworkPacketEvent* e = new Pine::NetworkPacketEvent(lastMessage);
+
+					 enet_packet_destroy(event.packet);
+			 }
+			 break;
+				 break;
 			 case ENET_EVENT_TYPE_NONE:
 				 break;
 			 }

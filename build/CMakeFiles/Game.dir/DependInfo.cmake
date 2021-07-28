@@ -5,7 +5,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/Game/Source/MyGame.cpp" "/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles/Game.dir/Game/Source/MyGame.cpp.o"
-  "/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/Game/Source/main.cpp" "/Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build/CMakeFiles/Game.dir/Game/Source/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
@@ -17,12 +16,16 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../PineEngine/Source/Pine/Logging"
   "../PineEngine/Source/Pine/Maths"
   "../PineEngine/Source/Pine/Networking"
+  "../PineEngine/Source/Pine/Rendering"
+  "../PineEngine/Source/Pine/Events"
   "../PineEngine/Vendor/spdlog/include"
   "../PineEngine/Vendor/glew-2.1.0/include"
   "/usr/local/include/SDL2"
-  "/usr/local/include/GL"
-  "/usr/local/include/GLFW"
+  "../{GLEW_INCLUDE_DIR}"
   "../PineEngine/Vendor/enet-1.3.16/include"
+  "../PineEngine/Vendor/imgui1.83"
+  "../PineEngine/Vendor/glm"
+  "/usr/local/include/GL"
   )
 
 # Targets to which this target links.

@@ -2,6 +2,7 @@
 #include <SDL.h>
 #include "../Maths/PMaths.h"
 #include "Log.h"
+#include "window.h"
 namespace Pine {
 	class Input {
 
@@ -35,9 +36,11 @@ namespace Pine {
 		//THESE NEED TO BE REFACTORED< LOTS OF UNUSED OR REWRITTEN CODE AS A RESUKT OF THE EVENT SYSTEM
 
 		//test function for event system.
-		static Input::MouseButtons Input::MouseDown(SDL_Event* e);
-		static Input::KeyStrokes Input::KeyDown(SDL_Event* e);
+        static MouseButtons MouseDown(SDL_Event* e);
+        static KeyStrokes KeyDown(SDL_Event* e);
 
+		//left 1, middle 2,right 3, x1 4, x2 5.   Need to change to take in Pine state
+		static bool GetMouseDown(int mouse);
 		static bool OnMouseButtonUp(int mouseButton);
 		static bool CloseApplication();
 		static bool OnMouseButton(MouseButtons State);
@@ -46,7 +49,8 @@ namespace Pine {
 		static PVector2f GetMousePosition();
 		static void KeyPressed(SDL_Event* Key);
 		static SDL_KeyCode m_key;
-		static bool GetKeyDown(SDL_KeyCode key);
+		//returns true if key is down
+		static bool GetKeyDown(SDL_Scancode key);
 
 	private:
 		bool clicked;

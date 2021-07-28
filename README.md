@@ -1,4 +1,4 @@
 # PineEngine
 
-![PineEngine](/PineEngineTransparent.png?raw=true "PineEngine")
+![PineEngine](/PineEngineText.png?raw=true "PineEngine")
 Pine Engine

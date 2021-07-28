@@ -1,13 +1,35 @@
 #pragma once
 //#include <sdl2/SDL.h>
-#define SDL_MAIN_HANDLED
-
+#include <Log.h>
 #include <SDL.h>
 #include <memory>
-//#include "PineAPI.h"
-
+#include "Scene.h"
+#include <map>
+#include <utility>
 
 namespace Pine {
+	namespace Priv
+	{
+		inline int GetUniqueSceneID()
+		{
+			static int _ComponentID = 0;
+
+			_ComponentID++;
+
+			return _ComponentID;
+
+		}
+	}
+
+	template<class T> inline int GetSceneID()
+	{
+		static_assert(std::is_base_of<Scene, T>::value, "object MUST inherit from class Scene");
+
+		static int _SceneID = Priv::GetUniqueSceneID();
+
+		return _SceneID;
+	}
+	
 	class Game
 	{
 		//the game files. COntroll game play
@@ -15,53 +37,114 @@ namespace Pine {
 
 
 	public:
-		enum GameState { RUNNING, GAMEOVER, CLOSING };
+		enum GameState { MENU, RUNNING, GAMEOVER, CLOSING };
+
 		inline GameState GetGameState() { return st; }
+
 		inline void GameRun() { SetState(RUNNING); }
+
 		inline void GameOver() { SetState(GAMEOVER); }
-		inline void GameClose() { SetState(CLOSING); }
+
+		inline void GameClose() { SetState(CLOSING); PINE_ENGINE_WARN("State Close"); }
 
 
 		inline bool IsGameRunning() { return st == RUNNING; }
+
 		inline bool IsGameOver() { return st == GAMEOVER; }
+
 		inline bool IsGameClosing() { return st == CLOSING; }
+
 		inline bool CheckIfexiting() { return isExiting; }
 
 		///////////////////*Controll Functions*\\\\\\\\\\\\\\\\\\\\\\\\
 		
-		virtual void Update() {};
+		virtual void Update(int p_StepTime) {};
+
 		virtual void Start() {};
+
 		virtual void Initialize() {};
+
 		virtual void Terminate() {};
+
 		virtual void OnMouseClick() {};
 
-		//NTS if not set, send event to remind developer.
-		inline void SetWindowParameters(int p_Width, int p_Height, const char* p_WindowName) { m_WindowWidth = p_Width; m_WindowHeight = p_Height; m_WindowName = p_WindowName; g_ParametersSet = true; }
-		static int GetWindowWidth() { return m_WindowWidth; }
-		static int GetWindowHeight() { return m_WindowHeight; }
-		static const char& GetWindowName() { return *m_WindowName; }
-		static inline int m_WindowWidth;
-		static inline int m_WindowHeight;
-		static inline bool g_ParametersSet;
-		static inline const char* m_WindowName;
+		virtual void Draw() {};
+
+		virtual void RenderUI() {};
+
+		void CloseScene(std::string p_SceneName);
+	protected:
+
+		inline void SetState(GameState STATE) { st = STATE; }
+
+		bool isExiting = false;
 
 	private:
-
 		GameState st;
-		
+
+		std::string m_CurrentScene;
+
+		std::unordered_map<std::string, std::shared_ptr<Scene>> m_Scenes;
+
+	public:
+
+		inline std::weak_ptr<Scene> GetCurrentScene()
+		{
+			return GetScene<Scene>(m_CurrentScene);
+		}
+
+		//Add Scene to game ready for use
+		template<class T> inline void AddScene(std::shared_ptr <T> p_Scene)
+		{
+			static_assert(std::is_base_of<Scene, T>::value, "object MUST inherit from class Scene");
+
+			int _SceneID = GetSceneID<T>();
+
+			p_Scene->SetID(_SceneID);
+
+			std::string _SceneName = p_Scene->GetName();
+
+			if (!std::get<bool>(m_Scenes.try_emplace(_SceneName, p_Scene)))
+			{
+				PINE_ENGINE_WARN("Scene '{0}' already exists in Game", _SceneName);
+			}
+			PINE_ENGINE_WARN("Scene '{0}' added to Game", _SceneName);
+		}
 
 
-	protected:
-		inline void SetState(GameState STATE) { st = STATE; }
-		bool isExiting = false;
+		//Load Scene from Game, runs that scene
+		template<class T> inline void LoadScene(std::string p_SceneName)
+		{
+			std::unordered_map<std::string, std::shared_ptr<Scene>>::iterator got = m_Scenes.find(p_SceneName);
+
+			if (got != m_Scenes.end())
+			{
+				got->second->OnSceneLoad();
+
+				int _NumOfPineObjects = got->second->GetPineObjectCount();
+				m_CurrentScene = got->first;
+				PINE_ENGINE_WARN("Scene '{0}' Loaded with: {1} PineObjects", p_SceneName, _NumOfPineObjects);
+				return;
+			}
+
+			PINE_ENGINE_WARN("Scene '{0}' Could not be found in current Game instance", p_SceneName);
+		}
+
+		//Get Scene from Game
+		template<class T> inline std::weak_ptr<T> GetScene(std::string p_SceneName)
+		{
+			std::unordered_map<std::string, std::shared_ptr<Scene>>::iterator got = m_Scenes.find(p_SceneName);
+
+			if (got != m_Scenes.end())
+			{
+				return static_cast<std::weak_ptr<T>>(got->second);
+			}
+
+			PINE_ENGINE_WARN("Scene '{0}' Could not be found in current Game context", p_SceneName);
+
+			return std::weak_ptr<T>();
+		}
 	};
-
 	Game* CreateGame();
 }
-#define PINE_WINDOW_WIDTH Pine::Game::GetWindowWidth()
 
-#define PINE_WINDOW_HEIGHT Pine::Game::GetWindowHeight()
-
-#define PINE_WINDOW_NAME &Pine::Game::GetWindowName()
-
-//$//(SolutionDir)PineEngine\Vendor\spdlog\include;$(SolutionDir)PineEngine\Vendor\SDL2-2.0.12\include;$(SolutionDir)PineEngine\Vendor\enet-1.3.16\include;

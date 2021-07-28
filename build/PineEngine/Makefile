@@ -171,6 +171,33 @@ Source/Pine/Core/Core.cpp.s:
 	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/Core.cpp.s
 .PHONY : Source/Pine/Core/Core.cpp.s
 
+Source/Pine/Core/EntryPoint.o: Source/Pine/Core/EntryPoint.cpp.o
+
+.PHONY : Source/Pine/Core/EntryPoint.o
+
+# target to build an object file
+Source/Pine/Core/EntryPoint.cpp.o:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/EntryPoint.cpp.o
+.PHONY : Source/Pine/Core/EntryPoint.cpp.o
+
+Source/Pine/Core/EntryPoint.i: Source/Pine/Core/EntryPoint.cpp.i
+
+.PHONY : Source/Pine/Core/EntryPoint.i
+
+# target to preprocess a source file
+Source/Pine/Core/EntryPoint.cpp.i:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/EntryPoint.cpp.i
+.PHONY : Source/Pine/Core/EntryPoint.cpp.i
+
+Source/Pine/Core/EntryPoint.s: Source/Pine/Core/EntryPoint.cpp.s
+
+.PHONY : Source/Pine/Core/EntryPoint.s
+
+# target to generate assembly for a file
+Source/Pine/Core/EntryPoint.cpp.s:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/EntryPoint.cpp.s
+.PHONY : Source/Pine/Core/EntryPoint.cpp.s
+
 Source/Pine/Core/Game.o: Source/Pine/Core/Game.cpp.o
 
 .PHONY : Source/Pine/Core/Game.o
@@ -224,6 +251,114 @@ Source/Pine/Core/Input.s: Source/Pine/Core/Input.cpp.s
 Source/Pine/Core/Input.cpp.s:
 	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/Input.cpp.s
 .PHONY : Source/Pine/Core/Input.cpp.s
+
+Source/Pine/Core/window.o: Source/Pine/Core/window.cpp.o
+
+.PHONY : Source/Pine/Core/window.o
+
+# target to build an object file
+Source/Pine/Core/window.cpp.o:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/window.cpp.o
+.PHONY : Source/Pine/Core/window.cpp.o
+
+Source/Pine/Core/window.i: Source/Pine/Core/window.cpp.i
+
+.PHONY : Source/Pine/Core/window.i
+
+# target to preprocess a source file
+Source/Pine/Core/window.cpp.i:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/window.cpp.i
+.PHONY : Source/Pine/Core/window.cpp.i
+
+Source/Pine/Core/window.s: Source/Pine/Core/window.cpp.s
+
+.PHONY : Source/Pine/Core/window.s
+
+# target to generate assembly for a file
+Source/Pine/Core/window.cpp.s:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Core/window.cpp.s
+.PHONY : Source/Pine/Core/window.cpp.s
+
+Source/Pine/Events/Event.o: Source/Pine/Events/Event.cpp.o
+
+.PHONY : Source/Pine/Events/Event.o
+
+# target to build an object file
+Source/Pine/Events/Event.cpp.o:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Events/Event.cpp.o
+.PHONY : Source/Pine/Events/Event.cpp.o
+
+Source/Pine/Events/Event.i: Source/Pine/Events/Event.cpp.i
+
+.PHONY : Source/Pine/Events/Event.i
+
+# target to preprocess a source file
+Source/Pine/Events/Event.cpp.i:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Events/Event.cpp.i
+.PHONY : Source/Pine/Events/Event.cpp.i
+
+Source/Pine/Events/Event.s: Source/Pine/Events/Event.cpp.s
+
+.PHONY : Source/Pine/Events/Event.s
+
+# target to generate assembly for a file
+Source/Pine/Events/Event.cpp.s:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Events/Event.cpp.s
+.PHONY : Source/Pine/Events/Event.cpp.s
+
+Source/Pine/Events/EventBinder.o: Source/Pine/Events/EventBinder.cpp.o
+
+.PHONY : Source/Pine/Events/EventBinder.o
+
+# target to build an object file
+Source/Pine/Events/EventBinder.cpp.o:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Events/EventBinder.cpp.o
+.PHONY : Source/Pine/Events/EventBinder.cpp.o
+
+Source/Pine/Events/EventBinder.i: Source/Pine/Events/EventBinder.cpp.i
+
+.PHONY : Source/Pine/Events/EventBinder.i
+
+# target to preprocess a source file
+Source/Pine/Events/EventBinder.cpp.i:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Events/EventBinder.cpp.i
+.PHONY : Source/Pine/Events/EventBinder.cpp.i
+
+Source/Pine/Events/EventBinder.s: Source/Pine/Events/EventBinder.cpp.s
+
+.PHONY : Source/Pine/Events/EventBinder.s
+
+# target to generate assembly for a file
+Source/Pine/Events/EventBinder.cpp.s:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Events/EventBinder.cpp.s
+.PHONY : Source/Pine/Events/EventBinder.cpp.s
+
+Source/Pine/Events/EventSystem.o: Source/Pine/Events/EventSystem.cpp.o
+
+.PHONY : Source/Pine/Events/EventSystem.o
+
+# target to build an object file
+Source/Pine/Events/EventSystem.cpp.o:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Events/EventSystem.cpp.o
+.PHONY : Source/Pine/Events/EventSystem.cpp.o
+
+Source/Pine/Events/EventSystem.i: Source/Pine/Events/EventSystem.cpp.i
+
+.PHONY : Source/Pine/Events/EventSystem.i
+
+# target to preprocess a source file
+Source/Pine/Events/EventSystem.cpp.i:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Events/EventSystem.cpp.i
+.PHONY : Source/Pine/Events/EventSystem.cpp.i
+
+Source/Pine/Events/EventSystem.s: Source/Pine/Events/EventSystem.cpp.s
+
+.PHONY : Source/Pine/Events/EventSystem.s
+
+# target to generate assembly for a file
+Source/Pine/Events/EventSystem.cpp.s:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Events/EventSystem.cpp.s
+.PHONY : Source/Pine/Events/EventSystem.cpp.s
 
 Source/Pine/Logging/Log.o: Source/Pine/Logging/Log.cpp.o
 
@@ -306,6 +441,303 @@ Source/Pine/Networking/Networking.cpp.s:
 	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Networking/Networking.cpp.s
 .PHONY : Source/Pine/Networking/Networking.cpp.s
 
+Source/Pine/Rendering/Layer.o: Source/Pine/Rendering/Layer.cpp.o
+
+.PHONY : Source/Pine/Rendering/Layer.o
+
+# target to build an object file
+Source/Pine/Rendering/Layer.cpp.o:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Layer.cpp.o
+.PHONY : Source/Pine/Rendering/Layer.cpp.o
+
+Source/Pine/Rendering/Layer.i: Source/Pine/Rendering/Layer.cpp.i
+
+.PHONY : Source/Pine/Rendering/Layer.i
+
+# target to preprocess a source file
+Source/Pine/Rendering/Layer.cpp.i:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Layer.cpp.i
+.PHONY : Source/Pine/Rendering/Layer.cpp.i
+
+Source/Pine/Rendering/Layer.s: Source/Pine/Rendering/Layer.cpp.s
+
+.PHONY : Source/Pine/Rendering/Layer.s
+
+# target to generate assembly for a file
+Source/Pine/Rendering/Layer.cpp.s:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Layer.cpp.s
+.PHONY : Source/Pine/Rendering/Layer.cpp.s
+
+Source/Pine/Rendering/LayerManager.o: Source/Pine/Rendering/LayerManager.cpp.o
+
+.PHONY : Source/Pine/Rendering/LayerManager.o
+
+# target to build an object file
+Source/Pine/Rendering/LayerManager.cpp.o:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/LayerManager.cpp.o
+.PHONY : Source/Pine/Rendering/LayerManager.cpp.o
+
+Source/Pine/Rendering/LayerManager.i: Source/Pine/Rendering/LayerManager.cpp.i
+
+.PHONY : Source/Pine/Rendering/LayerManager.i
+
+# target to preprocess a source file
+Source/Pine/Rendering/LayerManager.cpp.i:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/LayerManager.cpp.i
+.PHONY : Source/Pine/Rendering/LayerManager.cpp.i
+
+Source/Pine/Rendering/LayerManager.s: Source/Pine/Rendering/LayerManager.cpp.s
+
+.PHONY : Source/Pine/Rendering/LayerManager.s
+
+# target to generate assembly for a file
+Source/Pine/Rendering/LayerManager.cpp.s:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/LayerManager.cpp.s
+.PHONY : Source/Pine/Rendering/LayerManager.cpp.s
+
+Source/Pine/Rendering/Renderer.o: Source/Pine/Rendering/Renderer.cpp.o
+
+.PHONY : Source/Pine/Rendering/Renderer.o
+
+# target to build an object file
+Source/Pine/Rendering/Renderer.cpp.o:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Renderer.cpp.o
+.PHONY : Source/Pine/Rendering/Renderer.cpp.o
+
+Source/Pine/Rendering/Renderer.i: Source/Pine/Rendering/Renderer.cpp.i
+
+.PHONY : Source/Pine/Rendering/Renderer.i
+
+# target to preprocess a source file
+Source/Pine/Rendering/Renderer.cpp.i:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Renderer.cpp.i
+.PHONY : Source/Pine/Rendering/Renderer.cpp.i
+
+Source/Pine/Rendering/Renderer.s: Source/Pine/Rendering/Renderer.cpp.s
+
+.PHONY : Source/Pine/Rendering/Renderer.s
+
+# target to generate assembly for a file
+Source/Pine/Rendering/Renderer.cpp.s:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Renderer.cpp.s
+.PHONY : Source/Pine/Rendering/Renderer.cpp.s
+
+Source/Pine/Rendering/Shader.o: Source/Pine/Rendering/Shader.cpp.o
+
+.PHONY : Source/Pine/Rendering/Shader.o
+
+# target to build an object file
+Source/Pine/Rendering/Shader.cpp.o:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Shader.cpp.o
+.PHONY : Source/Pine/Rendering/Shader.cpp.o
+
+Source/Pine/Rendering/Shader.i: Source/Pine/Rendering/Shader.cpp.i
+
+.PHONY : Source/Pine/Rendering/Shader.i
+
+# target to preprocess a source file
+Source/Pine/Rendering/Shader.cpp.i:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Shader.cpp.i
+.PHONY : Source/Pine/Rendering/Shader.cpp.i
+
+Source/Pine/Rendering/Shader.s: Source/Pine/Rendering/Shader.cpp.s
+
+.PHONY : Source/Pine/Rendering/Shader.s
+
+# target to generate assembly for a file
+Source/Pine/Rendering/Shader.cpp.s:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Source/Pine/Rendering/Shader.cpp.s
+.PHONY : Source/Pine/Rendering/Shader.cpp.s
+
+Vendor/imgui1.83/imgui.o: Vendor/imgui1.83/imgui.cpp.o
+
+.PHONY : Vendor/imgui1.83/imgui.o
+
+# target to build an object file
+Vendor/imgui1.83/imgui.cpp.o:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui.cpp.o
+.PHONY : Vendor/imgui1.83/imgui.cpp.o
+
+Vendor/imgui1.83/imgui.i: Vendor/imgui1.83/imgui.cpp.i
+
+.PHONY : Vendor/imgui1.83/imgui.i
+
+# target to preprocess a source file
+Vendor/imgui1.83/imgui.cpp.i:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui.cpp.i
+.PHONY : Vendor/imgui1.83/imgui.cpp.i
+
+Vendor/imgui1.83/imgui.s: Vendor/imgui1.83/imgui.cpp.s
+
+.PHONY : Vendor/imgui1.83/imgui.s
+
+# target to generate assembly for a file
+Vendor/imgui1.83/imgui.cpp.s:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui.cpp.s
+.PHONY : Vendor/imgui1.83/imgui.cpp.s
+
+Vendor/imgui1.83/imgui_demo.o: Vendor/imgui1.83/imgui_demo.cpp.o
+
+.PHONY : Vendor/imgui1.83/imgui_demo.o
+
+# target to build an object file
+Vendor/imgui1.83/imgui_demo.cpp.o:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_demo.cpp.o
+.PHONY : Vendor/imgui1.83/imgui_demo.cpp.o
+
+Vendor/imgui1.83/imgui_demo.i: Vendor/imgui1.83/imgui_demo.cpp.i
+
+.PHONY : Vendor/imgui1.83/imgui_demo.i
+
+# target to preprocess a source file
+Vendor/imgui1.83/imgui_demo.cpp.i:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_demo.cpp.i
+.PHONY : Vendor/imgui1.83/imgui_demo.cpp.i
+
+Vendor/imgui1.83/imgui_demo.s: Vendor/imgui1.83/imgui_demo.cpp.s
+
+.PHONY : Vendor/imgui1.83/imgui_demo.s
+
+# target to generate assembly for a file
+Vendor/imgui1.83/imgui_demo.cpp.s:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_demo.cpp.s
+.PHONY : Vendor/imgui1.83/imgui_demo.cpp.s
+
+Vendor/imgui1.83/imgui_draw.o: Vendor/imgui1.83/imgui_draw.cpp.o
+
+.PHONY : Vendor/imgui1.83/imgui_draw.o
+
+# target to build an object file
+Vendor/imgui1.83/imgui_draw.cpp.o:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_draw.cpp.o
+.PHONY : Vendor/imgui1.83/imgui_draw.cpp.o
+
+Vendor/imgui1.83/imgui_draw.i: Vendor/imgui1.83/imgui_draw.cpp.i
+
+.PHONY : Vendor/imgui1.83/imgui_draw.i
+
+# target to preprocess a source file
+Vendor/imgui1.83/imgui_draw.cpp.i:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_draw.cpp.i
+.PHONY : Vendor/imgui1.83/imgui_draw.cpp.i
+
+Vendor/imgui1.83/imgui_draw.s: Vendor/imgui1.83/imgui_draw.cpp.s
+
+.PHONY : Vendor/imgui1.83/imgui_draw.s
+
+# target to generate assembly for a file
+Vendor/imgui1.83/imgui_draw.cpp.s:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_draw.cpp.s
+.PHONY : Vendor/imgui1.83/imgui_draw.cpp.s
+
+Vendor/imgui1.83/imgui_impl_opengl3.o: Vendor/imgui1.83/imgui_impl_opengl3.cpp.o
+
+.PHONY : Vendor/imgui1.83/imgui_impl_opengl3.o
+
+# target to build an object file
+Vendor/imgui1.83/imgui_impl_opengl3.cpp.o:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_impl_opengl3.cpp.o
+.PHONY : Vendor/imgui1.83/imgui_impl_opengl3.cpp.o
+
+Vendor/imgui1.83/imgui_impl_opengl3.i: Vendor/imgui1.83/imgui_impl_opengl3.cpp.i
+
+.PHONY : Vendor/imgui1.83/imgui_impl_opengl3.i
+
+# target to preprocess a source file
+Vendor/imgui1.83/imgui_impl_opengl3.cpp.i:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_impl_opengl3.cpp.i
+.PHONY : Vendor/imgui1.83/imgui_impl_opengl3.cpp.i
+
+Vendor/imgui1.83/imgui_impl_opengl3.s: Vendor/imgui1.83/imgui_impl_opengl3.cpp.s
+
+.PHONY : Vendor/imgui1.83/imgui_impl_opengl3.s
+
+# target to generate assembly for a file
+Vendor/imgui1.83/imgui_impl_opengl3.cpp.s:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_impl_opengl3.cpp.s
+.PHONY : Vendor/imgui1.83/imgui_impl_opengl3.cpp.s
+
+Vendor/imgui1.83/imgui_impl_sdl.o: Vendor/imgui1.83/imgui_impl_sdl.cpp.o
+
+.PHONY : Vendor/imgui1.83/imgui_impl_sdl.o
+
+# target to build an object file
+Vendor/imgui1.83/imgui_impl_sdl.cpp.o:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_impl_sdl.cpp.o
+.PHONY : Vendor/imgui1.83/imgui_impl_sdl.cpp.o
+
+Vendor/imgui1.83/imgui_impl_sdl.i: Vendor/imgui1.83/imgui_impl_sdl.cpp.i
+
+.PHONY : Vendor/imgui1.83/imgui_impl_sdl.i
+
+# target to preprocess a source file
+Vendor/imgui1.83/imgui_impl_sdl.cpp.i:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_impl_sdl.cpp.i
+.PHONY : Vendor/imgui1.83/imgui_impl_sdl.cpp.i
+
+Vendor/imgui1.83/imgui_impl_sdl.s: Vendor/imgui1.83/imgui_impl_sdl.cpp.s
+
+.PHONY : Vendor/imgui1.83/imgui_impl_sdl.s
+
+# target to generate assembly for a file
+Vendor/imgui1.83/imgui_impl_sdl.cpp.s:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_impl_sdl.cpp.s
+.PHONY : Vendor/imgui1.83/imgui_impl_sdl.cpp.s
+
+Vendor/imgui1.83/imgui_tables.o: Vendor/imgui1.83/imgui_tables.cpp.o
+
+.PHONY : Vendor/imgui1.83/imgui_tables.o
+
+# target to build an object file
+Vendor/imgui1.83/imgui_tables.cpp.o:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_tables.cpp.o
+.PHONY : Vendor/imgui1.83/imgui_tables.cpp.o
+
+Vendor/imgui1.83/imgui_tables.i: Vendor/imgui1.83/imgui_tables.cpp.i
+
+.PHONY : Vendor/imgui1.83/imgui_tables.i
+
+# target to preprocess a source file
+Vendor/imgui1.83/imgui_tables.cpp.i:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_tables.cpp.i
+.PHONY : Vendor/imgui1.83/imgui_tables.cpp.i
+
+Vendor/imgui1.83/imgui_tables.s: Vendor/imgui1.83/imgui_tables.cpp.s
+
+.PHONY : Vendor/imgui1.83/imgui_tables.s
+
+# target to generate assembly for a file
+Vendor/imgui1.83/imgui_tables.cpp.s:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_tables.cpp.s
+.PHONY : Vendor/imgui1.83/imgui_tables.cpp.s
+
+Vendor/imgui1.83/imgui_widgets.o: Vendor/imgui1.83/imgui_widgets.cpp.o
+
+.PHONY : Vendor/imgui1.83/imgui_widgets.o
+
+# target to build an object file
+Vendor/imgui1.83/imgui_widgets.cpp.o:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_widgets.cpp.o
+.PHONY : Vendor/imgui1.83/imgui_widgets.cpp.o
+
+Vendor/imgui1.83/imgui_widgets.i: Vendor/imgui1.83/imgui_widgets.cpp.i
+
+.PHONY : Vendor/imgui1.83/imgui_widgets.i
+
+# target to preprocess a source file
+Vendor/imgui1.83/imgui_widgets.cpp.i:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_widgets.cpp.i
+.PHONY : Vendor/imgui1.83/imgui_widgets.cpp.i
+
+Vendor/imgui1.83/imgui_widgets.s: Vendor/imgui1.83/imgui_widgets.cpp.s
+
+.PHONY : Vendor/imgui1.83/imgui_widgets.s
+
+# target to generate assembly for a file
+Vendor/imgui1.83/imgui_widgets.cpp.s:
+	cd /Users/bradley/Documents/C++Projects/LatestVersion/PineEngine/build && $(MAKE) $(MAKESILENT) -f PineEngine/CMakeFiles/PineEngine.dir/build.make PineEngine/CMakeFiles/PineEngine.dir/Vendor/imgui1.83/imgui_widgets.cpp.s
+.PHONY : Vendor/imgui1.83/imgui_widgets.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -318,12 +750,27 @@ help:
 	@echo "... Source/Pine/Core/Core.o"
 	@echo "... Source/Pine/Core/Core.i"
 	@echo "... Source/Pine/Core/Core.s"
+	@echo "... Source/Pine/Core/EntryPoint.o"
+	@echo "... Source/Pine/Core/EntryPoint.i"
+	@echo "... Source/Pine/Core/EntryPoint.s"
 	@echo "... Source/Pine/Core/Game.o"
 	@echo "... Source/Pine/Core/Game.i"
 	@echo "... Source/Pine/Core/Game.s"
 	@echo "... Source/Pine/Core/Input.o"
 	@echo "... Source/Pine/Core/Input.i"
 	@echo "... Source/Pine/Core/Input.s"
+	@echo "... Source/Pine/Core/window.o"
+	@echo "... Source/Pine/Core/window.i"
+	@echo "... Source/Pine/Core/window.s"
+	@echo "... Source/Pine/Events/Event.o"
+	@echo "... Source/Pine/Events/Event.i"
+	@echo "... Source/Pine/Events/Event.s"
+	@echo "... Source/Pine/Events/EventBinder.o"
+	@echo "... Source/Pine/Events/EventBinder.i"
+	@echo "... Source/Pine/Events/EventBinder.s"
+	@echo "... Source/Pine/Events/EventSystem.o"
+	@echo "... Source/Pine/Events/EventSystem.i"
+	@echo "... Source/Pine/Events/EventSystem.s"
 	@echo "... Source/Pine/Logging/Log.o"
 	@echo "... Source/Pine/Logging/Log.i"
 	@echo "... Source/Pine/Logging/Log.s"
@@ -333,6 +780,39 @@ help:
 	@echo "... Source/Pine/Networking/Networking.o"
 	@echo "... Source/Pine/Networking/Networking.i"
 	@echo "... Source/Pine/Networking/Networking.s"
+	@echo "... Source/Pine/Rendering/Layer.o"
+	@echo "... Source/Pine/Rendering/Layer.i"
+	@echo "... Source/Pine/Rendering/Layer.s"
+	@echo "... Source/Pine/Rendering/LayerManager.o"
+	@echo "... Source/Pine/Rendering/LayerManager.i"
+	@echo "... Source/Pine/Rendering/LayerManager.s"
+	@echo "... Source/Pine/Rendering/Renderer.o"
+	@echo "... Source/Pine/Rendering/Renderer.i"
+	@echo "... Source/Pine/Rendering/Renderer.s"
+	@echo "... Source/Pine/Rendering/Shader.o"
+	@echo "... Source/Pine/Rendering/Shader.i"
+	@echo "... Source/Pine/Rendering/Shader.s"
+	@echo "... Vendor/imgui1.83/imgui.o"
+	@echo "... Vendor/imgui1.83/imgui.i"
+	@echo "... Vendor/imgui1.83/imgui.s"
+	@echo "... Vendor/imgui1.83/imgui_demo.o"
+	@echo "... Vendor/imgui1.83/imgui_demo.i"
+	@echo "... Vendor/imgui1.83/imgui_demo.s"
+	@echo "... Vendor/imgui1.83/imgui_draw.o"
+	@echo "... Vendor/imgui1.83/imgui_draw.i"
+	@echo "... Vendor/imgui1.83/imgui_draw.s"
+	@echo "... Vendor/imgui1.83/imgui_impl_opengl3.o"
+	@echo "... Vendor/imgui1.83/imgui_impl_opengl3.i"
+	@echo "... Vendor/imgui1.83/imgui_impl_opengl3.s"
+	@echo "... Vendor/imgui1.83/imgui_impl_sdl.o"
+	@echo "... Vendor/imgui1.83/imgui_impl_sdl.i"
+	@echo "... Vendor/imgui1.83/imgui_impl_sdl.s"
+	@echo "... Vendor/imgui1.83/imgui_tables.o"
+	@echo "... Vendor/imgui1.83/imgui_tables.i"
+	@echo "... Vendor/imgui1.83/imgui_tables.s"
+	@echo "... Vendor/imgui1.83/imgui_widgets.o"
+	@echo "... Vendor/imgui1.83/imgui_widgets.i"
+	@echo "... Vendor/imgui1.83/imgui_widgets.s"
 .PHONY : help
 
 

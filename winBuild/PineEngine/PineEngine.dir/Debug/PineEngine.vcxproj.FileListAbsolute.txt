@@ -1,2 +1,0 @@
-D:\Game Engine\PineEngine\winBuild\PineEngine\Debug\PineEngine.pdb
-D:\Game Engine\PineEngine\winBuild\PineEngine\PineEngine.dir\Debug\PineEngine.pdb

@@ -1,0 +1,1149 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		40B51D3FE4784C53BFC18920 /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 3D0E0D41025D419E94F4303C /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				CA15345E1CEC95DB110EC2D5 /* Generate CMakeFiles/ZERO_CHECK */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		E8EA2DB2DA6E4061AB49CC77 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 19E0D6EC3BC94372B79591C8 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				26D815EE022BA13FCDCF3696 /* Generate CMakeFiles/ALL_BUILD */,
+			);
+			dependencies = (
+				9C59C2B6537A4FE1BCF63C36 /* PBXTargetDependency */,
+				6BAD1306DF044998913247DF /* PBXTargetDependency */,
+				B777D0DF75CD46CA82F7E588 /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		0244F9C25BB940CD9F77CF2D /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/PineServer.h */ = {isa = PBXBuildFile; fileRef = 033F630905FE4B858240DC11 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/PineServer.h */; };
+		02E7B92DE90D4C2EA3D199DA /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Game/Source/MyGame.cpp */ = {isa = PBXBuildFile; fileRef = 70211C78B73F49A1974E9C84 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Game/Source/MyGame.cpp */; };
+		033FA8E6CECB437FAC7781DF /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/Event.h */ = {isa = PBXBuildFile; fileRef = 67D86E2EF48F41BF9051469C /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/Event.h */; };
+		061057B239714F16B15A2E48 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Layer.cpp */ = {isa = PBXBuildFile; fileRef = A23614B36CAE4A7980B1C2BA /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Layer.cpp */; };
+		0B0FAD8818294BD8B098EE8F /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Maths/PMaths.cpp */ = {isa = PBXBuildFile; fileRef = 4917AAF066114E39857EEE8B /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Maths/PMaths.cpp */; };
+		0E8779746439431A82155777 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Renderer.h */ = {isa = PBXBuildFile; fileRef = 9427BF99963C4C2CAAC47118 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Renderer.h */; };
+		0ED8519FC3084016A533441B /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_widgets.cpp */ = {isa = PBXBuildFile; fileRef = F4D1BA4F20D2452EA0D6360C /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_widgets.cpp */; };
+		1134EAFA6EFE40E1BAEC20E5 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Logging/Log.cpp */ = {isa = PBXBuildFile; fileRef = 8C223927088242719E9E5C04 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Logging/Log.cpp */; };
+		22E86B8BD3D0451598A165E2 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_impl_opengl3.cpp */ = {isa = PBXBuildFile; fileRef = 5CE3F3FE54C2486CA07863DF /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_impl_opengl3.cpp */; };
+		269323CEEF38492982EDE9B1 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_draw.cpp */ = {isa = PBXBuildFile; fileRef = 2D838BCFCC1943CAA617207F /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_draw.cpp */; };
+		280527039CAC41E9B7E3C1B5 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine.h */ = {isa = PBXBuildFile; fileRef = BC4EB5F2FE50465698EE250F /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine.h */; };
+		2E50CFCB177243A49CCFE3CC /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Networking/ServerNetworking.h */ = {isa = PBXBuildFile; fileRef = FE0F2988808C4A40AD51AA29 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Networking/ServerNetworking.h */; };
+		428F27D3B88B4429BA89D20D /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Layer.h */ = {isa = PBXBuildFile; fileRef = 62AC9B43162B4EA1BFE54081 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Layer.h */; };
+		4B24725583BD4040AE2240A1 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Maths/PMaths.h */ = {isa = PBXBuildFile; fileRef = 69E2001ADF6F4CDBA0D7DC05 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Maths/PMaths.h */; };
+		4E53106A743B464887D2990E /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 344AE317F30B43F48EFEB9FF /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/CMakeLists.txt */; };
+		515720BD5635455BAEFBBD0D /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/EntryPoint.cpp */ = {isa = PBXBuildFile; fileRef = C110A082AAF64DFFA7C665AF /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/EntryPoint.cpp */; };
+		526592EA9AB249EC9C8C0532 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Core.h */ = {isa = PBXBuildFile; fileRef = B9C8E1F5B060498FBBF9EDB2 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Core.h */; };
+		579883F437EA479EA33D6387 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Networking/Networking.h */ = {isa = PBXBuildFile; fileRef = 27291DAFFCDC4A59ABB17560 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Networking/Networking.h */; };
+		5F0492B809C1446A8C2A88AC /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/EventBinder.cpp */ = {isa = PBXBuildFile; fileRef = 4BDA4C3557A44CAF800B7C21 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/EventBinder.cpp */; };
+		60895EA7476F48578C1AAA37 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/EventBinder.h */ = {isa = PBXBuildFile; fileRef = 1F6FD0422C674E899D20E455 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/EventBinder.h */; };
+		60D10D390B0A43B28B66BBAE /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Networking/Networking.cpp */ = {isa = PBXBuildFile; fileRef = 391D351160C84DD2996ADC37 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Networking/Networking.cpp */; };
+		635540757D864D028387853B /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Core.cpp */ = {isa = PBXBuildFile; fileRef = 8362BA9E1AD345718DB0709E /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Core.cpp */; };
+		6CD8E6D386954B179E38D4EF /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Logging/Log.h */ = {isa = PBXBuildFile; fileRef = D9096BC55BC34416A5577038 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Logging/Log.h */; };
+		7B2F13F3D75A4CB99653BDA3 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_tables.cpp */ = {isa = PBXBuildFile; fileRef = 3AA9BFF85DD741F0A540DB74 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_tables.cpp */; };
+		837587728EAD4F6F92D26E82 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = CBA17C5E9717460DB24EF91B /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/CMakeLists.txt */; };
+		84BCD9CDCD4246C5A2835C85 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Game/Source/MyGame.h */ = {isa = PBXBuildFile; fileRef = 762E488E424E4379957610F5 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Game/Source/MyGame.h */; };
+		85D2092F14CE4C49B09A0776 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Shader.h */ = {isa = PBXBuildFile; fileRef = 6248D3DEE515472FBD555389 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Shader.h */; };
+		8ED33FAC9D45429593F4877E /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/EventSystem.cpp */ = {isa = PBXBuildFile; fileRef = A3F83BAA775C40758CAD30B5 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/EventSystem.cpp */; };
+		914BCA39985E41BFA7038F90 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/LayerManager.cpp */ = {isa = PBXBuildFile; fileRef = FEA7023BE55F4336AAF3B791 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/LayerManager.cpp */; };
+		9905F3F118D1432BAD2D8A8A /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/PineAPI.h */ = {isa = PBXBuildFile; fileRef = CBA169645B7D485DA59A1E92 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/PineAPI.h */; };
+		9C90092FD0434EA688D56CF2 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Input.cpp */ = {isa = PBXBuildFile; fileRef = DBE0D0C7079445EE9C445B5C /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Input.cpp */; };
+		A39DD75356FD4AD7A69E789A /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Game.cpp */ = {isa = PBXBuildFile; fileRef = 6CEF95E1588A4AC8913FA0D5 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Game.cpp */; };
+		A97E2AE0ED78447788BD6A71 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/EventSystem.h */ = {isa = PBXBuildFile; fileRef = E35FC4EB674B4EC38D846C5A /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/EventSystem.h */; };
+		A99C0141B55643969BA46AF0 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_impl_sdl.cpp */ = {isa = PBXBuildFile; fileRef = 7126E095999A4F878FEA746C /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_impl_sdl.cpp */; };
+		AA4A9C4CDD9449CB8FE9744E /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/Event.cpp */ = {isa = PBXBuildFile; fileRef = 20417BBADFBC4CFC8B8DA444 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/Event.cpp */; };
+		ABB4A5B700FD4CFDB7D6CA8E /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/LayerManager.h */ = {isa = PBXBuildFile; fileRef = 2869193CCE174B4D9B8BA3B9 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/LayerManager.h */; };
+		C04FE78637944AA399212083 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/window.h */ = {isa = PBXBuildFile; fileRef = 51E18AD504DD4EB9BF6D8621 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/window.h */; };
+		D56DF598A8D947388E7A8A4C /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_demo.cpp */ = {isa = PBXBuildFile; fileRef = B5411DB5F1E14D479C40E0A4 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_demo.cpp */; };
+		DC18217B3842433EB23704BE /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui.cpp */ = {isa = PBXBuildFile; fileRef = 9A045325C8ED4FC6AEFF0E05 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui.cpp */; };
+		EDC0E2566253405FA1A33971 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Game.h */ = {isa = PBXBuildFile; fileRef = FAC86E8037424740BDB5E7DD /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Game.h */; };
+		F1D07CD5F0C94FFD95BF2722 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/window.cpp */ = {isa = PBXBuildFile; fileRef = 4A372F3057F7448BBAE30C2F /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/window.cpp */; };
+		F6A488F4060244898EFA5305 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Input.h */ = {isa = PBXBuildFile; fileRef = A60AF6BFCF7F4AEBAA74A83E /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Input.h */; };
+		FADF4D01287C4306B0DD9FE6 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Renderer.cpp */ = {isa = PBXBuildFile; fileRef = 30B39461D2CD4A58901AE41D /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Renderer.cpp */; };
+		FE7C61A1674D488B998EE9E4 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Shader.cpp */ = {isa = PBXBuildFile; fileRef = BDD28C1A0AF94C11BD0B359C /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Shader.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		2CEB5CD5463F4579BC9C8EFD /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		6FBAFE1009934CAF8A2A365E /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+		88CB9D44C6644C91ADF438BE /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+		A11258A6A7AD4F1D9D05F561 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		17A9F781B1544DC7801C8A4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C0F1F359B47C4A1390C0228B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 40B51D3FE4784C53BFC18920;
+			remoteInfo = ZERO_CHECK;
+		};
+		54FF6D4376DA4374842C2AB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C0F1F359B47C4A1390C0228B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 40B51D3FE4784C53BFC18920;
+			remoteInfo = ZERO_CHECK;
+		};
+		76AB075A5C5141F3AFDF8CB8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C0F1F359B47C4A1390C0228B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 40B51D3FE4784C53BFC18920;
+			remoteInfo = ZERO_CHECK;
+		};
+		8B6947F61CE6456F937FEB15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C0F1F359B47C4A1390C0228B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 08A6CA7F93E846CEBC619752;
+			remoteInfo = PineEngine;
+		};
+		C0A9B7F0BE454C6BBE99E451 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C0F1F359B47C4A1390C0228B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E51DFBA71F0453B8F5890AF;
+			remoteInfo = Game;
+		};
+		F39AE6039EF84DDA842D5750 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C0F1F359B47C4A1390C0228B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 08A6CA7F93E846CEBC619752;
+			remoteInfo = PineEngine;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		033F630905FE4B858240DC11 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/PineServer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = PineServer.h; path = PineEngine/Source/PineServer.h; sourceTree = SOURCE_ROOT; };
+		1F6FD0422C674E899D20E455 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/EventBinder.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = EventBinder.h; path = PineEngine/Source/Pine/Events/EventBinder.h; sourceTree = SOURCE_ROOT; };
+		20417BBADFBC4CFC8B8DA444 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/Event.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Event.cpp; path = PineEngine/Source/Pine/Events/Event.cpp; sourceTree = SOURCE_ROOT; };
+		27291DAFFCDC4A59ABB17560 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Networking/Networking.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Networking.h; path = PineEngine/Source/Pine/Networking/Networking.h; sourceTree = SOURCE_ROOT; };
+		2869193CCE174B4D9B8BA3B9 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/LayerManager.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = LayerManager.h; path = PineEngine/Source/Pine/Rendering/LayerManager.h; sourceTree = SOURCE_ROOT; };
+		2D838BCFCC1943CAA617207F /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_draw.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui_draw.cpp; path = PineEngine/Vendor/imgui1.83/imgui_draw.cpp; sourceTree = SOURCE_ROOT; };
+		30B39461D2CD4A58901AE41D /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Renderer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Renderer.cpp; path = PineEngine/Source/Pine/Rendering/Renderer.cpp; sourceTree = SOURCE_ROOT; };
+		344AE317F30B43F48EFEB9FF /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = PineEngine/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		391D351160C84DD2996ADC37 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Networking/Networking.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Networking.cpp; path = PineEngine/Source/Pine/Networking/Networking.cpp; sourceTree = SOURCE_ROOT; };
+		3AA9BFF85DD741F0A540DB74 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_tables.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui_tables.cpp; path = PineEngine/Vendor/imgui1.83/imgui_tables.cpp; sourceTree = SOURCE_ROOT; };
+		3D97ACDB32B8456D8584C7B5 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		4917AAF066114E39857EEE8B /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Maths/PMaths.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = PMaths.cpp; path = PineEngine/Source/Pine/Maths/PMaths.cpp; sourceTree = SOURCE_ROOT; };
+		4A372F3057F7448BBAE30C2F /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/window.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = window.cpp; path = PineEngine/Source/Pine/Core/window.cpp; sourceTree = SOURCE_ROOT; };
+		4BDA4C3557A44CAF800B7C21 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/EventBinder.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = EventBinder.cpp; path = PineEngine/Source/Pine/Events/EventBinder.cpp; sourceTree = SOURCE_ROOT; };
+		51E18AD504DD4EB9BF6D8621 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/window.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = window.h; path = PineEngine/Source/Pine/Core/window.h; sourceTree = SOURCE_ROOT; };
+		5CE3F3FE54C2486CA07863DF /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_impl_opengl3.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui_impl_opengl3.cpp; path = PineEngine/Vendor/imgui1.83/imgui_impl_opengl3.cpp; sourceTree = SOURCE_ROOT; };
+		6248D3DEE515472FBD555389 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Shader.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Shader.h; path = PineEngine/Source/Pine/Rendering/Shader.h; sourceTree = SOURCE_ROOT; };
+		62AC9B43162B4EA1BFE54081 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Layer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Layer.h; path = PineEngine/Source/Pine/Rendering/Layer.h; sourceTree = SOURCE_ROOT; };
+		67D86E2EF48F41BF9051469C /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/Event.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Event.h; path = PineEngine/Source/Pine/Events/Event.h; sourceTree = SOURCE_ROOT; };
+		69E2001ADF6F4CDBA0D7DC05 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Maths/PMaths.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = PMaths.h; path = PineEngine/Source/Pine/Maths/PMaths.h; sourceTree = SOURCE_ROOT; };
+		6CEF95E1588A4AC8913FA0D5 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Game.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Game.cpp; path = PineEngine/Source/Pine/Core/Game.cpp; sourceTree = SOURCE_ROOT; };
+		70211C78B73F49A1974E9C84 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Game/Source/MyGame.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = MyGame.cpp; path = Game/Source/MyGame.cpp; sourceTree = SOURCE_ROOT; };
+		7126E095999A4F878FEA746C /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_impl_sdl.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui_impl_sdl.cpp; path = PineEngine/Vendor/imgui1.83/imgui_impl_sdl.cpp; sourceTree = SOURCE_ROOT; };
+		762E488E424E4379957610F5 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Game/Source/MyGame.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = MyGame.h; path = Game/Source/MyGame.h; sourceTree = SOURCE_ROOT; };
+		8362BA9E1AD345718DB0709E /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Core.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Core.cpp; path = PineEngine/Source/Pine/Core/Core.cpp; sourceTree = SOURCE_ROOT; };
+		8C223927088242719E9E5C04 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Logging/Log.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Log.cpp; path = PineEngine/Source/Pine/Logging/Log.cpp; sourceTree = SOURCE_ROOT; };
+		9427BF99963C4C2CAAC47118 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Renderer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Renderer.h; path = PineEngine/Source/Pine/Rendering/Renderer.h; sourceTree = SOURCE_ROOT; };
+		9A045325C8ED4FC6AEFF0E05 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui.cpp; path = PineEngine/Vendor/imgui1.83/imgui.cpp; sourceTree = SOURCE_ROOT; };
+		A23614B36CAE4A7980B1C2BA /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Layer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Layer.cpp; path = PineEngine/Source/Pine/Rendering/Layer.cpp; sourceTree = SOURCE_ROOT; };
+		A3F83BAA775C40758CAD30B5 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/EventSystem.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = EventSystem.cpp; path = PineEngine/Source/Pine/Events/EventSystem.cpp; sourceTree = SOURCE_ROOT; };
+		A60AF6BFCF7F4AEBAA74A83E /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Input.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Input.h; path = PineEngine/Source/Pine/Core/Input.h; sourceTree = SOURCE_ROOT; };
+		B1C2F7EA18814CCA98CB60CD /* Game */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = Game; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5411DB5F1E14D479C40E0A4 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_demo.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui_demo.cpp; path = PineEngine/Vendor/imgui1.83/imgui_demo.cpp; sourceTree = SOURCE_ROOT; };
+		B9C8E1F5B060498FBBF9EDB2 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Core.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Core.h; path = PineEngine/Source/Pine/Core/Core.h; sourceTree = SOURCE_ROOT; };
+		BC4EB5F2FE50465698EE250F /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Pine.h; path = PineEngine/Source/Pine.h; sourceTree = SOURCE_ROOT; };
+		BDD28C1A0AF94C11BD0B359C /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Shader.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Shader.cpp; path = PineEngine/Source/Pine/Rendering/Shader.cpp; sourceTree = SOURCE_ROOT; };
+		C110A082AAF64DFFA7C665AF /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/EntryPoint.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = EntryPoint.cpp; path = PineEngine/Source/Pine/Core/EntryPoint.cpp; sourceTree = SOURCE_ROOT; };
+		CBA169645B7D485DA59A1E92 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/PineAPI.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = PineAPI.h; path = PineEngine/Source/Pine/Core/PineAPI.h; sourceTree = SOURCE_ROOT; };
+		CBA17C5E9717460DB24EF91B /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		D9096BC55BC34416A5577038 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Logging/Log.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Log.h; path = PineEngine/Source/Pine/Logging/Log.h; sourceTree = SOURCE_ROOT; };
+		DBE0D0C7079445EE9C445B5C /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Input.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Input.cpp; path = PineEngine/Source/Pine/Core/Input.cpp; sourceTree = SOURCE_ROOT; };
+		E35FC4EB674B4EC38D846C5A /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/EventSystem.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = EventSystem.h; path = PineEngine/Source/Pine/Events/EventSystem.h; sourceTree = SOURCE_ROOT; };
+		E73C112A6BF748CBB86F91B7 /* PineEngine */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libPineEngine.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4D1BA4F20D2452EA0D6360C /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_widgets.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui_widgets.cpp; path = PineEngine/Vendor/imgui1.83/imgui_widgets.cpp; sourceTree = SOURCE_ROOT; };
+		FAC86E8037424740BDB5E7DD /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Game.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Game.h; path = PineEngine/Source/Pine/Core/Game.h; sourceTree = SOURCE_ROOT; };
+		FE0F2988808C4A40AD51AA29 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Networking/ServerNetworking.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ServerNetworking.h; path = PineEngine/Source/Pine/Networking/ServerNetworking.h; sourceTree = SOURCE_ROOT; };
+		FEA7023BE55F4336AAF3B791 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/LayerManager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = LayerManager.cpp; path = PineEngine/Source/Pine/Rendering/LayerManager.cpp; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C5EE297069D9461C88EE57EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4EE2E859DB14407A829DDC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03E78DC0D9CA4BD3A487FC13 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				B57C57EA9B6042B3A3535569 /* CMake Rules */,
+				3D97ACDB32B8456D8584C7B5 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		2C4D8F24C23E4FE4AA2DA9D3 /* PineEngine */ = {
+			isa = PBXGroup;
+			children = (
+				80FCA9F5F7024F4BAC6BA418 /* Source Files */,
+				C8E1CE6FA644429C873E7682 /* Header Files */,
+				344AE317F30B43F48EFEB9FF /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/CMakeLists.txt */,
+			);
+			name = PineEngine;
+			sourceTree = "<group>";
+		};
+		3C755729FFD64A5FA09590BE /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				762E488E424E4379957610F5 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Game/Source/MyGame.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		678272B464DC4057B0049601 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				70211C78B73F49A1974E9C84 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Game/Source/MyGame.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		80FCA9F5F7024F4BAC6BA418 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				8362BA9E1AD345718DB0709E /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Core.cpp */,
+				C110A082AAF64DFFA7C665AF /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/EntryPoint.cpp */,
+				6CEF95E1588A4AC8913FA0D5 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Game.cpp */,
+				DBE0D0C7079445EE9C445B5C /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Input.cpp */,
+				4A372F3057F7448BBAE30C2F /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/window.cpp */,
+				20417BBADFBC4CFC8B8DA444 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/Event.cpp */,
+				4BDA4C3557A44CAF800B7C21 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/EventBinder.cpp */,
+				A3F83BAA775C40758CAD30B5 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/EventSystem.cpp */,
+				8C223927088242719E9E5C04 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Logging/Log.cpp */,
+				4917AAF066114E39857EEE8B /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Maths/PMaths.cpp */,
+				391D351160C84DD2996ADC37 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Networking/Networking.cpp */,
+				A23614B36CAE4A7980B1C2BA /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Layer.cpp */,
+				FEA7023BE55F4336AAF3B791 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/LayerManager.cpp */,
+				30B39461D2CD4A58901AE41D /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Renderer.cpp */,
+				BDD28C1A0AF94C11BD0B359C /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Shader.cpp */,
+				9A045325C8ED4FC6AEFF0E05 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui.cpp */,
+				B5411DB5F1E14D479C40E0A4 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_demo.cpp */,
+				2D838BCFCC1943CAA617207F /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_draw.cpp */,
+				5CE3F3FE54C2486CA07863DF /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_impl_opengl3.cpp */,
+				7126E095999A4F878FEA746C /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_impl_sdl.cpp */,
+				3AA9BFF85DD741F0A540DB74 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_tables.cpp */,
+				F4D1BA4F20D2452EA0D6360C /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_widgets.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		832A84DEE6F44B42B2BEE07A /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				678272B464DC4057B0049601 /* Source Files */,
+				3C755729FFD64A5FA09590BE /* Header Files */,
+				CBA17C5E9717460DB24EF91B /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/CMakeLists.txt */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
+		A743EA6F5EBB4457906F79B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B57C57EA9B6042B3A3535569 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		C8E1CE6FA644429C873E7682 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				BC4EB5F2FE50465698EE250F /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine.h */,
+				B9C8E1F5B060498FBBF9EDB2 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Core.h */,
+				FAC86E8037424740BDB5E7DD /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Game.h */,
+				A60AF6BFCF7F4AEBAA74A83E /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Input.h */,
+				CBA169645B7D485DA59A1E92 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/PineAPI.h */,
+				51E18AD504DD4EB9BF6D8621 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/window.h */,
+				67D86E2EF48F41BF9051469C /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/Event.h */,
+				1F6FD0422C674E899D20E455 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/EventBinder.h */,
+				E35FC4EB674B4EC38D846C5A /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/EventSystem.h */,
+				D9096BC55BC34416A5577038 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Logging/Log.h */,
+				69E2001ADF6F4CDBA0D7DC05 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Maths/PMaths.h */,
+				27291DAFFCDC4A59ABB17560 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Networking/Networking.h */,
+				FE0F2988808C4A40AD51AA29 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Networking/ServerNetworking.h */,
+				62AC9B43162B4EA1BFE54081 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Layer.h */,
+				2869193CCE174B4D9B8BA3B9 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/LayerManager.h */,
+				9427BF99963C4C2CAAC47118 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Renderer.h */,
+				6248D3DEE515472FBD555389 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Shader.h */,
+				033F630905FE4B858240DC11 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/PineServer.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		C9AC9448822A45F299579A01 = {
+			isa = PBXGroup;
+			children = (
+				832A84DEE6F44B42B2BEE07A /* Game */,
+				03E78DC0D9CA4BD3A487FC13 /* ALL_BUILD */,
+				2C4D8F24C23E4FE4AA2DA9D3 /* PineEngine */,
+				F2BD74EA9D2041708F84A761 /* Products */,
+				A743EA6F5EBB4457906F79B8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F2BD74EA9D2041708F84A761 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B1C2F7EA18814CCA98CB60CD /* Game */,
+				E73C112A6BF748CBB86F91B7 /* PineEngine */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		08A6CA7F93E846CEBC619752 /* PineEngine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFB90D5B4AE046EC9A9A5E4A /* Build configuration list for PBXNativeTarget "PineEngine" */;
+			buildPhases = (
+				D00FFC7176B848B6BA54E82A /* Sources */,
+				E4EE2E859DB14407A829DDC0 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BFDEFC06E2D2498895F939A9 /* PBXTargetDependency */,
+			);
+			name = PineEngine;
+			productName = PineEngine;
+			productReference = E73C112A6BF748CBB86F91B7 /* PineEngine */;
+			productType = "com.apple.product-type.library.static";
+		};
+		6E51DFBA71F0453B8F5890AF /* Game */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 043B6EA66CE84DAD83FC38C0 /* Build configuration list for PBXNativeTarget "Game" */;
+			buildPhases = (
+				970F043F0B6A4529A1CD6D6A /* Sources */,
+				C5EE297069D9461C88EE57EC /* Frameworks */,
+				3E61B9EF5C6AA9EB96FFFF48 /* CMake PostBuild Rules */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				629359F20EF447D6B0B72015 /* PBXTargetDependency */,
+				0D1C19C9DBD64A3883E0F7D3 /* PBXTargetDependency */,
+			);
+			name = Game;
+			productName = Game;
+			productReference = B1C2F7EA18814CCA98CB60CD /* Game */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C0F1F359B47C4A1390C0228B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1240;
+			};
+			buildConfigurationList = CCF058D9F71B4050B700DDB8 /* Build configuration list for PBXProject "PineEngine" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				2CEB5CD5463F4579BC9C8EFD /* Debug */,
+				A11258A6A7AD4F1D9D05F561 /* Release */,
+				88CB9D44C6644C91ADF438BE /* MinSizeRel */,
+				6FBAFE1009934CAF8A2A365E /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = C9AC9448822A45F299579A01;
+			projectDirPath = ../../;
+			projectRoot = "";
+			targets = (
+				E8EA2DB2DA6E4061AB49CC77 /* ALL_BUILD */,
+				6E51DFBA71F0453B8F5890AF /* Game */,
+				08A6CA7F93E846CEBC619752 /* PineEngine */,
+				40B51D3FE4784C53BFC18920 /* ZERO_CHECK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		26D815EE022BA13FCDCF3696 /* Generate CMakeFiles/ALL_BUILD */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ALL_BUILD";
+			outputPaths = (
+"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs/CMakeFiles/ALL_BUILD"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd \"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs\"
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd \"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs\"
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd \"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs\"
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd \"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs\"
+  echo Build\\ all\\ projects
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		3C0110FC8322DE7E50886E21 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		3E61B9EF5C6AA9EB96FFFF48 /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd \"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs\"
+  /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL2-2.0.14/lib/x64/SDL2.dll /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine\\ Projects/MacOs/bin/SDL2.dll
+  cd \"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs\"
+  /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL2_image-2.0.5/lib/x64/SDL2_image.dll /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine\\ Projects/MacOs/bin/SDL2_image.dll
+  cd \"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs\"
+  /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL2_mixer-2.0.4/lib/x64/SDL2_mixer.dll /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine\\ Projects/MacOs/bin/SDL2_mixer.dll
+  cd \"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs\"
+  /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL2_ttf-2.0.15/lib/x64/SDL2_ttf.dll /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine\\ Projects/MacOs/bin/SDL2_ttf.dll
+  cd \"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs\"
+  /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/glew-2.1.0/bin/Release/x64/glew32.dll /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine\\ Projects/MacOs/bin/glew32.dll
+  cd \"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs\"
+  /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy_directory /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Game/Assets /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine\\ Projects/MacOs/bin/Assets
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd \"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs\"
+  /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL2-2.0.14/lib/x64/SDL2.dll /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine\\ Projects/MacOs/bin/SDL2.dll
+  cd \"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs\"
+  /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL2_image-2.0.5/lib/x64/SDL2_image.dll /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine\\ Projects/MacOs/bin/SDL2_image.dll
+  cd \"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs\"
+  /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL2_mixer-2.0.4/lib/x64/SDL2_mixer.dll /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine\\ Projects/MacOs/bin/SDL2_mixer.dll
+  cd \"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs\"
+  /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL2_ttf-2.0.15/lib/x64/SDL2_ttf.dll /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine\\ Projects/MacOs/bin/SDL2_ttf.dll
+  cd \"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs\"
+  /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/glew-2.1.0/bin/Release/x64/glew32.dll /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine\\ Projects/MacOs/bin/glew32.dll
+  cd \"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs\"
+  /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy_directory /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Game/Assets /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine\\ Projects/MacOs/bin/Assets
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd \"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs\"
+  /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL2-2.0.14/lib/x64/SDL2.dll /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine\\ Projects/MacOs/bin/SDL2.dll
+  cd \"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs\"
+  /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL2_image-2.0.5/lib/x64/SDL2_image.dll /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine\\ Projects/MacOs/bin/SDL2_image.dll
+  cd \"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs\"
+  /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL2_mixer-2.0.4/lib/x64/SDL2_mixer.dll /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine\\ Projects/MacOs/bin/SDL2_mixer.dll
+  cd \"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs\"
+  /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL2_ttf-2.0.15/lib/x64/SDL2_ttf.dll /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine\\ Projects/MacOs/bin/SDL2_ttf.dll
+  cd \"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs\"
+  /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/glew-2.1.0/bin/Release/x64/glew32.dll /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine\\ Projects/MacOs/bin/glew32.dll
+  cd \"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs\"
+  /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy_directory /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Game/Assets /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine\\ Projects/MacOs/bin/Assets
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd \"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs\"
+  /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL2-2.0.14/lib/x64/SDL2.dll /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine\\ Projects/MacOs/bin/SDL2.dll
+  cd \"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs\"
+  /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL2_image-2.0.5/lib/x64/SDL2_image.dll /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine\\ Projects/MacOs/bin/SDL2_image.dll
+  cd \"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs\"
+  /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL2_mixer-2.0.4/lib/x64/SDL2_mixer.dll /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine\\ Projects/MacOs/bin/SDL2_mixer.dll
+  cd \"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs\"
+  /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/SDL2_ttf-2.0.15/lib/x64/SDL2_ttf.dll /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine\\ Projects/MacOs/bin/SDL2_ttf.dll
+  cd \"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs\"
+  /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/glew-2.1.0/bin/Release/x64/glew32.dll /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine\\ Projects/MacOs/bin/glew32.dll
+  cd \"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs\"
+  /usr/local/Cellar/cmake/3.19.3/bin/cmake -E copy_directory /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Game/Assets /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine\\ Projects/MacOs/bin/Assets
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		9B50530E35CC49C82C2FACCF = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		CA15345E1CEC95DB110EC2D5 /* Generate CMakeFiles/ZERO_CHECK */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ZERO_CHECK";
+			outputPaths = (
+"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs/CMakeFiles/ZERO_CHECK"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd \"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs\"
+  make -f /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine\\ Projects/MacOs/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd \"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs\"
+  make -f /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine\\ Projects/MacOs/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd \"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs\"
+  make -f /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine\\ Projects/MacOs/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd \"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs\"
+  make -f /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine\\ Projects/MacOs/CMakeScripts/ReRunCMake.make
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		970F043F0B6A4529A1CD6D6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02E7B92DE90D4C2EA3D199DA /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Game/Source/MyGame.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D00FFC7176B848B6BA54E82A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				635540757D864D028387853B /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Core.cpp */,
+				515720BD5635455BAEFBBD0D /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/EntryPoint.cpp */,
+				A39DD75356FD4AD7A69E789A /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Game.cpp */,
+				9C90092FD0434EA688D56CF2 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/Input.cpp */,
+				F1D07CD5F0C94FFD95BF2722 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core/window.cpp */,
+				AA4A9C4CDD9449CB8FE9744E /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/Event.cpp */,
+				5F0492B809C1446A8C2A88AC /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/EventBinder.cpp */,
+				8ED33FAC9D45429593F4877E /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events/EventSystem.cpp */,
+				1134EAFA6EFE40E1BAEC20E5 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Logging/Log.cpp */,
+				0B0FAD8818294BD8B098EE8F /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Maths/PMaths.cpp */,
+				60D10D390B0A43B28B66BBAE /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Networking/Networking.cpp */,
+				061057B239714F16B15A2E48 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Layer.cpp */,
+				914BCA39985E41BFA7038F90 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/LayerManager.cpp */,
+				FADF4D01287C4306B0DD9FE6 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Renderer.cpp */,
+				FE7C61A1674D488B998EE9E4 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering/Shader.cpp */,
+				DC18217B3842433EB23704BE /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui.cpp */,
+				D56DF598A8D947388E7A8A4C /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_demo.cpp */,
+				269323CEEF38492982EDE9B1 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_draw.cpp */,
+				22E86B8BD3D0451598A165E2 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_impl_opengl3.cpp */,
+				A99C0141B55643969BA46AF0 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_impl_sdl.cpp */,
+				7B2F13F3D75A4CB99653BDA3 /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_tables.cpp */,
+				0ED8519FC3084016A533441B /* /Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83/imgui_widgets.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0D1C19C9DBD64A3883E0F7D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 40B51D3FE4784C53BFC18920 /* ZERO_CHECK */;
+			targetProxy = 54FF6D4376DA4374842C2AB9 /* PBXContainerItemProxy */;
+		};
+		629359F20EF447D6B0B72015 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 08A6CA7F93E846CEBC619752 /* PineEngine */;
+			targetProxy = F39AE6039EF84DDA842D5750 /* PBXContainerItemProxy */;
+		};
+		6BAD1306DF044998913247DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 08A6CA7F93E846CEBC619752 /* PineEngine */;
+			targetProxy = 8B6947F61CE6456F937FEB15 /* PBXContainerItemProxy */;
+		};
+		9C59C2B6537A4FE1BCF63C36 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6E51DFBA71F0453B8F5890AF /* Game */;
+			targetProxy = C0A9B7F0BE454C6BBE99E451 /* PBXContainerItemProxy */;
+		};
+		B777D0DF75CD46CA82F7E588 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 40B51D3FE4784C53BFC18920 /* ZERO_CHECK */;
+			targetProxy = 17A9F781B1544DC7801C8A4F /* PBXContainerItemProxy */;
+		};
+		BFDEFC06E2D2498895F939A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 40B51D3FE4784C53BFC18920 /* ZERO_CHECK */;
+			targetProxy = 76AB075A5C5141F3AFDF8CB8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		06A662FD33024BA093C62FD7 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		211BFB683DA74E50AB0D9E44 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs/bin/MinSizeRel";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = ("$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Game/Source","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Logging","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Maths","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Networking","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/spdlog/include","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/glew-2.1.0/include",/usr/local/include/SDL2,"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/{GLEW_INCLUDE_DIR}","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/enet-1.3.16/include","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/glm",/usr/local/include/GL);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = ("$(inherited)");
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG '-std=gnu++17' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","\"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs/PineEngine/MinSizeRel/libPineEngine.a\"",/usr/local/lib/libSDL2main.a,/usr/local/lib/libSDL2.dylib,"-framework Cocoa",/usr/local/lib/libSDL2_image.dylib,/usr/local/lib/libSDL2_ttf.dylib,/usr/local/lib/libSDL2_ttf.dylib,"-framework Cocoa",/usr/local/lib/libGLEW.dylib,/usr/local/lib/libSDL2_mixer.dylib,"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/enet-1.3.16/lib/libenet.a","-framework OpenGL",/usr/local/lib/libSDL2_image.dylib,/usr/local/lib/libGLEW.dylib,/usr/local/lib/libSDL2_mixer.dylib,"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/enet-1.3.16/lib/libenet.a","-framework OpenGL");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Game;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		2B07EF77D32741F8BA05CB47 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		38450735377C4431B25AF4DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		64B9824B77184F6E8962E3B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		74674179A7DF4367AEC4B3E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs/bin/Debug";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = ("$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Game/Source","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Logging","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Maths","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Networking","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/spdlog/include","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/glew-2.1.0/include",/usr/local/include/SDL2,"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/{GLEW_INCLUDE_DIR}","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/enet-1.3.16/include","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/glm",/usr/local/include/GL);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = ("$(inherited)");
+				OTHER_CPLUSPLUSFLAGS = "   '-std=gnu++17' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","\"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs/PineEngine/Debug/libPineEngine.a\"",/usr/local/lib/libSDL2main.a,/usr/local/lib/libSDL2.dylib,"-framework Cocoa",/usr/local/lib/libSDL2_image.dylib,/usr/local/lib/libSDL2_ttf.dylib,/usr/local/lib/libSDL2_ttf.dylib,"-framework Cocoa",/usr/local/lib/libGLEW.dylib,/usr/local/lib/libSDL2_mixer.dylib,"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/enet-1.3.16/lib/libenet.a","-framework OpenGL",/usr/local/lib/libSDL2_image.dylib,/usr/local/lib/libGLEW.dylib,/usr/local/lib/libSDL2_mixer.dylib,"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/enet-1.3.16/lib/libenet.a","-framework OpenGL");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Game;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		7734165930A64460A31C525F /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		7E147D4DB12D49C5A8CABC6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		860CEA98C3084CFAA4824A44 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs/build";
+			};
+			name = RelWithDebInfo;
+		};
+		952FD2B46766497FAE3009B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PINE_PLATFORM_MACOS,DEBUG);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Logging","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Maths","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Networking","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/spdlog/include","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/glew-2.1.0/include","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/glm",/usr/local/include/GL,/usr/local/include/SDL2,"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/enet-1.3.16/include");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = "   '-std=gnu++17' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = PineEngine;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs/PineEngine";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		A31081B6A138446084343578 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs/build";
+			};
+			name = Release;
+		};
+		AA0894FC7BDD4275AD311859 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs/build";
+			};
+			name = MinSizeRel;
+		};
+		C2C429ABFD2A45219C0A74EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs/bin/Release";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = ("$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Game/Source","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Logging","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Maths","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Networking","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/spdlog/include","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/glew-2.1.0/include",/usr/local/include/SDL2,"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/{GLEW_INCLUDE_DIR}","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/enet-1.3.16/include","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/glm",/usr/local/include/GL);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = ("$(inherited)");
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG '-std=gnu++17' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","\"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs/PineEngine/Release/libPineEngine.a\"",/usr/local/lib/libSDL2main.a,/usr/local/lib/libSDL2.dylib,"-framework Cocoa",/usr/local/lib/libSDL2_image.dylib,/usr/local/lib/libSDL2_ttf.dylib,/usr/local/lib/libSDL2_ttf.dylib,"-framework Cocoa",/usr/local/lib/libGLEW.dylib,/usr/local/lib/libSDL2_mixer.dylib,"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/enet-1.3.16/lib/libenet.a","-framework OpenGL",/usr/local/lib/libSDL2_image.dylib,/usr/local/lib/libGLEW.dylib,/usr/local/lib/libSDL2_mixer.dylib,"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/enet-1.3.16/lib/libenet.a","-framework OpenGL");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Game;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		CA13D894513E42D4864FCF3D /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PINE_PLATFORM_MACOS,DEBUG);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Logging","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Maths","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Networking","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/spdlog/include","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/glew-2.1.0/include","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/glm",/usr/local/include/GL,/usr/local/include/SDL2,"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/enet-1.3.16/include");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG '-std=gnu++17' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = PineEngine;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs/PineEngine";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		DC4B593E667E4211A7BC0348 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PINE_PLATFORM_MACOS,DEBUG);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Logging","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Maths","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Networking","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/spdlog/include","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/glew-2.1.0/include","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/glm",/usr/local/include/GL,/usr/local/include/SDL2,"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/enet-1.3.16/include");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG '-std=gnu++17' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = PineEngine;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs/PineEngine";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		E064C8C355594E5487D6AC13 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs/bin/RelWithDebInfo";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = ("$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Game/Source","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Logging","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Maths","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Networking","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/spdlog/include","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/glew-2.1.0/include",/usr/local/include/SDL2,"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/{GLEW_INCLUDE_DIR}","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/enet-1.3.16/include","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/glm",/usr/local/include/GL);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = ("$(inherited)");
+				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG '-std=gnu++17' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","\"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs/PineEngine/RelWithDebInfo/libPineEngine.a\"",/usr/local/lib/libSDL2main.a,/usr/local/lib/libSDL2.dylib,"-framework Cocoa",/usr/local/lib/libSDL2_image.dylib,/usr/local/lib/libSDL2_ttf.dylib,/usr/local/lib/libSDL2_ttf.dylib,"-framework Cocoa",/usr/local/lib/libGLEW.dylib,/usr/local/lib/libSDL2_mixer.dylib,"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/enet-1.3.16/lib/libenet.a","-framework OpenGL",/usr/local/lib/libSDL2_image.dylib,/usr/local/lib/libGLEW.dylib,/usr/local/lib/libSDL2_mixer.dylib,"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/enet-1.3.16/lib/libenet.a","-framework OpenGL");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Game;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		E2D8F98C9C44433AAF8C052D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs/build";
+			};
+			name = Debug;
+		};
+		E2E4E8768D6E48FCB9E6ECC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",PINE_PLATFORM_MACOS,DEBUG);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Core","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Logging","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Maths","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Networking","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Rendering","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Source/Pine/Events","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/spdlog/include","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/glew-2.1.0/include","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/imgui1.83","/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/glm",/usr/local/include/GL,/usr/local/include/SDL2,"/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/PineEngine/Vendor/enet-1.3.16/include");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG '-std=gnu++17' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = PineEngine;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs/PineEngine";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		EACA7F7C3D6F4D6EBC9A4545 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		FD80EF4D3238406695410104 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/bradley/documents/C++Projects/LatestVersion/PineEngine/Engine Projects/MacOs";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		043B6EA66CE84DAD83FC38C0 /* Build configuration list for PBXNativeTarget "Game" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74674179A7DF4367AEC4B3E9 /* Debug */,
+				C2C429ABFD2A45219C0A74EE /* Release */,
+				211BFB683DA74E50AB0D9E44 /* MinSizeRel */,
+				E064C8C355594E5487D6AC13 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		19E0D6EC3BC94372B79591C8 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64B9824B77184F6E8962E3B5 /* Debug */,
+				EACA7F7C3D6F4D6EBC9A4545 /* Release */,
+				2B07EF77D32741F8BA05CB47 /* MinSizeRel */,
+				06A662FD33024BA093C62FD7 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		3D0E0D41025D419E94F4303C /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38450735377C4431B25AF4DA /* Debug */,
+				7E147D4DB12D49C5A8CABC6D /* Release */,
+				7734165930A64460A31C525F /* MinSizeRel */,
+				FD80EF4D3238406695410104 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		CCF058D9F71B4050B700DDB8 /* Build configuration list for PBXProject "PineEngine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2D8F98C9C44433AAF8C052D /* Debug */,
+				A31081B6A138446084343578 /* Release */,
+				AA0894FC7BDD4275AD311859 /* MinSizeRel */,
+				860CEA98C3084CFAA4824A44 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		FFB90D5B4AE046EC9A9A5E4A /* Build configuration list for PBXNativeTarget "PineEngine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				952FD2B46766497FAE3009B2 /* Debug */,
+				E2E4E8768D6E48FCB9E6ECC1 /* Release */,
+				DC4B593E667E4211A7BC0348 /* MinSizeRel */,
+				CA13D894513E42D4864FCF3D /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C0F1F359B47C4A1390C0228B /* Project object */;
+}

@@ -173,13 +173,15 @@ namespace Pine {
 		default:
 			break;
 		case SDL_QUIT:
-			PINE_ENGINE_WARN("CLOSE BUTTON PRESSED");
+			
+			("CLOSE BUTTON PRESSED");
 			return true;
 		}
 		return false;
 		
 	}
 
+	//need to change to glm vec2
 	PVector2f Input::GetMousePosition()//return mouse current on-screen pos
 	{
 		int x, y;
@@ -225,17 +227,33 @@ namespace Pine {
 		}
 	
 	}
-	bool Input::GetKeyDown(SDL_KeyCode key)
+	bool Input::GetKeyDown(SDL_Scancode key)
 	{
-		
-		if (key != m_key)
-		{
+		int count = 0;
+		const uint8_t* state = SDL_GetKeyboardState(NULL);
+
+		if (state[key]) {
+			//PINE_ENGINE_WARN("PRESSED");
+			return true;
+		}
+		else {
+
+			//PINE_ENGINE_WARN("NOT PRESSED");
 			return false;
 		}
-		m_key = SDLK_UNKNOWN;
-		return true;
-
 		
+	}
+
+	//need to change to take in Pine state
+	bool Input::GetMouseDown(int  mouse)
+	{
+		Uint32 button = SDL_GetMouseState(NULL, NULL);
+		if (button == mouse) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 

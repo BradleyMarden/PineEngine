@@ -8,7 +8,6 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "../CMAKE/FindGLEW.cmake"
-  "../CMAKE/FindGLFW.cmake"
   "../CMAKE/FindSDL2.cmake"
   "../CMAKE/FindSDL2Mixer.cmake"
   "../CMAKE/FindSDL2TTF.cmake"

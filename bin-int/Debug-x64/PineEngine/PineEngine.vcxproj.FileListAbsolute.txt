@@ -1,2 +1,0 @@
-D:\PineEngine\PineEngine\bin\Debug-x64\PineEngine\PineEngine.pdb
-D:\PineEngine\PineEngine\bin-int\Debug-x64\PineEngine\PineEngine.pdb
